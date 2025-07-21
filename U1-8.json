@@ -1,0 +1,1148 @@
+{
+  "questions": [
+    {
+      "question": "Was ist laut den Kursmaterialien die grundlegende Anforderung an einen Algorithmus bezüglich seiner Ausgabe?",
+      "answers": [
+        "Er muss immer die schnellste Lösung liefern.",
+        "Er muss eine oder mehrere Ausgaben in unendlicher Zeit zurückgeben.",
+        "Er muss eine oder mehrere Werte als Ausgabe in endlicher Zeit zurückgeben.",
+        "Er muss hardwarenah implementiert sein."
+      ],
+      "correct": 2,
+      "explanation": "Ein Algorithmus wird als eine wohldefinierte Folge von Berechnungen definiert, die einen oder mehrere Werte als Eingabe entgegennimmt und einen oder mehrere Werte als Ausgabe in endlicher Zeit zurückgibt [1]. Die Endlichkeit der Zeit ist entscheidend für die Korrektheit eines Algorithmus [2]. Option 0 ist falsch, da Algorithmen nicht immer die schnellste Lösung sein müssen, sondern eine korrekte. Option 1 widerspricht direkt der Definition, und Option 3 ist eine Implementierungsdetail, keine definitorische Anforderung."
+    },
+    {
+      "question": "Welche Eingabe führt bei Insertion Sort unter Berücksichtigung der Worst-Case-Laufzeit zu den meisten Vertauschungen?",
+      "answers": [
+        "Eine bereits aufsteigend sortierte Liste.",
+        "Eine Liste, bei der alle Elemente gleich sind.",
+        "Eine umgekehrt sortierte Liste.",
+        "Eine Liste mit abwechselnd großen und kleinen Werten."
+      ],
+      "correct": 2,
+      "explanation": "Der Worst Case für Insertion Sort tritt auf, wenn die Eingabe eine umgekehrt sortierte Liste ist. In diesem Szenario muss jedes Element mit allen vorhergehenden Elementen getauscht werden, um seine korrekte Position zu finden, was zu einer quadratischen Laufzeit von Θ(n²) führt [3-5]. Eine bereits sortierte Liste führt zum Best Case (Θ(n)) [3]. Duplikate ändern die grundlegende Logik der Vergleiche und Verschiebungen nicht wesentlich, und abwechselnde Werte führen eher zum Average Case."
+    },
+    {
+      "question": "Welche der folgenden Aussagen über die Landau-Notation ist korrekt?",
+      "answers": [
+        "f(n) = O(g(n)) bedeutet, dass f(n) immer kleiner ist als g(n).",
+        "f(n) = Ω(g(n)) bedeutet, dass f(n) asymptotisch langsamer wächst als g(n).",
+        "f(n) = Θ(g(n)) bedeutet, dass f(n) asymptotisch genau so schnell wächst wie g(n).",
+        "f(n) = o(g(n)) ist eine enge asymptotische Schranke."
+      ],
+      "correct": 2,
+      "explanation": "Die Θ-Notation (Theta-Notation) beschreibt eine 'enge Schranke', was bedeutet, dass die Funktion f(n) asymptotisch genau so schnell wächst wie g(n). Formal gibt es positive Konstanten c1, c2 und n0, sodass 0 ≤ c1g(n) ≤ f(n) ≤ c2g(n) für alle n ≥ n0 gilt [6-8]. Option 0 ist falsch, da O-Notation nur eine obere Schranke angibt, und f(n) größer sein kann als g(n) für kleine n. Option 1 ist falsch, da Ω-Notation eine untere Schranke darstellt, also f(n) mindestens so schnell wächst wie g(n) [6, 7]. Option 3 ist falsch, da die o-Notation (klein-O-Notation) eine 'lose' obere Schranke darstellt, die besagt, dass f(n) asymptotisch strikt langsamer wächst als g(n) [6, 9]."
+    },
+    {
+      "question": "Was ist die Zeitkomplexität für den Aufbau eines Max-Heaps aus einem unsortierten Array mit n Elementen?",
+      "answers": ["O(n log n)", "Θ(n)", "O(log n)", "Θ(n²)"],
+      "correct": 1,
+      "explanation": "Der Aufbau eines Max-Heaps aus einem unsortierten Array (buildMaxHeap-Operation) hat eine schärfere Laufzeit von Θ(n) [10, 11]. Obwohl jeder einzelne max-heapify-Aufruf O(log n) kostet und es n solche Aufrufe gibt, ist die Summe der Kosten über alle Ebenen des Baumes effizienter und ergibt eine lineare Zeitkomplexität. O(n log n) ist eine lose obere Schranke [10], während O(log n) der Aufwand für eine einzelne max-heapify-Operation ist [12]."
+    },
+    {
+      "question": "Ein Vergleichsbasierter Sortieralgorithmus sortiert eine Liste mit n Elementen. Was ist die asymptotische untere Schranke für seine Laufzeit?",
+      "answers": ["Θ(n)", "Ω(n²)", "Ω(n log n)", "O(log n)"],
+      "correct": 2,
+      "explanation": "Vergleichsbasierte Sortierverfahren haben eine theoretische untere Schranke für den Aufwand von Ω(n log n) [13, 14]. Dies liegt daran, dass alle n! möglichen Permutationen einer Eingabeliste durch Vergleiche unterschieden werden müssen, was mindestens log(n!) Vergleiche erfordert, und log(n!) ist asymptotisch Ω(n log n) [14]. Θ(n) und Ω(n²) sind für andere Sortierverfahren relevant (z.B. Insertion Sort Best Case ist Θ(n), Worst Case ist Θ(n²)), aber nicht die allgemeine untere Schranke für *alle* vergleichsbasierten Sortierverfahren [15]."
+    },
+    {
+      "question": "Welche Eigenschaft des Master-Theorems muss erfüllt sein, damit der dritte Fall (T(n) = Θ(f(n))) zutrifft?",
+      "answers": [
+        "f(n) muss asymptotisch kleiner sein als n^(log_b a).",
+        "Es muss eine Konstante k ≥ 0 geben, sodass f(n) = Θ(n^(log_b a) log^k n).",
+        "f(n) muss asymptotisch größer sein als n^(log_b a) und zusätzlich muss a*f(n/b) ≤ c*f(n) für eine Konstante c < 1 gelten.",
+        "Die Funktion f(n) muss konstant sein."
+      ],
+      "correct": 2,
+      "explanation": "Für den dritten Fall des Master-Theorems (T(n) = Θ(f(n))) muss f(n) asymptotisch um einen polynomiellen Faktor größer sein als n^(log_b a), d.h., es existiert eine Konstante ϵ > 0, so dass f(n) = Ω(n^(log_b a + ϵ)). Zusätzlich muss die 'Regularitätsbedingung' a * f(n/b) ≤ c * f(n) für eine Konstante c < 1 und alle hinreichend große n erfüllt sein [16-19]. Option 0 beschreibt den ersten Fall, und Option 1 den zweiten Fall [16, 17]."
+    },
+    {
+      "question": "Welcher Sortieralgorithmus ist in einer standardmäßigen Implementierung stabil, während Quicksort dies normalerweise nicht ist?",
+      "answers": ["Selectionsort", "Bubblesort", "Mergesort", "Heapsort"],
+      "correct": 2,
+      "explanation": "Mergesort ist ein stabiler Sortieralgorithmus [20, 21]. Das bedeutet, dass Elemente mit gleichem Wert ihre relative Reihenfolge in der sortierten Ausgabe beibehalten. Quicksort und Heapsort sind in ihren Standardimplementierungen im Allgemeinen nicht stabil [20]. Bubblesort ist stabil [22], aber Mergesort ist die hier genannte Option, die diesen Kontrast zu Quicksort hervorhebt und in den Vorlesungen explizit als stabil bezeichnet wird [20]."
+    },
+    {
+      "question": "Eine Hash-Tabelle verwendet 'Chaining' zur Kollisionsbehandlung. Was ist die asymptotische Worst-Case-Laufzeit für die Suche nach einem Schlüssel, wenn n Elemente in der Tabelle sind?",
+      "answers": ["O(1)", "O(log n)", "O(n)", "O(n²)"],
+      "correct": 2,
+      "explanation": "Im Worst Case können alle n Schlüssel auf dieselbe Position im Hash-Array abgebildet werden, wodurch eine einzige verkettete Liste alle Elemente enthält. In diesem Fall degeneriert die Suche zu einer linearen Suche durch die Liste, was eine Laufzeit von O(n) bedeutet [23, 24]. O(1) ist der ideale Average Case [23], aber nicht der Worst Case."
+    },
+    {
+      "question": "Warum ist es beim Einfügen in einen B-Baum mit Ordnung t üblich, Knoten auf dem Weg nach unten proaktiv zu splitten, wenn sie voll sind (2t-1 Schlüssel)?",
+      "answers": [
+        "Um die Baumhöhe zu minimieren.",
+        "Um zu viele Blockzugriffe durch rekursive Splits auf dem Rückweg zu vermeiden.",
+        "Um sicherzustellen, dass die Blätter immer auf derselben Ebene bleiben.",
+        "Um eine lineare Liste im schlimmsten Fall zu verhindern."
+      ],
+      "correct": 1,
+      "explanation": "Um zusätzliche Blockzugriffe der Rekursion zu vermeiden, werden Knoten proaktiv während der Suche bereits gesplittet, wenn sie bereits 2t-1 Elemente enthalten [25]. Dies optimiert die Performance bei blockweisen Lese-/Schreiboperationen, die in B-Bäumen im Vordergrund stehen [26]. Die anderen Optionen beschreiben allgemeine Ziele oder Eigenschaften von B-Bäumen, aber nicht den spezifischen Grund für das proaktive Splitten."
+    },
+    {
+      "question": "Welche der folgenden Eigenschaften ist für ein Problem unerlässlich, damit es effizient mit Dynamischer Programmierung gelöst werden kann?",
+      "answers": [
+        "Das Problem muss zyklische Abhängigkeiten haben.",
+        "Es muss eine lokale, gierige Wahl geben, die zum globalen Optimum führt.",
+        "Die Anzahl der Teilprobleme muss polynomiell in der Eingabegröße sein und sich überlappen.",
+        "Die Problemlösung muss ausschließlich rekursiv erfolgen."
+      ],
+      "correct": 2,
+      "explanation": "Zwei notwendige Zutaten für die Dynamische Programmierung sind die 'Optimalität in Teilproblemen' (eine optimale Lösung für ein Problem kann aus optimalen Lösungen von Teilproblemen zusammengesetzt werden) und 'überlappende Teilprobleme' (die Anzahl der Teilprobleme muss polynomiell in der Eingabegröße sein, um von Wiederholungen zu profitieren) [27]. Option 1 ist falsch, da DP in der Regel auf DAGs oder Problemen mit gerichteten Abhängigkeiten angewendet wird. Option 2 beschreibt eine Eigenschaft von Greedy-Algorithmen, nicht von DP-Problemen im Allgemeinen [28]. Option 3 ist falsch, da DP sowohl top-down (mit Memoization) als auch bottom-up (tabellarisch) implementiert werden kann [29, 30]."
+    },
+    {
+      "question": "Welches Problem kann der Bellman-Ford-Algorithmus identifizieren, das Dijkstra's Algorithmus nicht zuverlässig handhaben kann?",
+      "answers": [
+        "Negative Kantengewichte.",
+        "Unerreichbare Knoten.",
+        "Zyklen im Graphen.",
+        "Negative Zyklen."
+      ],
+      "correct": 3,
+      "explanation": "Der Bellman-Ford-Algorithmus kann negative Kantengewichte verarbeiten und sogar negative Zyklen erkennen [31-34]. Dijkstra's Algorithmus funktioniert korrekt nur bei nicht-negativen Kantengewichten [35, 36] und liefert in Graphen mit negativen Zyklen keine sinnvollen kürzesten Pfade, da die Distanz unendlich klein werden könnte [37]."
+    },
+    {
+      "question": "Was ist die Zeitkomplexität des Floyd-Warshall-Algorithmus zur Berechnung aller kürzesten Pfade in einem Graph mit V Knoten?",
+      "answers": ["O(V²)", "O(V²E)", "Θ(V³)", "Θ(VE)"],
+      "correct": 2,
+      "explanation": "Der Floyd-Warshall-Algorithmus hat eine Laufzeit von Θ(V³) [38, 39]. Dies ergibt sich aus den drei verschachtelten Schleifen, die jeweils V-mal durchlaufen werden [39]. Andere Algorithmen wie Bellman-Ford für alle Paare hätten O(V²E) oder O(V⁴) auf dichten Graphen [40], während Dijkstra O(V³ + VE) oder O(V³) auf dichten Graphen erreicht [40]."
+    },
+    {
+      "question": "Was ist der Hauptvorteil der Adjazenzliste gegenüber der Adjazenzmatrix zur Darstellung von Graphen, insbesondere bei dünn besetzten Graphen?",
+      "answers": [
+        "Schnellerer Zugriff auf Nachbarschaftsabfragen.",
+        "Geringerer Speicherbedarf.",
+        "Einfachere Implementierung für gerichtete Graphen.",
+        "Bessere Performance bei dichten Graphen."
+      ],
+      "correct": 1,
+      "explanation": "Die Adjazenzliste ist speicherfreundlicher, insbesondere bei dünn besetzten (sparse) Graphen, da sie nur tatsächlich vorhandene Kanten speichert. Die Adjazenzmatrix benötigt immer V² Speicherplatz, unabhängig von der Anzahl der Kanten [41]. Bei Nachbarschaftsabfragen ist die Adjazenzmatrix oft schneller [41]."
+    },
+    {
+      "question": "Welche Art von Kante in einem gerichteten Graphen wird während einer Tiefensuche (DFS) als 'Rückwärts-Kante' klassifiziert?",
+      "answers": [
+        "Eine Kante zu einem neu entdeckten Knoten.",
+        "Eine Kante zu einem Knoten, der bereits ein Vorgänger im DFS-Baum ist (einschließlich Schleifen).",
+        "Eine Kante zu einem Nachfolger im DFS-Baum.",
+        "Eine Kante zu einem Knoten in einem anderen Zweig des Baumes."
+      ],
+      "correct": 1,
+      "explanation": "Eine Rückwärts-Kante (u, v) tritt auf, wenn v ein Vorgänger von u im aktuellen DFS-Baum ist, einschließlich Selbstschleifen (self-loops) [42]. Baum-Kanten sind Kanten zu neu entdeckten Knoten. Vorwärts- und Quer-Kanten verbinden zu Nachfolgern oder Knoten in anderen Zweigen, aber nicht zu Vorfahren in der aktuellen Rekursionstiefe [43]."
+    },
+    {
+      "question": "Was ist eine 'safe edge' (geeignete Kante) im Kontext der Konstruktion eines Minimalen Spannbaums (MST) nach dem allgemeinen Greedy-Ansatz?",
+      "answers": [
+        "Jede Kante mit dem kleinsten Gewicht im gesamten Graphen.",
+        "Eine Kante, die einen Schnitt respektiert und diesen Schnitt überquert, während sie das minimale Gewicht unter allen kreuzenden Kanten hat.",
+        "Jede Kante, die keinen Zyklus erzeugt.",
+        "Eine Kante, die direkt zum Startknoten führt."
+      ],
+      "correct": 1,
+      "explanation": "Eine 'safe edge' ist eine leichte Kante, die einen Schnitt (S, V-S) eines Graphen G kreuzt, der eine bereits gewählte Kantenmenge A (die Teil eines MST ist) respektiert. Das bedeutet, dass die Kante das minimale Gewicht unter allen Kanten hat, die den Schnitt überqueren, und sie keinen Zyklus mit den Kanten in A bildet [44, 45]. Die anderen Optionen sind entweder zu allgemein oder beschreiben nicht die spezifische Definition einer 'safe edge'."
+    },
+    {
+      "question": "Welches Szenario führt im Average Case zu einer linearen Laufzeit (Θ(n)) für den Quickselect-Algorithmus?",
+      "answers": [
+        "Der Pivot ist immer das kleinste oder größte Element.",
+        "Der Pivot ist in jedem Schritt genau der Median der verbleibenden Elemente.",
+        "Der Pivot liegt in den mittleren 50% der verbleibenden Elemente (2. oder 3. Quartil) mit einer Wahrscheinlichkeit von mindestens 0.5.",
+        "Der Pivot ist zufällig gewählt und der Algorithmus benötigt stets nur eine Rekursionstiefe von log n."
+      ],
+      "correct": 2,
+      "explanation": "Quickselect erreicht eine Average Case Laufzeit von Θ(n) [46-48]. Dies wird argumentiert, indem gezeigt wird, dass selbst wenn der Pivot nur in 50% der Fälle 'hilfreich' ist (d.h. in der 2. oder 3. Quartile liegt und mindestens 1/4 der Elemente verwirft), die erwartete Anzahl von Rekursionen und damit der Aufwand immer noch linear bleibt [49-51]. Option 0 beschreibt den Worst Case (Θ(n²)) [47]. Option 1 wäre der Idealfall, der ebenfalls zu Θ(n) führt, aber unrealistisch ist. Option 3 ist ungenau, da die Θ(n) Laufzeit nicht direkt aus einer log n Rekursionstiefe folgt, sondern aus der konstanten Anzahl von Vergleichen pro 'Generation' im Erwartungswert."
+    },
+    {
+      "question": "Welche der folgenden Maßnahmen würde NICHT dazu beitragen, die Performance einer Hash-Tabelle mit offener Adressierung (z.B. lineares Sondieren) beim Einfügen zu verbessern, wenn der Füllfaktor hoch ist?",
+      "answers": [
+        "Die Verwendung einer besseren Hash-Funktion.",
+        "Das regelmäßige 'Rehashing' in eine größere Tabelle.",
+        "Das Markieren gelöschter Einträge mit einem speziellen Marker anstatt sie zu leeren.",
+        "Die Verwendung von Double Hashing anstelle von linearem Sondieren."
+      ],
+      "correct": 2,
+      "explanation": "Das Markieren gelöschter Einträge mit einem speziellen Marker ('DELETED') ist notwendig für die Korrektheit der Suchoperationen in Hash-Tabellen mit offener Adressierung [52], da ein leerer Platz die Suche vorzeitig beenden würde. Es verbessert jedoch nicht die Einfügeperformance bei hohem Füllfaktor, da es weiterhin zu langen Sondierungssequenzen kommen kann [53]. Eine bessere Hash-Funktion [54], regelmäßiges Rehashing [55] und die Verwendung von Double Hashing [52, 53] sind Strategien, die darauf abzielen, Kollisionen zu reduzieren oder Sondierungssequenzen zu optimieren und somit die Performance bei hohem Füllfaktor zu verbessern."
+    },
+    {
+      "question": "Nach einer LL-Rotation in einem AVL-Baum, was ist der neue Wurzelknoten des rotierten Teilbaums?",
+      "answers": [
+        "Der ursprüngliche Elternknoten.",
+        "Der rechte Kindknoten des ursprünglichen Elternknotens.",
+        "Der linke Kindknoten des ursprünglichen Elternknotens.",
+        "Der tiefste Knoten des ursprünglichen linken Teilbaums."
+      ],
+      "correct": 2,
+      "explanation": "Bei einer LL-Rotation (Links-Links-Fall), die bei einer Links-Unbalance im Baum auftritt (+2, +1 oder +2, 0 Balancefaktor im Eltern- und Kindknoten), wird der linke Kindknoten des unbalancierten Knotens zum neuen Wurzelknoten des Teilbaums [56-58]. Der ursprüngliche Elternknoten wechselt auf die unterbesetzte Seite des neuen Wurzelknotens. Option 0 ist falsch, da der Elternknoten rotiert. Option 1 ist falsch, da es sich um eine Linksrotation handelt. Option 3 ist zu spezifisch und nicht die allgemeine Regel."
+    },
+    {
+      "question": "Warum ist das allgemeine Geldwechselproblem (mit beliebigen Münzwerten) ein Problem der Dynamischen Programmierung und nicht immer ein Greedy-Problem?",
+      "answers": [
+        "Weil Münzwerte nicht überlappende Teilprobleme erzeugen.",
+        "Weil eine lokal optimale Wahl (immer die größte Münze) nicht immer zu einem globalen Optimum führt.",
+        "Weil es unendlich viele Münzwerte geben kann.",
+        "Weil es immer nur eine optimale Lösung gibt."
+      ],
+      "correct": 1,
+      "explanation": "Das allgemeine Geldwechselproblem ist ein Dynamische Programmierung Problem, weil eine gierige (lokal optimale) Wahl – d.h., immer die größte verfügbare Münze zu wählen – nicht immer zu einer global optimalen Lösung (minimale Anzahl von Münzen) führt. Das Beispiel mit einer 18-Cent-Münze zeigt dies deutlich: 37 Cent können mit 3 Münzen (18+18+1) erreicht werden, während der gierige Ansatz 4 Münzen (20+10+5+2) benötigen würde [59]. Option 0 ist falsch, da Teilprobleme wie das Wechseln kleinerer Beträge auftreten. Option 2 ist keine relevante Eigenschaft. Option 3 ist falsch, da DP für Optimierungsprobleme angewendet wird, die oft mehrere optimale Lösungen haben können, aber auch wenn es nur eine gibt, kann der greedy Ansatz fehlschlagen."
+    },
+    {
+      "question": "Was ist die Kernidee der Longest Common Subsequence (LCS) Problemdefinition im Kontext der Dynamischen Programmierung?",
+      "answers": [
+        "Das Problem kann durch wiederholtes Entfernen von Zeichen gelöst werden.",
+        "Die optimale Lösung kann rekursiv aus den optimalen Lösungen kleinerer Präfixe der beiden Sequenzen aufgebaut werden.",
+        "Es muss immer eine perfekte Übereinstimmung der Zeichensequenzen gefunden werden.",
+        "Die Lösung erfordert die Konstruktion eines Graphen und die Suche nach dem längsten Pfad."
+      ],
+      "correct": 1,
+      "explanation": "Die Kernidee der LCS-Lösung mit Dynamischer Programmierung liegt in ihrer optimalen Teilstruktur und den überlappenden Teilproblemen [60, 61]. Die optimale Lösung für die LCS zweier Sequenzen kann durch rekursives Betrachten ihrer Präfixe und der letzten Zeichen aufgebaut werden. Wenn die letzten Zeichen übereinstimmen, gehören sie zur LCS und das Problem reduziert sich auf die kürzeren Präfixe; andernfalls wird das Maximum der LCS der Sequenzen ohne das jeweils letzte Zeichen gesucht [60, 61]. Option 0 ist ungenau. Option 2 ist falsch, da das Problem selten eine perfekte Übereinstimmung findet. Option 3 beschreibt eine alternative Herangehensweise, die nicht im Kern der DP-Lösung für LCS liegt."
+    },
+    {
+      "question": "Welche der folgenden Bedingungen ist eine Konsequenz aus dem Max-Flow Min-Cut Theorem?",
+      "answers": [
+        "Der Wert eines Flusses ist immer kleiner als die Kapazität jedes beliebigen Schnitts.",
+        "Ein maximaler Fluss ist gleich der Kapazität des minimalen Schnitts.",
+        "Ein Flussnetzwerk muss zyklenfrei sein, damit der Satz gilt.",
+        "Die Summe der Kapazitäten aller Kanten, die von der Quelle s ausgehen, ist der maximale Fluss."
+      ],
+      "correct": 1,
+      "explanation": "Das Max-Flow Min-Cut Theorem besagt, dass der Wert eines maximalen Flusses in einem Flussnetzwerk gleich der Kapazität eines minimalen Schnitts ist [62]. Dies ist eine fundamentale Beziehung in der Netzwerkflusstheorie. Option 0 ist eine Vorbedingung, aber nicht die Aussage des Theorems selbst. Option 2 ist falsch, da Flussnetzwerke Zyklen enthalten können. Option 3 ist nur dann korrekt, wenn es keine negativen Rückwärtsflüsse aus der Quelle gibt."
+    },
+    {
+      "question": "Was ist das Hauptmerkmal eines 'augmentierenden Pfades' im Ford-Fulkerson-Algorithmus?",
+      "answers": [
+        "Es ist ein Pfad im ursprünglichen Graphen mit freier Kapazität.",
+        "Es ist ein Pfad im Residualnetzwerk von der Quelle zur Senke mit verfügbarer Restkapazität.",
+        "Es ist ein Pfad im Graphen, der ausschließlich aus Rückwärtskanten besteht.",
+        "Es ist der kürzeste Pfad im Graph basierend auf den Kantengewichten."
+      ],
+      "correct": 1,
+      "explanation": "Ein augmentierender Pfad ist ein einfacher Pfad im Residualnetzwerk (G_f) von der Quelle (s) zur Senke (t), der es erlaubt, den aktuellen Fluss zu erhöhen [63, 64]. Das Residualnetzwerk zeigt die verbleibenden Kapazitäten der Kanten, einschließlich 'Rückwärtskapazitäten' auf bereits genutzten Kanten [63]. Die Optionen 0 und 2 sind ungenau oder falsch. Option 3 beschreibt einen shortest-path-Algorithmus, was zwar für die Pfadsuche innerhalb von Ford-Fulkerson genutzt werden kann (z.B. Edmonds-Karp), aber nicht die Definition des augmentierenden Pfades selbst ist."
+    },
+    {
+      "question": "Der Edmonds-Karp-Algorithmus ist eine spezifische Implementierung des Ford-Fulkerson-Algorithmus. Welche Eigenschaft der augmentierenden Pfade nutzt er, um seine Laufzeitgarantie zu erzielen?",
+      "answers": [
+        "Er findet augmentierende Pfade, die die größte Restkapazität haben.",
+        "Er findet augmentierende Pfade mit der geringsten Anzahl an Kanten (kürzeste Pfade im ungewichteten Residualnetzwerk).",
+        "Er nutzt nur Baum-Kanten für die Augmentierung.",
+        "Er verwendet eine Tiefensuche zur Pfadfindung."
+      ],
+      "correct": 1,
+      "explanation": "Der Edmonds-Karp-Algorithmus verwendet eine Breitensuche (BFS), um die kürzesten augmentierenden Pfade (bezogen auf die Anzahl der Kanten) im Residualnetzwerk zu finden [65, 66]. Diese Strategie stellt sicher, dass die Laufzeit O(VE²) ist, indem sie garantiert, dass die kürzesten Pfaddistanzen im Residualnetzwerk mit jeder Fluss-Augmentierung zunehmen und jede Kante höchstens |V|/2 mal kritisch wird [65, 66]. Option 0 ist eine alternative Heuristik, nicht Edmonds-Karp. Option 2 ist falsch, da BFS verwendet wird und BFS Baumkanten entdeckt."
+    },
+    {
+      "question": "Was ist die Hauptannahme von Bucket Sort, die es ihm erlaubt, in linearer Zeit zu sortieren?",
+      "answers": [
+        "Alle Elemente sind ganze Zahlen.",
+        "Die Elemente sind nahezu gleichmäßig über einen bestimmten Wertebereich verteilt.",
+        "Die Liste ist fast sortiert.",
+        "Die Anzahl der Buckets ist gleich der Anzahl der Elemente."
+      ],
+      "correct": 1,
+      "explanation": "Bucket Sort nimmt an, dass die zu sortierenden Werte im Intervall [0, 1) liegen und gleich verteilt sind. Unter dieser Annahme kann er eine Average Case Laufzeit von O(n) erreichen [67-70]. Obwohl die Anzahl der Buckets oft an die Anzahl der Elemente n angepasst wird [67], ist die Gleichverteilungsannahme entscheidend für die lineare Average Case Laufzeit. Die Eigenschaft, ganze Zahlen zu sein, ist für Counting Sort relevanter."
+    },
+    {
+      "question": "Bei der Implementierung eines Heaps (Max-Heap) in einem Array, wie berechnet man den Index des linken Kindknotens eines Knotens `i` bei 0-basierter Indexierung?",
+      "answers": ["2 * i", "2 * i + 1", "(i - 1) / 2", "i + 1"],
+      "correct": 1,
+      "explanation": "Bei 0-basierter Indexierung (wie in Java) sind die Kinder eines Knotens am Index `i` bei `2 * i + 1` (linkes Kind) und `2 * i + 2` (rechtes Kind) zu finden [71]. Der Elternknoten eines Kindknotens `k` ist bei `(k - 1) / 2` [71]. Option 0 ist korrekt für 1-basierte Indexierung, aber nicht für 0-basierte."
+    },
+    {
+      "question": "Was ist ein 'Sentinel-Element' in einer doppelt verketteten Liste, und wofür wird es verwendet?",
+      "answers": [
+        "Ein Element, das das Ende der Liste markiert und die Suche beschleunigt.",
+        "Ein Dummy-Element am Anfang oder Ende der Liste, das den Code für Einfüge- und Löschoperationen vereinfacht.",
+        "Ein spezielles Element, das den kleinsten oder größten Wert in der Liste speichert.",
+        "Ein temporäres Element, das während einer Sortieroperation verwendet wird."
+      ],
+      "correct": 1,
+      "explanation": "Ein 'Sentinel' oder Dummy-Element ist ein spezieller Knoten, der an bestimmten Positionen in einer Datenstruktur (z.B. am Anfang oder Ende einer verketteten Liste) platziert wird, um Randfälle bei Operationen wie Einfügen oder Löschen zu vereinfachen [72]. Es reduziert die Notwendigkeit, spezielle Bedingungen für leere Listen oder Listenenden zu prüfen, und kann auch eine Suche vereinfachen. Es speichert keine Nutzdaten im eigentlichen Sinne."
+    },
+    {
+      "question": "Was ist das Hauptproblem, das die naive rekursive Lösung des 'Rod Cutting' (Stabzuschnitt)-Problems unzureichend macht?",
+      "answers": [
+        "Sie findet nicht immer die optimale Lösung.",
+        "Sie hat einen exponentiellen Zeitaufwand aufgrund redundanter Berechnungen überlappender Teilprobleme.",
+        "Sie benötigt zu viel Speicherplatz.",
+        "Sie funktioniert nur für sehr kurze Stäbe."
+      ],
+      "correct": 1,
+      "explanation": "Die naive rekursive Lösung für das Rod Cutting Problem ist korrekt, aber sehr ineffizient, da sie Teilergebnisse immer wieder neu berechnet. Dies führt zu einem exponentiellen Zeitaufwand von O(2^n) [29, 73]. Dynamische Programmierung löst dieses Problem, indem sie die Teilergebnisse speichert (Memoization oder Bottom-Up-Tabellierung), was den Aufwand auf polynomiell (O(n²)) reduziert [29, 74]. Option 0 ist falsch, da die Lösung korrekt ist. Option 2 ist im Vergleich zur Laufzeit von weniger Bedeutung, und Option 3 ist eine Folge der exponentiellen Laufzeit."
+    },
+    {
+      "question": "Was ist der entscheidende Unterschied zwischen einer 'maximalen Menge vertex-disjunkter augmentierender Pfade' im Hopcroft-Karp-Algorithmus und einer einzelnen augmentierenden Pfadsuche im Ford-Fulkerson-Algorithmus?",
+      "answers": [
+        "Ford-Fulkerson sucht nur einen Pfad, während Hopcroft-Karp mehrere gleichzeitig findet.",
+        "Hopcroft-Karp sucht nach Pfaden, die von bereits gematchten Knoten beginnen.",
+        "Hopcroft-Karp findet eine Menge von Pfaden, die keine gemeinsamen Knoten (außer Start/Ende) haben und alle gleichzeitig zur Augmentierung verwendet werden können.",
+        "Ford-Fulkerson findet immer den längsten augmentierenden Pfad, während Hopcroft-Karp den kürzesten findet."
+      ],
+      "correct": 2,
+      "explanation": "Der Hopcroft-Karp-Algorithmus findet in jeder Iteration eine *maximale Menge vertex-disjunkter augmentierender Pfade* [75]. Das bedeutet, dass diese Pfade keine gemeinsamen Knoten teilen, was eine effizientere Augmentierung des Matchings in einem einzigen Schritt ermöglicht. Im Gegensatz dazu findet der Ford-Fulkerson-Algorithmus (auch mit Edmonds-Karp) in der Regel nur einen augmentierenden Pfad pro Iteration und wendet ihn an [76]. Option 0 ist eine vereinfachte, aber im Kern richtige Aussage, jedoch ist die Spezifik von 'vertex-disjunkt' entscheidend. Optionen 1 und 3 sind falsch, da Hopcroft-Karp auf ungematchten Knoten beginnt und die Länge der Pfade eine Rolle spielt (oft kürzeste)."
+    },
+    {
+      "question": "Was ist das Problem des 'Travelling Salesperson' (TSP) im Kontext der Effizienz von Algorithmen?",
+      "answers": [
+        "Es ist ein NP-hartes Problem mit exponentiell steigendem Aufwand.",
+        "Es kann in linearer Zeit gelöst werden.",
+        "Es ist ein typisches Beispiel für einen Greedy-Algorithmus.",
+        "Es hat nur eine Lösung für kleine Eingabegrößen."
+      ],
+      "correct": 0,
+      "explanation": "Das Rundreiseproblem (Travelling Salesperson Problem, TSP) ist ein berühmtes Beispiel für ein NP-hartes Problem [77]. Dies bedeutet, dass seine Laufzeit im Allgemeinen exponentiell mit der Anzahl der Stationen (n) ansteigt, was es für große n unlösbar macht [77, 78]. Es kann nicht in linearer Zeit gelöst werden und ist im Allgemeinen kein Greedy-Problem, da lokale optimale Entscheidungen nicht unbedingt zu einer global optimalen Route führen."
+    },
+    {
+      "question": "Was ist der Hauptnachteil der Selektion mit Quickselect im Worst Case, und wie kann dies theoretisch vermieden werden?",
+      "answers": [
+        "Es ist immer O(n²); es kann durch Sortieren der gesamten Liste vermieden werden.",
+        "Es ist O(log n); es kann durch Verwendung einer Hash-Tabelle vermieden werden.",
+        "Es ist O(n²), wenn der Pivot immer das Randelement ist; theoretisch kann dies durch eine komplexe O(n)-Pivot-Wahl-Strategie vermieden werden.",
+        "Es ist O(n); es kann durch eine deterministische Pivot-Wahl vermieden werden."
+      ],
+      "correct": 2,
+      "explanation": "Der Worst Case von Quickselect liegt in Θ(n²), wenn der Pivot jedes Mal ein Randelement (kleinster oder größter Wert) ist, was zu einer unausgewogenen Aufteilung führt (T(n) = T(n-1) + Θ(n)) [47, 79]. Theoretisch gibt es eine komplexere O(n)-Pivot-Wahl-Strategie ('Median of Medians'), die einen garantiert guten Pivot findet und somit den Worst Case auf O(n) reduziert [79, 80]. Diese ist jedoch in der Praxis aufgrund hoher Konstanten unattraktiv [79]."
+    },
+    {
+      "question": "In einem Binären Suchbaum, was ist die Definition des Nachfolgers eines Knotens x, wenn x keinen rechten Kindknoten hat?",
+      "answers": [
+        "Der Knoten mit dem größten Wert im linken Teilbaum von x.",
+        "Der erste Vorfahre von x, bei dem x oder ein Vorfahre von x das linke Kind ist.",
+        "Der Wurzelknoten des gesamten Baumes.",
+        "Es gibt keinen Nachfolger."
+      ],
+      "correct": 1,
+      "explanation": "Der Nachfolger eines Knotens x ist, falls x keinen rechten Kindknoten besitzt, der erste Vorfahre von x, bei dem x oder einer seiner Vorfahren das linke Kind ist [81]. Dies bedeutet, dass man den Baum nach oben navigiert, bis man einen Knoten findet, dessen linke Unterbaumkante zu dem Pfad von x gehört. Option 0 beschreibt den Vorgänger. Option 3 ist falsch, es sei denn, x ist das Maximum des Baumes."
+    },
+    {
+      "question": "Welche der folgenden Laufzeitpolynome wird in Θ-Notation korrekt auf den dominierenden Summanden gekürzt? (Angenommen a,b,c,d,e sind positive Konstanten)",
+      "answers": [
+        "a⋅1 + b⋅n + c⋅n² + d⋅n³ + e⋅n³ = Θ(n²)",
+        "a⋅1 + b⋅n + c⋅n² = Θ(n)",
+        "a⋅1 + b⋅(n+1) + c⋅n⋅(n+1) + d⋅n² = Θ(n³)",
+        "a⋅1 + b⋅n + c⋅n² + d⋅n³ + e⋅n³ = Θ(n³)"
+      ],
+      "correct": 3,
+      "explanation": "Bei der Kürzung eines Laufzeitpolynoms auf den dominierenden Summanden in Θ-Notation wird der Term mit der höchsten Potenz der Eingabegröße n beibehalten. In diesem Fall ist n³ der dominierende Term, und die Gesamtfunktion wächst asymptotisch wie Θ(n³) [82, 83]. Option 0 ist falsch, da n³ dominanter als n² ist. Option 1 ist falsch, da n² dominanter als n ist. Option 2 ist falsch, da n² dominanter als n ist und die Koeffizienten irrelevant sind für die Θ-Notation."
+    },
+    {
+      "question": "Warum ist es in der Praxis üblich, Quicksort den Vorzug vor Mergesort zu geben, obwohl Mergesort eine bessere Worst-Case-Laufzeitgarantie bietet?",
+      "answers": [
+        "Quicksort ist immer stabil, Mergesort nicht.",
+        "Quicksort benötigt immer weniger Speicherplatz (in-place).",
+        "Quicksort hat einen niedrigeren konstanten Faktor im Average Case und kann randomisiert werden, um den Worst Case zu vermeiden.",
+        "Mergesort kann keine großen Datensätze verarbeiten."
+      ],
+      "correct": 2,
+      "explanation": "Obwohl Quicksort eine Worst-Case-Laufzeit von O(n²) hat, ist seine Average-Case-Laufzeit O(n log n), oft mit einem niedrigeren konstanten Faktor als Mergesort [15, 84]. Durch Randomisierung der Pivot-Wahl kann zudem verhindert werden, dass der Worst Case systematisch auftritt [85, 86]. Mergesort ist zwar stabil [20] und hat eine garantierte O(n log n) Laufzeit im Worst Case [15], benötigt aber oft zusätzlichen Speicherplatz. Option 0 ist falsch, Quicksort ist nicht stabil [20]. Option 1 ist nicht immer korrekt, Mergesort kann auch in-place implementiert werden, ist aber komplexer und Quicksort ist im Allgemeinen 'mehr' in-place. Option 3 ist falsch."
+    },
+    {
+      "question": "Der Gale-Shapley-Algorithmus findet ein stabiles Matching in einem bipartiten Graphen, in dem jeder Partner eine Präferenzliste hat. Welche Eigenschaft hat das vom Algorithmus gefundene Matching typischerweise aus Sicht der 'proposing' Partei (z.B. der Männer, die Frauen 'anfragen')?",
+      "answers": [
+        "Es ist für beide Parteien gleichermaßen optimal.",
+        "Es ist für die 'proposing' Partei optimal und für die 'receiving' Partei am schlechtesten.",
+        "Es ist für die 'receiving' Partei optimal und für die 'proposing' Partei am schlechtesten.",
+        "Es minimiert die Anzahl der gematchten Paare."
+      ],
+      "correct": 1,
+      "explanation": "Der Gale-Shapley-Algorithmus (oft im Kontext des 'Stable Marriage Problem' diskutiert) findet ein stabiles Matching, das für die 'proposing' Partei (im Beispiel die Männer) optimal ist und für die 'receiving' Partei (im Beispiel die Frauen) am schlechtesten [87]. Jedes Mitglied der proposing Partei bekommt seinen bestmöglichen Partner, den es unter einem stabilen Matching erhalten kann [87, 88]. Option 0 und 2 sind falsch, und Option 3 ist falsch, da der Algorithmus ein maximales Matching findet."
+    },
+    {
+      "question": "Was ist der Zweck der `π` (Pi)-Funktion im Knuth-Morris-Pratt (KMP)-Algorithmus für String Matching?",
+      "answers": [
+        "Sie berechnet den Hash-Wert des Musters.",
+        "Sie gibt an, wie weit man im Text zurückspringen muss, wenn ein Mismatch auftritt.",
+        "Sie bestimmt das längstmögliche Präfix des Musters, das gleichzeitig ein Suffix des bereits gematchten Teils ist, um bei einem Mismatch effektiv weiterzusuchen.",
+        "Sie zählt die Vorkommen des Musters im Text."
+      ],
+      "correct": 2,
+      "explanation": "Die `π`-Funktion (Präfixfunktion) im KMP-Algorithmus ist eine Lookup-Tabelle, die bei einem Mismatch direkt auf das längstmögliche Präfix des Musters verweist, das gleichzeitig ein Suffix des bisherigen (partiell) gematchten Teils des Textes ist [89, 90]. Dies ermöglicht es dem Algorithmus, das Matching fortzusetzen, ohne im Text zurückspringen zu müssen, was seine lineare Laufzeit erklärt [89]. Option 0 ist für den Rabin-Karp-Algorithmus relevant. Option 1 ist irreführend, da KMP ein 'Zurückspringen' im Text vermeidet."
+    },
+    {
+      "question": "Ein binärer Suchbaum wird erstellt, indem Elemente in aufsteigender Reihenfolge eingefügt werden (z.B. 1, 2, 3, ...). Welche Struktur nimmt der Baum in diesem Fall an, und welche Auswirkungen hat dies auf die Suchzeit?",
+      "answers": [
+        "Er wird zu einem balancierten Baum; die Suchzeit bleibt O(log n).",
+        "Er degeneriert zu einer verketteten Liste; die Suchzeit wird im Worst Case O(n).",
+        "Er wird zu einem Max-Heap; die Suchzeit bleibt O(1).",
+        "Er kann nicht mit aufsteigenden Elementen aufgebaut werden."
+      ],
+      "correct": 1,
+      "explanation": "Wenn Elemente in aufsteigend sortierter Reihenfolge in einen binären Suchbaum eingefügt werden, degeneriert der Baum zu einer linearen Struktur, die einer verketteten Liste ähnelt. Die Höhe des Baumes wird proportional zur Anzahl der Elemente (n), was dazu führt, dass Operationen wie die Suche im Worst Case eine Laufzeit von O(n) haben [91, 92]. Balancierte Bäume (wie AVL-Bäume) vermeiden dies [93]."
+    },
+    {
+      "question": "Was ist der kleinste positive Wert für `n`, für den die äußere Schleife `for (int i = 1; i <= n; i *= 2)` im gegebenen Python-Pseudocode `for(int i = 1; i <= n; i *= 2)` mehr als einmal durchlaufen wird?",
+      "answers": ["n = 1", "n = 2", "n = 0", "n = 3"],
+      "correct": 1,
+      "explanation": "Die Schleife beginnt mit `i = 1`. Im ersten Durchlauf ist `i = 1`. Wenn `n = 1`, ist `i <= n` (1 <= 1) erfüllt, die Schleife läuft einmal. Um mehr als einmal durchlaufen zu werden, muss `i` nach der Multiplikation mit 2 immer noch kleiner oder gleich `n` sein. Wenn `i` zu 2 wird, muss `2 <= n` gelten. Daher ist `n = 2` der kleinste Wert, für den die Schleife zweimal durchlaufen wird. `n=0` würde die Schleife gar nicht starten. `n=3` würde auch zweimal durchlaufen."
+    },
+    {
+      "question": "Im Kontext von Heapsort, welche Datenstruktur ist ein 'Heap' und wofür ist er besonders nützlich, abgesehen vom Sortieren?",
+      "answers": [
+        "Eine Hashtabelle; für schnelles Einfügen und Suchen.",
+        "Ein balancierter Binärbaum mit speziellen Eigenschaften; besonders nützlich für Prioritätswarteschlangen.",
+        "Eine doppelt verkettete Liste; für effiziente PREPEND-Operationen.",
+        "Ein Array, das Elemente nach Größe sortiert; für O(1) Zugriffe."
+      ],
+      "correct": 1,
+      "explanation": "Ein Heap ist ein binärer Baum (typischerweise als Array implementiert), der die Heap-Eigenschaft erfüllt (Elternknoten ist größer/kleiner als seine Kinder). Er ist eine fundamentale Datenstruktur und besonders nützlich für die Implementierung von Prioritätswarteschlangen (Priority Queues), die Operationen wie das Extrahieren des größten/kleinsten Elements oder das Erhöhen/Senken der Priorität effizient unterstützen [94-96]. Hashtabellen sind für Schlüssel-Wert-Speicher [97]. Doppelt verkettete Listen sind für flexible Elementverkettung [98]. Arrays sind allgemeine Datenstrukturen und nicht primär Heaps."
+    },
+    {
+      "question": "Welche Aussage trifft auf die 'o-Notation' (klein-o-Notation) zu?",
+      "answers": [
+        "f(n) = o(g(n)) bedeutet, dass f(n) asymptotisch genau so schnell wächst wie g(n).",
+        "f(n) = o(g(n)) bedeutet, dass f(n) asymptotisch langsamer wächst als g(n).",
+        "f(n) = o(g(n)) ist eine untere Schranke für f(n).",
+        "f(n) = o(g(n)) ist identisch mit f(n) = O(g(n))."
+      ],
+      "correct": 1,
+      "explanation": "Die o-Notation (klein-o-Notation) f(n) = o(g(n)) bedeutet, dass f(n) asymptotisch *strikt langsamer* wächst als g(n). Formal gilt, dass für jede positive Konstante c ein n0 existiert, sodass 0 ≤ f(n) < c * g(n) für alle n ≥ n0 [9, 99]. Dies unterscheidet sich von der O-Notation (Groß-O-Notation), die nur eine obere Schranke ist und asymptotisch gleiches Wachstum zulässt [7, 100]. Option 0 beschreibt die Θ-Notation. Option 2 ist falsch, da die o-Notation eine obere Schranke ist. Option 3 ist falsch, da o(g(n)) eine stärkere Aussage als O(g(n)) ist."
+    },
+    {
+      "question": "Was ist die Zeitkomplexität für das Einfügen eines Elements in eine doppelt verkettete Liste, wenn die Einfügestelle als Referenz gegeben ist (z.B. vor/nach einem bestimmten Knoten)?",
+      "answers": ["O(n)", "O(log n)", "O(1)", "O(n²)"],
+      "correct": 2,
+      "explanation": "Das Einfügen eines Elements in eine doppelt verkettete Liste, wenn die Einfügestelle bekannt ist (d.h. eine Referenz auf den Knoten, vor oder nach dem eingefügt werden soll, ist gegeben), erfordert lediglich das Umhängen einiger weniger Zeiger. Dies sind konstante Operationen, daher ist die Laufzeit O(1) [101]. Das Suchen der Einfügestelle selbst könnte O(n) kosten, aber die Frage bezieht sich auf das Einfügen bei gegebener Referenz."
+    },
+    {
+      "question": "Welcher der folgenden Sortieralgorithmen ist nicht vergleichsbasiert und kann daher unter bestimmten Bedingungen die Ω(n log n)-Schranke unterbieten?",
+      "answers": ["Heapsort", "Quicksort", "Radix Sort", "Mergesort"],
+      "correct": 2,
+      "explanation": "Radix Sort [102, 103], Counting Sort [104, 105] und Bucket Sort [67, 70] sind nicht-vergleichsbasierte Sortierverfahren. Sie nutzen spezielle Eigenschaften der Daten (z.B. Wertebereich, Ziffern), um die Elemente zu sortieren, und können unter günstigen Bedingungen eine lineare Laufzeit (z.B. Θ(n) oder Θ(n+k)) erreichen, die die Ω(n log n)-Schranke der vergleichsbasierten Sortieralgorithmen (wie Heapsort, Quicksort, Mergesort) unterbietet [13, 106]."
+    },
+    {
+      "question": "Welche Hauptkategorie von Problemen löst der Greedy-Algorithmus typischerweise?",
+      "answers": [
+        "Probleme, bei denen eine lokale optimale Entscheidung zu einer global optimalen Lösung führt.",
+        "Probleme mit sich stark überlappenden Teillösungen und komplexen Abhängigkeiten.",
+        "Probleme, die eine vollständige Suche des Lösungsraums erfordern.",
+        "Probleme mit unendlichen Lösungsräumen."
+      ],
+      "correct": 0,
+      "explanation": "Greedy-Algorithmen lösen eine Klasse von Optimierungsproblemen, bei denen eine lokal optimale Entscheidung in jedem Schritt zu einer global optimalen Lösung führt [28]. Im Gegensatz dazu erfordert Dynamische Programmierung, die auch optimale Teilstrukturen hat, eine umfassendere Speicherung und Kombination von Teilergebnissen, da lokale Entscheidungen nicht immer global optimal sind (wie im Geldwechsel-Beispiel [59]). Option 1 beschreibt eher Dynamische Programmierung, Option 2 und 3 sind nicht die Merkmale von Greedy-Algorithmen."
+    },
+    {
+      "question": "Im Master-Theorem für 'Substract and Conquer' Rekurrenzen der Form T(n) = a · T(n - b) + f(n), was ist die asymptotische Laufzeit, wenn a > 1 und f(n) = O(n^d)?",
+      "answers": ["O(n^d)", "O(n^(d+1))", "O(n^d ⋅ a^(n/b))", "O(log n)"],
+      "correct": 2,
+      "explanation": "Für das Master-Theorem für Substract and Conquer Rekurrenzen der Form T(n) = a · T(n - b) + f(n) mit f(n) = O(n^d), gilt im Fall 3, wenn a > 1, dass die asymptotische Laufzeit O(n^d ⋅ a^(n/b)) ist [107]. Option 0 ist für a < 1, und Option 1 ist für a = 1."
+    },
+    {
+      "question": "Was ist der Hauptzweck eines 'Rooted Tree' in der Kontext der Datenstrukturen?",
+      "answers": [
+        "Um eine Liste von Knoten effizient zu speichern.",
+        "Um hierarchische Beziehungen zwischen Elementen darzustellen, wobei jeder Knoten flexibel viele Kinder haben kann.",
+        "Um die schnellste Suchzeit in einem Array zu erreichen.",
+        "Um eine priorisierte Warteschlange zu implementieren."
+      ],
+      "correct": 1,
+      "explanation": "Rooted Trees sind hierarchische Datenstrukturen, in denen jeder Knoten (außer der Wurzel) genau einen Elternknoten hat und eine variable Anzahl von Kindknoten. Die Kinder können als verkettete Liste organisiert sein, was eine flexible Anzahl von Kindern pro Knoten ermöglicht [72, 97]. Die anderen Optionen beschreiben entweder andere Datenstrukturen oder nicht den primären Zweck von Rooted Trees."
+    },
+    {
+      "question": "Wie ist der Average Case (durchschnittlicher Fall) für die Laufzeit von Insertion Sort im Vergleich zum Worst Case?",
+      "answers": [
+        "Der Average Case ist immer linear (Θ(n)).",
+        "Der Average Case ist immer besser als der Best Case (Θ(1)).",
+        "Der Average Case ist in der Regel nahe am Worst Case (Θ(n²)).",
+        "Der Average Case ist asymptotisch genauso gut wie Merge Sort (Θ(n log n))."
+      ],
+      "correct": 2,
+      "explanation": "Obwohl Insertion Sort einen Best Case von Θ(n) hat, ist der Average Case in der Regel nahe am Worst Case von Θ(n²) [108]. Dies liegt daran, dass im Durchschnitt viele Elemente verschoben werden müssen, um die richtige Position zu finden, selbst bei zufälliger Eingabe. Es ist nicht asymptotisch so gut wie Merge Sort im Average Case, da Merge Sort Θ(n log n) ist [15]."
+    },
+    {
+      "question": "Was ist eine 'starke Zusammenhangskomponente' in einem gerichteten Graphen?",
+      "answers": [
+        "Eine Menge von Knoten, in der jeder Knoten zu jedem anderen einen Weg hat.",
+        "Eine Untermenge von Knoten, die alle isoliert sind.",
+        "Ein Pfad, der alle Knoten im Graphen besucht.",
+        "Eine Teilmenge der Knoten, in der jeder Knoten jeden anderen erreichen kann."
+      ],
+      "correct": 3,
+      "explanation": "Eine starke Zusammenhangskomponente ist eine Teilmenge der Knoten in einem gerichteten Graphen, in der jeder Knoten von jedem anderen Knoten innerhalb dieser Teilmenge aus erreichbar ist [109]. Option 0 ist zu allgemein, da es auch auf den Graphen als Ganzes zutreffen könnte, die Frage aber nach der Definition der Komponente fragt. Option 1 ist falsch, isolierte Knoten bilden nur triviale Komponenten. Option 2 ist die Definition eines Hamilton-Pfades, nicht einer Zusammenhangskomponente."
+    },
+    {
+      "question": "Was ist der entscheidende Vorteil von AVL-Bäumen gegenüber 'einfachen' Binären Suchbäumen?",
+      "answers": [
+        "AVL-Bäume unterstützen mehr Operationen als einfache Binäre Suchbäume.",
+        "AVL-Bäume können Duplikate speichern, während Binäre Suchbäume dies nicht können.",
+        "AVL-Bäume garantieren eine logarithmische Höhe (Θ(log n)) auch im Worst Case, wodurch Operationen wie Suchen, Einfügen und Löschen immer in O(log n) liegen.",
+        "AVL-Bäume sind einfacher zu implementieren."
+      ],
+      "correct": 2,
+      "explanation": "Einfache Binäre Suchbäume können im Worst Case zu einer linearen Liste degenerieren (z.B. bei sortiertem Einfügen), was Operationen wie Suchen, Einfügen und Löschen zu O(n) machen kann [91]. AVL-Bäume sind selbstbalancierende Binäre Suchbäume, die durch Rotationen (LL, RR, LR, RL) ihre Höhe auf logarithmische Weise (Θ(log n)) beschränken. Dies stellt sicher, dass alle grundlegenden Operationen auch im Worst Case eine Laufzeit von O(log n) haben [93, 110]. Option 0 und 1 sind falsch. Option 3 ist falsch, AVL-Bäume sind komplexer zu implementieren als einfache BSTs."
+    },
+    {
+      "question": "Was ist der primäre Zweck von 'Prioritätswarteschlangen' (Priority Queues), die oft mit Heaps implementiert werden?",
+      "answers": [
+        "Um Daten schnell nach ihrem Einfügemoment zu verarbeiten (FIFO).",
+        "Um Daten in alphabetischer Reihenfolge zu speichern.",
+        "Um Elemente basierend auf ihrer Dringlichkeit oder Wichtigkeit zu verwalten und zu extrahieren.",
+        "Um Duplikate effizient zu entfernen."
+      ],
+      "correct": 2,
+      "explanation": "Prioritätswarteschlangen sind dazu da, Aufträge oder Elemente gemäß ihrer Dringlichkeit (Priorität) zu verwalten. Typische Operationen sind das Einfügen eines Elements mit einer Priorität, das Abfragen des Elements mit der höchsten Priorität und das Extrahieren des Elements mit der höchsten Priorität [96]. Dies unterscheidet sich von FIFO (Queues) oder LIFO (Stacks) [98, 111]. Heaps sind eine effiziente Implementierung für diese Datenstruktur [96]."
+    },
+    {
+      "question": "Was ist die formal korrekte Definition der Ω-Notation?",
+      "answers": [
+        "Ω(g(n)) = {f(n) : es gibt positive Konstanten c und n0, so dass 0 ≤ f(n) ≤ cg(n) für alle n ≥ n0}",
+        "Ω(g(n)) = {f(n) : es gibt positive Konstanten c und n0, so dass 0 ≤ cg(n) ≤ f(n) für alle n ≥ n0}",
+        "Ω(g(n)) = {f(n) : es gibt positive Konstanten c1, c2 und n0, so dass 0 ≤ c1g(n) ≤ f(n) ≤ c2g(n) für alle n ≥ n0}",
+        "Ω(g(n)) = {f(n) : für jede positive Konstante c gibt es ein n0, so dass 0 ≤ f(n) ≤ cg(n) für alle n ≥ n0}"
+      ],
+      "correct": 1,
+      "explanation": "Die Ω-Notation (Omega-Notation) ist eine 'untere Schranke'. Die formale Definition lautet: Ω(g(n)) = {f(n) : es gibt positive Konstanten c und n0, so dass 0 ≤ cg(n) ≤ f(n) für alle n ≥ n0} [6, 7, 112]. Option 0 ist die Definition der O-Notation (obere Schranke). Option 2 ist die Definition der Θ-Notation (enge Schranke). Option 3 ist die Definition der o-Notation (lose obere Schranke) [9]."
+    },
+    {
+      "question": "Welche der folgenden Laufzeitpolynome T(n) lässt sich am besten als O(n²) abschätzen?",
+      "answers": [
+        "T(n) = 5n³ + 100n² - 20n + 6",
+        "T(n) = n + 76 log(n) + 8",
+        "T(n) = 7n² + 100n - 20",
+        "T(n) = 2^n + n²"
+      ],
+      "correct": 2,
+      "explanation": "O(n²) ist eine obere Schranke. Die Funktion, die am besten als O(n²) abzuschätzen ist, ist die, deren schnellstwachsender Term n² ist. 7n² + 100n - 20 hat n² als dominierenden Term [100]. Option 0 hat n³ als dominierenden Term, wäre also O(n³). Option 1 hat n als dominierenden Term, wäre also O(n). Option 3 hat 2^n als dominierenden Term, wäre also O(2^n) und nicht O(n²) [78, 113]."
+    },
+    {
+      "question": "Welche der folgenden Operationen auf einem Array hat typischerweise eine Laufzeit von O(n) aufgrund von Elementverschiebungen?",
+      "answers": [
+        "Zugriff auf ein Element über seinen Index.",
+        "Einfügen eines Elements an einer beliebigen Position.",
+        "Abfragen der Array-Länge.",
+        "Zugriff auf das erste Element."
+      ],
+      "correct": 1,
+      "explanation": "Das Einfügen eines Elements an einer beliebigen Position in einem Array (außer am Ende, wenn noch Platz ist) erfordert in der Regel, dass alle nachfolgenden Elemente um eine Position verschoben werden, um Platz zu schaffen. Dies führt zu einer Laufzeit von O(n) im Worst Case [101]. Der Zugriff auf ein Element über seinen Index ist O(1) [101]. Das Abfragen der Array-Länge ist ebenfalls O(1)."
+    },
+    {
+      "question": "Wie wird die 'Höhe' eines B-Baumes mit n Schlüsseln und Mindestgrad t ≥ 2 abgeschätzt?",
+      "answers": [
+        "h ≤ log₂(n) + 1",
+        "h ≤ n",
+        "h ≤ log_t(n) + 1/2",
+        "h ≤ t log₂(n)"
+      ],
+      "correct": 2,
+      "explanation": "Die Höhe h eines B-Baumes mit n Schlüsseln und Mindestgrad t ≥ 2 ist maximal h ≤ log_t(n) + 1/2 [114]. Dies ist ein entscheidender Vorteil von B-Bäumen, da sie durch das Speichern mehrerer Schlüssel pro Knoten sehr flach sind, was die Anzahl der langsamen Blockzugriffe auf der Festplatte minimiert [26]. Option 0 ist die Höhe eines binären Baumes. Die anderen Optionen sind falsch."
+    },
+    {
+      "question": "Was ist die Hauptidee hinter der 'Schnellen Exponentiation' im Kontext der All Pairs Shortest Paths (APSP) Probleme?",
+      "answers": [
+        "Den Algorithmus so zu modifizieren, dass er nur die Hälfte der Knoten verarbeitet.",
+        "Die Matrixmultiplikation zur Berechnung der kürzesten Pfade durch wiederholtes Quadrieren der Matrix zu beschleunigen.",
+        "Alle Kantengewichte durch Logarithmen zu ersetzen.",
+        "Die rekursive Definition der kürzesten Pfade zu vereinfachen."
+      ],
+      "correct": 1,
+      "explanation": "Die 'schnelle Exponentiation' ist ein Trick, um die Anzahl der Matrixmultiplikationen bei der Lösung von APSP-Problemen zu reduzieren. Statt die Matrix (die die Kantengewichte repräsentiert) n-1 Mal mit sich selbst zu multiplizieren, wird sie wiederholt quadriert (W, W², W⁴, ...), um die kürzesten Pfade in log(n) Schritten zu finden. Dies reduziert die Laufzeit von O(n⁴) auf Θ(n³ log n) [115]. Option 0 ist falsch, Option 2 ist irrelevant, und Option 3 ist zu allgemein und nicht der Kern der 'schnellen Exponentiation'."
+    },
+    {
+      "question": "Was ist die Hauptstrategie des KMP-Algorithmus, um die Laufzeit beim String Matching gegenüber dem naiven Ansatz zu verbessern?",
+      "answers": [
+        "Er nutzt Hashing, um Zeichenketten schnell zu vergleichen.",
+        "Er kompiliert das Muster in einen endlichen Automaten, der das Zurückspringen im Text vermeidet.",
+        "Er teilt den Text in kleinere Segmente auf und matcht diese parallel.",
+        "Er sortiert den Text vorab, um die Suche zu beschleunigen."
+      ],
+      "correct": 1,
+      "explanation": "Der Knuth-Morris-Pratt (KMP)-Algorithmus verbessert die Effizienz des String Matching, indem er das Muster vorverarbeitet, um eine Präfixfunktion zu erstellen [89, 90]. Diese Funktion erlaubt es dem Algorithmus, bei einem Mismatch zu bestimmen, wo das Matching fortgesetzt werden kann, ohne dass der Zeiger im Text zurückgesetzt werden muss. Dies ähnelt dem Verhalten eines Endlichen Automaten [116]. KMP erreicht somit eine Laufzeit von Θ(m) für die Vorverarbeitung und Θ(n) für das Matching, was eine Gesamtzeit von Θ(n+m) ergibt [117]. Option 0 ist die Strategie von Rabin-Karp. Optionen 2 und 3 sind nicht die Kernstrategie von KMP."
+    },
+    {
+      "question": "Welche der folgenden Aussagen ist für die 'Trichotomie reeller Zahlen' korrekt, gilt aber nicht für Funktionen im Kontext der asymptotischen Notation?",
+      "answers": [
+        "Für zwei Zahlen a, b ∈ R gilt genau eine der Eigenschaften a < b, a = b, a > b.",
+        "Für zwei Funktionen f(n), g(n) gilt immer f(n) = O(g(n)) oder g(n) = O(f(n)).",
+        "Jede Funktion hat eine eindeutige asymptotische Laufzeit in Θ-Notation.",
+        "Asymptotische Notationen sind immer transitiv."
+      ],
+      "correct": 0,
+      "explanation": "Die Trichotomie reeller Zahlen besagt, dass für zwei Zahlen a, b ∈ R genau eine der Eigenschaften a < b, a = b oder a > b gilt [118, 119]. Diese Eigenschaft gilt nicht für Funktionen im Kontext der asymptotischen Notationen. Funktionen wie n und n^(1+sin n) sind nicht asymptotisch vergleichbar, da der Exponent oszilliert [118, 119]. Option 1 ist falsch, wie das Beispiel n und n^(1+sin n) zeigt. Option 2 ist falsch, da nicht jede Funktion eine eindeutige Θ-Notation hat (z.B. wenn es keinen festen Grad gibt). Option 3 ist korrekt für asymptotische Notationen, aber nicht die gesuchte Aussage."
+    },
+    {
+      "question": "Was ist der zentrale Gedanke der Substitutionsmethode zur Lösung von Rekurrenzen?",
+      "answers": [
+        "Eine Rekurrenz wird so lange 'abgerollt', bis sich ein Muster ergibt.",
+        "Man errät die Form der Lösung und beweist ihre Korrektheit induktiv durch Einsetzen in die Rekurrenzgleichung.",
+        "Die Rekurrenz wird direkt mithilfe einer Formel gelöst.",
+        "Es werden nur die Basisfälle betrachtet, um die Laufzeit zu bestimmen."
+      ],
+      "correct": 1,
+      "explanation": "Die Substitutionsmethode ist eine von drei strukturierten Ansätzen zur Lösung von Rekurrenzen. Die Vorgehensweise besteht darin, die Form der Lösung (oft eine obere Schranke) zu erraten und dann durch Induktion zu beweisen, dass diese Schranke korrekt ist, indem man sie in die Rekurrenzgleichung einsetzt und die Konstanten bestimmt [120-122]. Option 0 beschreibt die Rekursionsbaum-Methode [120, 123]. Option 2 beschreibt das Master-Theorem [120, 124]. Option 3 ist unzureichend für eine vollständige Analyse."
+    },
+    {
+      "question": "Welche der folgenden Aussagen ist korrekt bezüglich der Unterscheidung von 'Best Case' und 'Average Case' bei der Analyse von Algorithmen?",
+      "answers": [
+        "Der Best Case tritt immer am häufigsten auf.",
+        "Der Average Case ist immer besser als der Best Case.",
+        "Der Average Case erfordert eine Annahme über die Verteilung der Eingaben.",
+        "Der Best Case und der Worst Case sind immer asymptotisch gleich dem Average Case."
+      ],
+      "correct": 2,
+      "explanation": "Der Average Case (durchschnittlicher Fall) ist eine statistische Größe, die eine zusätzliche Annahme zur Verteilung der Eingaben erfordert (z.B. dass alle Eingaben gleich wahrscheinlich sind) [125]. Der Best Case ist die Eingabe, die den niedrigsten Aufwand erzeugt, und der Worst Case die, die den höchsten Aufwand erzeugt [125]. Der Best Case tritt selten auf, und der Average Case ist oft nahe am Worst Case [15, 108]. Option 0 und 1 sind falsch. Option 3 ist falsch, wie z.B. Insertion Sort zeigt, wo Best Case (Θ(n)), Average Case (Θ(n²)) und Worst Case (Θ(n²)) unterschiedlich sein können."
+    },
+    {
+      "question": "Was ist die Definition des 'Grades' eines Knotens in einem ungerichteten Graphen?",
+      "answers": [
+        "Die Anzahl der Knoten, die vom betrachteten Knoten aus erreichbar sind.",
+        "Die Anzahl der Kanten, die zu diesem Knoten führen.",
+        "Die Anzahl der inzidenten Kanten (d.h. die den Knoten berühren).",
+        "Die Anzahl der Kanten, die von diesem Knoten ausgehen."
+      ],
+      "correct": 2,
+      "explanation": "Der Grad eines Knotens in einem ungerichteten Graphen ist die Anzahl der Kanten, die an diesen Knoten inzident sind (ihn berühren) [126, 127]. In gerichteten Graphen unterscheidet man zwischen Eingangsgrad (Anzahl eingehender Kanten) und Ausgangsgrad (Anzahl ausgehender Kanten) [126, 128]. Option 0 ist die Erreichbarkeit, nicht der Grad. Option 1 und 3 sind spezifische Definitionen für gerichtete Graphen."
+    },
+    {
+      "question": "Warum ist es sinnvoll, das Master-Theorem zur Lösung von Rekurrenzen zu verwenden, anstatt immer die Substitutions- oder Rekursionsbaum-Methode zu nutzen?",
+      "answers": [
+        "Es ist die einzige Methode, die korrekte Ergebnisse liefert.",
+        "Es bietet eine direkte Lösung für viele gängige Rekurrenzformen ohne Raten oder aufwendiges Abrollen.",
+        "Es funktioniert auch für Rekurrenzen, die keine feste a*T(n/b) + f(n) Form haben.",
+        "Es ist einfacher zu verstehen als die anderen Methoden."
+      ],
+      "correct": 1,
+      "explanation": "Das Master-Theorem bietet eine 'direkte Lösung' für Rekurrenzen der Form T(n) = a*T(n/b) + f(n), was es für viele praktische Fälle sehr nützlich macht [19, 120, 124, 129-131]. Im Gegensatz dazu erfordert die Substitutionsmethode ein 'Raten' der Lösung [121, 122], und die Rekursionsbaum-Methode ist analog zur MergeSort-Analyse eher ein 'Abrollen' und Aufaddieren der Kosten [123, 132]. Das Master-Theorem ist jedoch nicht anwendbar auf alle Rekurrenzen, wie z.B. asymmetrische Rekurrenzen [133, 134]."
+    },
+    {
+      "question": "Welche der folgenden Methoden zur Kollisionsbehandlung in Hash-Tabellen beinhaltet die Suche nach dem nächsten freien Platz in linearer Folge?",
+      "answers": [
+        "Chaining (Verkettete Listen)",
+        "Double Hashing",
+        "Lineares Sondieren",
+        "Direkte Adressierung"
+      ],
+      "correct": 2,
+      "explanation": "Lineares Sondieren (Linear Probing) ist eine Methode der offenen Adressierung, bei der im Falle einer Kollision sequenziell nach dem nächsten freien Platz gesucht wird [135]. Chaining verwendet verkettete Listen in jedem Bucket [135]. Double Hashing verwendet eine zweite Hash-Funktion, um die Schrittweite bei der Sondierung zu bestimmen [52, 53]. Direkte Adressierung hat keine Kollisionen, da der Schlüssel direkt der Index ist [97]."
+    },
+    {
+      "question": "Was ist ein 'Young-Tableau' und welche Eigenschaften hat es?",
+      "answers": [
+        "Eine Hashtabelle mit fester Größe und O(1) Zugriffszeit.",
+        "Eine Matrix, deren Einträge zeilenweise absteigend und spaltenweise aufsteigend sortiert sind.",
+        "Eine Matrix, deren Einträge jede Zeile von links nach rechts aufsteigend und jede Spalte von oben nach unten aufsteigend sortiert sind.",
+        "Ein balancierter Baum zur Speicherung von sortierten Daten."
+      ],
+      "correct": 2,
+      "explanation": "Ein Young-Tableau ist eine Matrix mit m Zeilen und n Spalten, bei der die Einträge jeder Zeile von links nach rechts aufsteigend sortiert sind und die Einträge jeder Spalte von oben nach unten aufsteigend sortiert sind. Leere Einträge werden mit ∞ dargestellt [136, 137]. Es ist eine spezielle Datenstruktur, die zum Sortieren verwendet werden kann, ähnlich wie Heaps, aber mit einer 2D-Struktur [138]."
+    },
+    {
+      "question": "Was ist die Hauptidee hinter der Implementierung des Floyd-Warshall-Algorithmus, um negative Zyklen zu erkennen?",
+      "answers": [
+        "Wenn nach der letzten Iteration des Algorithmus (k=V) immer noch eine Kante (i,j) existiert, für die d[i][j] > d[i][k]+d[k][j] gilt, gibt es einen negativen Zyklus.",
+        "Das Algorithmus kann keine negativen Zyklen erkennen, da er nur für positive Gewichte funktioniert.",
+        "Wenn die Diagonale der Kostenmatrix negative Werte enthält, existiert ein negativer Zyklus.",
+        "Negative Zyklen werden erkannt, wenn die Matrix nicht konvergiert."
+      ],
+      "correct": 2,
+      "explanation": "Der Floyd-Warshall-Algorithmus berechnet kürzeste Pfade zwischen allen Knotenpaaren. Wenn der Graph einen negativen Zyklus enthält, wird der Algorithmus dies nicht direkt signalisieren, aber die Distanzen auf den Diagonalen der Kostenmatrix (von einem Knoten zu sich selbst) könnten nach den Iterationen negativ werden (d[i][i] < 0) [31, 32]. Dies würde bedeuten, dass ein Pfad durch den negativen Zyklus zu einer Verkürzung der Distanz zu sich selbst führt, was nicht sinnvoll ist. Die Option 0 ist nicht korrekt, da der Floyd-Warshall-Algorithmus negative Zyklen implizit über die Diagonalen erkennt, wenn d[i][i] < 0."
+    },
+    {
+      "question": "Was ist das Ergebnis der 'inorder'-Traversierung eines binären Suchbaumes?",
+      "answers": [
+        "Die Knoten werden nach ihrem Einfügezeitpunkt ausgegeben.",
+        "Die Knoten werden in sortierter Reihenfolge ihrer Schlüssel ausgegeben.",
+        "Die Wurzelknoten werden zuerst ausgegeben, gefolgt von ihren Kindern.",
+        "Die Blätter werden zuerst ausgegeben, gefolgt von ihren Elternknoten."
+      ],
+      "correct": 1,
+      "explanation": "Die 'inorder'-Traversierung eines binären Suchbaumes besucht zuerst den linken Teilbaum, dann den aktuellen Knoten und schließlich den rechten Teilbaum (links, mitte, rechts). Dies hat die Eigenschaft, dass die Schlüssel der Knoten in aufsteigender (sortierter) Reihenfolge ausgegeben werden [139, 140]. Option 0 ist falsch. Option 2 beschreibt die 'preorder'-Traversierung, und Option 3 beschreibt die 'postorder'-Traversierung [139, 140]."
+    },
+    {
+      "question": "Was ist der asymptotische Worst-Case-Laufzeit von Bubblesort?",
+      "answers": ["Θ(n)", "Θ(n log n)", "Θ(n²)", "O(1)"],
+      "correct": 2,
+      "explanation": "Bubblesort hat eine Worst-Case-Laufzeit von Θ(n²) [141]. Dies tritt auf, wenn die Liste in umgekehrter Reihenfolge sortiert ist, da dann in jedem Durchlauf viele Vertauschungen und Vergleiche nötig sind. Auch der Average Case ist Θ(n²), nur der Best Case ist Θ(n) [141]."
+    },
+    {
+      "question": "Was ist der Zweck des 'load factor' in einer Hashmap?",
+      "answers": [
+        "Er bestimmt die initiale Größe der Hash-Tabelle.",
+        "Er ist ein Schwellenwert, der angibt, wann die Hash-Tabelle vergrößert (rehashing) werden sollte.",
+        "Er misst die durchschnittliche Länge der verketteten Listen bei Chaining.",
+        "Er gibt die Wahrscheinlichkeit einer Kollision an."
+      ],
+      "correct": 1,
+      "explanation": "Der 'Load Factor' (Füllfaktor) ist ein Schwellenwert (z.B. 0.75), der angibt, wann die Hashmap ihre interne Array-Struktur vergrößern und alle Einträge neu verteilen (rehashing) sollte, um die Effizienz der Operationen zu erhalten und zu viele Kollisionen zu vermeiden [55]. Option 0 ist falsch. Option 2 beschreibt α (n/m), den durchschnittlichen Füllfaktor, der die Listenlänge beeinflusst [23], aber der Load Factor ist der Grenzwert für das Rehashing. Option 3 ist falsch."
+    },
+    {
+      "question": "Welche der folgenden Python-Codefragmente hat die asymptotische Laufzeit Θ(1) (konstante Laufzeit)?",
+      "answers": [
+        "def foo(n): for i in range(0, n): pass",
+        "def foo(n): if n % 2 == 0: for i in range(0, n): pass",
+        "def foo(n): for i in range(0,1): pass; for j in range(0,2): pass; for k in range(0,3): pass",
+        "def foo(n): for i in range(1, n, 2): pass"
+      ],
+      "correct": 2,
+      "explanation": "Das Codefragment `def foo(n): for i in range(0,1): pass; for j in range(0,2): pass; for k in range(0,3): pass` hat eine konstante Laufzeit von Θ(1), da die Schleifen nur eine feste Anzahl von Iterationen unabhängig vom Eingabeparameter `n` durchlaufen [142]. Option 0, 1 und 3 haben eine Laufzeit, die von `n` abhängt (Θ(n) bzw. für Option 1 im Average Case auch Θ(n) [143])."
+    },
+    {
+      "question": "In der dynamischen Programmierung, was bedeutet 'Memoization'?",
+      "answers": [
+        "Die Rekursion wird durch iterative Schleifen ersetzt.",
+        "Das Lösen von Teilproblemen ohne Speicherung der Ergebnisse.",
+        "Das Speichern von Teilergebnissen in einer rekursiven Lösung, um Mehrfachberechnungen zu vermeiden.",
+        "Die Berechnung des Master-Theorems für jede Rekursion."
+      ],
+      "correct": 2,
+      "explanation": "Memoization ist eine Technik der dynamischen Programmierung, bei der die Ergebnisse von Funktionsaufrufen (Teilproblemen) gespeichert (zwischengespeichert) werden, um sie später wiederzuverwenden, anstatt sie erneut zu berechnen [30, 144]. Dies wird oft bei Top-Down-Ansätzen angewendet. Option 0 beschreibt den Bottom-Up-Ansatz. Option 1 ist das Gegenteil von Memoization. Option 3 ist falsch."
+    },
+    {
+      "question": "Wie viele Permutationen sind für eine Liste mit n Elementen möglich?",
+      "answers": ["n!", "2^n", "n log n", "n²"],
+      "correct": 0,
+      "explanation": "Für eine Liste mit n Elementen gibt es n! (n Fakultät) mögliche Permutationen [143, 145]. Diese Zahl wächst sehr schnell. Die anderen Optionen sind typische Laufzeitkomplexitäten, keine Anzahl von Permutationen."
+    },
+    {
+      "question": "Was ist der asymptotische Aufwand (Worst Case) für die max-heapify-Operation in einem Heap mit n Elementen?",
+      "answers": ["O(1)", "O(n)", "O(log n)", "O(n log n)"],
+      "correct": 2,
+      "explanation": "Die max-heapify-Operation stellt die Heap-Eigenschaft für einen Teilbaum wieder her, indem ein Element nach unten getauscht wird, bis es seine korrekte Position erreicht. Da die Höhe eines fast balancierten Baumes (wie eines Heaps) O(log n) ist und auf jeder Ebene konstanter Aufwand entsteht, ist der Aufwand für max-heapify O(log n) [12]. O(n) und O(n log n) sind für den gesamten Heap-Aufbau oder Heapsort relevant."
+    },
+    {
+      "question": "Was ist der zentrale Vorteil der Huffman-Codierung im Vergleich zu Codes fester Länge, der sie zu einem Greedy-Problem macht?",
+      "answers": [
+        "Sie ermöglicht schnellere Übertragungsgeschwindigkeiten durch Datenkompression.",
+        "Sie ordnet häufigeren Zeichen längere Codewörter zu, um Redundanz zu reduzieren.",
+        "Sie erzeugt präfixfreie Codewörter mit variabler Länge, die die durchschnittliche Codewortlänge minimieren.",
+        "Sie ist einfacher zu implementieren als andere Kompressionsalgorithmen."
+      ],
+      "correct": 2,
+      "explanation": "Huffman-Codes sind ein Beispiel für ein Problem, das mit einem Greedy-Ansatz optimal gelöst werden kann. Sie erzeugen präfixfreie Codewörter variabler Länge, wobei häufigere Zeichen kürzere Codewörter erhalten. Dies minimiert die durchschnittliche Codewortlänge und damit die Datenmenge [146, 147]. Die Greedy-Eigenschaft beruht darauf, dass die zwei Zeichen mit den niedrigsten Häufigkeiten zu einem neuen Knoten kombiniert werden, und dieser Schritt ist lokal optimal und führt zum globalen Optimum [148]."
+    },
+    {
+      "question": "Welche Aussage beschreibt korrekt die 'Konvergenz'-Eigenschaft von Kürzeste-Pfade-Algorithmen (Bellman-Ford, Dijkstra) im Kontext der 'Relax'-Operation?",
+      "answers": [
+        "Die Relax-Operation erhöht die Distanz zu einem Knoten, wenn ein kürzerer Weg gefunden wird.",
+        "Wenn die Distanz zu einem Knoten u bereits dem kürzesten Pfad entspricht und (u, v) eine Kante ist, dann führt Relax(u, v) dazu, dass auch die Distanz zu v dem kürzesten Pfad entspricht, falls der Weg über u kürzer ist.",
+        "Die Relax-Operation wird nur einmal für jede Kante ausgeführt.",
+        "Die Konvergenz ist garantiert, auch wenn negative Zyklen vorhanden sind."
+      ],
+      "correct": 1,
+      "explanation": "Die Konvergenz-Eigenschaft besagt: Wenn u.d (die aktuell bekannte Distanz zu u) dem tatsächlichen kürzesten Pfad δ(s, u) entspricht und s ⇝ u → v ein kürzester Pfad ist, dann führt die Operation RELAX(u, v, w) dazu, dass auch v.d dem kürzesten Pfad δ(s, v) entspricht [149]. Relax überprüft und aktualisiert Distanzen zu Knoten, wenn ein kürzerer Pfad gefunden wird [149, 150]. Option 0 ist falsch, da Distanzen verkürzt werden. Option 2 ist falsch, da Relax-Operationen (insbesondere bei Bellman-Ford) mehrfach ausgeführt werden können. Option 3 ist falsch, da negative Zyklen eine Konvergenz zu endlichen kürzesten Pfaden verhindern [32, 37]."
+    },
+    {
+      "question": "Was ist das Ergebnis einer 'preorder'-Traversierung eines Binären Suchbaumes?",
+      "answers": [
+        "Die Knoten werden in sortierter Reihenfolge ausgegeben.",
+        "Die Kinder eines Knotens werden vor dem Knoten selbst ausgegeben.",
+        "Der aktuelle Knoten wird zuerst ausgegeben, gefolgt von seinen linken und rechten Kindern.",
+        "Die Traversierung ist abhängig von der Balance des Baumes."
+      ],
+      "correct": 2,
+      "explanation": "Die 'preorder'-Traversierung eines binären Suchbaumes besucht zuerst den aktuellen Knoten (Wurzel), dann rekursiv seinen linken Teilbaum und schließlich seinen rechten Teilbaum (mitte, links, rechts) [139, 140]. Option 0 beschreibt die 'inorder'-Traversierung. Option 1 beschreibt die 'postorder'-Traversierung."
+    },
+    {
+      "question": "Was ist ein 'Partition'-Algorithmus im Kontext von Quicksort, und welche Eigenschaft muss er erfüllen?",
+      "answers": [
+        "Er teilt das Array in zwei gleich große Hälften.",
+        "Er sortiert das gesamte Array in linearer Zeit.",
+        "Er wählt ein 'Pivot'-Element und teilt das Array in zwei Teile: Elemente kleiner als das Pivot und Elemente größer als das Pivot.",
+        "Er identifiziert alle Duplikate im Array."
+      ],
+      "correct": 2,
+      "explanation": "Die `partition`-Funktion (oder -Methode) ist das Herzstück von Quicksort. Sie wählt ein Pivot-Element aus und reorganisiert das (Teil-)Array so, dass alle Elemente, die kleiner als das Pivot sind, vor ihm stehen, und alle Elemente, die größer sind, nach ihm [151-153]. Die Reihenfolge innerhalb dieser beiden Teilmengen ist dabei nicht festgelegt. Option 0 ist der Idealfall, der selten eintritt. Option 1 ist falsch. Option 3 ist nicht der Zweck von `partition`."
+    },
+    {
+      "question": "Welche Art von Datenstruktur ist ein 'Stack' (Stapel)?",
+      "answers": [
+        "FIFO (First-In, First-Out)",
+        "LIFO (Last-In, First-Out)",
+        "Eine Hashtabelle",
+        "Eine Prioritätswarteschlange"
+      ],
+      "correct": 1,
+      "explanation": "Ein Stack (Stapel) ist eine LIFO-Datenstruktur ('Last-In, First-Out') [111]. Das bedeutet, dass das zuletzt hinzugefügte Element das erste ist, das entfernt wird (PUSH und POP Operationen) [111]. Im Gegensatz dazu ist eine Queue (Warteschlange) eine FIFO-Struktur [98]."
+    },
+    {
+      "question": "In einem Binären Suchbaum mit n Elementen, was ist der asymptotische Aufwand (Average Case) für Operationen wie Suchen, Einfügen und Löschen?",
+      "answers": ["O(1)", "Θ(n)", "Θ(log n)", "Θ(n log n)"],
+      "correct": 2,
+      "explanation": "Im Average Case, wenn ein Binärer Suchbaum einigermaßen balanciert ist, ist seine Höhe logarithmisch (Θ(log n)) [91]. Folglich sind Operationen wie Suchen, Einfügen und Löschen, die typischerweise von der Baumhöhe abhängen, im Average Case in Θ(log n) [91, 154]. Im Worst Case können diese Operationen jedoch zu Θ(n) degenerieren [91]."
+    },
+    {
+      "question": "Was ist ein 'minimaler Spannbaum' (Minimal Spanning Tree, MST) in einem gewichteten, ungerichteten Graphen?",
+      "answers": [
+        "Ein Pfad mit minimaler Summe der Kantengewichte, der alle Knoten verbindet.",
+        "Eine Untermenge von Kanten, die einen Baum bildet und alle Knoten des Graphen enthält, wobei die Summe der Kantengewichte minimal ist.",
+        "Eine Menge von Kanten, die alle Zyklen im Graphen entfernt.",
+        "Der kürzeste Weg von einem Startknoten zu allen anderen Knoten."
+      ],
+      "correct": 1,
+      "explanation": "Ein Minimaler Spannbaum (MST) ist eine Untermenge der Kanten eines gegebenen zusammenhängenden, ungerichteten Graphen mit Kantengewichten, die einen Baum bildet (d.h. alle Knoten verbindet und zyklenfrei ist) und deren Summe der Kantengewichte minimal ist [155-157]. Option 0 beschreibt eher einen Hamiltonschen Pfad oder einen Eulerischen Pfad. Option 2 ist ein allgemeines Ziel von Graphenalgorithmen. Option 3 beschreibt ein Single-source Shortest Path Problem."
+    },
+    {
+      "question": "Was ist die Zeitkomplexität für die Vorverarbeitungsphase des Rabin-Karp-Algorithmus?",
+      "answers": ["Θ(n)", "Θ(m)", "O(n + m)", "O(m²)"],
+      "correct": 1,
+      "explanation": "Die Vorverarbeitungsphase des Rabin-Karp-Algorithmus besteht darin, den Hash-Wert des Musters (P der Länge m) zu berechnen. Dies erfolgt in Θ(m) Zeit [158]. Die eigentliche Matching-Phase hat im Worst Case eine Laufzeit von O((n-m+1)m) [117, 159], aber der Vorverarbeitungsschritt selbst ist nur vom Muster abhängig."
+    },
+    {
+      "question": "Welche Laufzeitabschätzung beschreibt den Worst Case des folgenden Programmierfragments in Python korrekt, wenn `range()` und `print()` konstante Laufzeit haben?",
+      "answers": [
+        "T_foo ∈ Ω(1)",
+        "T_foo ∈ Θ(2^n)",
+        "T_foo ∈ O(2^(2n))",
+        "T_foo ∈ O(n)"
+      ],
+      "correct": 1,
+      "explanation": "Das Codefragment `if n % 2 == 0: for i in range(0, 2**n): print(i)` hat eine bedingte Ausführung. Im Worst Case ist `n % 2 == 0`, und die Schleife läuft `2^n` Mal. Somit ist der Worst Case in Θ(2^n) [160]. Option 0 ist der Best Case (n ist ungerade, Schleife läuft nicht). Die O-Notation sollte die engst-mögliche obere Schranke sein. Θ(2^n) ist die tight bound hier. Die angegebenen falschen Optionen 2 und 3 sind zu breit gefasst oder zu niedrig."
+    },
+    {
+      "question": "Welche der folgenden Techniken zur Laufzeitanalyse ist am besten geeignet, um eine Rekurrenz der Form `T(n) = aT(n/b) + f(n)` zu lösen, wenn f(n) exponentiell wächst?",
+      "answers": [
+        "Die Substitutionsmethode.",
+        "Die Rekursionsbaum-Methode.",
+        "Das Master-Theorem.",
+        "Die Akra-Bazzi-Methode."
+      ],
+      "correct": 2,
+      "explanation": "Das Master-Theorem ist speziell dafür konzipiert, Rekurrenzen der Form T(n) = aT(n/b) + f(n) zu lösen und deckt verschiedene Fälle von f(n) ab, einschließlich Fällen, in denen f(n) asymptotisch schneller wächst als n^(log_b a) [16, 17, 19, 124, 130, 131]. Während die Substitutions- und Rekursionsbaum-Methoden auch angewendet werden könnten, sind sie oft aufwendiger, da sie ein 'Raten' der Lösung oder ein 'Abrollen' des Baumes erfordern [121, 123]. Die Akra-Bazzi-Methode ist allgemeiner, aber auch komplizierter und wird im Kurs übersprungen [121, 122]."
+    },
+    {
+      "question": "Was ist der Zweck der 'updateHeight(node)' und 'balance(node)' Methoden in der `AvlTreeSubmission` Klasse nach einem `insert` oder `delete` Aufruf?",
+      "answers": [
+        "Sie sind nur für die interne Darstellung des Baumes wichtig und beeinflussen nicht die Laufzeit.",
+        "Sie berechnen die Anzahl der Knoten im Baum neu.",
+        "Sie aktualisieren die Höhen der betroffenen Knoten und führen ggf. Rotationen durch, um die AVL-Baum-Eigenschaft (Balancierung) wiederherzustellen.",
+        "Sie entfernen doppelte Werte aus dem Baum."
+      ],
+      "correct": 2,
+      "explanation": "Nach dem Einfügen oder Löschen eines Knotens in einem AVL-Baum können sich die Höhen der Knoten ändern und die Balance-Eigenschaft verletzt werden. Die Methode `updateHeight(node)` aktualisiert die Höhe eines Knotens, und die Methode `balance(node)` überprüft den Balancefaktor des Knotens und führt bei Bedarf die notwendigen Rotationen (LL, RR, LR, RL) durch, um die AVL-Eigenschaft wiederherzustellen und die logarithmische Laufzeit zu gewährleisten [93, 161-163]. Option 0 ist falsch, da die Balancierung entscheidend für die Worst-Case-Laufzeit ist. Option 1 ist falsch, und Option 3 ist Aufgabe einer anderen Logik."
+    },
+    {
+      "question": "Was ist die Hauptidee hinter dem 'rückwärts Kruskal'-Algorithmus zur Konstruktion eines Minimalen Spannbaums?",
+      "answers": [
+        "Er fügt die teuersten Kanten zuerst hinzu, solange kein Zyklus entsteht.",
+        "Er entfernt die billigsten Kanten zuerst, solange der Graph zusammenhängend bleibt.",
+        "Er entfernt die teuersten Kanten, solange der Graph zusammenhängend bleibt und keine Zyklen entstehen.",
+        "Er verwendet eine Prioritätswarteschlange, um die Kanten zu verwalten."
+      ],
+      "correct": 2,
+      "explanation": "Der 'rückwärts Kruskal'-Algorithmus ist eine Variante des Kruskal-Algorithmus, bei der die Kanten in absteigender Reihenfolge ihres Gewichts betrachtet werden. Die Idee ist, die teuerste Kante zu entfernen, solange der Graph zusammenhängend bleibt [164, 165]. Dies ist eine alternative Methode zum Finden eines MST, aber im Kern immer noch ein Greedy-Algorithmus. Option 0 und 1 sind direkte Gegenbeispiele zur Funktionsweise. Option 3 beschreibt eher den Prim-Algorithmus, obwohl Kruskal auch Sortierung verwendet (implizit eine PQ)."
+    },
+    {
+      "question": "Welche der folgenden Aussagen ist für eine 'Queue' (Warteschlange) korrekt?",
+      "answers": [
+        "Sie ist eine LIFO-Datenstruktur.",
+        "Das zuletzt hinzugefügte Element wird zuerst entfernt.",
+        "Sie ist eine FIFO-Datenstruktur.",
+        "Elemente können nur am Ende hinzugefügt und am Anfang entfernt werden."
+      ],
+      "correct": 2,
+      "explanation": "Eine Queue (Warteschlange) ist eine FIFO-Datenstruktur ('First-In, First-Out') [98]. Das bedeutet, dass das zuerst hinzugefügte Element auch zuerst entfernt wird (ENQUEUE- und DEQUEUE-Operationen) [98]. Option 0 und 1 beschreiben einen Stack (LIFO) [111]. Option 3 ist die korrekte Beschreibung der ENQUEUE/DEQUEUE-Operationen für eine Queue, während Option 2 die korrekte Klassifizierung ist."
+    },
+    {
+      "question": "Welche Aussage über die Traversierungs-Reihenfolgen 'inorder', 'preorder' und 'postorder' in einem Binären Suchbaum ist falsch?",
+      "answers": [
+        "Alle drei Reihenfolgen benötigen eine Laufzeit von Θ(n).",
+        "Preorder wird oft für Berechnungsbäume genutzt, um die Wurzel vor den Kindern zu verarbeiten.",
+        "Postorder gibt die Schlüssel in absteigender Reihenfolge zurück.",
+        "Inorder gibt die Schlüssel in aufsteigender Reihenfolge zurück."
+      ],
+      "correct": 2,
+      "explanation": "Die 'postorder'-Traversierung (links, rechts, mitte) gibt zuerst die Kinder eines Knotens und dann den Knoten selbst aus [139, 140]. Sie gibt die Schlüssel nicht in absteigender Reihenfolge zurück. Inorder gibt die Schlüssel in aufsteigender Reihenfolge aus [139]. Preorder gibt die Schlüssel in der Reihenfolge (mitte, links, rechts) aus und ist nützlich für Berechnungsbäume [139]. Alle drei Traversierungen besuchen jeden Knoten einmal und haben daher eine Laufzeit von Θ(n) [139]."
+    },
+    {
+      "question": "Was ist der asymptotische Aufwand der folgenden Python-Funktion für den Average Case, wenn `range()` und arithmetische Operationen konstante Laufzeit haben?",
+      "answers": ["Θ(1)", "Θ(n)", "Θ(n²)", "Θ(log n)"],
+      "correct": 1,
+      "explanation": "Das Codefragment `def foo(n): if(n % 2 == 0): for i in range(0,n): pass` hat eine Schleife, die `n`-mal durchläuft. Da die `if`-Bedingung `n % 2 == 0` für die Hälfte aller natürlichen Zahlen `n` (die geraden Zahlen) zutrifft, wird die Schleife im Durchschnitt etwa `n/2` Mal durchlaufen. Asymptotisch ist `n/2` in Θ(n) [143]. Θ(1) wäre der Best Case (wenn n ungerade ist), Θ(n²) und Θ(log n) sind zu hoch bzw. zu niedrig."
+    },
+    {
+      "question": "Welcher Algorithmus wird verwendet, um eine maximale Menge vertex-disjunkter augmentierender Pfade in einem bipartiten Matching zu finden?",
+      "answers": [
+        "Ford-Fulkerson-Algorithmus",
+        "Gale-Shapley-Algorithmus",
+        "Hopcroft-Karp-Algorithmus",
+        "Kruskal-Algorithmus"
+      ],
+      "correct": 2,
+      "explanation": "Der Hopcroft-Karp-Algorithmus ist ein spezialisierter Algorithmus zur Berechnung des maximalen bipartiten Matchings. Er nutzt die effiziente Findung einer maximalen Menge vertex-disjunkter augmentierender Pfade [75, 166]. Der Ford-Fulkerson-Algorithmus kann auch Matchings finden, ist aber allgemeiner [167]. Der Gale-Shapley-Algorithmus findet stabile Matchings [168], und Kruskal ist für MSTs [45]."
+    },
+    {
+      "question": "Was ist der Unterschied zwischen der 'O-Notation' und der 'o-Notation'?",
+      "answers": [
+        "O-Notation ist eine untere Schranke, o-Notation ist eine obere Schranke.",
+        "O-Notation bedeutet 'nicht schneller als', o-Notation bedeutet 'strikt langsamer als'.",
+        "O-Notation ist für lineare Funktionen, o-Notation ist für exponentielle Funktionen.",
+        "Sie sind austauschbar und bedeuten dasselbe."
+      ],
+      "correct": 1,
+      "explanation": "Die O-Notation (Groß-O) f(n) = O(g(n)) ist eine obere Schranke und bedeutet, dass f(n) asymptotisch höchstens so schnell wächst wie g(n) (f(n) wächst nicht schneller als g(n)). Die o-Notation (klein-o) f(n) = o(g(n)) ist eine 'lose' obere Schranke und bedeutet, dass f(n) asymptotisch strikt langsamer wächst als g(n) (f(n) wächst langsamer als g(n)) [6, 9, 169, 170]. Das ist ein subtiler, aber wichtiger Unterschied in der Stärke der Aussage."
+    },
+    {
+      "question": "Was ist der asymptotische Worst-Case-Laufzeit von Quicksort in Θ-Notation?",
+      "answers": ["Θ(n log n)", "Θ(n²)", "Θ(n)", "Θ(log n)"],
+      "correct": 1,
+      "explanation": "Die Worst-Case-Laufzeit von Quicksort ist Θ(n²) [143, 171-173]. Dies tritt auf, wenn die Pivot-Auswahl systematisch zu sehr unausgewogenen Partitionen führt, z.B. wenn der Pivot immer das kleinste oder größte Element ist (was bei bereits sortierten oder umgekehrt sortierten Eingaben und einer Pivotwahl des ersten/letzten Elements passieren kann). Θ(n log n) ist die Average-Case-Laufzeit [84]."
+    },
+    {
+      "question": "In einem Flussnetzwerk, was ist die 'Kapazität eines Schnitts (S, T)'?",
+      "answers": [
+        "Die Summe der Flüsse über alle Kanten, die von S nach T gehen.",
+        "Die Summe der Kapazitäten aller Kanten, die von S nach T verlaufen.",
+        "Die maximale Menge an Fluss, die von der Quelle s zur Senke t fließen kann.",
+        "Die Anzahl der Kanten, die den Schnitt überqueren."
+      ],
+      "correct": 1,
+      "explanation": "Die Kapazität eines Schnitts (S, T) in einem Flussnetzwerk ist die Summe der Kapazitäten aller Kanten, die von der Knotenmenge S zur Knotenmenge T verlaufen (d.h. von einem Knoten in S zu einem Knoten in T) [174]. Der Netto-Fluss über den Schnitt ist die Summe der Flüsse in S nach T minus der Flüsse in T nach S [174]. Option 0 ist der Netto-Fluss in eine Richtung. Option 2 ist der maximale Fluss des Netzwerks. Option 3 ist die Anzahl der Kanten, nicht die Kapazität."
+    },
+    {
+      "question": "Warum ist der Rabin-Karp-Algorithmus im Worst Case in O((n-m+1)m) trotz der Verwendung von modularer Arithmetik für das Hashing?",
+      "answers": [
+        "Weil der Hash-Wert zu groß wird, um in konstanter Zeit verglichen zu werden.",
+        "Weil die modulo-Operation selbst ineffizient ist.",
+        "Weil bei vielen Hash-Kollisionen jeder arithmetische Treffer eine zeichenweise Verifikation des Musters erfordert, die O(m) kostet.",
+        "Weil der Algorithmus immer alle möglichen Offsets im Text prüfen muss."
+      ],
+      "correct": 2,
+      "explanation": "Die modulare Arithmetik im Rabin-Karp-Algorithmus ermöglicht es, die Hash-Werte in konstanter Zeit zu berechnen und zu aktualisieren [175, 176]. Wenn jedoch viele Hash-Kollisionen auftreten (d.h., verschiedene Substrings haben denselben Hash-Wert), muss jeder 'arithmetische Treffer' durch eine zeichenweise Verifikation überprüft werden, die O(m) Zeit kostet [159]. Wenn dies für (n-m+1) mögliche Offsets passiert, degeneriert die Laufzeit im Worst Case zu O((n-m+1)m) [117, 159]. Option 0 ist falsch, da modulare Arithmetik gerade das Problem der großen Zahlen löst. Option 1 ist falsch, da arithmetische Operationen als konstant angenommen werden. Option 3 ist zwar prinzipiell richtig, aber der Flaschenhals sind die Verifikationen bei Kollisionen."
+    },
+    {
+      "question": "Was ist die Zeitkomplexität für das Suchen eines Elements in einem Binären Suchbaum, der zu einer verketteten Liste degeneriert ist?",
+      "answers": ["O(1)", "O(log n)", "O(n)", "O(n log n)"],
+      "correct": 2,
+      "explanation": "Wenn ein Binärer Suchbaum zu einer verketteten Liste degeneriert (z.B. durch Einfügen bereits sortierter Elemente), ist seine Höhe proportional zur Anzahl der Elemente (h = n). In diesem Fall muss im Worst Case jedes Element in der 'Liste' durchlaufen werden, um das gesuchte Element zu finden, was eine Laufzeit von O(n) bedeutet [91, 92]. Ein balancierter Baum würde O(log n) erreichen [154]."
+    },
+    {
+      "question": "Welche der folgenden Bedingungen ist ein 'Basisfall' in der Definition einer algorithmischen Rekurrenz?",
+      "answers": [
+        "Für alle n < n0 gilt T(n) = Θ(log n).",
+        "Für alle n ≥ n0 gilt, dass jeder Rekursionspfad unendlich viele rekursive Aufrufe enthält.",
+        "Für alle n < n0 gilt T(n) = Θ(1).",
+        "Eine Rekurrenz ist algorithmisch, wenn sie stets eine exakte Lösung hat."
+      ],
+      "correct": 2,
+      "explanation": "In der Definition einer algorithmischen Rekurrenz ist der Basisfall dadurch gekennzeichnet, dass für alle Eingabegrößen n, die unterhalb eines bestimmten Schwellwerts n0 liegen, die Laufzeit T(n) konstant ist, also T(n) = Θ(1) [177, 178]. Dies ist wichtig, damit der Algorithmus in endlicher Zeit terminiert [179, 180]. Option 0 ist falsch. Option 1 beschreibt einen nicht-terminierenden Fall. Option 3 ist falsch."
+    },
+    {
+      "question": "Was ist der wesentliche Unterschied zwischen dem 'Heap Sort'-Algorithmus und der Verwendung eines Heaps als 'Prioritätswarteschlange'?",
+      "answers": [
+        "Heapsort ist nur für Min-Heaps geeignet, Prioritätswarteschlangen nur für Max-Heaps.",
+        "Heapsort ist ein Sortieralgorithmus, der den Heap verändert und leert, während eine Prioritätswarteschlange eine dynamische Datenstruktur für fortlaufende Operationen ist.",
+        "Heapsort arbeitet in-place, Prioritätswarteschlangen benötigen zusätzlichen Speicherplatz.",
+        "Prioritätswarteschlangen sind stabiler als Heapsort."
+      ],
+      "correct": 1,
+      "explanation": "Heapsort ist ein vollständiger Sortieralgorithmus, der ein Array zuerst in einen Heap umwandelt und dann das größte (oder kleinste) Element wiederholt extrahiert, um das Array zu sortieren [181]. Dabei wird der Heap im Laufe des Sortierprozesses 'geleert'. Eine Prioritätswarteschlange hingegen ist eine dynamische Datenstruktur, die fortlaufende Operationen wie Einfügen, Maximum/Minimum abfragen und Extrahieren des Maximums/Minimums unterstützt, ohne die Datenstruktur zu 'leeren', sondern für zukünftige Operationen bereitzuhalten [96]. Option 0 ist falsch, beide können als Min- oder Max-Heaps implementiert werden. Option 2 ist nicht der wesentliche Unterschied. Option 3 ist irrelevant."
+    },
+    {
+      "question": "Welches der folgenden Probleme ist ein typisches Beispiel für ein Problem, das mit dem 'Divide-and-Conquer'-Prinzip gelöst wird?",
+      "answers": [
+        "Das Kürzeste-Wege-Problem (z.B. Dijkstra).",
+        "Die Matrix-Ketten-Multiplikation.",
+        "Die Suche in einer Hash-Tabelle.",
+        "Merge Sort."
+      ],
+      "correct": 3,
+      "explanation": "Merge Sort ist ein klassisches Beispiel für einen Algorithmus, der dem Divide-and-Conquer-Prinzip folgt: Das Problem wird in kleinere Teilprobleme geteilt (Divide), diese werden rekursiv gelöst (Conquer), und die Teillösungen werden kombiniert (Combine) [182, 183]. Die Matrix-Ketten-Multiplikation ist ein klassisches Beispiel für Dynamische Programmierung, nicht Divide-and-Conquer per se. Das Kürzeste-Wege-Problem wird mit Graphalgorithmen gelöst. Die Suche in einer Hash-Tabelle ist eine Datenstruktur-Operation."
+    },
+    {
+      "question": "Was ist das Ergebnis der Funktion `get_frequency_domain(n)` aus der Klausuraufgabe, die nach dem Mastertheorem analysiert wurde, unter den Annahmen, dass `len(n)` der Eingabegröße `n` entspricht und alle Operationen konstanten Aufwand haben?",
+      "answers": ["Θ(n)", "Θ(n log n)", "Θ(n²)", "Θ(log n)"],
+      "correct": 1,
+      "explanation": "Die Funktion `get_frequency_domain(n)` hat die Rekurrenz `T(n) = 2T(n/2) + Θ(n)` [184]. Hier sind `a=2`, `b=2` und `f(n) = Θ(n)`. Dies entspricht dem zweiten Fall des Master-Theorems, bei dem `f(n) = Θ(n^(log_b a) log^k n)` mit `log_b a = log_2 2 = 1` und `k=0` (da `f(n)=n = n^1 * log^0 n`). Die Lösung für diesen Fall ist `T(n) = Θ(n^(log_b a) log^(k+1) n)`, was zu Θ(n log^(0+1) n) = Θ(n log n) führt [17, 184]."
+    },
+    {
+      "question": "Welche der folgenden Aussagen ist für den 'Optimal Binary Search Trees'-Algorithmus korrekt?",
+      "answers": [
+        "Der Baum wird so konstruiert, dass alle Blätter auf der gleichen Ebene liegen.",
+        "Er minimiert die maximale Tiefe eines Knotens im Baum.",
+        "Er minimiert die durchschnittliche Anzahl besuchter Baumknoten (erwartete Suchkosten).",
+        "Er nutzt eine Greedy-Strategie, um die Wurzel zu wählen."
+      ],
+      "correct": 2,
+      "explanation": "Der Algorithmus für 'Optimal Binary Search Trees' ist ein Problem der dynamischen Programmierung, das darauf abzielt, einen binären Suchbaum zu konstruieren, der die durchschnittliche Anzahl der besuchten Knoten (oder die erwarteten Suchkosten) minimiert [185, 186]. Dies wird durch das Zwischenspeichern der optimalen Suchkosten für alle möglichen Teilbäume erreicht [187]. Option 0 ist eine Eigenschaft von B-Bäumen. Option 1 ist falsch. Option 3 ist falsch, da es sich um ein DP-Problem handelt, nicht um ein Greedy-Problem [185]."
+    },
+    {
+      "question": "Welche Art von Baumstruktur speichert in jedem Knoten zwischen `t-1` und `2t-1` viele Schlüssel, um blockweise Lese-/Schreiboperationen zu optimieren?",
+      "answers": ["Binärer Suchbaum", "AVL-Baum", "Rot-Schwarz-Baum", "B-Baum"],
+      "correct": 3,
+      "explanation": "B-Bäume sind speziell für blockweise Lese-/Schreiboperationen (z.B. auf Festplatten) optimiert. Sie speichern in jedem Knoten mehrere Schlüssel (zwischen t-1 und 2t-1), wodurch die Bäume relativ niedrig und breit sind. Dies minimiert die Anzahl der teuren Blockzugriffe [26, 140]. Binäre Suchbäume, AVL-Bäume und Rot-Schwarz-Bäume sind binäre Bäume, die typischerweise nur einen Schlüssel pro Knoten speichern."
+    },
+    {
+      "question": "Was ist ein 'simpler Pfad' in einem Graphen?",
+      "answers": [
+        "Ein Pfad, der alle Knoten im Graphen besucht.",
+        "Ein Pfad, der jeden Knoten höchstens einmal enthält.",
+        "Ein Pfad, der nur aus zwei Knoten und einer Kante besteht.",
+        "Ein Pfad, der von der Quelle zur Senke führt."
+      ],
+      "correct": 1,
+      "explanation": "Ein Pfad ist 'simpel' oder 'zyklenfrei', wenn er jeden Knoten höchstens einmal enthält [126, 188]. Dies ist wichtig für viele Graphalgorithmen, da Zyklen (insbesondere negative Zyklen in kürzesten Pfaden) problematisch sein können [37]. Option 0 beschreibt einen Hamiltonschen Pfad (wenn alle Knoten besucht werden). Die anderen Optionen sind zu spezifisch oder nicht die korrekte Definition."
+    },
+    {
+      "question": "Was ist die Zeitkomplexität (Worst Case) von Selection Sort?",
+      "answers": ["Θ(n)", "Θ(n log n)", "Θ(n²)", "Θ(log n)"],
+      "correct": 2,
+      "explanation": "Selection Sort hat eine Laufzeit von Θ(n²) in allen Fällen (Best Case, Average Case, Worst Case) [189]. Dies liegt daran, dass der Algorithmus in jeder Phase das Minimum im unsortierten Teil der Liste finden muss, was immer eine Iteration über den restlichen unsortierten Teil erfordert, und dann ein Tausch vornimmt. Die Anzahl der Vergleiche ist immer konstant quadratisch."
+    },
+    {
+      "question": "Welches der folgenden Probleme ist ein Beispiel für ein Problem, das sich durch Dynamische Programmierung (mit Memoization) effizienter lösen lässt als durch reine Rekursion?",
+      "answers": [
+        "Die Berechnung der n-ten Fibonacci-Zahl auf naive rekursive Weise.",
+        "Die Sortierung einer Liste mit Quicksort.",
+        "Das Auffinden des Maximums in einem Array.",
+        "Die Suche nach einem Element in einem balancierten Binärbaum."
+      ],
+      "correct": 0,
+      "explanation": "Die naive rekursive Berechnung der n-ten Fibonacci-Zahl hat einen exponentiellen Zeitaufwand, da viele Teilergebnisse mehrfach berechnet werden. Durch Dynamische Programmierung (Memoization) kann dieser Aufwand auf polynomiell reduziert werden, indem Ergebnisse zwischengespeichert werden [144, 190]. Die anderen Optionen sind keine typischen Beispiele für Probleme, bei denen die naive Rekursion exponentiell ineffizient wäre, da sie entweder andere Algorithmusparadigmen nutzen oder von Natur aus effizienter sind."
+    },
+    {
+      "question": "Was ist ein 'gerichteter azyklischer Graph' (DAG) und wofür ist er besonders nützlich?",
+      "answers": [
+        "Ein Graph ohne Zyklen; nützlich für die Suche nach kürzesten Pfaden mit negativen Gewichten.",
+        "Ein Graph, in dem alle Kanten ungerichtet sind; nützlich für die Topologische Sortierung.",
+        "Ein gerichteter Graph ohne Zyklen; nützlich für die Topologische Sortierung und die Identifikation kritischer Pfade.",
+        "Ein Graph, der alle Knoten auf einer Ebene verbindet; nützlich für BFS."
+      ],
+      "correct": 2,
+      "explanation": "Ein gerichteter azyklischer Graph (DAG) ist ein gerichteter Graph, der keine Zyklen enthält [43]. DAGs sind besonders nützlich für die Topologische Sortierung [43] und für die effiziente Berechnung kürzester Pfade (oder längster Pfade durch Negation der Gewichte) [191], da keine endlosen Zyklen existieren. Option 0 ist falsch (negative Gewichte sind ok, aber keine negativen Zyklen). Option 1 ist falsch, da DAGs gerichtet sind. Option 3 ist falsch."
+    },
+    {
+      "question": "In der Übung 6 wurde ein Binärer Suchbaum mit Java als Array implementiert. Wie wird die Baumstruktur in einem 0-basierten Array abgebildet, und was ist der Index des rechten Kindes eines Knotens an Index `i`?",
+      "answers": [
+        "Linkes Kind: `2*i`, Rechtes Kind: `2*i+1`",
+        "Linkes Kind: `2*i+1`, Rechtes Kind: `2*i+2`",
+        "Linkes Kind: `i-1`, Rechtes Kind: `i+1`",
+        "Linkes Kind: `i/2`, Rechtes Kind: `i/2+1`"
+      ],
+      "correct": 1,
+      "explanation": "Bei der 0-basierten Array-Implementierung eines Binärbaums, die in der Übung beschrieben wird [192, 193], wird die Wurzel in `A` gespeichert. Das linke Kind eines Knotens an Index `i` befindet sich bei `2*i+1`, und das rechte Kind bei `2*i+2`. Der Elternknoten eines Kindes an Index `k` ist bei `(k-1)/2` [192]."
+    },
+    {
+      "question": "Warum ist es beim Design von Algorithmen wichtig, nicht nur den Worst Case, sondern auch den Average Case und gegebenenfalls den Best Case zu betrachten?",
+      "answers": [
+        "Weil der Worst Case immer die Realität widerspiegelt.",
+        "Weil der Best Case in der Praxis am häufigsten auftritt.",
+        "Weil der Average Case oft nahe am Worst Case liegt und der Best Case kaum eintritt, was die Wahl des Algorithmus stark beeinflusst.",
+        "Weil nur der Worst Case die Skalierbarkeit des Algorithmus bestimmt."
+      ],
+      "correct": 2,
+      "explanation": "Es ist wichtig, Worst, Average und Best Case zu betrachten, da der Worst Case eine obere Schranke für die Laufzeit garantiert [4], der Average Case jedoch oft realistischer ist [125]. Der Kurs betont, dass der Average Case von Algorithmen häufig nahe am Worst Case liegt und der Best Case nur selten eintritt, was bedeutet, dass der Best Case in der Regel nur einen 'Schein-Vorteil' bringt [15, 108]. Dies beeinflusst die praktische Wahl des Algorithmus erheblich. Option 0 und 1 sind falsch. Option 3 ist falsch, da der Average Case auch die Skalierbarkeit bestimmt."
+    },
+    {
+      "question": "Was ist der Zweck der 'rangeSearch'-Methode in einem B-Baum?",
+      "answers": [
+        "Sie sucht nach einem bestimmten Schlüssel im Baum.",
+        "Sie gibt alle Werte zurück, die in einem bestimmten Bereich (low, high) liegen, in sortierter Reihenfolge.",
+        "Sie fügt neue Schlüssel in einen bestimmten Bereich des Baumes ein.",
+        "Sie entfernt alle Schlüssel außerhalb eines bestimmten Bereichs."
+      ],
+      "correct": 1,
+      "explanation": "Die `rangeSearch`-Methode in einem B-Baum ist dafür vorgesehen, alle Schlüssel zurückzugeben, die innerhalb eines vorgegebenen Bereichs (zwischen `low` und `high`, einschließlich) liegen. Die Ergebnisse sollen in sortierter Reihenfolge zurückgegeben werden [194, 195]. Option 0 beschreibt die grundlegende `search`-Operation. Option 2 und 3 beschreiben Einfüge- bzw. Löschoperationen für Bereiche."
+    },
+    {
+      "question": "Was ist der Unterschied zwischen einem 'einfachen Weg' und einem 'Kreis' in einem Graphen?",
+      "answers": [
+        "Ein einfacher Weg darf Knoten mehrfach besuchen, ein Kreis nicht.",
+        "Ein einfacher Weg besucht keine Knoten doppelt, ein Kreis ist ein einfacher Weg, bei dem Anfangs- und Endknoten äquivalent sind.",
+        "Ein einfacher Weg ist ungerichtet, ein Kreis ist gerichtet.",
+        "Ein Kreis hat immer ein negatives Gewicht, ein einfacher Weg nicht."
+      ],
+      "correct": 1,
+      "explanation": "Ein einfacher Weg (oder Pfad) besucht keinen Knoten doppelt [126, 188]. Ein Kreis ist ein Weg, der keine Kante mehrfach begeht und bei dem Anfangs- und Endknoten äquivalent sind. Ein einfacher Kreis besucht keine Knoten (außer dem Start- und Endknoten) mehrfach [188]. Option 0 ist falsch. Option 2 ist falsch, da sowohl Wege als auch Kreise gerichtet oder ungerichtet sein können. Option 3 ist falsch, Kreise können beliebige Gewichte haben."
+    },
+    {
+      "question": "Wenn ein binärer Suchbaum mit Referenzen implementiert ist, was ist der asymptotische Aufwand (Worst Case) für die Operation 'delete', wenn ein Knoten mit zwei Kindern gelöscht werden muss?",
+      "answers": ["O(1)", "O(log n)", "O(n)", "O(n²)"],
+      "correct": 2,
+      "explanation": "Das Löschen eines Knotens mit zwei Kindern in einem binären Suchbaum beinhaltet das Finden des Inorder-Nachfolgers (oder -Vorgängers), das Kopieren seines Wertes und das anschließende Löschen des Nachfolgers aus seiner ursprünglichen Position [196-198]. Im Worst Case kann die Suche nach dem Nachfolger und das anschließende Löschen des Nachfolgers in einem unausgewogenen Baum eine Höhe proportional zu n haben, was zu einem Aufwand von O(n) führt [91, 197, 199]. O(log n) wäre der Fall für einen balancierten Baum."
+    },
+    {
+      "question": "Was ist die Hauptidee hinter Johnson's Algorithmus zur Lösung des All Pairs Shortest Paths (APSP) Problems?",
+      "answers": [
+        "Direktes Anwenden von Bellman-Ford für jedes Startpaar.",
+        "Verwendung von schneller Matrixmultiplikation zur Berechnung aller Pfade.",
+        "Umwandlung von Graphen mit negativen Kantengewichten in Graphen mit nicht-negativen Gewichten mittels einer Neugewichtungsfunktion und anschließende Anwendung von Dijkstra.",
+        "Eine Kombination aus BFS und DFS zur Pfadfindung."
+      ],
+      "correct": 2,
+      "explanation": "Johnson's Algorithmus ist eine effiziente Lösung für APSP, die auch negative Kantengewichte (aber keine negativen Zyklen) handhaben kann [200]. Die Kernidee ist, zuerst mit Bellman-Ford auf einem erweiterten Graphen zu prüfen, ob negative Zyklen vorhanden sind. Wenn nicht, wird eine Neugewichtungsfunktion angewendet, um alle Kantengewichte nicht-negativ zu machen, ohne die kürzesten Pfade zu ändern. Danach kann Dijkstra's Algorithmus für jeden Knoten als Startpunkt verwendet werden [201, 202]. Option 0 ist ineffizient (O(V²E)). Option 1 ist eine andere Methode (schnelle Exponentiation) [115]. Option 3 ist falsch."
+    },
+    {
+      "question": "Wie wird der Baum bei der 'Rekursionsbaum-Methode' zur Laufzeitanalyse von Rekurrenzen 'gelöst'?",
+      "answers": [
+        "Man errät eine obere Schranke und beweist sie per Induktion.",
+        "Man teilt die Rekurrenz in zwei kleinere Rekurrenzen auf und löst sie getrennt.",
+        "Man rollt die Rekurrenz 'ab', visualisiert die Kosten auf jeder Ebene des Baumes und summiert diese auf.",
+        "Man verwendet das Master-Theorem direkt, um das Ergebnis zu erhalten."
+      ],
+      "correct": 2,
+      "explanation": "Bei der Rekursionsbaum-Methode wird die Rekurrenz 'abgerollt' (visualisiert als Baum), und die Kosten, die auf jeder Ebene des Rekursionsbaums entstehen, werden aufsummiert, um die Gesamtlaufzeit zu bestimmen [123, 132, 203]. Dieser Ansatz kann auch dazu dienen, eine gute Hypothese für die Substitutionsmethode zu erhalten [123, 132]. Option 0 beschreibt die Substitutionsmethode. Option 3 beschreibt das Master-Theorem."
+    },
+    {
+      "question": "Welche Aussage ist korrekt, wenn eine Funktion `f(n)` die Eigenschaft `f(n) = O(1)` hat?",
+      "answers": [
+        "Die Funktion ist immer konstant 1.",
+        "Die Funktion ist für große n immer gleich 0.",
+        "Die Funktion wächst nicht schneller als eine Konstante, d.h., sie hat konstanten Aufwand.",
+        "Die Funktion hat immer eine Laufzeit von einer Einheit."
+      ],
+      "correct": 2,
+      "explanation": "Wenn f(n) = O(1), bedeutet dies, dass die Funktion asymptotisch nicht schneller wächst als eine Konstante. Es gibt eine positive Konstante c und ein n0, so dass 0 ≤ f(n) ≤ c für alle n ≥ n0 [204, 205]. Das bedeutet, der Aufwand ist konstant, unabhängig von der Größe der Eingabe n (für n ≥ n0). Option 0 und 1 sind falsch, da die Funktion auch andere konstante Werte annehmen kann oder nicht 0 sein muss. Option 3 ist falsch, da die Konstante c größer als 1 sein kann."
+    },
+    {
+      "question": "Was ist die Kernstrategie des Prim-Algorithmus zur Konstruktion eines Minimalen Spannbaums?",
+      "answers": [
+        "Beginnt mit allen Kanten und entfernt die teuersten, die keinen Zusammenhang verlieren.",
+        "Beginnt mit einem beliebigen Knoten und erweitert den Baum greedy um die günstigste Kante zu einem bislang unerreichten Knoten.",
+        "Sortiert alle Kanten nach Gewicht und fügt sie hinzu, wenn sie keinen Zyklus bilden.",
+        "Findet den kürzesten Pfad zwischen zwei gegebenen Knoten."
+      ],
+      "correct": 1,
+      "explanation": "Prims Algorithmus konstruiert einen MST, indem er mit einem vorgegebenen Startknoten beginnt und den Baum schrittweise erweitert. In jeder Iteration wählt er greedy die Kante mit dem geringsten Gewicht, die einen bereits erreichten Knoten mit einem bisher unerreichten Knoten verbindet [206, 207]. Dies wird typischerweise mit einer Prioritätswarteschlange effizient implementiert [206, 207]. Option 0 beschreibt den 'rückwärts Kruskal'-Algorithmus. Option 2 beschreibt den Kruskal-Algorithmus. Option 3 beschreibt ein Single-Source Shortest Path Problem."
+    },
+    {
+      "question": "In einem Flussnetzwerk, was bedeutet die 'Fluss-Erhalt'-Eigenschaft für einen Knoten u, der weder Quelle (s) noch Senke (t) ist?",
+      "answers": [
+        "Der Fluss in den Knoten muss größer sein als der Fluss aus dem Knoten.",
+        "Der Netto-Fluss durch den Knoten ist immer 0, d.h., der gesamte Fluss, der in den Knoten fließt, muss auch wieder herausfließen.",
+        "Die Kapazität aller Kanten, die in den Knoten fließen, ist unendlich.",
+        "Der Fluss in den Knoten ist immer kleiner als seine Kapazität."
+      ],
+      "correct": 1,
+      "explanation": "Die 'Fluss-Erhalt'-Eigenschaft (Flow Conservation) besagt, dass für jeden Zwischenknoten u (d.h., u ≠ s und u ≠ t) der gesamte Fluss, der in den Knoten hineinfließt, gleich dem gesamten Fluss ist, der aus dem Knoten herausfließt. Formal: Summe(f(v, u)) über alle v = Summe(f(u, v)) über alle v [208]. Das impliziert, dass der Netto-Fluss durch den Knoten 0 ist. Option 0 ist falsch. Option 2 und 3 sind falsche Annahmen."
+    },
+    {
+      "question": "Warum ist es beim Hashing mit offener Adressierung wichtig, einen 'gelöscht'-Marker zu verwenden, anstatt einen Platz einfach zu leeren?",
+      "answers": [
+        "Um den Speicherplatz zu sparen.",
+        "Um zu signalisieren, dass der Platz für neue Einfügungen zur Verfügung steht.",
+        "Um zu verhindern, dass spätere Suchoperationen fälschlicherweise bei einem scheinbar leeren Platz aufhören, bevor das gesuchte Element gefunden wird, das ursprünglich weitergesondiert wurde.",
+        "Um die Kollisionswahrscheinlichkeit zu reduzieren."
+      ],
+      "correct": 2,
+      "explanation": "Beim Hashing mit offener Adressierung (z.B. lineares Sondieren) wird bei einer Kollision nach einem festgelegten Schema andere Hash-Zellen besucht [209]. Wenn ein Element gelöscht wird, darf sein Platz nicht einfach geleert werden (d.h. auf 'EMPTY' gesetzt werden), da dies eine Suchoperation vorzeitig beenden könnte, die nach einem Element sucht, das ursprünglich diesen Platz 'übersprungen' hat und weiter sondiert wurde. Daher wird ein spezieller 'DELETED'-Marker verwendet, um zu signalisieren, dass dieser Platz bei Suchen übersprungen werden soll, aber für Einfügungen wiederverwendbar ist [52]. Option 0 ist falsch, da der Marker selbst Speicher benötigt. Option 1 ist ein sekundärer Zweck, aber nicht der primäre Grund für die Notwendigkeit des Markers. Option 3 ist falsch."
+    },
+    {
+      "question": "Was ist die entscheidende Verbesserung von Johnson's Algorithmus gegenüber dem Floyd-Warshall-Algorithmus für das APSP-Problem auf dünn besetzten Graphen?",
+      "answers": [
+        "Johnson's Algorithmus funktioniert nur für Graphen mit ausschließlich positiven Kantengewichten.",
+        "Johnson's Algorithmus hat eine schlechtere Worst-Case-Laufzeit als Floyd-Warshall auf dünn besetzten Graphen.",
+        "Johnson's Algorithmus erreicht eine bessere Laufzeit von O(V² log V + VE) und kann negative Kanten handhaben, im Gegensatz zu Floyd-Warshall, der Θ(V³) ist.",
+        "Johnson's Algorithmus kann negative Zyklen erkennen und handhaben."
+      ],
+      "correct": 2,
+      "explanation": "Johnson's Algorithmus erreicht eine Laufzeit von O(V² log V + VE) [200]. Er ist auch auf Graphen mit negativen Kantengewichten anwendbar (solange keine negativen Zyklen existieren) und ist auf dünn besetzten Graphen (wenn E klein ist) effizienter als der Floyd-Warshall-Algorithmus (Θ(V³)) [200]. Option 0 ist falsch, da Johnson's negative Kanten behandeln kann (nach Neugewichtung). Option 1 ist falsch. Option 3 ist zwar wahr (Johnson's Algorithmus erkennt negative Zyklen mittels Bellman-Ford [201]), aber die Hauptverbesserung liegt in der Laufzeit für dünn besetzte Graphen."
+    },
+    {
+      "question": "Was ist die primäre Funktion der Methode `findMinValueNode(Node node)` in der `AvlTreeSubmission` Klasse?",
+      "answers": [
+        "Sie findet den Knoten mit dem größten Wert im Baum.",
+        "Sie findet den Knoten mit dem kleinsten Wert in dem Teilbaum, dessen Wurzel 'node' ist.",
+        "Sie sucht nach einem spezifischen Wert im Baum.",
+        "Sie berechnet den Balancefaktor eines Knotens."
+      ],
+      "correct": 1,
+      "explanation": "Die Methode `findMinValueNode(Node node)` in einer Baumstruktur (wie einem AVL-Baum oder Binären Suchbaum) ist dazu da, den Knoten mit dem kleinsten Wert innerhalb des Teilbaums zu finden, der durch `node` verwurzelt ist [210, 211]. Dies geschieht in der Regel, indem man immer dem linken Kind folgt, bis kein linkes Kind mehr vorhanden ist. Option 0 beschreibt `findMaxValueNode`. Option 2 beschreibt `search`. Option 3 beschreibt `getBalanceFactor`."
+    },
+    {
+      "question": "Welche der folgenden Rekurrenzen ist ein Beispiel für eine 'unbalancierte Rekurrenz', die nicht direkt mit dem Master-Theorem gelöst werden kann?",
+      "answers": [
+        "T(n) = 2T(n/2) + Θ(n)",
+        "T(n) = 7T(n/2) + Θ(n²)",
+        "T(n) = T(n/3) + T(2n/3) + Θ(n)",
+        "T(n) = 3T(n/4) + Θ(n²)"
+      ],
+      "correct": 2,
+      "explanation": "Das Master-Theorem ist für Rekurrenzen der Form T(n) = aT(n/b) + f(n) ausgelegt, bei denen alle Teilprobleme die gleiche Größe n/b haben [124, 130]. Die Rekurrenz T(n) = T(n/3) + T(2n/3) + Θ(n) ist eine 'unbalancierte Rekurrenz', da die Teilprobleme unterschiedlich groß sind (n/3 und 2n/3) [212, 213]. Solche Rekurrenzen können nicht direkt mit dem Master-Theorem gelöst werden, erfordern aber oft die Rekursionsbaum-Methode oder die Akra-Bazzi-Methode [133, 134]. Die anderen Optionen sind Beispiele, die sich direkt mit dem Master-Theorem lösen lassen."
+    }
+  ]
+}
