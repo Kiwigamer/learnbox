@@ -394,22 +394,27 @@
         <div class="loading-message" id="loading-message">
           Lade verfügbare JSON-Dateien...
         </div>
-        
+
         <div id="file-list-container" class="hidden">
           <div class="selection-controls">
             <button onclick="selectAllFiles()">Alle auswählen</button>
             <button onclick="deselectAllFiles()">Alle abwählen</button>
           </div>
-          
+
           <div class="file-list" id="file-list">
             <!-- File items will be populated here -->
           </div>
-          
+
           <div class="selection-summary" id="selection-summary">
             <p>0 Dateien ausgewählt (0 Fragen)</p>
           </div>
-          
-          <button class="start-quiz-btn" id="start-quiz-btn" onclick="startSelectedQuiz()" disabled>
+
+          <button
+            class="start-quiz-btn"
+            id="start-quiz-btn"
+            onclick="startSelectedQuiz()"
+            disabled
+          >
             Quiz starten
           </button>
         </div>
@@ -445,6 +450,8 @@
       let score = 0;
       let answered = false;
       let isLoading = true;
+      let availableFiles = []; // Store information about found JSON files
+      let selectedFiles = []; // Store user's selected files
 
       // Function to load JSON files from the current directory
       async function loadQuestionsFromDirectory() {
@@ -643,9 +650,9 @@
         console.log("✅ loadQuestionsFromDirectory completed");
       }
 
-      // Alternative method for environments that don't support directory listing
-      async function loadQuestionsFromKnownFiles() {
-        console.log("🔄 Fallback: Trying to load from known files...");
+      // Function to discover available JSON files
+      async function discoverAvailableFiles() {
+        console.log("🔄 Discovering available JSON files...");
 
         const possibleFiles = [
           "sample-questions.json",
@@ -657,120 +664,227 @@
         ];
 
         console.log("📋 Checking these files:", possibleFiles);
+        availableFiles = [];
 
-        const loadPromises = possibleFiles.map(async (filename) => {
+        const checkPromises = possibleFiles.map(async (filename) => {
           try {
-            console.log(`🔍 Trying to load: ${filename}`);
+            console.log(`🔍 Checking: ${filename}`);
             const response = await fetch(filename);
-            console.log(
-              `📡 Response for ${filename}:`,
-              response.status,
-              response.statusText
-            );
 
             if (!response.ok) {
-              console.log(`❌ File not found or error: ${filename}`);
-              return [];
+              console.log(`❌ File not found: ${filename}`);
+              return null;
             }
 
             const data = await response.json();
-            console.log(`✅ Successfully loaded ${filename}:`, data);
+            console.log(`✅ Found ${filename}`);
 
-            let validQuestions = [];
+            let questionCount = 0;
+            let format = "unknown";
 
             if (Array.isArray(data)) {
-              console.log(`📋 ${filename} is array with ${data.length} items`);
-              validQuestions = data.filter((q, index) => {
-                const isValid =
+              questionCount = data.filter(
+                (q) =>
                   q.question &&
                   Array.isArray(q.answers) &&
                   q.answers.length > 0 &&
                   typeof q.correct === "number" &&
                   q.correct >= 0 &&
-                  q.correct < q.answers.length;
-
-                if (!isValid) {
-                  console.log(
-                    `❌ Invalid question at index ${index} in ${filename}:`,
-                    q
-                  );
-                }
-
-                return isValid;
-              });
+                  q.correct < q.answers.length
+              ).length;
+              format = "array";
             } else if (data.questions && Array.isArray(data.questions)) {
-              console.log(
-                `📋 ${filename} has questions property with ${data.questions.length} items`
-              );
-              validQuestions = data.questions.filter((q, index) => {
-                const isValid =
+              questionCount = data.questions.filter(
+                (q) =>
                   q.question &&
                   Array.isArray(q.answers) &&
                   q.answers.length > 0 &&
                   typeof q.correct === "number" &&
                   q.correct >= 0 &&
-                  q.correct < q.answers.length;
-
-                if (!isValid) {
-                  console.log(
-                    `❌ Invalid question at index ${index} in ${filename}:`,
-                    q
-                  );
-                }
-
-                return isValid;
-              });
-            } else {
-              console.log(`❌ Unexpected format in ${filename}:`, data);
+                  q.correct < q.answers.length
+              ).length;
+              format = "object";
             }
 
-            console.log(
-              `📊 Valid questions from ${filename}:`,
-              validQuestions.length
-            );
-            return validQuestions;
+            if (questionCount > 0) {
+              return {
+                filename: filename,
+                questionCount: questionCount,
+                format: format,
+                data: data,
+                title:
+                  data.title ||
+                  filename.replace(".json", "").replace(/[-_]/g, " "),
+              };
+            }
+
+            return null;
           } catch (error) {
-            console.log(`❌ Error loading ${filename}:`, error);
-            return [];
+            console.log(`❌ Error checking ${filename}:`, error);
+            return null;
           }
         });
 
-        const questionArrays = await Promise.all(loadPromises);
-        console.log("📊 All arrays from known files:", questionArrays);
+        const results = await Promise.all(checkPromises);
+        availableFiles = results.filter((file) => file !== null);
 
-        const loadedQuestions = questionArrays.flat();
-        console.log(
-          "📊 Total questions from known files:",
-          loadedQuestions.length
-        );
+        console.log("📊 Available files discovered:", availableFiles);
+        return availableFiles;
+      }
 
-        if (loadedQuestions.length > 0) {
-          questions = shuffleArray(loadedQuestions);
-          console.log(
-            "✅ Successfully loaded questions from known files:",
-            questions.length
-          );
-        } else {
-          console.log("❌ No questions found in any known files");
-          // Create a default message if no files are found
-          questions = [
-            {
-              question: "Keine JSON-Dateien mit Fragen gefunden",
-              answers: [
-                "Erstellen Sie eine 'questions.json' Datei mit Ihren Fragen.",
-                "Stellen Sie sicher, dass die JSON-Dateien im gleichen Verzeichnis wie diese HTML-Datei liegen.",
-                "Überprüfen Sie das Format der JSON-Dateien.",
-                "Alle oben genannten Optionen.",
-              ],
-              correct: 3,
-              explanation:
-                'Um das Quiz zu verwenden, erstellen Sie JSON-Dateien mit Fragen im Format: {"question": "...", "answers": [...], "correct": 0, "explanation": "..."}',
-            },
-          ];
+      // Function to display file selection interface
+      function showFileSelection() {
+        console.log("📋 Showing file selection interface");
+
+        document.getElementById("file-selection").classList.remove("hidden");
+        document.getElementById("quiz-content").classList.add("hidden");
+        document.getElementById("results").classList.add("hidden");
+
+        if (availableFiles.length === 0) {
+          document.getElementById("loading-message").textContent =
+            "Keine gültigen JSON-Dateien gefunden. Bitte überprüfen Sie Ihre Dateien.";
+          return;
         }
 
-        isLoading = false;
-        console.log("✅ loadQuestionsFromKnownFiles completed");
+        document.getElementById("loading-message").classList.add("hidden");
+        document
+          .getElementById("file-list-container")
+          .classList.remove("hidden");
+
+        const fileList = document.getElementById("file-list");
+        fileList.innerHTML = "";
+
+        availableFiles.forEach((file, index) => {
+          const fileItem = document.createElement("div");
+          fileItem.className = "file-item";
+          fileItem.onclick = () => toggleFileSelection(index);
+
+          fileItem.innerHTML = `
+            <input type="checkbox" id="file-${index}" ${
+            selectedFiles.includes(index) ? "checked" : ""
+          } 
+                   onchange="toggleFileSelection(${index})" onclick="event.stopPropagation()">
+            <div class="file-info">
+              <div class="file-name">${file.title}</div>
+              <div class="file-details">${file.filename} • ${
+            file.questionCount
+          } Fragen • Format: ${file.format}</div>
+            </div>
+          `;
+
+          fileList.appendChild(fileItem);
+        });
+
+        updateSelectionSummary();
+      }
+
+      // Function to toggle file selection
+      function toggleFileSelection(index) {
+        const checkbox = document.getElementById(`file-${index}`);
+
+        if (selectedFiles.includes(index)) {
+          selectedFiles = selectedFiles.filter((i) => i !== index);
+          checkbox.checked = false;
+        } else {
+          selectedFiles.push(index);
+          checkbox.checked = true;
+        }
+
+        updateSelectionSummary();
+      }
+
+      // Function to select all files
+      function selectAllFiles() {
+        selectedFiles = availableFiles.map((_, index) => index);
+        availableFiles.forEach((_, index) => {
+          document.getElementById(`file-${index}`).checked = true;
+        });
+        updateSelectionSummary();
+      }
+
+      // Function to deselect all files
+      function deselectAllFiles() {
+        selectedFiles = [];
+        availableFiles.forEach((_, index) => {
+          document.getElementById(`file-${index}`).checked = false;
+        });
+        updateSelectionSummary();
+      }
+
+      // Function to update selection summary
+      function updateSelectionSummary() {
+        const totalQuestions = selectedFiles.reduce((sum, index) => {
+          return sum + availableFiles[index].questionCount;
+        }, 0);
+
+        const summary = document.getElementById("selection-summary");
+        const startBtn = document.getElementById("start-quiz-btn");
+
+        summary.innerHTML = `<p>${selectedFiles.length} Dateien ausgewählt (${totalQuestions} Fragen)</p>`;
+
+        if (selectedFiles.length > 0) {
+          startBtn.disabled = false;
+          startBtn.textContent = `Quiz starten (${totalQuestions} Fragen)`;
+        } else {
+          startBtn.disabled = true;
+          startBtn.textContent = "Quiz starten";
+        }
+      }
+
+      // Function to start quiz with selected files
+      function startSelectedQuiz() {
+        if (selectedFiles.length === 0) {
+          alert("Bitte wählen Sie mindestens eine Datei aus.");
+          return;
+        }
+
+        console.log("🚀 Starting quiz with selected files:", selectedFiles);
+
+        // Load questions from selected files
+        questions = [];
+        selectedFiles.forEach((index) => {
+          const file = availableFiles[index];
+          let fileQuestions = [];
+
+          if (file.format === "array") {
+            fileQuestions = file.data.filter(
+              (q) =>
+                q.question &&
+                Array.isArray(q.answers) &&
+                q.answers.length > 0 &&
+                typeof q.correct === "number" &&
+                q.correct >= 0 &&
+                q.correct < q.answers.length
+            );
+          } else if (file.format === "object") {
+            fileQuestions = file.data.questions.filter(
+              (q) =>
+                q.question &&
+                Array.isArray(q.answers) &&
+                q.answers.length > 0 &&
+                typeof q.correct === "number" &&
+                q.correct >= 0 &&
+                q.correct < q.answers.length
+            );
+          }
+
+          questions = questions.concat(fileQuestions);
+        });
+
+        // Shuffle questions
+        questions = shuffleArray(questions);
+        console.log("📊 Total questions loaded:", questions.length);
+
+        // Hide file selection and start quiz
+        document.getElementById("file-selection").classList.add("hidden");
+        document.getElementById("quiz-content").classList.remove("hidden");
+
+        // Reset quiz state
+        currentQuestion = 0;
+        score = 0;
+        answered = false;
+
+        showQuestion();
       }
 
       // Utility function to shuffle array
@@ -784,73 +898,44 @@
       }
 
       function initQuiz() {
+        console.log("🚀 Initializing quiz...");
+
+        // Reset state
         currentQuestion = 0;
         score = 0;
         answered = false;
+        selectedFiles = [];
 
-        // Show loading state
-        const quizContent = document.getElementById("quiz-content");
-        const results = document.getElementById("results");
+        // Show file selection interface
+        document.getElementById("file-selection").classList.remove("hidden");
+        document.getElementById("quiz-content").classList.add("hidden");
+        document.getElementById("results").classList.add("hidden");
 
-        quizContent.classList.remove("hidden");
-        results.classList.add("hidden");
+        document.getElementById("loading-message").textContent =
+          "Lade verfügbare JSON-Dateien...";
+        document.getElementById("loading-message").classList.remove("hidden");
+        document.getElementById("file-list-container").classList.add("hidden");
 
-        // Show loading message
-        document.getElementById("question-number").textContent =
-          "Lade Fragen...";
-        document.getElementById("question-text").textContent =
-          "Bitte warten Sie, während die Fragen aus den JSON-Dateien geladen werden.";
-        document.getElementById("answers").innerHTML = "";
-        document.getElementById("feedback").classList.add("hidden");
-        document.getElementById("next-btn").disabled = true;
-
-        // Try to load questions from known files first (more reliable), then try directory
-        console.log("🚀 Starting quiz initialization...");
-
-        // Try the fallback method first since directory listing usually doesn't work
-        loadQuestionsFromKnownFiles()
+        // Discover available files
+        discoverAvailableFiles()
           .then(() => {
             console.log(
-              "📊 After loadQuestionsFromKnownFiles, questions count:",
-              questions.length
+              "📊 Discovery completed, found files:",
+              availableFiles.length
             );
-            if (questions.length === 0) {
-              console.log(
-                "🔄 No questions from known files, trying directory scan..."
-              );
-              return loadQuestionsFromDirectory();
-            }
-          })
-          .then(() => {
-            console.log("📊 Final questions count:", questions.length);
-            if (questions.length > 0) {
-              console.log("✅ Showing question...");
-              showQuestion();
+            if (availableFiles.length > 0) {
+              // Auto-select all files by default
+              selectedFiles = availableFiles.map((_, index) => index);
+              showFileSelection();
             } else {
-              // Show error state
-              console.log("❌ No questions found, showing error message");
-              document.getElementById("question-text").textContent =
-                "Fehler: Keine Fragen gefunden. Bitte stellen Sie sicher, dass JSON-Dateien mit Fragen im Verzeichnis vorhanden sind.";
+              document.getElementById("loading-message").textContent =
+                "Keine gültigen JSON-Dateien gefunden. Bitte überprüfen Sie Ihre Dateien.";
             }
           })
           .catch((error) => {
-            console.error("❌ Fehler beim Initialisieren des Quiz:", error);
-            // Create a helpful error message
-            questions = [
-              {
-                question: "Keine JSON-Dateien mit Fragen gefunden",
-                answers: [
-                  "Erstellen Sie eine 'sample-questions.json' Datei mit Ihren Fragen.",
-                  "Stellen Sie sicher, dass die JSON-Dateien im gleichen Verzeichnis wie diese HTML-Datei liegen.",
-                  "Überprüfen Sie das Format der JSON-Dateien (siehe README.md).",
-                  "Alle oben genannten Optionen.",
-                ],
-                correct: 3,
-                explanation:
-                  'Um das Quiz zu verwenden, erstellen Sie JSON-Dateien mit Fragen im Format: [{"question": "...", "answers": [...], "correct": 0, "explanation": "..."}]',
-              },
-            ];
-            showQuestion();
+            console.error("❌ Error during file discovery:", error);
+            document.getElementById("loading-message").textContent =
+              "Fehler beim Laden der Dateien. Bitte versuchen Sie es erneut.";
           });
       }
 
@@ -958,6 +1043,7 @@
       }
 
       function restartQuiz() {
+        // Go back to file selection instead of directly restarting
         initQuiz();
       }
 
