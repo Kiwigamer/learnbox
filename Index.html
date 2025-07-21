@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Algorithmus Quiz</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .quiz-container {
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        max-width: 800px;
+        width: 100%;
+        padding: 40px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .quiz-container::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 6px;
+        background: linear-gradient(90deg, #667eea, #764ba2);
+      }
+
+      .quiz-header {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .quiz-title {
+        color: #333;
+        font-size: 2.5em;
+        font-weight: 700;
+        margin-bottom: 10px;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .progress-bar {
+        width: 100%;
+        height: 8px;
+        background: #e0e0e0;
+        border-radius: 4px;
+        margin-bottom: 30px;
+        overflow: hidden;
+      }
+
+      .progress {
+        height: 100%;
+        background: linear-gradient(90deg, #667eea, #764ba2);
+        border-radius: 4px;
+        transition: width 0.3s ease;
+      }
+
+      .question-container {
+        margin-bottom: 30px;
+      }
+
+      .question-number {
+        color: #667eea;
+        font-weight: 600;
+        margin-bottom: 15px;
+        font-size: 1.1em;
+      }
+
+      .question {
+        font-size: 1.3em;
+        color: #333;
+        line-height: 1.6;
+        margin-bottom: 25px;
+        font-weight: 500;
+      }
+
+      .answers {
+        display: grid;
+        gap: 15px;
+      }
+
+      .answer {
+        background: #f8f9fa;
+        border: 2px solid #e9ecef;
+        border-radius: 12px;
+        padding: 20px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+        display: flex;
+        align-items: center;
+      }
+
+      .answer:hover {
+        background: #e3f2fd;
+        border-color: #667eea;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+      }
+
+      .answer-letter {
+        background: #667eea;
+        color: white;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        margin-right: 15px;
+        flex-shrink: 0;
+      }
+
+      .answer-text {
+        flex: 1;
+        font-size: 1.1em;
+        color: #333;
+      }
+
+      .answer.correct {
+        background: #d4edda;
+        border-color: #28a745;
+        color: #155724;
+      }
+
+      .answer.correct .answer-letter {
+        background: #28a745;
+      }
+
+      .answer.wrong {
+        background: #f8d7da;
+        border-color: #dc3545;
+        color: #721c24;
+      }
+
+      .answer.wrong .answer-letter {
+        background: #dc3545;
+      }
+
+      .feedback {
+        margin-top: 20px;
+        padding: 20px;
+        border-radius: 12px;
+        font-size: 1.1em;
+        line-height: 1.5;
+      }
+
+      .feedback.correct {
+        background: #d4edda;
+        border: 1px solid #c3e6cb;
+        color: #155724;
+      }
+
+      .feedback.wrong {
+        background: #f8d7da;
+        border: 1px solid #f5c6cb;
+        color: #721c24;
+      }
+
+      .controls {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 30px;
+      }
+
+      .btn {
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        border-radius: 50px;
+        font-size: 1.1em;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+      }
+
+      .btn:disabled {
+        background: #6c757d;
+        cursor: not-allowed;
+        transform: none;
+        box-shadow: none;
+      }
+
+      .score {
+        font-size: 1.2em;
+        font-weight: 600;
+        color: #667eea;
+      }
+
+      .results {
+        text-align: center;
+      }
+
+      .final-score {
+        font-size: 3em;
+        font-weight: 700;
+        margin: 20px 0;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .results-message {
+        font-size: 1.3em;
+        color: #555;
+        margin-bottom: 30px;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      .file-selection {
+        text-align: center;
+        padding: 20px;
+      }
+
+      .file-selection h2 {
+        color: #333;
+        font-size: 1.8em;
+        margin-bottom: 20px;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .file-list {
+        max-width: 600px;
+        margin: 0 auto 30px;
+        text-align: left;
+      }
+
+      .file-item {
+        background: #f8f9fa;
+        border: 2px solid #e9ecef;
+        border-radius: 12px;
+        padding: 15px 20px;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .file-item:hover {
+        background: #e3f2fd;
+        border-color: #667eea;
+        transform: translateY(-1px);
+        box-shadow: 0 3px 10px rgba(102, 126, 234, 0.2);
+      }
+
+      .file-item input[type="checkbox"] {
+        margin-right: 15px;
+        width: 18px;
+        height: 18px;
+        cursor: pointer;
+      }
+
+      .file-info {
+        flex: 1;
+      }
+
+      .file-name {
+        font-weight: 600;
+        color: #333;
+        font-size: 1.1em;
+        margin-bottom: 5px;
+      }
+
+      .file-details {
+        color: #666;
+        font-size: 0.9em;
+      }
+
+      .selection-controls {
+        margin-bottom: 20px;
+      }
+
+      .selection-controls button {
+        background: #6c757d;
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-size: 0.9em;
+        cursor: pointer;
+        margin: 0 5px;
+        transition: all 0.3s ease;
+      }
+
+      .selection-controls button:hover {
+        background: #5a6268;
+        transform: translateY(-1px);
+      }
+
+      .start-quiz-btn {
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: white;
+        border: none;
+        padding: 15px 40px;
+        border-radius: 50px;
+        font-size: 1.2em;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        margin-top: 10px;
+      }
+
+      .start-quiz-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+      }
+
+      .start-quiz-btn:disabled {
+        background: #6c757d;
+        cursor: not-allowed;
+        transform: none;
+        box-shadow: none;
+      }
+
+      .loading-message {
+        color: #667eea;
+        font-size: 1.1em;
+        margin-bottom: 20px;
+      }
+
+      @media (max-width: 600px) {
+        .quiz-container {
+          padding: 20px;
+          margin: 10px;
+        }
+
+        .quiz-title {
+          font-size: 2em;
+        }
+
+        .question {
+          font-size: 1.1em;
+        }
+
+        .answer {
+          padding: 15px;
+        }
+
+        .controls {
+          flex-direction: column;
+          gap: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="quiz-container">
+      <div class="quiz-header">
+        <h1 class="quiz-title">Algorithmus Quiz</h1>
+        <div class="progress-bar">
+          <div class="progress" id="progress"></div>
+        </div>
+      </div>
+
+      <div id="file-selection" class="file-selection hidden">
+        <h2>Wählen Sie Ihre Quiz-Dateien</h2>
+        <div class="loading-message" id="loading-message">
+          Lade verfügbare JSON-Dateien...
+        </div>
+        
+        <div id="file-list-container" class="hidden">
+          <div class="selection-controls">
+            <button onclick="selectAllFiles()">Alle auswählen</button>
+            <button onclick="deselectAllFiles()">Alle abwählen</button>
+          </div>
+          
+          <div class="file-list" id="file-list">
+            <!-- File items will be populated here -->
+          </div>
+          
+          <div class="selection-summary" id="selection-summary">
+            <p>0 Dateien ausgewählt (0 Fragen)</p>
+          </div>
+          
+          <button class="start-quiz-btn" id="start-quiz-btn" onclick="startSelectedQuiz()" disabled>
+            Quiz starten
+          </button>
+        </div>
+      </div>
+
+      <div id="quiz-content" class="hidden">
+        <div class="question-container">
+          <div class="question-number" id="question-number"></div>
+          <div class="question" id="question-text"></div>
+          <div class="answers" id="answers"></div>
+          <div class="feedback hidden" id="feedback"></div>
+        </div>
+
+        <div class="controls">
+          <div class="score" id="score">Punkte: 0/0</div>
+          <button class="btn" id="next-btn" onclick="nextQuestion()" disabled>
+            Weiter
+          </button>
+        </div>
+      </div>
+
+      <div id="results" class="results hidden">
+        <h2>Quiz beendet!</h2>
+        <div class="final-score" id="final-score"></div>
+        <div class="results-message" id="results-message"></div>
+        <button class="btn" onclick="restartQuiz()">Noch einmal</button>
+      </div>
+    </div>
+
+    <script>
+      let questions = [];
+      let currentQuestion = 0;
+      let score = 0;
+      let answered = false;
+      let isLoading = true;
+
+      // Function to load JSON files from the current directory
+      async function loadQuestionsFromDirectory() {
+        try {
+          console.log("🔍 Versuche Verzeichnis zu scannen...");
+
+          // First, try to get the list of files in the directory
+          const response = await fetch(".");
+          console.log(
+            "📡 Fetch Response Status:",
+            response.status,
+            response.statusText
+          );
+
+          if (!response.ok) {
+            throw new Error(
+              `HTTP Error: ${response.status} ${response.statusText}`
+            );
+          }
+
+          const text = await response.text();
+          console.log("📄 Response Text Length:", text.length);
+          console.log("📄 Response Text Preview:", text.substring(0, 500));
+
+          // Parse the directory listing to find JSON files
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(text, "text/html");
+          console.log("🔍 Parsed Document:", doc);
+
+          const links = doc.querySelectorAll("a");
+          console.log("🔗 Found links:", links.length);
+
+          const allHrefs = [];
+          const jsonFiles = [];
+
+          links.forEach((link, index) => {
+            const href = link.getAttribute("href");
+            const textContent = link.textContent;
+
+            console.log(
+              `🔗 Link ${index}: href="${href}", text="${textContent}"`
+            );
+            allHrefs.push(href);
+
+            if (href && href.endsWith(".json") && !href.includes("/")) {
+              console.log(`✅ JSON file found: ${href}`);
+              jsonFiles.push(href);
+            } else if (href && href.endsWith(".json")) {
+              console.log(`⚠️ JSON file in subdirectory ignored: ${href}`);
+            }
+          });
+
+          console.log("📂 All hrefs found:", allHrefs);
+          console.log("📋 JSON files found:", jsonFiles);
+
+          if (jsonFiles.length === 0) {
+            console.log("❌ No JSON files found in directory listing");
+            throw new Error(
+              "Keine JSON-Dateien im aktuellen Verzeichnis gefunden."
+            );
+          }
+
+          // Load all JSON files
+          console.log("🚀 Starting to load JSON files:", jsonFiles);
+
+          const loadPromises = jsonFiles.map(async (filename) => {
+            try {
+              console.log(`📥 Loading file: ${filename}`);
+              const response = await fetch(filename);
+              console.log(
+                `📡 Response for ${filename}:`,
+                response.status,
+                response.statusText
+              );
+
+              if (!response.ok) {
+                throw new Error(
+                  `Fehler beim Laden von ${filename}: ${response.status}`
+                );
+              }
+
+              const data = await response.json();
+              console.log(`📊 Data loaded from ${filename}:`, data);
+              console.log(
+                `📊 Data type for ${filename}:`,
+                typeof data,
+                Array.isArray(data)
+              );
+
+              // Validate question format
+              let validQuestions = [];
+
+              if (Array.isArray(data)) {
+                console.log(
+                  `📋 ${filename} contains array with ${data.length} items`
+                );
+                validQuestions = data.filter((q, index) => {
+                  const isValid =
+                    q.question &&
+                    Array.isArray(q.answers) &&
+                    q.answers.length > 0 &&
+                    typeof q.correct === "number" &&
+                    q.correct >= 0 &&
+                    q.correct < q.answers.length;
+
+                  if (!isValid) {
+                    console.log(
+                      `❌ Invalid question at index ${index} in ${filename}:`,
+                      q
+                    );
+                  } else {
+                    console.log(
+                      `✅ Valid question at index ${index} in ${filename}`
+                    );
+                  }
+
+                  return isValid;
+                });
+              } else if (data.questions && Array.isArray(data.questions)) {
+                console.log(
+                  `📋 ${filename} contains object with questions array (${data.questions.length} items)`
+                );
+                validQuestions = data.questions.filter((q, index) => {
+                  const isValid =
+                    q.question &&
+                    Array.isArray(q.answers) &&
+                    q.answers.length > 0 &&
+                    typeof q.correct === "number" &&
+                    q.correct >= 0 &&
+                    q.correct < q.answers.length;
+
+                  if (!isValid) {
+                    console.log(
+                      `❌ Invalid question at index ${index} in ${filename}:`,
+                      q
+                    );
+                  } else {
+                    console.log(
+                      `✅ Valid question at index ${index} in ${filename}`
+                    );
+                  }
+
+                  return isValid;
+                });
+              } else {
+                console.log(`❌ ${filename} has unexpected format:`, data);
+              }
+
+              console.log(
+                `📊 Valid questions from ${filename}:`,
+                validQuestions.length
+              );
+              return validQuestions;
+            } catch (error) {
+              console.error(`❌ Fehler beim Laden von ${filename}:`, error);
+              return [];
+            }
+          });
+
+          const questionArrays = await Promise.all(loadPromises);
+          console.log("📊 All question arrays:", questionArrays);
+
+          questions = questionArrays.flat();
+          console.log("📊 Total questions after flattening:", questions.length);
+
+          if (questions.length === 0) {
+            console.log("❌ No valid questions found in any JSON files");
+            throw new Error(
+              "Keine gültigen Fragen in den JSON-Dateien gefunden."
+            );
+          }
+
+          // Shuffle questions for variety
+          questions = shuffleArray(questions);
+          console.log("🔀 Questions shuffled, final count:", questions.length);
+        } catch (error) {
+          console.error("❌ Fehler beim Laden der Fragen:", error);
+          // Fallback to a simple error message
+          questions = [
+            {
+              question: `Fehler beim Laden der Fragen: ${error.message}`,
+              answers: [
+                "Stellen Sie sicher, dass JSON-Dateien im aktuellen Verzeichnis vorhanden sind.",
+                "Überprüfen Sie das Format der JSON-Dateien.",
+                "Versuchen Sie, die Seite neu zu laden.",
+                "Kontaktieren Sie den Administrator.",
+              ],
+              correct: 0,
+              explanation:
+                "Bitte überprüfen Sie die JSON-Dateien im Verzeichnis und deren Format.",
+            },
+          ];
+        }
+
+        isLoading = false;
+        console.log("✅ loadQuestionsFromDirectory completed");
+      }
+
+      // Alternative method for environments that don't support directory listing
+      async function loadQuestionsFromKnownFiles() {
+        console.log("🔄 Fallback: Trying to load from known files...");
+
+        const possibleFiles = [
+          "sample-questions.json",
+          "datenstrukturen-quiz.json",
+          "V11_V23.json",
+          "questions.json",
+          "quiz.json",
+          "algorithmus-fragen.json",
+        ];
+
+        console.log("📋 Checking these files:", possibleFiles);
+
+        const loadPromises = possibleFiles.map(async (filename) => {
+          try {
+            console.log(`🔍 Trying to load: ${filename}`);
+            const response = await fetch(filename);
+            console.log(
+              `📡 Response for ${filename}:`,
+              response.status,
+              response.statusText
+            );
+
+            if (!response.ok) {
+              console.log(`❌ File not found or error: ${filename}`);
+              return [];
+            }
+
+            const data = await response.json();
+            console.log(`✅ Successfully loaded ${filename}:`, data);
+
+            let validQuestions = [];
+
+            if (Array.isArray(data)) {
+              console.log(`📋 ${filename} is array with ${data.length} items`);
+              validQuestions = data.filter((q, index) => {
+                const isValid =
+                  q.question &&
+                  Array.isArray(q.answers) &&
+                  q.answers.length > 0 &&
+                  typeof q.correct === "number" &&
+                  q.correct >= 0 &&
+                  q.correct < q.answers.length;
+
+                if (!isValid) {
+                  console.log(
+                    `❌ Invalid question at index ${index} in ${filename}:`,
+                    q
+                  );
+                }
+
+                return isValid;
+              });
+            } else if (data.questions && Array.isArray(data.questions)) {
+              console.log(
+                `📋 ${filename} has questions property with ${data.questions.length} items`
+              );
+              validQuestions = data.questions.filter((q, index) => {
+                const isValid =
+                  q.question &&
+                  Array.isArray(q.answers) &&
+                  q.answers.length > 0 &&
+                  typeof q.correct === "number" &&
+                  q.correct >= 0 &&
+                  q.correct < q.answers.length;
+
+                if (!isValid) {
+                  console.log(
+                    `❌ Invalid question at index ${index} in ${filename}:`,
+                    q
+                  );
+                }
+
+                return isValid;
+              });
+            } else {
+              console.log(`❌ Unexpected format in ${filename}:`, data);
+            }
+
+            console.log(
+              `📊 Valid questions from ${filename}:`,
+              validQuestions.length
+            );
+            return validQuestions;
+          } catch (error) {
+            console.log(`❌ Error loading ${filename}:`, error);
+            return [];
+          }
+        });
+
+        const questionArrays = await Promise.all(loadPromises);
+        console.log("📊 All arrays from known files:", questionArrays);
+
+        const loadedQuestions = questionArrays.flat();
+        console.log(
+          "📊 Total questions from known files:",
+          loadedQuestions.length
+        );
+
+        if (loadedQuestions.length > 0) {
+          questions = shuffleArray(loadedQuestions);
+          console.log(
+            "✅ Successfully loaded questions from known files:",
+            questions.length
+          );
+        } else {
+          console.log("❌ No questions found in any known files");
+          // Create a default message if no files are found
+          questions = [
+            {
+              question: "Keine JSON-Dateien mit Fragen gefunden",
+              answers: [
+                "Erstellen Sie eine 'questions.json' Datei mit Ihren Fragen.",
+                "Stellen Sie sicher, dass die JSON-Dateien im gleichen Verzeichnis wie diese HTML-Datei liegen.",
+                "Überprüfen Sie das Format der JSON-Dateien.",
+                "Alle oben genannten Optionen.",
+              ],
+              correct: 3,
+              explanation:
+                'Um das Quiz zu verwenden, erstellen Sie JSON-Dateien mit Fragen im Format: {"question": "...", "answers": [...], "correct": 0, "explanation": "..."}',
+            },
+          ];
+        }
+
+        isLoading = false;
+        console.log("✅ loadQuestionsFromKnownFiles completed");
+      }
+
+      // Utility function to shuffle array
+      function shuffleArray(array) {
+        const shuffled = [...array];
+        for (let i = shuffled.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+        }
+        return shuffled;
+      }
+
+      function initQuiz() {
+        currentQuestion = 0;
+        score = 0;
+        answered = false;
+
+        // Show loading state
+        const quizContent = document.getElementById("quiz-content");
+        const results = document.getElementById("results");
+
+        quizContent.classList.remove("hidden");
+        results.classList.add("hidden");
+
+        // Show loading message
+        document.getElementById("question-number").textContent =
+          "Lade Fragen...";
+        document.getElementById("question-text").textContent =
+          "Bitte warten Sie, während die Fragen aus den JSON-Dateien geladen werden.";
+        document.getElementById("answers").innerHTML = "";
+        document.getElementById("feedback").classList.add("hidden");
+        document.getElementById("next-btn").disabled = true;
+
+        // Try to load questions from known files first (more reliable), then try directory
+        console.log("🚀 Starting quiz initialization...");
+
+        // Try the fallback method first since directory listing usually doesn't work
+        loadQuestionsFromKnownFiles()
+          .then(() => {
+            console.log(
+              "📊 After loadQuestionsFromKnownFiles, questions count:",
+              questions.length
+            );
+            if (questions.length === 0) {
+              console.log(
+                "🔄 No questions from known files, trying directory scan..."
+              );
+              return loadQuestionsFromDirectory();
+            }
+          })
+          .then(() => {
+            console.log("📊 Final questions count:", questions.length);
+            if (questions.length > 0) {
+              console.log("✅ Showing question...");
+              showQuestion();
+            } else {
+              // Show error state
+              console.log("❌ No questions found, showing error message");
+              document.getElementById("question-text").textContent =
+                "Fehler: Keine Fragen gefunden. Bitte stellen Sie sicher, dass JSON-Dateien mit Fragen im Verzeichnis vorhanden sind.";
+            }
+          })
+          .catch((error) => {
+            console.error("❌ Fehler beim Initialisieren des Quiz:", error);
+            // Create a helpful error message
+            questions = [
+              {
+                question: "Keine JSON-Dateien mit Fragen gefunden",
+                answers: [
+                  "Erstellen Sie eine 'sample-questions.json' Datei mit Ihren Fragen.",
+                  "Stellen Sie sicher, dass die JSON-Dateien im gleichen Verzeichnis wie diese HTML-Datei liegen.",
+                  "Überprüfen Sie das Format der JSON-Dateien (siehe README.md).",
+                  "Alle oben genannten Optionen.",
+                ],
+                correct: 3,
+                explanation:
+                  'Um das Quiz zu verwenden, erstellen Sie JSON-Dateien mit Fragen im Format: [{"question": "...", "answers": [...], "correct": 0, "explanation": "..."}]',
+              },
+            ];
+            showQuestion();
+          });
+      }
+
+      function showQuestion() {
+        const question = questions[currentQuestion];
+        document.getElementById("question-number").textContent = `Frage ${
+          currentQuestion + 1
+        } von ${questions.length}`;
+        document.getElementById("question-text").textContent =
+          question.question;
+
+        const answersContainer = document.getElementById("answers");
+        answersContainer.innerHTML = "";
+
+        question.answers.forEach((answer, index) => {
+          const answerDiv = document.createElement("div");
+          answerDiv.className = "answer";
+          answerDiv.onclick = () => selectAnswer(index);
+
+          answerDiv.innerHTML = `
+                    <div class="answer-letter">${String.fromCharCode(
+                      65 + index
+                    )}</div>
+                    <div class="answer-text">${answer}</div>
+                `;
+
+          answersContainer.appendChild(answerDiv);
+        });
+
+        document.getElementById("feedback").classList.add("hidden");
+        document.getElementById("next-btn").disabled = true;
+        answered = false;
+
+        updateProgress();
+        updateScore();
+      }
+
+      function selectAnswer(selectedIndex) {
+        if (answered) return;
+
+        answered = true;
+        const question = questions[currentQuestion];
+        const answers = document.querySelectorAll(".answer");
+
+        answers.forEach((answer, index) => {
+          answer.onclick = null;
+          if (index === question.correct) {
+            answer.classList.add("correct");
+          } else if (index === selectedIndex) {
+            answer.classList.add("wrong");
+          }
+        });
+
+        const feedback = document.getElementById("feedback");
+        if (selectedIndex === question.correct) {
+          score++;
+          feedback.className = "feedback correct";
+          feedback.innerHTML = `<strong>Richtig!</strong> ${question.explanation}`;
+        } else {
+          feedback.className = "feedback wrong";
+          feedback.innerHTML = `<strong>Falsch!</strong> Die richtige Antwort ist ${String.fromCharCode(
+            65 + question.correct
+          )}. ${question.explanation}`;
+        }
+
+        feedback.classList.remove("hidden");
+        document.getElementById("next-btn").disabled = false;
+        updateScore();
+      }
+
+      function nextQuestion() {
+        currentQuestion++;
+        if (currentQuestion < questions.length) {
+          showQuestion();
+        } else {
+          showResults();
+        }
+      }
+
+      function showResults() {
+        document.getElementById("quiz-content").classList.add("hidden");
+        document.getElementById("results").classList.remove("hidden");
+
+        const percentage = Math.round((score / questions.length) * 100);
+        document.getElementById(
+          "final-score"
+        ).textContent = `${score}/${questions.length} (${percentage}%)`;
+
+        let message = "";
+        if (percentage >= 90) {
+          message = "Ausgezeichnet! Sie beherrschen die Algorithmen perfekt!";
+        } else if (percentage >= 80) {
+          message =
+            "Sehr gut! Sie haben ein solides Verständnis der Algorithmen.";
+        } else if (percentage >= 70) {
+          message = "Gut gemacht! Es gibt noch einige Bereiche zum Vertiefen.";
+        } else if (percentage >= 60) {
+          message = "Nicht schlecht! Wiederholen Sie die Konzepte noch einmal.";
+        } else {
+          message =
+            "Keine Sorge! Studieren Sie die Materialien und versuchen Sie es erneut.";
+        }
+
+        document.getElementById("results-message").textContent = message;
+      }
+
+      function restartQuiz() {
+        initQuiz();
+      }
+
+      function updateProgress() {
+        const progress = ((currentQuestion + 1) / questions.length) * 100;
+        document.getElementById("progress").style.width = `${progress}%`;
+      }
+
+      function updateScore() {
+        document.getElementById("score").textContent = `Punkte: ${score}/${
+          currentQuestion + (answered ? 1 : 0)
+        }`;
+      }
+
+      // Initialize quiz when page loads
+      window.onload = function () {
+        initQuiz();
+      };
+    </script>
+  </body>
+</html>
