@@ -1,0 +1,996 @@
+{
+"questions" = [
+    {		
+        "question": "Was ist die grundlegende Definition eines Algorithmus laut den Kursmaterialien?",
+        "answers": [
+            "Eine Reihe von Anweisungen zur Hardware-Steuerung.",
+            "Eine wohldefinierte Folge von Berechnungen, die Eingaben entgegennimmt und Ausgaben in endlicher Zeit zurückgibt.",
+            "Ein Programm, das stets das schnellste Ergebnis liefert.",
+            "Eine Methode zur Organisation von Daten."
+        ],
+        "correct": 1,
+        "explanation": "Ein Algorithmus wird definiert als eine **wohldefinierte Folge von Berechnungen**, die einen oder mehrere Werte als Eingabe entgegennimmt und einen oder mehrere Werte als Ausgabe **in endlicher Zeit zurückgibt** [1]."
+    },
+    {
+        "question": "Was ist die Worst-Case-Laufzeit von Insertion Sort in der Theta-Notation?",
+        "answers": ["Θ(n)", "Θ(n log n)", "Θ(n²)", "Θ(log n)"],
+        "correct": 2,
+        "explanation": "Die Worst-Case-Laufzeit von Insertion Sort ist eine **quadratische Funktion in n, also Θ(n²)**. Dies tritt auf, wenn die Eingabeliste umgekehrt sortiert ist, da jedes Element mit allen vorhergehenden Elementen getauscht werden muss [2-5]."
+    },
+    {
+        "question": "Welche Entwurfsstrategie implementiert Merge Sort?",
+        "answers": [
+            "Greedy-Optimierung",
+            "Dynamische Programmierung",
+            "Teile-und-Herrsche (Divide-and-Conquer)",
+            "Brute Force"
+        ],
+        "correct": 2,
+        "explanation": "Merge Sort implementiert die **Divide-and-Conquer-Strategie**. Diese Strategie definiert die Problemlösung rekursiv, indem sie das Problem in kleinere Instanzen desselben Problems 'teilt' (Divide), diese rekursiv 'erledigt' (Conquer) und die Lösungen der Teilprobleme zur Lösung des Gesamtproblems 'kombiniert' (Combine) [6]."
+    },
+    {
+        "question": "Welche Eigenschaft trifft auf einen Max-Heap zu?",
+        "answers": [
+            "Jeder Knoten ist kleiner oder gleich seinen beiden Nachfolgern.",
+            "Jeder Knoten ist größer oder gleich seinen beiden Nachfolgern.",
+            "Das kleinste Element liegt immer an der Wurzel.",
+            "Die Elemente sind vollständig sortiert."
+        ],
+        "correct": 1,
+        "explanation": "Ein Heap ist ein binärer Baum. Ein **Max-Heap** erfüllt die Max-Heap-Eigenschaft, die besagt, dass **jeder Knoten größer oder gleich als seine beiden Nachfolger ist** [7]. Das größte Element des Heaps liegt somit immer an der Wurzel [7]."
+    },
+    {
+        "question": "Warum kann der Dijkstra-Algorithmus nicht zuverlässig auf Graphen mit negativen Kantengewichten angewendet werden, um kürzeste Pfade zu finden?",
+        "answers": [
+            "Er würde zu einer zu hohen Laufzeit führen.",
+            "Er würde in einer Endlosschleife stecken bleiben.",
+            "Er findet nicht garantiert den kürzesten Pfad, da sein Greedy-Prinzip fehlschlagen könnte.",
+            "Er ist nur für ungerichtete Graphen konzipiert."
+        ],
+        "correct": 2,
+        "explanation": "Dijkstra's Algorithmus findet kürzeste Wege nur dann korrekt, wenn **alle Kantengewichte positiv sind** [8]. Sein Greedy-Prinzip, den aktuell günstigsten Knoten zu wählen und als endgültig zu markieren, würde bei negativen Kantengewichten fehlschlagen, da ein zuvor als 'final' betrachteter Pfad durch das Entdecken eines negativen Kantengewichts später noch verkürzt werden könnte [8]."
+    },
+    {
+        "question": "Was ist ein grundlegendes Merkmal der Dynamischen Programmierung?",
+        "answers": [
+            "Sie löst Probleme, indem sie ad-hoc die lokal beste Entscheidung trifft.",
+            "Sie speichert Teilergebnisse (Memoisierung), um Mehrfachberechnungen zu vermeiden.",
+            "Sie teilt Probleme rekursiv in unabhängige Teilprobleme auf.",
+            "Sie findet Lösungen durch systematisches Ausprobieren aller Möglichkeiten."
+        ],
+        "correct": 1,
+        "explanation": "Dynamische Programmierung löst Optimierungsprobleme mit sich überlappenden Teillösungen. Ein zentrales Merkmal ist das **Zwischenspeichern von Teillösungen (Memoisierung)**, um Mehrfachberechnungen zu vermeiden [9, 10]."
+    },
+    {
+        "question": "Welche Sortiereigenschaft erfüllt eine standardmäßige Implementierung von Mergesort, die nicht von einer standardmäßigen Implementierung von Quicksort erfüllt wird?",
+        "answers": [
+            "In-place Sortierung",
+            "Geringer Speicherverbrauch",
+            "Stabilität",
+            "Bessere Worst-Case-Laufzeit im Vergleich zu Heapsort"
+        ],
+        "correct": 2,
+        "explanation": "Merge Sort ist ein **stabiles Sortierverfahren** [11]. Das bedeutet, wenn zwei Elemente den gleichen Wert haben, bleibt ihre ursprüngliche Reihenfolge nach dem Sortieren erhalten. Standardmäßige Implementierungen von Quicksort sind jedoch typischerweise nicht stabil [11]."
+    },
+    {
+        "question": "Wie wird der Balancefaktor in einem AVL-Baum berechnet?",
+        "answers": [
+            "Differenz zwischen der Anzahl der Knoten im linken und rechten Teilbaum.",
+            "Höhe des rechten Teilbaums minus Höhe des linken Teilbaums.",
+            "Anzahl der Rotationen seit der letzten Balancierung.",
+            "Summe der Schlüsselwerte der Kinder minus Schlüsselwert des Knotens."
+        ],
+        "correct": 1,
+        "explanation": "Der Balancefaktor in einem AVL-Baum wird als die **Höhe des rechten Teilbaums minus die Höhe des linken Teilbaums** berechnet [12, 13]. Ein Knoten ist AVL-konform balanciert, wenn sein Balancefaktor 0, +1 oder -1 beträgt [12, 13]."
+    },
+    {
+        "question": "Welchen Zweck erfüllen Landau-Symbole (O, Ω, Θ-Notation)?",
+        "answers": [
+            "Sie geben die absolute Laufzeit eines Algorithmus in Millisekunden an.",
+            "Sie beschreiben die asymptotische Wachstumsordnung der Laufzeit oder des Speicherbedarfs eines Algorithmus.",
+            "Sie dienen dazu, die genaue Anzahl der Operationen eines Algorithmus für eine feste Eingabegröße zu zählen.",
+            "Sie spezifizieren die Hardware-Anforderungen eines Programms."
+        ],
+        "correct": 1,
+        "explanation": "Landau-Symbole werden verwendet, um die **asymptotische Wachstumsordnung** der Laufzeit oder des Speicherbedarfs eines Algorithmus zu beschreiben, insbesondere wie das Programm bei unbeschränkter Eingabegröße skaliert [14, 15]."
+    },
+    {
+        "question": "Was bedeutet es, wenn die Laufzeit eines Algorithmus in O(g(n)) liegt?",
+        "answers": [
+            "Die Laufzeit wächst genau so schnell wie g(n).",
+            "Die Laufzeit wächst mindestens so schnell wie g(n).",
+            "Die Laufzeit wächst maximal so schnell wie g(n) oder langsamer.",
+            "Die Laufzeit ist immer konstant, unabhängig von n."
+        ],
+        "correct": 2,
+        "explanation": "Die **O-Notation (obere Schranke)** bedeutet, dass die Funktion **maximal so schnell wie g(n) wächst oder langsamer** [16, 17]. Es existieren positive Konstanten c und n0, sodass 0 ≤ f(n) ≤ cg(n) für alle n ≥ n0 gilt [16]."
+    },
+    {
+        "question": "Was bedeutet es, wenn die Laufzeit eines Algorithmus in Ω(g(n)) liegt?",
+        "answers": [
+            "Die Laufzeit wächst genau so schnell wie g(n).",
+            "Die Laufzeit wächst mindestens so schnell wie g(n).",
+            "Die Laufzeit wächst maximal so schnell wie g(n) oder langsamer.",
+            "Die Laufzeit ist unendlich."
+        ],
+        "correct": 1,
+        "explanation": "Die **Ω-Notation (untere Schranke)** bedeutet, dass die Funktion **mindestens so schnell wie g(n) wächst** [16, 18]. Es existieren positive Konstanten c und n0, sodass 0 ≤ cg(n) ≤ f(n) für alle n ≥ n0 gilt [16]."
+    },
+    {
+        "question": "Was ist die Best-Case-Laufzeit von Insertion Sort in der Theta-Notation?",
+        "answers": ["Θ(n²)", "Θ(n log n)", "Θ(n)", "Θ(log n)"],
+        "correct": 2,
+        "explanation": "Der Best-Case für Insertion Sort tritt auf, wenn die Eingabe bereits sortiert ist. In diesem Fall bricht die innere Schleife sofort ab, was zu einer **linearen Laufzeit von Θ(n)** führt [2]."
+    },
+    {
+        "question": "Was ist die Worst-Case-Laufzeit von Merge Sort in der Theta-Notation?",
+        "answers": ["Θ(n²)", "Θ(n log n)", "Θ(n)", "Θ(log n)"] ,
+        "correct": 1,
+        "explanation": "Die Worst-Case-Laufzeit von Merge Sort wird durch die Rekurrenzrelation T(n) = 2T(n/2) + Θ(n) beschrieben, welche mit dem Master-Theorem zu **Θ(n log n)** auflösbar ist [5, 19, 20]."
+    },
+    {
+        "question": "Welche Form muss eine Rekurrenzgleichung haben, um das Master-Theorem anwenden zu können?",
+        "answers": [
+            "T(n) = a * T(n - b) + f(n)",
+            "T(n) = a * T(n/b) + f(n)",
+            "T(n) = T(n-1) + T(n-2) + f(n)",
+            "T(n) = a * T(n^b) + f(n)"
+        ],
+        "correct": 1,
+        "explanation": "Das Master-Theorem ist direkt anwendbar für Rekurrenzen der Form **T(n) = a * T(n/b) + f(n)**, wobei a ≥ 1 und b > 1 Konstanten sind und f(n) eine asymptotisch positive Funktion ist [21-23]."
+    },
+    {
+        "question": "Was ist die allgemeine Eigenschaft eines Heaps?",
+        "answers": [
+            "Alle Elemente sind in aufsteigender Reihenfolge sortiert.",
+            "Es ist ein binärer Baum, der vollständig balanciert ist.",
+            "Die Wurzel enthält immer das größte oder kleinste Element, und diese Eigenschaft gilt rekursiv für alle Unterbäume.",
+            "Jeder Knoten hat höchstens zwei Kinder."
+        ],
+        "correct": 2,
+        "explanation": "Ein Heap ist ein binärer Baum, bei dem die **Heap-Eigenschaft** (Max-Heap oder Min-Heap) gilt: Jeder Knoten ist größer/gleich (Max-Heap) oder kleiner/gleich (Min-Heap) als seine beiden Nachfolger. Dies impliziert, dass das Extremum (größtes oder kleinstes Element) an der Wurzel liegt [7, 24, 25]."
+    },
+    {
+        "question": "Was ist die schärfere obere Schranke für die Laufzeit von Build-Max-Heap, um ein unsortiertes Array in einen Max-Heap zu verwandeln?",
+        "answers": ["O(n log n)", "O(log n)", "O(n²)", "O(n)"],
+        "correct": 3,
+        "explanation": "Obwohl eine lose Schranke O(n log n) ist (da jeder Aufruf von max-heapify O(log n) kostet und n Aufrufe gemacht werden), ist die **schärfere Schranke tatsächlich O(n)**, basierend auf einer genaueren Analyse der Kosten pro Ebene des Baumes [26, 27]."
+    },
+    {
+        "question": "Welche Laufzeit hat die Operation `extract-max` auf einer Prioritätswarteschlange, die mittels eines Heaps implementiert ist?",
+        "answers": ["O(1)", "O(log n)", "O(n)", "O(n log n)"],
+        "correct": 1,
+        "explanation": "Die Operation `extract-max` (oder `extract-min` für Min-Heaps) auf einem Heap ähnelt einem einzelnen Iterationsschritt von HeapSort und hat eine Laufzeit von **O(log n)**, da sie im Wesentlichen eine `max-heapify`-Operation ausführt [28]."
+    },
+    {
+        "question": "Geben Sie die Laufzeit von Quicksort für den schlechtesten Fall (Worst Case) in Θ-Notation an.",
+        "answers": ["Θ(n log n)", "Θ(n²)", "Θ(n)", "Θ(1)"],
+        "correct": 1,
+        "explanation": "Der Worst-Case für Quicksort tritt auf, wenn der Pivot immer zu einer der Listenenden führt (z.B. die sortierte oder umgekehrt sortierte Liste als Eingabe). Dies resultiert in einer Rekurrenz von T(n) = T(n-1) + Θ(n), was zu einer Laufzeit von **Θ(n²)** führt [29-32]."
+    },
+    {
+        "question": "Was ist die Average-Case-Laufzeit von Quicksort?",
+        "answers": ["O(n²)", "O(n log n)", "O(n)", "O(log n)"],
+        "correct": 1,
+        "explanation": "Im Durchschnitt (Average Case) hat Quicksort eine Laufzeit von **O(n log n)**, was es in der Praxis sehr effizient macht [33-35]."
+    },
+    {
+        "question": "Welche Annahme muss Counting Sort über den Wertebereich der zu sortierenden Elemente machen?",
+        "answers": [
+            "Alle Werte sind positiv.",
+            "Die Werte müssen Fließkommazahlen sein.",
+            "Die Werte müssen im Intervall zwischen 0 und k liegen, wobei k bekannt ist.",
+            "Alle Werte sind eindeutig."
+        ],
+        "correct": 2,
+        "explanation": "Counting Sort setzt voraus, dass die zu sortierenden Listenwerte in einem **bekannten, endlichen Wertebereich von 0 bis k** liegen [36, 37]."
+    },
+    {
+        "question": "Ist Counting Sort ein stabiles Sortierverfahren?",
+        "answers": [
+            "Ja, immer.",
+            "Nein, niemals.",
+            "Nur im Best-Case.",
+            "Es hängt von der Implementierung ab."
+        ],
+        "correct": 0,
+        "explanation": "**Counting Sort ist ein stabiles Sortierverfahren**, was bedeutet, dass die relative Reihenfolge von Elementen mit gleichem Wert nach dem Sortieren erhalten bleibt. Dies wird durch den Rückwärts-Lauf beim Platzieren der Elemente im Ziel-Array erreicht [36, 38, 39]."
+    },
+    {
+        "question": "Von welchen Parametern hängt die Laufzeit von Radix Sort ab, wenn Zahlen mit Bitlänge b sortiert werden, die zur Basis 2^r dargestellt sind?",
+        "answers": [
+            "Nur von der Anzahl der Elemente n.",
+            "Von der Anzahl der Elemente n und der Bitlänge b.",
+            "Von der Anzahl der Elemente n, der Bitlänge b und der Basis 2^r.",
+            "Nur von der Bitlänge b."
+        ],
+        "correct": 2,
+        "explanation": "Die Laufzeit von Radix Sort ist **Θ((b/r)(n + 2^r))**, wobei n die Anzahl der Elemente, b die Bitlänge der Zahlen und r die Basis der Darstellung ist [40]."
+    },
+    {
+        "question": "Welche Annahme macht Bucket Sort über die Verteilung der zu sortierenden Werte, um im Average Case effizient zu sein?",
+        "answers": [
+            "Die Werte sind aufsteigend sortiert.",
+            "Alle Werte sind ganzzahlig.",
+            "Die Werte liegen im Intervall [0, 1) und sind gleich verteilt.",
+            "Die Werte enthalten keine Duplikate."
+        ],
+        "correct": 2,
+        "explanation": "Bucket Sort geht davon aus, dass die zu sortierenden Werte **im Intervall [0, 1) liegen und gleich verteilt** sind [41-44]. Unter dieser Annahme kann im Average Case eine Laufzeit von O(n) erreicht werden [45]."
+    },
+    {
+        "question": "In welcher asymptotischen Laufzeit kann das Selektionsproblem (Finden des k-ten kleinsten Elements) im Average Case gelöst werden?",
+        "answers": ["O(n log n)", "O(n²)", "O(n)", "O(log n)"],
+        "correct": 2,
+        "explanation": "Das Selektionsproblem kann im Average Case in **O(n)** gelöst werden, beispielsweise durch Algorithmen, die von Quicksort inspiriert sind (z.B. Quickselect), indem rekursiv nur in die relevante Hälfte abgestiegen wird [46-49]."
+    },
+    {
+        "question": "Welche Eigenschaft charakterisiert einen Stack als Datenstruktur?",
+        "answers": ["FIFO (First In - First Out)", "LIFO (Last In - First Out)", "FILO (First In - Last Out)", "LILO (Last In - Last Out)"] ,
+        "correct": 1,
+        "explanation": "Ein Stack ist eine **LIFO-Datenstruktur (Last In - First Out)**, was bedeutet, dass das zuletzt hinzugefügte Element das erste ist, das wieder entfernt wird [50]."
+    },
+    {
+        "question": "Welche Eigenschaft charakterisiert eine Queue als Datenstruktur?",
+        "answers": ["FIFO (First In - First Out)", "LIFO (Last In - First Out)", "FILO (First In - Last Out)", "LILO (Last In - Last Out)"] ,
+        "correct": 0,
+        "explanation": "Eine Queue ist eine **FIFO-Datenstruktur (First In - First Out)**, was bedeutet, dass das zuerst hinzugefügte Element auch das erste ist, das wieder entfernt wird [51]."
+    },
+    {
+        "question": "Welche Worst-Case-Laufzeit hat das Einfügen eines Elements (`INSERT`) in eine doppelt verkettete Liste, wenn die Einfügestelle bereits bekannt ist (z.B. als Referenz auf den Vorgänger)?",
+        "answers": ["O(n)", "O(log n)", "O(1)", "O(n²)"],
+        "correct": 2,
+        "explanation": "Das Einfügen eines Elements in eine verkettete Liste, wenn die Einfügestelle bekannt ist, erfordert nur das Umhängen von Referenzen und hat somit eine Laufzeit von **O(1)** [52]."
+    },
+    {
+        "question": "Welche Methode zur Kollisionsauflösung wird angewendet, wenn in jeder Zelle eines Hash-Arrays eine verkettete Liste angelegt wird?",
+        "answers": ["Lineares Sondieren", "Doppeltes Hashing", "Verkettung (Chaining)", "Direkte Adressierung"],
+        "correct": 2,
+        "explanation": "Das Auflösen von Kollisionen durch Anlegen einer verketteten Liste in jeder Array-Zelle wird als **Verkettung (Chaining)** bezeichnet [53, 54]."
+    },
+    {
+        "question": "Was ist die Average-Case-Laufzeit für die Suchoperation in einer Hash-Tabelle mit Verkettung, bei Annahme einer idealen Hashfunktion und einem Füllfaktor α = n/m?",
+        "answers": ["Θ(1)", "Θ(n)", "Θ(α)", "Θ(1 + α)"],
+        "correct": 3,
+        "explanation": "Bei einer idealen Hashfunktion ist die durchschnittliche Länge der verketteten Liste der Füllfaktor α. Die Gesamtkosten für die Suche (einschließlich Hash-Berechnung und Zugriff auf die Hash-Zelle) sind **Θ(1 + α)** [55-57]."
+    },
+    {
+        "question": "Welche Eigenschaft muss ein Binärer Suchbaum (BST) erfüllen?",
+        "answers": [
+            "Alle Knoten haben maximal zwei Kinder.",
+            "Der Schlüssel des linken Kindes ist kleiner als der Knoten, der des rechten Kindes ist größer.",
+            "Der Baum ist immer vollständig balanciert.",
+            "Das größte Element befindet sich immer an der Wurzel."
+        ],
+        "correct": 1,
+        "explanation": "In einem Binären Suchbaum muss der **Schlüssel des linken Kindknotens kleiner als der Schlüssel des Knotens sein, und der Schlüssel des rechten Kindknotens größer** als der Schlüssel des Knotens [58, 59]."
+    },
+    {
+        "question": "Welche Traversierungsreihenfolge gibt die Schlüssel eines Binären Suchbaums sortiert zurück?",
+        "answers": ["Preorder", "Inorder", "Postorder", "Breadth-First"],
+        "correct": 1,
+        "explanation": "Die **Inorder-Traversierung** besucht zuerst den linken Teilbaum, dann den aktuellen Knoten und schließlich den rechten Teilbaum (links, mitte, rechts), wodurch die Schlüssel in aufsteigend sortierter Reihenfolge zurückgegeben werden [60, 61]."
+    },
+    {
+        "question": "Was ist die Worst-Case-Laufzeit für Operationen wie `SEARCH`, `INSERT` oder `DELETE` in einem Binären Suchbaum?",
+        "answers": ["O(log n)", "O(n)", "O(n log n)", "O(1)"],
+        "correct": 1,
+        "explanation": "Im Worst Case kann ein Binärer Suchbaum zu einer linearen Struktur (wie einer verketteten Liste) degenerieren (z.B. wenn Elemente aufsteigend sortiert eingefügt werden). In diesem Fall ist die Höhe h proportional zu n, und die Operationen haben eine Laufzeit von **O(n)** [62]."
+    },
+    {
+        "question": "Welche Art von Rotation wird in einem AVL-Baum typischerweise durchgeführt, wenn ein Knoten einen Balancefaktor von +2 hat und sein rechtes Kind einen Balancefaktor von +1 (RR-Fall)?",
+        "answers": ["LL-Rotation", "RR-Rotation", "LR-Rotation", "RL-Rotation"],
+        "correct": 1,
+        "explanation": "Bei einem Ungleichgewicht im **RR-Fall (Rechts-Rechts-Fall)**, d.h., ein Knoten hat Balancefaktor +2 und sein rechtes Kind +1, wird eine **einfache Rechtsrotation (RR-Rotation)** durchgeführt [63, 64]."
+    },
+    {
+        "question": "Wie viele Schlüssel speichert ein Knoten in einem B-Baum der Ordnung t (außer der Wurzel)?",
+        "answers": ["Genau t Schlüssel", "Zwischen 0 und t-1 Schlüssel", "Zwischen t-1 und 2t-1 Schlüssel", "Beliebig viele Schlüssel"],
+        "correct": 2,
+        "explanation": "In einem B-Baum der Ordnung t speichert jeder Knoten (außer der Wurzel) **zwischen t-1 und 2t-1 Schlüssel**. Die Wurzel darf auch weniger Werte enthalten [61, 65]."
+    },
+    {
+        "question": "Was ist die obere Schranke für die Höhe h eines B-Baums mit n Schlüsseln und Mindestgrad t ≥ 2?",
+        "answers": ["O(log n)", "O(n)", "O(n log n)", "h ≤ logt n + 1/2"],
+        "correct": 3,
+        "explanation": "Die Höhe h eines B-Baums mit n Schlüsseln und Mindestgrad t ≥ 2 ist maximal **h ≤ logt n + 1/2** [66]. Dies führt zu relativ niedrigen Bäumen."
+    },
+    {
+        "question": "Welcher der folgenden Punkte ist der erste Schritt zur Lösungsfindung nach der CLRS-Gliederung für Dynamische Programmierung?",
+        "answers": [
+            "Berechne den Wert der optimalen Lösung Bottom-Up.",
+            "Rekonstruiere die optimale Lösung aus der Berechnung.",
+            "Charakterisiere die Struktur der optimalen Lösung.",
+            "Definiere den Wert der optimalen Lösung rekursiv."
+        ],
+        "correct": 2,
+        "explanation": "Der erste Schritt bei der Dynamischen Programmierung ist, die **Struktur der optimalen Lösung zu charakterisieren** [9]."
+    },
+    {
+        "question": "Was ist die Laufzeit des naiven rekursiven Ansatzes zur Lösung des Rod Cutting Problems?",
+        "answers": ["O(n)", "O(n²)", "O(n log n)", "O(2^n)"],
+        "correct": 3,
+        "explanation": "Der naive rekursive Ansatz für Rod Cutting ist ineffizient, da Teilergebnisse wieder und wieder berechnet werden, was zu einer **exponentiellen Laufzeit von O(2^n)** führt [67]."
+    },
+    {
+        "question": "Warum ist die Reihenfolge der Multiplikation in einer Matrixkettenmultiplikation wichtig?",
+        "answers": [
+            "Weil die Matrizen sonst nicht multiplizierbar sind.",
+            "Um die Anzahl der notwendigen Additionen zu minimieren.",
+            "Um die Gesamtzahl der Skalarmultiplikationen zu minimieren.",
+            "Um die Anzahl der Matrizen im Produkt zu reduzieren."
+        ],
+        "correct": 2,
+        "explanation": "Die Reihenfolge der Multiplikation ist wichtig, da das Assoziativgesetz zwar die Gruppenbildung erlaubt, aber die **Anzahl der notwendigen Skalarmultiplikationen erheblich variieren kann**, und diese soll minimiert werden [68, 69]."
+    },
+    {
+        "question": "Welcher Begriff beschreibt das Zwischenspeichern von Teilergebnissen in einer Rekursion, um Mehrfachberechnungen zu vermeiden?",
+        "answers": ["Dynamic Programming", "Recursion", "Memoisierung", "Optimization"],
+        "correct": 2,
+        "explanation": "Das **Zwischenspeichern von Teilergebnissen in einer Rekursion** wird als **Memoisierung** bezeichnet und ist ein zentrales Konzept der Dynamischen Programmierung [10, 70]."
+    },
+    {
+        "question": "Was ist das charakteristische Merkmal eines Greedy-Algorithmus?",
+        "answers": [
+            "Er trifft globale, optimale Entscheidungen, ohne die Konsequenzen zu berücksichtigen.",
+            "Er trifft die lokal beste Entscheidung in der Hoffnung, dass dies zu einer global optimalen Lösung führt.",
+            "Er berechnet alle möglichen Lösungen und wählt die beste aus.",
+            "Er verwendet Rekursion, um Probleme in kleinere Teilprobleme zu zerlegen."
+        ],
+        "correct": 1,
+        "explanation": "Ein Greedy-Algorithmus trifft aus der aktuellen Situation heraus **ad-hoc die lokal beste Entscheidung** für das Optimierungsziel, in der Hoffnung, dass dies zu einer global optimalen Lösung führt [71]."
+    },
+    {
+        "question": "Wann kann das Rucksackproblem (Knapsack) mit einem Greedy-Algorithmus gelöst werden, und wann nicht?",
+        "answers": [
+            "Immer mit Greedy.",
+            "Immer mit Dynamischer Programmierung.",
+            "Wenn Gegenstände teilbar sind (Fractional Knapsack) mit Greedy; wenn unteilbar (0-1 Knapsack) mit DP.",
+            "Wenn Gegenstände unteilbar (0-1 Knapsack) mit Greedy; wenn teilbar (Fractional Knapsack) mit DP."
+        ],
+        "correct": 2,
+        "explanation": "Das **Fractional Knapsack Problem** (Gegenstände sind teilbar) kann mit einem **Greedy-Algorithmus** gelöst werden, indem man Gegenstände mit dem höchsten Wert pro Kilogramm zuerst wählt. Das **0-1 Knapsack Problem** (Gegenstände sind unteilbar) ist ein **Dynamische Programmierung** Problem [72]."
+    },
+    {
+        "question": "Was ist eine wichtige Eigenschaft von Huffman-Codes in Bezug auf ihre Struktur?",
+        "answers": [
+            "Sie haben immer eine feste Wortlänge.",
+            "Sie sind nicht präfixfrei.",
+            "Sie sind optimal, d.h., es gibt keinen kürzeren Code für gegebene Auftrittswahrscheinlichkeiten.",
+            "Sie sind nur für binäre Alphabete geeignet."
+        ],
+        "correct": 2,
+        "explanation": "Huffman-Codes sind **optimal**, was bedeutet, dass es keinen kürzeren präfixfreien Code für gegebene Auftrittswahrscheinlichkeiten gibt. Sie haben variable Längen, wobei häufigere Zeichen kürzere Codewörter erhalten [73, 74]."
+    },
+    {
+        "question": "Was sind die zwei fundamentalen Bestandteile eines Graphen G = (V, E)?",
+        "answers": ["Nodes und Edges", "Knoten und Kanten", "Vertices und Verbindungen", "Punkte und Linien"],
+        "correct": 1,
+        "explanation": "Ein Graph G = (V, E) ist ein Paar einer Menge **Knoten (V)** und einer Menge **Kanten (E)** [75, 76]."
+    },
+    {
+        "question": "Welche Datenstruktur wird typischerweise von der Breitensuche (BFS) verwendet, um die zu besuchenden Knoten zu verwalten?",
+        "answers": ["Stack (LIFO)", "Queue (FIFO)", "Priority Queue", "Linked List"],
+        "correct": 1,
+        "explanation": "Die Breitensuche (BFS) erkundet Nachbarn Ebene für Ebene und verwendet eine **Queue (FIFO)**, um die Knoten zur Bearbeitung zu puffern [77, 78]."
+    },
+    {
+        "question": "Welche Datenstruktur wird typischerweise von der Tiefensuche (DFS) verwendet, um die zu besuchenden Knoten zu verwalten?",
+        "answers": ["Queue (FIFO)", "Stack (LIFO) (explizit oder rekursiv)", "Prioritätswarteschlange", "Array"],
+        "correct": 1,
+        "explanation": "Die Tiefensuche (DFS) geht so tief wie möglich in einen Zweig, bevor zurückgegangen wird, und verwendet dazu einen **Stack (explizit oder rekursiv)** [79, 80]."
+    },
+    {
+        "question": "Welche Art von Graphen kann topologisch sortiert werden?",
+        "answers": [
+            "Ungerichtete Graphen mit positiven Gewichten.",
+            "Gerichtete Graphen, die zyklenfrei sind (DAGs).",
+            "Vollständige Graphen.",
+            "Graphen mit negativen Kantengewichten."
+        ],
+        "correct": 1,
+        "explanation": "Die topologische Sortierung ist für **gerichtete, zyklenfreie Graphen (DAGs)** möglich. Dabei werden die Knoten so gereiht, dass für jede Kante (u, v) der Knoten u vor dem Knoten v sortiert wird [81]."
+    },
+    {
+        "question": "Was ist ein Minimaler Spannbaum (MST) in einem zusammenhängenden ungerichteten Graphen mit Kantengewichten?",
+        "answers": [
+            "Ein Pfad mit der geringsten Anzahl von Kanten, der alle Knoten verbindet.",
+            "Eine Untermenge von Kanten, die einen Baum bildet und alle Knoten des Graphen beinhaltet, mit minimaler Summe der Kantengewichte.",
+            "Ein Kreis mit dem geringsten Gesamtgewicht.",
+            "Ein Baum, der nur positive Kantengewichte enthält."
+        ],
+        "correct": 1,
+        "explanation": "Ein **Minimaler Spannbaum (MST)** ist eine Untermenge von Kanten eines zusammenhängenden ungerichteten Graphen, die einen Baum bildet, der alle Knoten des Graphen beinhaltet, und die **Summe der Kantengewichte minimiert** [82]."
+    },
+    {
+        "question": "Welche Strategie verfolgt Kruskal's Algorithmus zur Konstruktion eines Minimalen Spannbaums?",
+        "answers": [
+            "Erweitert den MST von einem Startknoten aus.",
+            "Fügt iterativ die leichteste Kante hinzu, die keinen Zyklus erzeugt.",
+            "Entfernt iterativ die teuerste Kante, die den Graphen nicht trennt.",
+            "Er verwendet Breitensuche, um die kürzesten Pfade zu finden."
+        ],
+        "correct": 1,
+        "explanation": "Kruskal's Algorithmus bildet greedy die Vereinigungsmenge getrennter Unter-MSTs, indem er schrittweise die **leichteste Kante hinzufügt, die keinen Zyklus erzeugt** [83]."
+    },
+    {
+        "question": "Welche Datenstruktur wird im Prim's Algorithmus verwendet, um die zu besuchenden Knoten zu verwalten und deren Prioritäten zu aktualisieren?",
+        "answers": ["Stack", "Queue", "Adjazenzliste", "Prioritätswarteschlange"],
+        "correct": 3,
+        "explanation": "Prim's Algorithmus verwendet eine **Prioritätswarteschlange**, in der alle Knoten zunächst eine unendliche Priorität haben, die dann auf das Gewicht der Verbindungskanten zu bereits im MST enthaltenen Knoten abgesenkt wird [84, 85]."
+    },
+    {
+        "question": "Was ist eine besondere Fähigkeit des Bellman-Ford Algorithmus im Vergleich zu Dijkstra's Algorithmus?",
+        "answers": [
+            "Er ist schneller auf dichten Graphen.",
+            "Er kann kürzeste Pfade in Graphen mit negativen Kantengewichten finden und negative Zyklen erkennen.",
+            "Er funktioniert nur auf azyklischen Graphen.",
+            "Er findet den kürzesten Pfad in ungewichteten Graphen."
+        ],
+        "correct": 1,
+        "explanation": "Der Bellman-Ford Algorithmus kann **kürzeste Pfade in Graphen mit negativen Kantengewichten finden und dabei auch das Vorhandensein negativer Zyklen erkennen** [86, 87]. Dies ist eine Erweiterung gegenüber Dijkstra, der nur mit nicht-negativen Gewichten korrekt arbeitet [8]."
+    },
+    {
+        "question": "Was besagt das Max-Flow Min-Cut Theorem?",
+        "answers": [
+            "Der maximale Fluss in einem Netzwerk ist gleich der Summe aller Kapazitäten.",
+            "Der maximale Fluss in einem Netzwerk ist gleich der Kapazität eines minimalen Schnitts.",
+            "Der minimale Schnitt in einem Netzwerk ist immer Null.",
+            "Der Fluss durch einen Graphen ist immer konstant."
+        ],
+        "correct": 1,
+        "explanation": "Das **Max-Flow Min-Cut Theorem** besagt, dass der Wert eines maximalen Flusses in einem Flussnetzwerk **gleich der Kapazität eines minimalen Schnitts** ist [88]."
+    },
+    {
+        "question": "Warum ist Edmonds-Karp ein effizienterer Algorithmus als der allgemeine Ford-Fulkerson-Algorithmus?",
+        "answers": [
+            "Edmonds-Karp verwendet eine Tiefensuche anstelle einer Breitensuche.",
+            "Edmonds-Karp funktioniert nur auf Graphen ohne Zyklen.",
+            "Edmonds-Karp garantiert die Wahl eines kürzesten augmentierenden Pfades, was die Anzahl der Augmentierungen begrenzt und eine bessere Worst-Case-Laufzeit (O(VE²)) ergibt.",
+            "Edmonds-Karp kann negative Kantengewichte handhaben."
+        ],
+        "correct": 2,
+        "explanation": "Der Edmonds-Karp Algorithmus entspricht dem Ford-Fulkerson Algorithmus mit einer **Breitensuche, die immer den kürzesten augmentierenden Pfad findet**. Dies begrenzt die Anzahl der Augmentierungen und führt zu einer besseren Worst-Case-Laufzeit von **O(VE²)** [89, 90]."
+    },
+    {
+        "question": "Was ist das Ziel des Stable Marriage Problem (Stabiles Heiratsproblem), gelöst durch den Gale-Shapley Algorithmus?",
+        "answers": [
+            "Jeder Mann findet seine präferierte Frau.",
+            "Jede Frau findet ihren präferierten Mann.",
+            "Ein Matching zu finden, in dem es kein instabiles Paar gibt, das sich gegenseitig ihren aktuellen Partnern vorziehen würde.",
+            "Ein Matching zu finden, das die höchste Summe der Präferenzen aller Beteiligten ergibt."
+        ],
+        "correct": 2,
+        "explanation": "Der Gale-Shapley Algorithmus findet ein **stabiles Matching** in einem vollständigen bipartiten Graphen, bei dem jeder Knoten eine Reihung von Präferenzen für die Knoten der Gegenseite hat. Ein Matching ist stabil, wenn es kein Paar gibt, das jeweils füreinander eine größere Präferenz hat als für ihre aktuellen Partner [91, 92]."
+    },
+    {
+        "question": "Wie wird die Übereinstimmung in dem Rabin-Karp Algorithmus effizient geprüft?",
+        "answers": [
+            "Durch den direkten Vergleich aller Zeichen in jedem möglichen Fenster.",
+            "Durch die Berechnung eines Hash-Wertes des Musters und der Textfenster unter Verwendung modularer Arithmetik.",
+            "Durch die Erstellung eines endlichen Automaten für das Muster.",
+            "Durch die Nutzung einer Präfix-Funktion."
+        ],
+        "correct": 1,
+        "explanation": "Der Rabin-Karp Algorithmus nutzt die **Berechnung von Hash-Werten des Musters und der Textfenster unter Verwendung modularer Arithmetik**. Dies ermöglicht es, die Übereinstimmung eines Fensters in O(1) zu prüfen, wobei ein 'echter' Vergleich bei einem Hash-Treffer zur Verifikation in O(m) erfolgt [93-95]."
+    },
+    {
+        "question": "Was ist die Kernidee des Knuth-Morris-Pratt (KMP) Algorithmus zur String-Suche?",
+        "answers": [
+            "Er verwendet Hashtabellen, um Muster zu speichern.",
+            "Er vermeidet redundante Vergleiche im Text durch die Nutzung einer vorberechneten 'Präfix-Funktion', die angibt, wie weit man im Muster zurückspringen kann.",
+            "Er teilt das Problem rekursiv in kleinere Text- und Musterstücke auf.",
+            "Er sucht das Muster in umgekehrter Reihenfolge."
+        ],
+        "correct": 1,
+        "explanation": "Der KMP Algorithmus vermeidet redundante Vergleiche im Text, indem er eine **Lookup-Tabelle (Präfix-Funktion π)** berechnet. Diese Tabelle gibt direkt an, auf welches längstmögliche Präfix man zurückspringen kann, wenn ein 'Fehler' (Mismatch) auftritt, um das Matching fortzusetzen [96]."
+    },
+    {
+        "question": "Was ist die Laufzeit von Heapsort im Worst-Case?",
+        "answers": ["Θ(n)", "Θ(n log n)", "Θ(n²)", "Θ(log n)"],
+        "correct": 1,
+        "explanation": "Heap Sort hat eine Worst-Case-Laufzeit von **Θ(n log n)**, da die `buildMaxHeap`-Phase O(n) und die n `extract-max`-Operationen jeweils O(log n) kosten [97]."
+    },
+    {
+        "question": "Welche Landau-Notation beschreibt eine 'enge Schranke', die sowohl die obere als auch die untere Schranke einer Funktion darstellt?",
+        "answers": ["O-Notation", "Ω-Notation", "Θ-Notation", "o-Notation"],
+        "correct": 2,
+        "explanation": "Die **Θ-Notation** ist eine 'enge Schranke' ('tight bound'), die besagt, dass eine Funktion **asymptotisch genau so schnell wächst** wie angegeben. Sie kombiniert die obere Schranke der O-Notation mit der unteren Schranke der Ω-Notation [98, 99]."
+    },
+    {
+        "question": "Was ist der Hauptvorteil von AVL-Bäumen gegenüber 'normalen' Binären Suchbäumen?",
+        "answers": [
+            "Sie sind einfacher zu implementieren.",
+            "Sie benötigen weniger Speicherplatz.",
+            "Sie garantieren, dass Operationen wie Suchen, Einfügen und Löschen auch im Worst Case eine logarithmische Laufzeit (Θ(log n)) haben.",
+            "Sie erlauben Duplikate von Schlüsseln."
+        ],
+        "correct": 2,
+        "explanation": "AVL-Bäume balancieren sich selbst durch Rotationen. Dadurch wird sichergestellt, dass die Höhe des Baumes immer logarithmisch zur Anzahl der Elemente ist (Θ(log n)), was Operationen wie Suchen, Einfügen und Löschen auch im Worst Case eine **logarithmische Laufzeit (Θ(log n))** ermöglicht [12, 13, 62]."
+    },
+    {
+        "question": "Welche Art von Kante entsteht in einem gerichteten Graphen bei einer Tiefensuche (DFS), wenn eine Kante (u, v) zu einem bereits besuchten Knoten v führt, der ein Vorgänger von u im DFS-Baum ist?",
+        "answers": ["Baum-Kante", "Rückwärts-Kante", "Vorwärts-Kante", "Quer-Kante"],
+        "correct": 1,
+        "explanation": "Wenn bei der Tiefensuche in einem gerichteten Graphen eine Kante (u, v) zu einem Knoten v führt, der ein **Vorgänger von u (einschließlich Schlaufen)** ist, wird diese als **Rückwärts-Kante** klassifiziert [100]."
+    },
+    {
+        "question": "Wie wird die Laufzeit von Divide-and-Conquer-Algorithmen typischerweise modelliert?",
+        "answers": [
+            "Als eine konstante Funktion.",
+            "Als ein lineares Polynom.",
+            "Als eine Rekurrenzgleichung.",
+            "Als eine Matrixmultiplikation."
+        ],
+        "correct": 2,
+        "explanation": "Zur Analyse von Divide-and-Conquer-Algorithmen werden **Rekurrenzen benötigt**. Eine Rekurrenz ist eine Gleichung, die eine Funktion über ihren eigenen Wert auf anderen (typischerweise kleineren) Argumenten beschreibt [101, 102]."
+    },
+    {
+        "question": "Was ist die Standard-Laufzeit der Multiplikation von zwei n x n Matrizen?",
+        "answers": ["Θ(n²)", "Θ(n log n)", "Θ(n³)", "Θ(n²)"],
+        "correct": 2,
+        "explanation": "Die Standard-Implementierung der Matrixmultiplikation von zwei n x n Matrizen hat eine Laufzeit von **Θ(n³)**, da jeder der n² Koeffizienten des Ergebnisprodukts durch n Operationen berechnet wird [103-105]."
+    },
+    {
+        "question": "Welche Art von Baum ist ein Young-Tableau ähnlich und ermöglicht effiziente `insert` und `extractMin` Operationen?",
+        "answers": ["Binärer Suchbaum", "AVL-Baum", "Heap", "B-Baum"],
+        "correct": 2,
+        "explanation": "Young-Tableaus sind **ähnlich wie Heaps**, aber mit einer 2D-Struktur [106]. Sie ermöglichen effiziente Implementierungen für `insert` und `extractMin` [106]."
+    },
+    {
+        "question": "Was ist der Hauptunterschied zwischen dem 0-1 Knapsack Problem und dem Fractional Knapsack Problem?",
+        "answers": [
+            "Das 0-1 Knapsack Problem ist einfacher zu lösen.",
+            "Im 0-1 Knapsack Problem dürfen Gegenstände nur entweder ganz (1) oder gar nicht (0) genommen werden, während im Fractional Knapsack Problem Gegenstände auch teilweise genommen werden dürfen.",
+            "Das Fractional Knapsack Problem ist ein Problem der Graphentheorie.",
+            "Das 0-1 Knapsack Problem wird immer mit einem Greedy-Algorithmus gelöst."
+        ],
+        "correct": 1,
+        "explanation": "Im **0-1 Knapsack Problem** sind die Gegenstände **unteilbar** (z.B. Armbanduhren), was eine Lösung mittels Dynamischer Programmierung erfordert. Im **Fractional Knapsack Problem** sind die Gegenstände **teilbar** (z.B. seltene Erden), was eine Lösung mittels eines Greedy-Algorithmus erlaubt [72]."
+    },
+    {
+        "question": "Was ist eine 'starke Zusammenhangskomponente' in einem gerichteten Graphen?",
+        "answers": [
+            "Eine Teilmenge von Knoten, in der jeder Knoten von jedem anderen aus erreichbar ist.",
+            "Ein Pfad, der alle Knoten im Graphen besucht.",
+            "Ein Knoten, der keine ausgehenden Kanten hat.",
+            "Eine Menge von Knoten ohne Zyklen."
+        ],
+        "correct": 0,
+        "explanation": "Eine **starke Zusammenhangskomponente** in einem gerichteten Graphen ist eine Teilmenge der Knoten, in denen **jeder Knoten jeden anderen erreichen kann** [107]."
+    },
+    {
+        "question": "Was ist die Funktion des `RELAX`-Vorgangs in Algorithmen zur Bestimmung kürzester Pfade?",
+        "answers": [
+            "Erhöht die Distanz eines Knotens.",
+            "Setzt die Distanz eines Knotens auf unendlich.",
+            "Prüft, ob ein Knoten günstiger über einen anderen Knoten erreicht werden kann, und aktualisiert bei Bedarf die Distanz und den Vorgänger.",
+            "Entfernt einen Knoten aus dem Graphen."
+        ],
+        "correct": 2,
+        "explanation": "`RELAX` prüft, ob ein Knoten `v` günstiger über einen Knoten `u` plus eine (eventuell existierende) Kante (`u, v`) erreicht werden kann. Falls ja, wird die Distanz von `v` aktualisiert und `u` als neuer Vorgänger von `v` gesetzt [86, 108]."
+    },
+    {
+        "question": "Was ist der Hauptvorteil von Johnsons Algorithmus für kürzeste Pfade von jedem zu jedem Knoten?",
+        "answers": [
+            "Er ist immer der schnellste Algorithmus für alle Graphen.",
+            "Er ist auf Graphen mit negativen Kantengewichten anwendbar und erreicht dabei eine effiziente Laufzeit von O(V² log V + VE).",
+            "Er kann nur auf azyklischen Graphen angewendet werden.",
+            "Er benötigt keinen zusätzlichen Speicherplatz."
+        ],
+        "correct": 1,
+        "explanation": "Johnsons Algorithmus ist auf **Graphen mit negativen Kanten anwendbar** und erreicht eine Laufzeit von **O(V² log V + VE)**, was ihn auf dünn besetzten Graphen effizienter als Floyd-Warshall macht [109]."
+    },
+    {
+        "question": "Was ist die Worst-Case-Laufzeit der naiven String-Matching-Lösung für ein Muster P der Länge m und einen Text T der Länge n?",
+        "answers": ["Θ(n)", "Θ(m)", "Θ(nm)", "Θ(n log m)"],
+        "correct": 2,
+        "explanation": "Für ein Muster P der Länge m und einen Text T der Länge n liegt die naive String-Matching-Lösung im Worst Case in **Θ(nm)** [110]."
+    },
+    {
+        "question": "Welche zwei Hauptkomponenten haben String-Matching-Algorithmen typischerweise?",
+        "answers": [
+            "Kompression und Dekompression.",
+            "Verschlüsselung und Entschlüsselung.",
+            "Vorverarbeitung des Musters und das eigentliche Matching.",
+            "Tokenisierung und Parsing."
+        ],
+        "correct": 2,
+        "explanation": "String-Matching-Algorithmen bestehen i.d.R. aus zwei Komponenten: einer **Vorverarbeitung des Musters** und dem **eigentlichen Matching** [110]."
+    },
+    {
+        "question": "Was ist die Definition eines 'Matchings' in einem ungerichteten Graphen?",
+        "answers": [
+            "Eine Teilmenge von Kanten, die einen Kreis bildet.",
+            "Eine Teilmenge der Kanten, so dass für alle Knoten v höchstens eine Kante aus M inzident ist zu v.",
+            "Ein Pfad, der alle Knoten im Graphen verbindet.",
+            "Eine Menge von Kanten, die alle denselben Startknoten haben."
+        ],
+        "correct": 1,
+        "explanation": "Ein **Matching** in einem ungerichteten Graphen G = (V, E) ist eine Teilmenge der Kanten M ⊆ E, so dass für alle Knoten v **höchstens eine Kante aus M inzident ist zu v** [90, 111]."
+    },
+    {
+        "question": "Wie werden in einem B-Baum übervolle Knoten beim Einfügen typischerweise gehandhabt?",
+        "answers": [
+            "Das Element wird verworfen.",
+            "Der Knoten wird in zwei Teile gesplittet, und der Median wandert in den Elternknoten hoch.",
+            "Alle Elemente werden in einen neuen, größeren Knoten kopiert.",
+            "Der Baum wird neu aufgebaut."
+        ],
+        "correct": 1,
+        "explanation": "Wenn ein Knoten in einem B-Baum voll wird, muss er in zwei Teile gesplittet werden. Dabei **wandert der Median-Schlüssel nach oben** in den Elternknoten, und die linke sowie rechte Hälfte werden zu den beiden neuen Knoten [112, 113]."
+    },
+    {
+        "question": "Was ist die Worst-Case-Laufzeit von Bubblesort?",
+        "answers": ["Θ(n)", "Θ(n log n)", "Θ(n²)", "Θ(1)"],
+        "correct": 2,
+        "explanation": "Bubblesort hat im Worst Case eine Laufzeit von **Θ(n²)** [114]."
+    },
+    {
+        "question": "Welche Art von Baum ist ein Heap in der Regel?",
+        "answers": ["Ein binärer Suchbaum.", "Ein balancierter AVL-Baum.", "Ein vollständiger Binärbaum.", "Ein N-ärer Baum."],
+        "correct": 2,
+        "explanation": "Ein Heap ist ein **vollständiger Binärbaum** [24, 115]. Dabei werden die Nachfolger eines Knotens i ungefähr an Position 2i (oder 2i+1 / 2i+2 in 0-indizierten Arrays) abgelegt [115]."
+    },
+    {
+        "question": "Wie unterscheidet sich der Reverse-Kruskal-Algorithmus vom klassischen Kruskal-Algorithmus bei der MST-Konstruktion?",
+        "answers": [
+            "Reverse-Kruskal fügt Kanten hinzu, während Kruskal Kanten entfernt.",
+            "Reverse-Kruskal beginnt mit allen Kanten und entfernt die teuersten, die den Graphen nicht trennen, während Kruskal mit leeren Kanten beginnt und die billigsten hinzufügt, die keinen Zyklus bilden.",
+            "Reverse-Kruskal ist nur für gerichtete Graphen geeignet.",
+            "Beide Algorithmen sind identisch."
+        ],
+        "correct": 1,
+        "explanation": "Der Reverse-Kruskal-Algorithmus beginnt mit allen Kanten und **entfernt die teuerste Kante**, solange der Graph zusammenhängend bleibt [116]. Kruskal's Algorithmus hingegen **fügt die billigsten Kanten hinzu**, die keinen Zyklus erzeugen [83]."
+    },
+    {
+        "question": "Welche Methode zur Kollisionsbehandlung in Hash-Tabellen verwendet eine zweite Hashfunktion zur Bestimmung der Schrittweite bei Kollisionen?",
+        "answers": ["Chaining", "Lineares Sondieren", "Doppeltes Hashing", "Direkte Adressierung"],
+        "correct": 2,
+        "explanation": "Das **Doppelte Hashing** ('Double Hashing') löst Kollisionen, indem es eine **Schrittweite aus einer zweiten Hashfunktion** verwendet: h(k, i) = (h1(k) + i · h2(k)) mod m, wobei i bei Kollisionen erhöht wird [117, 118]."
+    },
+    {
+        "question": "Was ist ein 'Sentinel' in Zusammenhang mit verketteten Listen?",
+        "answers": [
+            "Ein Zeiger auf das letzte Element der Liste.",
+            "Ein spezielles Dummy-Element, das den Code für Operationen wie INSERT und DELETE vereinfacht.",
+            "Eine Methode zur Messung der Listengröße.",
+            "Ein Algorithmus zur Sortierung der Liste."
+        ],
+        "correct": 1,
+        "explanation": "Ein 'Sentinel' ist ein **Dummy-Element**, das am Anfang oder Ende einer verketteten Liste eingefügt wird, um **Sonderfälle (z.B. leere Liste, Einfügen/Löschen am Anfang/Ende) im Code zu vereinfachen** [119]."
+    },
+    {
+        "question": "Warum ist die Suche nach dem Median (Selektionsproblem) im Worst Case in O(n) möglich, aber praktisch oft nicht attraktiv?",
+        "answers": [
+            "Weil es keinen Algorithmus dafür gibt.",
+            "Weil die Konstante des Algorithmus zu hoch ist und der Worst Case zu unwahrscheinlich ist, um den Aufwand zu rechtfertigen.",
+            "Weil es zu viel Speicher benötigt.",
+            "Weil es nur auf bereits sortierten Listen funktioniert."
+        ],
+        "correct": 1,
+        "explanation": "Die Suche nach dem Median im Worst Case in O(n) ist theoretisch möglich, aber die entsprechende Konstruktion (z.B. mit einer speziellen Pivot-Wahl) ist **nur theoretisch relevant, da die Konstante zu hoch und der Worst Case zu unwahrscheinlich ist**, um den Aufwand praktisch zu rechtfertigen [120]."
+    },
+    {
+        "question": "Welche Arten von Kanten definiert DFS auf gerichteten Graphen?",
+        "answers": [
+            "Gerichtete und ungerichtete Kanten.",
+            "Start- und Endkanten.",
+            "Baum-, Rückwärts-, Vorwärts- und Quer-Kanten.",
+            "Starke und schwache Kanten."
+        ],
+        "correct": 2,
+        "explanation": "DFS auf gerichteten Graphen definiert vier Arten von Kanten: **Baum-Kanten, Rückwärts-Kanten, Vorwärts-Kanten und Quer-Kanten** [81, 100]."
+    },
+    {
+        "question": "Was ist ein 'Augmentierender Pfad' im Kontext von Flussnetzwerken (Ford-Fulkerson-Algorithmus)?",
+        "answers": [
+            "Ein Pfad, der die Quelle mit der Senke verbindet und nur volle Kanten enthält.",
+            "Ein Pfad im Residualnetzwerk von der Quelle zur Senke, auf dem der Fluss erhöht werden kann.",
+            "Ein Pfad, der einen Zyklus im Graphen bildet.",
+            "Ein Pfad, der die Kapazität eines Schnitts minimiert."
+        ],
+        "correct": 1,
+        "explanation": "Ein **augmentierender Pfad** ist ein simpler Pfad im Residual Network Gf von der Quelle (s) zur Senke (t), auf dem der Fluss erhöht werden kann [121]."
+    },
+    {
+        "question": "Was ist das Hauptproblem, das durch die Verwendung von modularer Arithmetik im Rabin-Karp-Algorithmus gelöst wird?",
+        "answers": [
+            "Die Vermeidung von Kollisionen.",
+            "Die Reduzierung der Speicherkomplexität.",
+            "Die Handhabung sehr großer Muster-Zahlen, die sonst die O(1)-Annahme für Arithmetik verletzen würden.",
+            "Die Beschleunigung der Vorverarbeitung des Textes."
+        ],
+        "correct": 2,
+        "explanation": "Die Muster-Zahl im Rabin-Karp-Algorithmus kann sehr schnell sehr groß werden, was die Annahme, dass Arithmetik und Zahlenvergleiche in O(1) realisierbar sind, verletzt. Die **modulare Arithmetik löst dieses Problem**, indem die Zahlen modulo eine Primzahl berechnet werden, wodurch alle Rechnungen in O(1) durchgeführt werden können [93, 94]."
+    },
+    {
+        "question": "Was ist die Funktion der Präfix-Funktion π im Knuth-Morris-Pratt (KMP) Algorithmus?",
+        "answers": [
+            "Sie berechnet den Hashwert des Musters.",
+            "Sie gibt den Index des längstmöglichen Präfixes des Musters an, der auch ein Suffix des bereits gematchten Teils ist, um bei einem Mismatch effizient weiterzusuchen.",
+            "Sie transformiert das Muster in einen endlichen Automaten.",
+            "Sie findet alle Vorkommen des Musters im Text in linearer Zeit."
+        ],
+        "correct": 1,
+        "explanation": "Die **Präfix-Funktion π** in KMP sucht unter allen kürzeren Präfixen des Musters das längste, das gleichzeitig ein Suffix der bisherigen Sequenz ist. Sie ermöglicht es, bei einem Mismatch direkt auf die richtige Position im Muster zu springen, ohne den Text erneut zu scannen [96, 122]."
+    },
+    {
+        "question": "Warum wird in den Übungen oft Java-Code anstelle von Pseudocode in der Klausur verwendet?",
+        "answers": [
+            "Weil Java leistungsfähiger ist als Pseudocode.",
+            "Um Verwirrung durch unterschiedliche Array-Indizierungen zu vermeiden.",
+            "Weil Java die einzige erlaubte Programmiersprache ist.",
+            "Weil Java eine bessere Laufzeitanalyse ermöglicht."
+        ],
+        "correct": 1,
+        "explanation": "Um Verwirrung aufgrund der unterschiedlichen Array-Indizierungen zwischen Cormen's Pseudocode (Index ab 1) und Java (Index ab 0) zu vermeiden, wird in der Klausur **nur Java-Code** verwendet [123]."
+    },
+    {
+        "question": "Was ist der Hauptunterschied zwischen der Substitutionsmethode und der Rekursionsbaum-Methode zur Lösung von Rekurrenzen?",
+        "answers": [
+            "Die Substitutionsmethode ist nur für lineare Rekurrenzen geeignet.",
+            "Die Substitutionsmethode erfordert ein 'Erraten' der Lösung und einen Induktionsbeweis, während die Rekursionsbaum-Methode die Rekurrenz 'abrollt' und die Kosten aufaddiert.",
+            "Die Rekursionsbaum-Methode ist mathematisch weniger exakt.",
+            "Die Substitutionsmethode wird nur für den Best-Case verwendet."
+        ],
+        "correct": 1,
+        "explanation": "Die **Substitutionsmethode** erfordert, dass man eine Schranke der Gleichung 'errät' und dies dann per Induktion beweist [124, 125]. Die **Rekursionsbaum-Methode** hingegen 'rollt' die Rekurrenz 'ab' und summiert die Teilkosten auf, um eine Hypothese für die Substitution zu erhalten [126, 127]."
+    },
+    {
+        "question": "Was sind die typischen Operationen für eine 'Prioritätswarteschlange' (Priority Queue), die mit einem Heap implementiert ist?",
+        "answers": [
+            "`push`, `pop`, `peek`.",
+            "`enqueue`, `dequeue`, `front`.",
+            "`insert`, `maximum` (oder `minimum`), `extract-max` (oder `extract-min`), `increase-key` (oder `decrease-key`).",
+            "`add`, `remove`, `contains`."
+        ],
+        "correct": 2,
+        "explanation": "Typische Operationen für eine Priority Queue sind `insert(S, x, k)` (Element x mit Priorität k einfügen), `maximum(S)` (höchste Priorität zurückgeben), `extract-max(S)` (höchste Priorität entfernen und zurückgeben) und `increase-key(S, x, k)` (Priorität erhöhen) [28, 128, 129]."
+    },
+    {
+        "question": "Wann tritt der Worst Case für Quicksort auf, wenn kein randomisierter Pivot verwendet wird?",
+        "answers": [
+            "Wenn alle Elemente gleich sind.",
+            "Wenn die Eingabeliste bereits sortiert oder umgekehrt sortiert ist.",
+            "Wenn der Pivot immer das mittlere Element ist.",
+            "Wenn die Liste leer ist."
+        ],
+        "correct": 1,
+        "explanation": "Für den nicht-randomisierten Quicksort tritt der Worst Case (Laufzeit Θ(n²)) ein, wenn die Eingabe eine **sortierte oder umgekehrt sortierte Liste** ist, da dies zu einem unbalancierten Split führt [30, 130]."
+    },
+    {
+        "question": "Was ist die untere Schranke für vergleichsbasierte Sortierverfahren?",
+        "answers": ["Ω(n)", "Ω(n log n)", "Ω(n²)", "Ω(log n)"],
+        "correct": 1,
+        "explanation": "Vergleichsbasierte Sortierverfahren haben eine untere Schranke für den Aufwand von **Ω(n log n)**, da mindestens so viele Vergleiche benötigt werden, um alle n! möglichen Permutationen zu unterscheiden [37, 131, 132]."
+    },
+    {
+        "question": "Wie ist die Höhe eines 'Rooted Tree' Baum als verkettete Liste von Kindern implementiert?",
+        "answers": [
+            "Die Höhe ist immer konstant.",
+            "Die Höhe ist flexibel, abhängig von der Anzahl der Kinder.",
+            "Die Höhe ist immer 1.",
+            "Die Höhe ist immer logarithmisch."
+        ],
+        "correct": 1,
+        "explanation": "In 'Rooted Trees' ist die Liste der Kinder eine verkettete Liste, wodurch die **Anzahl der Kinder flexibel** wird [119, 133]."
+    },
+    {
+        "question": "Welche Eigenschaft der Trichotomie reeller Zahlen gilt nicht für Funktionen in der asymptotischen Notation?",
+        "answers": [
+            "Die Transitivität.",
+            "Die Symmetrie.",
+            "Dass für zwei Funktionen f(n) und g(n) genau eine der Beziehungen f(n) < g(n), f(n) = g(n) oder f(n) > g(n) gilt.",
+            "Die Reflexivität."
+        ],
+        "correct": 2,
+        "explanation": "Die Trichotomie reeller Zahlen, die besagt, dass für zwei Zahlen a, b ∈ R genau eine der Eigenschaften a < b, a = b, a > b gilt, **gilt nicht für Funktionen in der asymptotischen Notation**. Funktionen können asymptotisch unvergleichbar sein, wie z.B. n und n^(1+sin n) [134, 135]."
+    },
+    {
+        "question": "Was ist der Worst-Case-Laufzeit von Floyd-Warshall, um alle kürzesten Pfade in einem Graphen zu finden?",
+        "answers": ["Θ(V log V)", "Θ(V²)", "Θ(V³)", "Θ(VE)"],
+        "correct": 2,
+        "explanation": "Der Floyd-Warshall Algorithmus hat eine Laufzeit von **Θ(V³)**, wobei V die Anzahl der Knoten ist [136, 137]."
+    },
+    {
+        "question": "Was ist ein 'simpler Pfad' in einem Graphen?",
+        "answers": [
+            "Ein Pfad, der jeden Knoten mehrmals enthält.",
+            "Ein Pfad, der nur einen Knoten enthält.",
+            "Ein Pfad, der jeden Knoten höchstens einmal enthält.",
+            "Ein Pfad, der keine Kanten enthält."
+        ],
+        "correct": 2,
+        "explanation": "Ein Pfad ist **simpel/zyklenfrei, wenn er jeden Knoten höchstens einmal enthält** [138]."
+    },
+    {
+        "question": "Welche Kostenmatrix wird in APSP-Problemen (All-Pairs Shortest Paths) am besten verwendet, um Distanzen zu repräsentieren?",
+        "answers": [
+            "Adjazenzmatrix mit Binärwerten (0 oder 1).",
+            "Eine Matrix mit Gewichten, wobei `wij` das Kantengewicht zwischen i und j ist, oder ∞, wenn keine direkte Kante existiert.",
+            "Eine Matrix, die nur die Anzahl der Knoten speichert.",
+            "Eine Matrix, die nur die Vorgänger speichert."
+        ],
+        "correct": 1,
+        "explanation": "Für APSP-Probleme werden Distanzen am besten als **Adjazenzmatrix** repräsentiert, mit Gewichten `wij` = Kantengewicht für (i,j), 0 wenn i=j, oder ∞ wenn (i,j) nicht in E ist [139]."
+    },
+    {
+        "question": "Was ist der Zweck des `splitChild`-Vorgangs in einem B-Baum?",
+        "answers": [
+            "Das Zusammenführen zweier Knoten.",
+            "Das Entfernen eines Knotens aus dem Baum.",
+            "Das Aufteilen eines übervollen Kindknotens in zwei Hälften, wobei der Median in den Elternknoten hochwandert.",
+            "Das Sortieren der Schlüssel innerhalb eines Knotens."
+        ],
+        "correct": 2,
+        "explanation": "Die `splitChild`-Methode in einem B-Baum dient dazu, einen übervollen Kindknoten in zwei neue Knoten aufzuteilen, wobei der Median-Schlüssel dieses Kindknotens in den Elternknoten verschoben wird [140, 141]."
+    },
+    {
+        "question": "Was passiert, wenn die Wurzel eines B-Baums beim Einfügen gesplittet werden muss?",
+        "answers": [
+            "Der Baum wird instabil.",
+            "Der Baum schrumpft um eine Ebene.",
+            "Der Baum wächst um eine Ebene, da eine neue Wurzel entsteht.",
+            "Alle Schlüssel werden in einen neuen Knoten kopiert."
+        ],
+        "correct": 2,
+        "explanation": "Wenn die Wurzel eines B-Baums gesplittet wird (z.B. weil sie voll ist), **wächst der Baum um eine Ebene**, indem eine neue Wurzel gebildet wird, die den Median des gesplitteten Knotens enthält [141, 142]."
+    },
+    {
+        "question": "In einem Young-Tableau: Wie wird der `insert`-Vorgang typischerweise eingeleitet?",
+        "answers": [
+            "Das Element wird an der Wurzel eingefügt.",
+            "Das Element wird an der oberen linken Ecke eingefügt.",
+            "Das Element wird an der unteren rechten Ecke eingefügt und dann 'hochgeblasen'.",
+            "Das Element wird in der Mitte des Tableaus eingefügt."
+        ],
+        "correct": 2,
+        "explanation": "Beim Einfügen eines Elements in ein Young-Tableau wird es zuerst **ganz unten rechts eingefügt** und dann durch Vergleiche und Vertauschungen mit seinen Nachbarn (links und oben) an seine korrekte Position gebracht [143]."
+    },
+    {
+        "question": "Was ist ein 'Residual Network' im Kontext von Flussnetzwerken?",
+        "answers": [
+            "Ein Graph, der die ursprünglichen Kapazitäten darstellt.",
+            "Ein Graph, der die noch offenen Flusskapazitäten (einschließlich Rückwärtskapazitäten) für weitere Fluss-Augmentierungen darstellt.",
+            "Ein Graph ohne Fluss.",
+            "Ein Graph, der nur die bereits genutzten Kapazitäten enthält."
+        ],
+        "correct": 1,
+        "explanation": "Ein 'Residual Network' ist ein Graph von noch offenen Flusskapazitäten, der auch **Rückwärtskapazitäten** enthält, um eventuelle 'Fehler' in der Flussverteilung auszubügeln und weitere Fluss-Augmentierungen zu ermöglichen [121, 144]."
+    },
+    {
+        "question": "Was ist die Idee hinter dem 'Multiply-Shift-Methode' für Hash-Funktionen?",
+        "answers": [
+            "Sie verwendet die Division mit einer Primzahl.",
+            "Sie berechnet den Hash-Wert durch Multiplikation des Schlüssels mit einer Konstanten und anschließende Bit-Shifts, um eine spezifische Anzahl von Bits als Hash zu extrahieren.",
+            "Sie verwendet zwei Hash-Funktionen, um Kollisionen zu vermeiden.",
+            "Sie basiert auf dem Sortieren des Eingabeschlüssels."
+        ],
+        "correct": 1,
+        "explanation": "Die 'Multiply-Shift-Methode' (ha(k) = (ka mod 2^w) >> (w - l)) berechnet den Hash-Wert durch **Multiplikation des Schlüssels mit einer festen Konstanten a** und anschließende **Bit-Shifts**, um einen Hash von l Bit zu erhalten [57]."
+    },
+    {
+        "question": "Was ist die Hauptannahme für die 'Average Case'-Analyse von Algorithmen?",
+        "answers": [
+            "Der Worst-Case tritt immer ein.",
+            "Der Best-Case tritt immer ein.",
+            "Alle Eingaben sind gleich wahrscheinlich.",
+            "Die Eingaben sind bereits teilweise sortiert."
+        ],
+        "correct": 2,
+        "explanation": "Die 'Average Case'-Analyse eines Algorithmus erfordert eine zusätzliche Annahme zur Verteilung der Eingaben. Häufig wird der Einfachheit halber angenommen, dass **alle Eingaben gleich wahrscheinlich** sind [145]."
+    },
+    {
+        "question": "Was ist das Hauptproblem, das 'Direct-Address Tables' haben und das durch 'Hashes' gelöst wird?",
+        "answers": [
+            "Sie sind zu langsam für große Datenmengen.",
+            "Sie können nur kleine Schlüsselwerte speichern.",
+            "Sie sind auf einen beschränkten Wertebereich der Schlüssel angewiesen und benötigen viel Speicherplatz, wenn die Schlüssel spärlich verteilt sind.",
+            "Sie können keine Elemente löschen."
+        ],
+        "correct": 2,
+        "explanation": "Der offensichtliche Nachteil von Direct-Address Tables ist die **Beschränkung des Wertebereichs** der Schlüssel auf die Array-Indizes. **Hashes ('Streutabellen')** lösen dies, indem sie eine Hash-Funktion definieren, die Schlüssel auf einen kleineren Array-Indexbereich abbildet [133, 146]."
+    },
+    {
+        "question": "Was ist eine 'topologische Sortierung' eines Graphen?",
+        "answers": [
+            "Eine Sortierung der Knoten nach ihrem Grad.",
+            "Eine Reihung der Knoten in einem gerichteten, zyklenfreien Graphen (DAG), so dass für jede Kante (u, v) der Knoten u vor dem Knoten v in der Reihung steht.",
+            "Eine Sortierung der Kanten nach ihrem Gewicht.",
+            "Eine Sortierung, die den kürzesten Pfad von einem Startknoten findet."
+        ],
+        "correct": 1,
+        "explanation": "Eine **topologische Sortierung** ist eine Reihung der Knoten in einem **gerichteten, zyklenfreien Graphen (DAG)**, so dass für jede Kante (u, v) der Knoten u vor dem Knoten v sortiert wird [81]."
+    },
+    {
+        "question": "Welche Laufzeit hat der Aufbau eines Heaps (`buildMaxHeap`) durch wiederholte Anwendung von `maxHeapify`?",
+        "answers": ["O(log n)", "O(n log n)", "O(n)", "O(n²)" ],
+        "correct": 2,
+        "explanation": "Obwohl man intuitiv O(n log n) annehmen könnte, da `maxHeapify` O(log n) kostet und n-mal aufgerufen wird, ist die tatsächlich schärfere Schranke für `buildMaxHeap` **O(n)** [26, 27]."
+    },
+    {
+        "question": "Was ist das Ergebnis der Funktion `floorMod(key, sizeFactor)` in Java, wenn `key` negativ ist?",
+        "answers": [
+            "Es gibt eine Fehlermeldung.",
+            "Es gibt immer einen positiven Modulo-Wert.",
+            "Es gibt einen negativen Modulo-Wert.",
+            "Es gibt den Absolutwert des Modulos."
+        ],
+        "correct": 1,
+        "explanation": "Die Methode `Math.floorMod(key, sizeFactor)` in Java wurde eingeführt, um sicherzustellen, dass das Ergebnis **immer einen positiven Modulo-Wert zurückgibt**, auch wenn der Schlüssel (`key`) negativ ist [147, 148]."
+    },
+    {
+        "question": "In einem Binären Suchbaum: Was ist der Vorgänger eines Knotens x, wenn kein linkes Kind existiert?",
+        "answers": [
+            "Das Maximum des rechten Kindes.",
+            "Der erste Vorfahre, bei dem x oder ein Vorfahre von x das rechte Kind ist.",
+            "Der Wurzelknoten.",
+            "NIL (null)."
+        ],
+        "correct": 1,
+        "explanation": "Der Vorgänger für einen Knoten x ist entweder das Maximum des linken Kindes oder, falls kein linkes Kind existiert, **der erste Vorfahre, bei dem x oder ein Vorfahre von x das rechte Kind ist** [149]."
+    },
+    {
+        "question": "Wie wird die Laufzeit von Algorithmen zur Matrixmultiplikation mit Divide-and-Conquer und Strassen's Methode beschrieben?",
+        "answers": [
+            "Θ(n³)",
+            "Θ(n log n)",
+            "Θ(n²)",
+            "Θ(n^(log₂7)) ≈ O(n^2.81)"
+        ],
+        "correct": 3,
+        "explanation": "Strassens Methode verwendet Divide-and-Conquer und erreicht eine Laufzeit von **Θ(n^(log₂7)) = O(n^2.81)**, was eine Verbesserung gegenüber der Standard-Multiplikation von Θ(n³) darstellt [150, 151]."
+    },
+    {
+        "question": "Was ist ein 'minimaler Schnitt' (min-cut) in einem Flussnetzwerk?",
+        "answers": [
+            "Ein Schnitt, dessen Kapazität maximal ist.",
+            "Ein Schnitt, der keine Kanten kreuzt.",
+            "Ein Schnitt, dessen Kapazität minimal ist.",
+            "Ein Schnitt, der nur die Quell- und Senkenknoten enthält."
+        ],
+        "correct": 2,
+        "explanation": "Ein **minimaler Schnitt** in einem Flussnetzwerk ist derjenige Schnitt, dessen **Kapazität minimal ist** [152]."
+    },
+    {
+        "question": "Was ist die Laufzeit des Hopcroft-Karp Algorithmus zur Berechnung eines maximalen Matchings in einem bipartiten Graphen?",
+        "answers": ["O(V + E)", "O(VE)", "O(√V * E)", "O(V²)"],
+        "correct": 2,
+        "explanation": "Der Hopcroft-Karp Algorithmus erreicht eine Laufzeit von **O(√V * E)** zur Bestimmung eines maximalen Matchings in einem bipartiten Graphen [153, 154]."
+    },
+    {
+        "question": "Welche Regel bezüglich 'anti-paralleler Kanten' wird oft in Flussnetzwerk-Definitionen angewendet, um die algorithmische Lösung zu vereinfachen?",
+        "answers": [
+            "Anti-parallele Kanten sind immer erlaubt.",
+            "Wenn (u, v) ∈ E, dann soll (v, u) ∉ E gelten.",
+            "Alle Kanten müssen anti-parallel sein.",
+            "Die Kapazität von anti-parallelen Kanten muss unendlich sein."
+        ],
+        "correct": 1,
+        "explanation": "Wenn (u, v) ∈ E, dann soll gelten, dass **(v, u) ∉ E** [155]. Dies wird oft in Flussnetzwerk-Definitionen angenommen, um die algorithmische Lösung für den maximalen Fluss zu vereinfachen; andernfalls muss ein Workaround mit Ersatzknoten eingefügt werden [155, 156]."
+    },
+    {
+        "question": "Was ist das Hauptproblem, das Edmonds-Karp gegenüber der allgemeinen Ford-Fulkerson-Methode löst?",
+        "answers": [
+            "Edmonds-Karp ist nur für Graphen mit positiven Kantenkapazitäten.",
+            "Edmonds-Karp verhindert das Auftreten des Worst-Case-Szenarios von Ford-Fulkerson (O(E|f*|)) durch die Wahl des kürzesten augmentierenden Pfades.",
+            "Edmonds-Karp kann negative Zyklen erkennen.",
+            "Edmonds-Karp ist eine Methode zur String-Suche."
+        ],
+        "correct": 1,
+        "explanation": "Der Edmonds-Karp Algorithmus entspricht dem Ford-Fulkerson Algorithmus, verwendet jedoch immer eine Breitensuche, um den kürzesten augmentierenden Pfad zu finden. Dies **verhindert das O(E|f*|)-Worst-Case-Szenario von Ford-Fulkerson** und garantiert eine Laufzeit von O(VE²) [89, 157]."
+    },
+    {
+        "question": "Welche Eigenschaft erfüllt ein AVL-Baum bezüglich seines 'Balancefaktors'?",
+        "answers": [
+            "Der Balancefaktor muss immer 0 sein.",
+            "Der Absolutwert des Balancefaktors darf höchstens 1 betragen (0, +1, oder -1).",
+            "Der Balancefaktor muss immer positiv sein.",
+            "Der Balancefaktor ist die Anzahl der Knoten im Baum."
+        ],
+        "correct": 1,
+        "explanation": "Ein Knoten in einem AVL-Baum ist AVL-konform balanciert, wenn sein **Balancefaktor 0, +1 oder -1 beträgt** [12, 13]."
+    }
+]
+}
