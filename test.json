@@ -1,0 +1,2257 @@
+[
+  {
+    "question": "Was ist die grundlegende Definition eines Algorithmus laut den Kursmaterialien?",
+    "answers": [
+      "Eine Reihe von Anweisungen zur Hardware-Steuerung",
+      "Eine wohldefinierte Folge von Berechnungen, die Eingaben entgegennimmt und Ausgaben in endlicher Zeit zurückgibt.",
+      "Ein Programm, das stets das schnellste Ergebnis liefert.",
+      "Eine Methode zur Organisation von Daten."
+    ],
+    "correct": 1,
+    "explanation": "Ein Algorithmus wird definiert als eine wohldefinierte Folge von Berechnungen, die einen oder mehrere Werte als Eingabe entgegennimmt und einen oder mehrere Werte als Ausgabe in endlicher Zeit zurückgibt [1, 2]."
+  },
+  {
+    "question": "Wie ist die Worst-Case-Laufzeit von Insertion Sort in der Theta-Notation?",
+    "answers": [
+      "Θ(n)",
+      "Θ(n log n)",
+      "Θ(n²)",
+      "Θ(log n)"
+    ],
+    "correct": 2,
+    "explanation": "Die Worst-Case-Laufzeit von Insertion Sort ist eine quadratische Funktion in n, also Θ(n²) [3-7]. Dies tritt auf, wenn die Eingabeliste umgekehrt sortiert ist, da jedes Element mit allen vorhergehenden Elementen getauscht werden muss [8]."
+  },
+  {
+    "question": "Welche Entwurfsstrategie implementiert Merge Sort?",
+    "answers": [
+      "Greedy-Optimierung",
+      "Dynamische Programmierung",
+      "Teile und Herrsche (Divide-and-Conquer)",
+      "Backtracking"
+    ],
+    "correct": 2,
+    "explanation": "MergeSort implementiert die Divide-and-Conquer-Strategie, indem es eine unsortierte Eingabeliste halbiert, die Teillisten rekursiv sortiert und die sortierten Teillisten kombiniert [9, 10]."
+  },
+  {
+    "question": "Welches Lehrbuch wird in der Vorlesung \"Einführung in die Algorithmik\" (EidA) eng verfolgt?",
+    "answers": [
+      "Data Structures and Algorithms in Java",
+      "The Art of Computer Programming",
+      "Introduction to Algorithms von Cormen, Leiserson, Rivest, Stein (CLRS)",
+      "Algorithms Unlocked"
+    ],
+    "correct": 2,
+    "explanation": "Die Vorlesung folgt recht eng dem Buch 'Introduction to Algorithms' von Cormen, Leiserson, Rivest, Stein (CLRS) [11]."
+  },
+  {
+    "question": "Wie viele ECTS-Punkte gibt es für die Vorlesung \"Einführung in die Algorithmik\" (EidA)?",
+    "answers": [
+      "5 ECTS",
+      "6 ECTS",
+      "7,5 ECTS",
+      "10 ECTS"
+    ],
+    "correct": 2,
+    "explanation": "Die Vorlesung 'Einführung in die Algorithmik' ist mit 7,5 ECTS = 225 Stunden Arbeit für einen Durchschnittsstudierenden angesetzt [12, 13]."
+  },
+  {
+    "question": "Für welche Form von Rekurrenzgleichungen kann das Master-Theorem angewendet werden?",
+    "answers": [
+      "T(n) = T(n-b) + f(n)",
+      "T(n) = a * T(n/b) + f(n)",
+      "T(n) = T(n-1) + T(n-2)",
+      "T(n) = T(n+b) + f(n)"
+    ],
+    "correct": 1,
+    "explanation": "Das Master-Theorem ist eine direkte Lösung für Rekurrenzen der Form T(n) = a * T(n/b) + f(n), wobei a > 0 und b > 1 Konstanten sind [14-18]."
+  },
+  {
+    "question": "Welche Eigenschaft muss ein Binärbaum erfüllen, um ein Max-Heap zu sein?",
+    "answers": [
+      "Jeder Knoten ist kleiner oder gleich als seine beiden Nachfolger.",
+      "Der Baum muss vollständig balanciert sein.",
+      "Jeder Knoten ist größer oder gleich als seine beiden Nachfolger.",
+      "Die Blätter müssen alle auf unterschiedlichen Ebenen liegen."
+    ],
+    "correct": 2,
+    "explanation": "Ein Binärbaum erfüllt die Max-Heap-Eigenschaft, wenn für alle Knoten gilt, dass der Elternknoten größer oder gleich seinen Kindern ist (A[parent(i)] ≥ A[i]) [19]."
+  },
+  {
+    "question": "Was ist die Average-Case-Laufzeit von Quicksort, wenn alle Elemente unterschiedlich sind?",
+    "answers": [
+      "O(n²)",
+      "O(log n)",
+      "O(n log n)",
+      "O(n)"
+    ],
+    "correct": 2,
+    "explanation": "Im Average Case ist die Laufzeit von Quicksort O(n log n), wenn alle Elemente unterschiedlich sind [20, 21]."
+  },
+  {
+    "question": "Was ist die untere Schranke für die Laufzeit vergleichsbasierter Sortierverfahren?",
+    "answers": [
+      "Θ(n)",
+      "Ω(n²)",
+      "Ω(log n)",
+      "Ω(n log n)"
+    ],
+    "correct": 3,
+    "explanation": "Vergleichsbasierte Sortierverfahren haben eine untere Schranke für den Aufwand von Ω(n log n) [22-24]."
+  },
+  {
+    "question": "Welche Sortiereigenschaft wird von einer standardmäßigen Implementierung von Mergesort erfüllt, welche nicht von einer standardmäßigen Implementierung von Quicksort erfüllt wird?",
+    "answers": [
+      "In-place Sortierung",
+      "Stabilität",
+      "O(1) Zusatzspeicher",
+      "Optimaler Worst-Case"
+    ],
+    "correct": 1,
+    "explanation": "Mergesort ist in der Regel eine stabile Sortierung, während Quicksort dies nicht ist [7, 25, 26]."
+  },
+  {
+    "question": "Welche der folgenden Datenstrukturen ist eine LIFO-Datenstruktur (Last In-First Out)?",
+    "answers": [
+      "Queue",
+      "Array",
+      "Stack",
+      "Verkettete Liste"
+    ],
+    "correct": 2,
+    "explanation": "Ein Stack (Stapel) ist eine LIFO-Datenstruktur, bei der das zuletzt hinzugefügte Element als Erstes entfernt wird [27]."
+  },
+  {
+    "question": "Welche der folgenden Datenstrukturen ist eine FIFO-Datenstruktur (First In-First Out)?",
+    "answers": [
+      "Stack",
+      "Queue",
+      "Heap",
+      "Binärer Suchbaum"
+    ],
+    "correct": 1,
+    "explanation": "Queues sind FIFO-Datenstrukturen, bei denen das frühest hinzugefügte Element als Erstes entfernt wird [28]."
+  },
+  {
+    "question": "Nennen Sie eine Methode zur Auflösung von Kollisionen in Hash-Tabellen.",
+    "answers": [
+      "Binäre Suche",
+      "Bubble Sort",
+      "Verkettung (Chaining)",
+      "AVL-Rotation"
+    ],
+    "correct": 2,
+    "explanation": "Eine Möglichkeit, Kollisionen in Hash-Tabellen aufzulösen, ist die Verkettung, bei der in jeder Array-Zelle eine verkettete Liste angelegt wird [29, 30]. Andere Methoden sind Lineares Sondieren und Doppeltes Hashing [30]."
+  },
+  {
+    "question": "Was speichert ein AVL-Baum zusätzlich in jedem Knoten zur Balancierung?",
+    "answers": [
+      "Die Anzahl der Kinder",
+      "Den Balancierungsfaktor (Differenz der Höhen des rechten und linken Teilbaums)",
+      "Den Vorgänger des Knotens",
+      "Die Summe der Werte in seinen Teilbäumen"
+    ],
+    "correct": 1,
+    "explanation": "Ein AVL-Baum speichert in jedem Knoten einen Balancierungsfaktor, der die Differenz zwischen der Höhe des rechten und linken Teilbaums angibt [31, 32]."
+  },
+  {
+    "question": "Wie viele Schlüssel speichert ein Knoten in einem B-Baum (außer der Wurzel) mindestens und maximal, gegeben den Grad t?",
+    "answers": [
+      "Mindestens t, maximal 2t",
+      "Mindestens t-1, maximal 2t-1",
+      "Mindestens 1, maximal t",
+      "Mindestens 2, maximal 2t-1"
+    ],
+    "correct": 1,
+    "explanation": "In einem B-Baum werden in jedem Knoten (außer der Wurzel) zwischen t-1 und 2t-1 Schlüssel gespeichert [33, 34]."
+  },
+  {
+    "question": "Nennen Sie zwei notwendige Eigenschaften eines Problems, damit es mit Dynamischer Programmierung gelöst werden kann.",
+    "answers": [
+      "Zyklenfreiheit und Gerichtetheit",
+      "Konstante Laufzeit und einfacher Basisfall",
+      "Optimalität in Teilproblemen und überlappende Teilprobleme",
+      "Zufällige Eingabe und lineare Skalierung"
+    ],
+    "correct": 2,
+    "explanation": "Dynamische Programmierung erfordert Optimalität in Teilproblemen (eine optimale Lösung für ein Teilproblem kann aus optimalen Lösungen kleinerer Teilprobleme zusammengesetzt werden) und überlappende Teilprobleme (die Anzahl der Teilprobleme muss polynomiell in der Eingabegröße sein) [35, 36]."
+  },
+  {
+    "question": "Welche Variante des Rucksackproblems kann mit einem Greedy-Algorithmus gelöst werden?",
+    "answers": [
+      "0-1 Knapsack",
+      "Bounded Knapsack",
+      "Fractional Knapsack",
+      "Multiple-Choice Knapsack"
+    ],
+    "correct": 2,
+    "explanation": "Das Fractional Knapsack Problem, bei dem Gegenstände teilbar sind, kann mit einem Greedy-Algorithmus gelöst werden [37]."
+  },
+  {
+    "question": "Welche Graphenrepräsentation ist bei dicht besetzten Graphen (vielen Kanten) typischerweise speichereffizienter?",
+    "answers": [
+      "Adjazenzliste",
+      "Adjazenzmatrix",
+      "Kantenliste",
+      "Inzidenzmatrix"
+    ],
+    "correct": 1,
+    "explanation": "Eine Adjazenzmatrix ist bei dicht besetzten Graphen speichereffizienter, da sie für jedes Knotenpaar speichert, ob eine Kante existiert [38]."
+  },
+  {
+    "question": "Welche Graphenrepräsentation ist bei dünn besetzten Graphen (wenigen Kanten) typischerweise speichereffizienter?",
+    "answers": [
+      "Adjazenzmatrix",
+      "Adjazenzliste",
+      "Inzidenzmatrix",
+      "Matrix der kürzesten Wege"
+    ],
+    "correct": 1,
+    "explanation": "Eine Adjazenzliste ist speicherfreundlich bei dünn besetzten (sparse) Graphen, da jeder Knoten nur eine Liste seiner Nachbarn hat [38]."
+  },
+  {
+    "question": "Welche der folgenden Anwendungen ist typisch für die Tiefensuche (DFS)?",
+    "answers": [
+      "Finden des kürzesten Pfades in ungewichteten Graphen",
+      "Finden aller Knoten in einem bestimmten Abstand",
+      "Zykluserkennung und Topologische Sortierung",
+      "Berechnung von maximalen Flüssen"
+    ],
+    "correct": 2,
+    "explanation": "Tiefensuche (DFS) ist nützlich für Zusammenhang, Zykluserkennung und topologische Sortierung [39]."
+  },
+  {
+    "question": "Nennen Sie zwei Algorithmen zur Konstruktion eines Minimalen Spannbaums (MST).",
+    "answers": [
+      "Bellman-Ford und Dijkstra",
+      "Kruskal und Prim",
+      "Floyd-Warshall und Johnson",
+      "Ford-Fulkerson und Edmonds-Karp"
+    ],
+    "correct": 1,
+    "explanation": "Die zwei Hauptalgorithmen zur Konstruktion eines Minimalen Spannbaums sind Kruskal und Prim [40, 41]."
+  },
+  {
+    "question": "Welche Art von Kantengewichten kann der Bellman-Ford-Algorithmus verarbeiten?",
+    "answers": [
+      "Nur positive Kantengewichte",
+      "Nur nicht-negative Kantengewichte",
+      "Auch negative Kantengewichte, erkennt negative Zyklen",
+      "Nur Ganzzahlgewichte"
+    ],
+    "correct": 2,
+    "explanation": "Der Bellman-Ford-Algorithmus ist in der Lage, kürzeste Pfade auch bei Graphen mit negativen Kantengewichten zu finden und kann negative Zyklen erkennen [42]."
+  },
+  {
+    "question": "Welche Voraussetzung muss für die Kantengewichte gelten, damit Dijkstras Algorithmus kürzeste Wege korrekt findet?",
+    "answers": [
+      "Die Kantengewichte müssen ganzzahlig sein.",
+      "Die Kantengewichte dürfen nicht negativ sein.",
+      "Die Kantengewichte müssen unterschiedlich sein.",
+      "Die Kantengewichte müssen alle gleich sein."
+    ],
+    "correct": 1,
+    "explanation": "Dijkstras Algorithmus findet kürzeste Wege nur dann korrekt, wenn alle Kantengewichte positiv sind [43, 44]."
+  },
+  {
+    "question": "Was ist die Laufzeitkomplexität des Floyd-Warshall-Algorithmus?",
+    "answers": [
+      "Θ(V²)",
+      "Θ(E log V)",
+      "Θ(V³)",
+      "Θ(V + E)"
+    ],
+    "correct": 2,
+    "explanation": "Die Laufzeit des Floyd-Warshall Algorithmus liegt in Θ(V³), mit einer niedrigen Konstante [45-47]."
+  },
+  {
+    "question": "Was besagt das Max-Flow Min-Cut Theorem?",
+    "answers": [
+      "Der maximale Fluss in einem Netzwerk ist die Summe aller Kantenkapazitäten.",
+      "Ein Fluss ist nur dann maximal, wenn keine augmentierenden Pfade existieren.",
+      "Der Wert eines maximalen Flusses in einem Flussnetzwerk ist gleich der Kapazität eines minimalen Schnitts.",
+      "Die Summe der Kapazitäten eines Schnitts ist immer gleich dem Fluss."
+    ],
+    "correct": 2,
+    "explanation": "Das Max-Flow Min-Cut Theorem besagt, dass der Wert eines maximalen Flusses in einem Flussnetzwerk der Kapazität eines minimalen Schnitts entspricht [48]."
+  },
+  {
+    "question": "Wie viele Permutationen sind für eine Liste mit n Elementen möglich?",
+    "answers": [
+      "n²",
+      "n log n",
+      "2^n",
+      "n!"
+    ],
+    "correct": 3,
+    "explanation": "Für eine Liste mit n Elementen gibt es n! (n-Fakultät) viele Permutationen [7, 49]."
+  },
+  {
+    "question": "Was ist die Zeitkomplexität für das Einfügen und Löschen von Elementen in einer doppelt verketteten Liste, wenn die Referenz auf das Element bekannt ist?",
+    "answers": [
+      "O(n)",
+      "O(log n)",
+      "O(1)",
+      "O(n log n)"
+    ],
+    "correct": 2,
+    "explanation": "INSERT und DELETE Operationen in einer doppelt verketteten Liste, wenn die Referenz auf das Element bekannt ist, kosten O(1) [50]."
+  },
+  {
+    "question": "Was ist das Hauptziel von Hashing (Streutabellen)?",
+    "answers": [
+      "Daten zu sortieren",
+      "Hierarchische Beziehungen darzustellen",
+      "Schneller Zugriff auf Daten durch Indexbildung (O(1))",
+      "Mengen statisch zu halten"
+    ],
+    "correct": 2,
+    "explanation": "Das Ziel von Hashing ist der schnelle Zugriff auf Daten durch Indexbildung, idealerweise in O(1) [51]."
+  },
+  {
+    "question": "Welches Problem tritt bei Hash-Funktionen auf, wenn verschiedene Schlüssel auf die gleiche Array-Position abgebildet werden?",
+    "answers": [
+      "Überlauf",
+      "Degeneration",
+      "Kollision",
+      "Blockierung"
+    ],
+    "correct": 2,
+    "explanation": "Eine Kollision entsteht, wenn zwei Schlüssel auf dieselbe Array-Position abgebildet werden [29, 51]."
+  },
+  {
+    "question": "Was ist der Zweck der `updateHeight(Node node)` Methode in einem AVL-Baum?",
+    "answers": [
+      "Den Wert eines Knotens zu aktualisieren.",
+      "Die Balance des Baumes zu prüfen.",
+      "Die Höhe eines Knotens basierend auf seinen Kindern zu aktualisieren.",
+      "Die Anzahl der Elemente im Baum zu zählen."
+    ],
+    "correct": 2,
+    "explanation": "Die `updateHeight` Methode aktualisiert die Höhe eines Knotens basierend auf den Höhen seiner linken und rechten Kinder [52]."
+  },
+  {
+    "question": "Was ist der primäre Vorteil von B-Bäumen gegenüber Binären Suchbäumen für große Datensätze auf externem Speicher?",
+    "answers": [
+      "Einfachere Implementierung",
+      "Geringerer Speicherbedarf pro Schlüssel",
+      "Optimierung für blockweise Lese-/Schreiboperationen",
+      "Schnellere Traversierung"
+    ],
+    "correct": 2,
+    "explanation": "B-Bäume sind für blockweise Lese-/Schreiboperationen optimiert, was bei externem Speicher von Vorteil ist, da viele Werte auf einmal gelesen/geschrieben werden [33]."
+  },
+  {
+    "question": "Was ist das Hauptmerkmal eines Greedy-Algorithmus?",
+    "answers": [
+      "Er löst Probleme durch Zerlegung in kleinere Teilprobleme.",
+      "Er trifft lokal optimale Entscheidungen in der Hoffnung, ein globales Optimum zu erreichen.",
+      "Er speichert Zwischenergebnisse, um Mehrfachberechnungen zu vermeiden.",
+      "Er durchsucht alle möglichen Lösungen systematisch."
+    ],
+    "correct": 1,
+    "explanation": "Greedy-Optimierung bedeutet, dass aus der aktuellen Situation heraus ad-hoc der größte Gewinn für das Optimierungsziel gewählt wird, in der Hoffnung, dass dies zu einer global optimalen Lösung führt [53, 54]."
+  },
+  {
+    "question": "Was ist ein augmentierender Pfad im Ford-Fulkerson-Algorithmus?",
+    "answers": [
+      "Ein Pfad im ursprünglichen Graphen, der noch Kapazität hat.",
+      "Ein Pfad im Residual Network, der den Fluss von s nach t erhöhen kann.",
+      "Ein Pfad, der die maximale Flusskapazität einer einzelnen Kante anzeigt.",
+      "Ein kürzester Pfad von der Quelle zum Senke."
+    ],
+    "correct": 1,
+    "explanation": "Ein augmentierender Pfad ist ein simpler Pfad im Residual Network (Gf) von der Quelle s zur Senke t, der den Fluss erhöhen kann [55]."
+  },
+  {
+    "question": "Was ist der Grad eines Knotens in einem ungerichteten Graphen?",
+    "answers": [
+      "Die Anzahl der ausgehenden Kanten",
+      "Die Anzahl der eingehenden Kanten",
+      "Die Anzahl der inzidenten Kanten",
+      "Die maximale Anzahl von Pfaden, die von ihm ausgehen"
+    ],
+    "correct": 2,
+    "explanation": "In ungerichteten Graphen ist der Grad eines Knotens die Anzahl der inzidenten Kanten [56, 57]."
+  },
+  {
+    "question": "Was ist die asymptotische Laufzeit des Python-Programms `foo(n)` im Durchschnittsfall (Average Case), wenn `n` ein gerader oder ungerader Input sein kann?",
+    "answers": [
+      "Θ(1)",
+      "Θ(log n)",
+      "Θ(n)",
+      "Θ(n²)"
+    ],
+    "correct": 2,
+    "explanation": "Für `def foo(n): if(n % 2 == 0): for i in range(0,n): pass` gilt im Durchschnittsfall eine Laufzeit von Θ(n) [7, 58], da die Schleife nur bei geraden Zahlen durchlaufen wird."
+  },
+  {
+    "question": "Sortieren Sie die Liste `[59-63]` mit Insertion Sort. Wie sieht die Liste nach der **zweiten** äußeren Schleifeniteration (nachdem das Element '3' verarbeitet wurde) aus?",
+    "answers": [
+      "[59-63]",
+      "[59-63]",
+      "[59-63]",
+      "[60, 61, 63-65]"
+    ],
+    "correct": 1,
+    "explanation": "Nach dem ersten Schritt (i=1, Element 2): [59-63]. Nach dem zweiten Schritt (i=2, Element 3): [59-63] [66-68]."
+  },
+  {
+    "question": "Gegeben das Array `[59, 61, 63-65]` für Quicksort und der Pivot `4` (letztes Element). Wie sieht das Array nach dem ersten `partition`-Schritt aus?",
+    "answers": [
+      "[59, 61, 63-65]",
+      "[59, 61, 63-65]",
+      "[59, 61, 63-65]",
+      "[59, 61, 63-65]"
+    ],
+    "correct": 1,
+    "explanation": "Nach dem `partition`-Schritt, bei dem 4 als Pivot gewählt wird, werden Elemente kleiner als 4 nach links und größere nach rechts verschoben. Das Ergebnis ist `[59, 61, 63-65]` [69-72]."
+  },
+  {
+    "question": "Gegeben das Array `[59-61, 63-65, 73]`. Wie sieht das Array nach dem initialen `buildMaxHeap`-Schritt für einen Max-Heap aus (Wurzel an Index 0)?",
+    "answers": [
+      "[59-61, 63-65, 73]",
+      "[59-61, 63-65, 73]",
+      "[59-61, 63-65, 73]",
+      "[59-61, 63-65, 73]"
+    ],
+    "correct": 1,
+    "explanation": "Nach dem `buildMaxHeap`-Schritt wird das Array in einen Max-Heap umgewandelt, in dem das größte Element an der Wurzel (Index 0) liegt und die Heap-Eigenschaft für alle Knoten erfüllt ist. Das Beispiel in den Folien zeigt, dass für das gegebene Array das Ergebnis `[59-61, 63-65, 73]` ist [74-76]."
+  },
+  {
+    "question": "Führen Sie den Dijkstra-Algorithmus auf dem folgenden Graphen (startend bei A) aus. Was ist die **kürzeste Distanz zu Knoten D** nach Abschluss des Algorithmus?",
+    "answers": [
+      "2",
+      "4",
+      "5",
+      "8"
+    ],
+    "correct": 1,
+    "explanation": "Im Beispiel von Dijkstras Algorithmus wird gezeigt, dass die kürzeste Distanz von A zu D 4 beträgt (A-B-D) [44, 77]."
+  },
+  {
+    "question": "Gegeben die initiale Kostenmatrix für einen Graphen im Floyd-Warshall-Algorithmus. Was ist der Wert in `Kostenmatrix[A][C]` nach der Iteration k=B (zweiter Knoten)? (Initial: A-B=3, B-C=1)",
+    "answers": [
+      "∞",
+      "3",
+      "4",
+      "6"
+    ],
+    "correct": 2,
+    "explanation": "Initial ist Kostenmatrix[A][C] = ∞. Nach der Iteration k=B (2. Knoten) wird der Pfad A -> B -> C berücksichtigt. Die Kosten dafür sind A-B (3) + B-C (1) = 4. Dieser Wert ist kleiner als ∞, also wird Kostenmatrix[A][C] auf 4 aktualisiert [45, 78-80]."
+  },
+  {
+    "question": "In einem AVL-Baum wird ein Knoten mit Balancefaktor +2 festgestellt. Welche Rotation(en) könnte(n) erforderlich sein, um den Baum zu balancieren, wenn die linke Subtree-Höhe die rechte Subtree-Höhe um 2 übersteigt (LL-Fall)?",
+    "answers": [
+      "Linksrotation (single right rotation im englischen)",
+      "Rechtsrotation (single left rotation im englischen)",
+      "Doppel-Linksrotation",
+      "Doppel-Rechtsrotation"
+    ],
+    "correct": 0,
+    "explanation": "Ein Balancefaktor von +2 (linkes Kind 2 höher als rechtes Kind) deutet auf einen LL-Fall hin. Hierbei ist eine Linksrotation (im Deutschen oft auch als 'Rechtsdrehung' des Baumes bezeichnet) des Knotens erforderlich, um ihn zu balancieren [33, 81]."
+  },
+  {
+    "question": "Fügen Sie die Schlüssel `[+10, +20, +5, +6]` in einen leeren B-Baum mit `t=2` ein. Welcher Schlüssel wird nach dem Einfügen von `+6` zur Wurzel, wenn der Knoten voll wird und geteilt wird?",
+    "answers": [
+      "5",
+      "6",
+      "10",
+      "20"
+    ],
+    "correct": 2,
+    "explanation": "Initial leer. +10, +20, +5 werden eingefügt: [63, 82, 83]. Wenn +6 eingefügt wird, ist der Knoten [63, 73, 82, 83] voll (2t-1 = 3 Schlüssel). Er muss gesplittet werden. Der Median (10) wandert nach oben und wird zur neuen Wurzel. Die Hälften [63, 73] und [83] werden die Kinder [84, 85]."
+  },
+  {
+    "question": "Gegeben eine Hash-Tabelle mit `m=10` Buckets und Hashfunktion `h(key) = key % 10`. Fügen Sie die Schlüssel `12, 22, 32` unter Verwendung von Chaining ein. Welche Liste befindet sich in Bucket `2`?",
+    "answers": [
+      "[]",
+      "[52]",
+      "[52, 86]",
+      "[52, 86, 87]"
+    ],
+    "correct": 3,
+    "explanation": "Alle Schlüssel (12, 22, 32) haben als `key % 10` den Wert 2. Bei Chaining werden alle Elemente, die auf denselben Bucket gehasht werden, in einer verketteten Liste in diesem Bucket gespeichert. Daher enthält Bucket 2 die Liste `[52, 86, 87]` [29, 30]."
+  },
+  {
+    "question": "Ein ungerichteter Graph G=(V,E) hat 5 Knoten. Wie viele Kanten E muss G mindestens haben, damit sichergestellt ist, dass G zusammenhängend ist?",
+    "answers": [
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "correct": 1,
+    "explanation": "Ein Graph mit n Knoten benötigt mindestens n-1 Kanten, um zusammenhängend zu sein. Für n=5 Knoten sind das 5-1=4 Kanten [88]."
+  },
+  {
+    "question": "Betrachten Sie das folgende Python-Programm: `def foo(n): for i in range(0,1): pass; for j in range(0,2): pass; for k in range(0,3): pass`. Welche Laufzeitabschätzung in Θ-Notation ist korrekt?",
+    "answers": [
+      "Θ(n)",
+      "Θ(n log n)",
+      "Θ(1)",
+      "Θ(6)"
+    ],
+    "correct": 2,
+    "explanation": "Die Schleifen sind nicht von `n` abhängig und iterieren eine konstante Anzahl von Malen. Daher ist die Laufzeit konstant, also Θ(1) [58, 89]."
+  },
+  {
+    "question": "Wie ist die Höhe eines `null`-Knotens in der `height(Node node)` Methode einer AVL-Baum-Implementierung definiert?",
+    "answers": [
+      "-1",
+      "0",
+      "1",
+      "Undefiniert"
+    ],
+    "correct": 1,
+    "explanation": "Die `height` Methode in der `AvlTreeSubmission` gibt 0 zurück, wenn der Knoten `null` ist [52]."
+  },
+  {
+    "question": "Welche Methode in der `AvlTreeSubmission` ist dafür zuständig, die Balance eines Knotens nach einer Einfüge- oder Löschoperation wiederherzustellen?",
+    "answers": [
+      "rightRotate()",
+      "leftRotate()",
+      "balance()",
+      "updateHeight()"
+    ],
+    "correct": 2,
+    "explanation": "Die Methode `balance(Node node)` ist dafür vorgesehen, einen Knoten auf AVL-Konformität zu überprüfen und durch geeignete Rotationen zu balancieren, falls notwendig [90-93]."
+  },
+  {
+    "question": "Was ist der Zweck der `findMinValueNode(Node node)` Methode in einem AVL-Baum?",
+    "answers": [
+      "Den höchsten Wert im Baum zu finden.",
+      "Den Knoten mit dem kleinsten Schlüssel in einem Teilbaum zu finden.",
+      "Die Wurzel des Baumes zurückzugeben.",
+      "Einen neuen Knoten zu erstellen."
+    ],
+    "correct": 1,
+    "explanation": "Die Methode `findMinValueNode(Node node)` soll den Knoten mit dem kleinsten enthaltenen Schlüssel in dem gegebenen Teilbaum zurückgeben [90, 94]."
+  },
+  {
+    "question": "Wofür steht die statische Variable `t` in der `BTreeNodeSubmission` Klasse?",
+    "answers": [
+      "Für die maximale Anzahl der Schlüssel.",
+      "Für die minimale Ordnung des B-Baums.",
+      "Für die Anzahl der Kinder eines Knotens.",
+      "Für die Höhe des Baumes."
+    ],
+    "correct": 1,
+    "explanation": "`static int t = 2;` definiert den Grad des B-Baums, welcher die minimale und maximale Anzahl der Schlüssel und Kinder in einem Knoten festlegt [95]."
+  },
+  {
+    "question": "In einer array-basierten Binärsuchbaum-Implementierung, wie wird der Index des linken Kindes eines Knotens an Index `i` (0-indiziert) berechnet?",
+    "answers": [
+      "2 * i",
+      "2 * i + 1",
+      "2 * i + 2",
+      "(i - 1) / 2"
+    ],
+    "correct": 1,
+    "explanation": "Der Index des linken Kindes eines Knotens an Index `i` wird in einem 0-indizierten Array als `2 * i + 1` berechnet [96, 97]."
+  },
+  {
+    "question": "Was ist der Zweck der `lCopy` und `rCopy` Arrays in der `merge` Methode von MergeSort?",
+    "answers": [
+      "Speichern der unsortierten Hälften.",
+      "Speichern der sortierten Hälften vor dem Zusammenführen.",
+      "Speichern der finalen sortierten Liste.",
+      "Speichern von temporären Indizes."
+    ],
+    "correct": 1,
+    "explanation": "Die Arrays `lCopy` und `rCopy` werden verwendet, um die zwei sortierten Teillisten temporär zu speichern, bevor sie zur einer sortierten Gesamtliste zusammengeführt werden [98, 99]."
+  },
+  {
+    "question": "Für einen 0-indizierten Array, der einen Heap darstellt, wie berechnet man den Index des Elternknotens (`parentIdx`) eines Knotens an Index `i`?",
+    "answers": [
+      "`2 * i + 1`",
+      "`2 * i + 2`",
+      "`(i - 1) / 2`",
+      "`i / 2`"
+    ],
+    "correct": 2,
+    "explanation": "In Java (0-indiziert) ist der Elternknoten eines Kindknotens `k` bei `⌊(i - 1) / 2⌋` zu finden [97]."
+  },
+  {
+    "question": "Was ist die Zeitkomplexität für die `PREPEND`-Operation in einer einfach verketteten Liste?",
+    "answers": [
+      "O(n)",
+      "O(log n)",
+      "O(1)",
+      "O(n²)"
+    ],
+    "correct": 2,
+    "explanation": "`PREPEND` (Anhängen am Anfang) ändert nur Referenzen, was eine Laufzeit von O(1) hat [50]."
+  },
+  {
+    "question": "Was ist der Zweck des `LOAD_FACTOR` in den `HashMap` Implementierungen?",
+    "answers": [
+      "Definiert die anfängliche Größe der Hash-Tabelle.",
+      "Bestimmt die maximale Anzahl von Kollisionen.",
+      "Gibt die Schwelle an, bei der eine Größenänderung (Rehashing) ausgelöst wird.",
+      "Legt die Hash-Funktion fest."
+    ],
+    "correct": 2,
+    "explanation": "Der `LOAD_FACTOR` (z.B. 0.75) ist eine Schwelle, die zur Vergrößerung (Rehashing) der Hash-Tabelle genutzt wird, wenn das Verhältnis von Einträgen zu Buckets diesen Faktor überschreitet [100]."
+  },
+  {
+    "question": "In der `MaxHeapSubmission` oder `MinHeapSubmission`, wofür wird die `toRemove` HashMap verwendet?",
+    "answers": [
+      "Um Elemente zu speichern, die eingefügt werden sollen.",
+      "Um eine Liste aller entfernten Elemente zu führen.",
+      "Um eine verzögerte Löschung von Elementen im Heap zu handhaben.",
+      "Um die Größe des Heaps zu verfolgen."
+    ],
+    "correct": 2,
+    "explanation": "Die `toRemove` HashMap wird verwendet, um eine verzögerte Löschung ('lazy deletion') von Elementen zu implementieren, anstatt sie sofort physisch aus dem Heap zu entfernen [101, 102]."
+  },
+  {
+    "question": "Was ist der Zweck der `assignCars` Methode in der `FerryRecursiveSubmission`?",
+    "answers": [
+      "Die Gesamtlänge aller Autos zu berechnen.",
+      "Die maximale Anzahl von Autos zu bestimmen, die auf die Fähre passen, unter Verwendung eines rekursiven Ansatzes.",
+      "Die Fahrzeuge zufällig auf die Spuren zu verteilen.",
+      "Den optimalen Preis für die Fährfahrt zu berechnen."
+    ],
+    "correct": 1,
+    "explanation": "Die Methode `assignCars` soll die maximale Anzahl von Fahrzeugen berechnen, die auf die Fähre untergebracht werden können, und deren Zuweisung zu den Spuren (LEFT/RIGHT) unter Verwendung eines rekursiven Ansatzes [103, 104]."
+  },
+  {
+    "question": "Betrachten Sie die `KatzeSubmission.compareTo` Methode. Welches Attribut wird zuerst für den Vergleich zweier Katzen verwendet?",
+    "answers": [
+      "Matrikelnummer",
+      "Studiengang",
+      "Name",
+      "Geburtsdatum"
+    ],
+    "correct": 2,
+    "explanation": "Die `compareTo` Methode in `KatzeSubmission` vergleicht Katzen zuerst alphabetisch nach dem Namen und dann nach der Matrikelnummer, wenn die Namen gleich sind [105, 106]."
+  },
+  {
+    "question": "Wie wird der Index des rechten Kindes (`getRightChild`) eines Knotens `parent` in einem Ternary Heap (0-indiziert) berechnet?",
+    "answers": [
+      "`3 * parent + 1`",
+      "`3 * parent + 2`",
+      "`3 * parent + 3`",
+      "`(parent - 1) / 3`"
+    ],
+    "correct": 2,
+    "explanation": "Der Index des rechten Kindes eines Knotens an Index `parent` in einem Ternary Heap wird als `3 * parent + 3` berechnet (bei 0-indizierung) [107]. (Anmerkung: Das Quellcode-Snippet für `getRightChild` ist mit `//TODO` markiert, aber der Standard für d-ary Heaps ist `d * i + d`). In diesem Fall `3*i + 3` für den dritten Kindknoten, oder `3*i+2` für den zweiten und `3*i+1` für den ersten."
+  },
+  {
+    "question": "Was ist der Zweck der `maxHeapAdd` Methode in der Heapsort-Implementierung?",
+    "answers": [
+      "Die Heap-Eigenschaft des gesamten Arrays wiederherzustellen.",
+      "Das größte Element aus dem Heap zu entfernen.",
+      "Ein Element zum Max-Heap hinzuzufügen und die Max-Heap-Eigenschaft wiederherzustellen.",
+      "Die Größe des Heaps zu aktualisieren."
+    ],
+    "correct": 2,
+    "explanation": "Die Methode `maxHeapAdd` fügt ein Element zum Max-Heap hinzu und stellt sicher, dass die Max-Heap-Eigenschaft für den neuen Heap gültig ist, indem sie das neue Element bei Bedarf nach oben tauscht (`increaseKey`-ähnlich) [108-110]."
+  },
+  {
+    "question": "Im Floyd-Warshall-Algorithmus, wie lautet die Aktualisierungsregel für `d[i][j]`?",
+    "answers": [
+      "`d[i][j] = d[i][k] + d[k][j]`",
+      "`d[i][j] = min(d[i][j], d[i][k] + d[k][j])`",
+      "`d[i][j] = max(d[i][j], d[i][k] + d[k][j])`",
+      "`d[i][j] = d[i][k] - d[k][j]`"
+    ],
+    "correct": 1,
+    "explanation": "Die Rekurrenzgleichung für `d[i][j]` im Floyd-Warshall-Algorithmus lautet `d^(k)ij = min(d^(k-1)ij, d^(k-1)ik + d^(k-1)kj)` [45, 111]."
+  },
+  {
+    "question": "Welche Zahl wird in der `YoungTableauSubmission` verwendet, um leere Einträge oder Unendlichkeit (`∞`) darzustellen?",
+    "answers": [
+      "0",
+      "-1",
+      "Integer.MIN_VALUE",
+      "Integer.MAX_VALUE"
+    ],
+    "correct": 3,
+    "explanation": "In der `YoungTableauSubmission` wird `Integer.MAX_VALUE` verwendet, um leere Einträge oder Unendlichkeit darzustellen [112]."
+  },
+  {
+    "question": "Was ist der Zweck der `search(int key)` Methode in einer `HashMapChainSubmission`?",
+    "answers": [
+      "Einen neuen Schlüssel in die Hash-Tabelle einzufügen.",
+      "Einen Schlüssel aus der Hash-Tabelle zu löschen.",
+      "Die Existenz eines Schlüssels in der Hash-Tabelle zu überprüfen, indem die entsprechende verkettete Liste durchsucht wird.",
+      "Die Hash-Tabelle zu vergrößern."
+    ],
+    "correct": 2,
+    "explanation": "Die `search` Methode in einer `HashMapChainSubmission` soll überprüfen, ob ein Schlüssel in der Hash-Tabelle vorhanden ist. Dies geschieht, indem der Hash-Index berechnet und dann die verkettete Liste an diesem Index durchsucht wird [113, 114]."
+  },
+  {
+    "question": "In der `BinarySearchTreeSubmission`, welche Werte werden von den Helper-Methoden `left(int index)` und `right(int index)` zurückgegeben?",
+    "answers": [
+      "Die Werte der Kindknoten.",
+      "Die Höhen der Kindknoten.",
+      "Die Indizes der linken bzw. rechten Kindknoten.",
+      "Boolesche Werte, ob Kindknoten existieren."
+    ],
+    "correct": 2,
+    "explanation": "Die Helper-Methoden `left(int index)` und `right(int index)` geben die Indizes der linken (2 * index + 1) bzw. rechten (2 * index + 2) Kindknoten im Array zurück [96, 115]."
+  },
+  {
+    "question": "Betrachten Sie das folgende Python-Programm: `def foo(n): if n % 2 == 0: for i in range(0,2**n): print(i)`. Welche Laufzeitabschätzung für den **Best Case** (Ω-Notation) ist korrekt?",
+    "answers": [
+      "Ω(2^n)",
+      "Ω(n)",
+      "Ω(1)",
+      "Ω(n²)"
+    ],
+    "correct": 2,
+    "explanation": "Im Best Case (wenn `n` ungerade ist) wird die Schleife nie ausgeführt, die Funktion terminiert sofort. Daher ist die Laufzeit Ω(1) [116, 117]."
+  },
+  {
+    "question": "Was ist das Ergebnis der Funktion `partition_sort(n)` laut Aufgabenstellung?",
+    "answers": [
+      "Eine Liste von Primzahlen bis n.",
+      "Eine nach Größe der Elemente sortierte Liste von Listen.",
+      "Eine nach Länge der Listen sortierte Liste, die aus nach Größe der Elemente sortierten Listen besteht.",
+      "Eine Liste von Fibonacci-Zahlen."
+    ],
+    "correct": 2,
+    "explanation": "Die Funktion `partition_sort(n)` gibt eine nach Länge der Listen sortierte Liste zurück, die aus nach Größe der Elemente sortierten Listen besteht [118]."
+  },
+  {
+    "question": "In der `generate_partitions` Funktion, wie lautet die Bedingung für den Basisfall, dass `remaining` 0 ist?",
+    "answers": [
+      "`remaining == 1`",
+      "`remaining < 0`",
+      "`remaining == 0`",
+      "`remaining > 0`"
+    ],
+    "correct": 2,
+    "explanation": "Der Basisfall für `generate_partitions` ist, wenn `remaining == 0` ist, was bedeutet, dass eine gültige Partition gefunden wurde [119]."
+  },
+  {
+    "question": "Was ist die Zeitkomplexität für die `search`-Operation in einer einfach verketteten Liste im Worst Case?",
+    "answers": [
+      "O(1)",
+      "O(log n)",
+      "O(n)",
+      "O(n log n)"
+    ],
+    "correct": 2,
+    "explanation": "Für `SEARCH` muss potentiell jedes Element angesehen werden, d.h. der Worst Case-Aufwand ist in O(n) [50]."
+  },
+  {
+    "question": "Was ist der `EMPTY` Wert in der `HashMapLinearSubmission` und wofür wird er genutzt?",
+    "answers": [
+      "Der Wert, der eingefügt wurde.",
+      "Ein Marker für gelöschte Einträge.",
+      "Ein Wert, der anzeigt, dass ein Bucket leer ist.",
+      "Die maximale Größe der Hashmap."
+    ],
+    "correct": 2,
+    "explanation": "`EMPTY = Integer.MIN_VALUE` wird verwendet, um zu initialisieren und anzuzeigen, dass ein Bucket in der Hash-Tabelle leer ist [120]."
+  },
+  {
+    "question": "Was ist die Rolle der `maxheapify` Methode im Heapsort-Algorithmus?",
+    "answers": [
+      "Ein Element in den Heap einzufügen.",
+      "Die Heap-Eigenschaft für einen Teilbaum wiederherzustellen.",
+      "Das Array in einen Heap umzuwandeln.",
+      "Das größte Element aus dem Heap zu extrahieren."
+    ],
+    "correct": 1,
+    "explanation": "Die `maxheapify` Methode ist dafür verantwortlich, die Heap-Eigenschaft für einen Teilbaum wiederherzustellen, indem sie einen Knoten nach unten tauscht, wenn die Heap-Eigenschaft an seiner Wurzel verletzt ist [121-123]."
+  },
+  {
+    "question": "Welche Datenstruktur wird typischerweise für die Warteschlange in Dijkstras Algorithmus empfohlen, um die Laufzeit zu optimieren?",
+    "answers": [
+      "Array",
+      "Stack",
+      "Verkettete Liste",
+      "Prioritätswarteschlange (PriorityQueue)"
+    ],
+    "correct": 3,
+    "explanation": "Die Laufzeit von Dijkstras Algorithmus hängt wesentlich von der Implementierung der Prioritäts-Queue ab; diese wird verwendet, um den aktuell günstigsten Knoten auszuwählen [124, 125]."
+  },
+  {
+    "question": "Was ist der Zweck der `predecessors` HashMap in Dijkstras `get_distances` Methode?",
+    "answers": [
+      "Um die Kosten zu jedem Knoten zu speichern.",
+      "Um die Kanten des Graphen zu speichern.",
+      "Um die Vorgängerknoten auf den kürzesten Pfaden zu speichern und so den Pfad rekonstruieren zu können.",
+      "Um besuchte Knoten zu markieren."
+    ],
+    "correct": 2,
+    "explanation": "Die `predecessors` HashMap wird in Dijkstras `get_distances` Methode verwendet, um für jeden Knoten den Vorgängerknoten auf dem jeweiligen kürzesten Pfad zu speichern, was die Rekonstruktion des Pfades ermöglicht [125]."
+  },
+  {
+    "question": "Welche Pivot-Auswahlstrategie wählt das Element an der letzten Position des Teilarrays?",
+    "answers": [
+      "firstPivot",
+      "middlePivot",
+      "lastPivot",
+      "medianOfThree"
+    ],
+    "correct": 2,
+    "explanation": "Die Methode `lastPivot` gibt den Index des letzten Elements im Teilarray zurück [126, 127]."
+  },
+  {
+    "question": "Was ist der Hauptzweck der `berechneDistanz` Methode in der `LevenshteinSubmission` Klasse?",
+    "answers": [
+      "Die Länge zweier Sätze zu vergleichen.",
+      "Die Levenshtein-Distanz zwischen zwei Zeichenketten zu berechnen.",
+      "Zwei Sätze zu konkattenieren.",
+      "Die Anzahl der gemeinsamen Zeichen in zwei Sätzen zu finden."
+    ],
+    "correct": 1,
+    "explanation": "Die `berechneDistanz` Methode in der `LevenshteinSubmission` ist dazu da, die Levenshtein-Distanz zwischen zwei Zeichenketten (`satz1`, `satz2`) zu berechnen [128]."
+  },
+  {
+    "question": "Was ist die Zeitkomplexität der `naive` Methode in `MeanSubmission` aufgrund der `Arrays.sort(input)`-Aufrufe innerhalb einer Schleife?",
+    "answers": [
+      "Linear",
+      "Logarithmisch",
+      "Quadratisch",
+      "Exponentiell"
+    ],
+    "correct": 2,
+    "explanation": "Die `naive` Methode sortiert bei jeder Iteration ein Unterarray mit `Arrays.sort(input)`. Wenn `k` die Länge des Unterarrays ist, kostet dies O(k log k). Wenn dies `n` mal gemacht wird, führt dies zu einer hohen Gesamtkomplexität, die deutlich schlechter ist als eine effizientere Lösung, potentiell quadratisch in bestimmten Fällen [129]."
+  },
+  {
+    "question": "In der `MusicSubmission.precedes` Methode, wenn der Titel (`title`) zweier Musikobjekte gleich ist, welches Kriterium wird als Nächstes für den Vergleich verwendet?",
+    "answers": [
+      "Künstler (artist)",
+      "Dauer (duration)",
+      "Veröffentlichungsdatum (releaseDate)",
+      "ID (id)"
+    ],
+    "correct": 1,
+    "explanation": "Die `precedes` Methode in `MusicSubmission` soll die Musik erst alphabetisch nach dem Titel, bei gleichem Titel nach der Länge (`duration`) und bei gleicher Länge nach der ID (`id`) vergleichen [130, 131]."
+  },
+  {
+    "question": "Was ist der Zweck der `pivotFunc` Eigenschaft in der `QuicksortSubmission` Klasse?",
+    "answers": [
+      "Die Rekursionstiefe zu begrenzen.",
+      "Die Art der Pivot-Auswahlstrategie zu steuern.",
+      "Die Sortierreihenfolge umzukehren.",
+      "Die Größe des Arrays zu speichern."
+    ],
+    "correct": 1,
+    "explanation": "Die `pivotFunc` Eigenschaft steuert über ein `switch`-Statement, welche der verschiedenen Pivot-Auswahlstrategien (z.B. `firstPivot`, `middlePivot`, `lastPivot`, `inefficientPivot`, `medianFirstMiddleLastPivot`) verwendet wird [132, 133]."
+  },
+  {
+    "question": "Welche Art von Graphen wird die `bfs` Methode in `SearcherSubmission` typischerweise verwendet, um kürzeste Pfade zu finden?",
+    "answers": [
+      "Gewichtete Graphen",
+      "Gerichtete Graphen mit negativen Kanten",
+      "Ungewichtete Graphen",
+      "Zyklenfreie Graphen"
+    ],
+    "correct": 2,
+    "explanation": "Die Breitensuche (BFS) ist dafür bekannt, kürzeste Pfade in ungewichteten Graphen zu finden [134, 135]."
+  },
+  {
+    "question": "Sortieren Sie die Liste `[59, 61, 63-65]` mit Bubble Sort. Wie sieht die Liste nach dem **ersten vollständigen Durchlauf** der äußeren Schleife aus?",
+    "answers": [
+      "[59, 61, 63-65]",
+      "[59, 61, 63-65]",
+      "[59, 61, 63-65]",
+      "[59, 61, 63-65]"
+    ],
+    "correct": 1,
+    "explanation": "Beim Bubble Sort wird in jedem Durchlauf das größte Element an das Ende 'gebubbelt'. Nach dem ersten vollständigen Durchlauf befindet sich das größte Element (7) an der letzten Position: `[59, 61, 63-65]` [136-138]."
+  },
+  {
+    "question": "Sortieren Sie die Liste `[59, 61, 63-65]` mit Selection Sort. Wie sieht die Liste nach dem **ersten Schritt** (nach dem ersten Tausch) aus?",
+    "answers": [
+      "[59, 61, 63-65]",
+      "[59, 61, 63-65]",
+      "[59, 61, 63-65]",
+      "[60, 61, 63-65]"
+    ],
+    "correct": 0,
+    "explanation": "Beim Selection Sort wird im ersten Schritt das kleinste Element der gesamten Liste gesucht (hier: 1) und mit dem Element an der ersten Position getauscht. Die Liste wird zu `[59, 61, 63-65]` [139]."
+  },
+  {
+    "question": "Gegeben das Array `[12, 13, 59, 73, 86]` und ein maximaler Wert `n=29`. Bestimmen Sie die Anzahl der Buckets `k` für Bucket Sort gemäß der Heuristik `k = ⌊√n⌋`.",
+    "answers": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "correct": 2,
+    "explanation": "Die Heuristik für die Anzahl der Buckets ist `k = ⌊√n⌋`. Für `n=29` ist `√29 ≈ 5.38`. Abgerundet (`⌊5.38⌋`) ergibt sich `k=5` Buckets [140]."
+  },
+  {
+    "question": "Führen Sie den MergeSort für die Teilliste `[59, 61, 63-65]` aus, die aus einem vorherigen Schritt des MergeSort stammt. Wie sieht diese Teilliste nach dem **ersten Merge-Schritt** aus?",
+    "answers": [
+      "[59, 61, 63-65]",
+      "[59, 61, 63-65]",
+      "[59, 61, 63, 64]",
+      "[59, 61, 63-65]"
+    ],
+    "correct": 3,
+    "explanation": "Wenn die Teilliste `[59, 61, 63-65]` in `[59, 63]` und `[61, 64, 65]` gesplittet wird, und diese rekursiv sortiert wurden (sind schon sortiert), dann führt der erste Merge-Schritt von `[59, 63]` und `[61, 64, 65]` zu `[59, 61, 63-65]` [141, 142]. Die Frage ist nach dem *ersten Merge-Schritt*, was in der Illustration dem Zusammenführen von `[59]` und `[63]` zu `[59, 63]` entspricht, und dann `[61]` und `[64]` zu `[61, 64]`, etc."
+  },
+  {
+    "question": "Analysieren Sie die Laufzeit des folgenden Pseudocodes: `for(int i = 0; i * i <= n * n; i++) { Konstante Operation }`. Welches ist die Θ-Notation für die Laufzeit?",
+    "answers": [
+      "Θ(1)",
+      "Θ(n)",
+      "Θ(n²)",
+      "Θ(log n)"
+    ],
+    "correct": 1,
+    "explanation": "Die Schleife läuft von `i = 0` bis `i * i <= n * n`, was effektiv `i <= n` bedeutet. Die Anzahl der Iterationen ist daher proportional zu `n`. Jede Operation innerhalb der Schleife ist konstant. Daher ist die Laufzeit Θ(n) [143, 144]."
+  },
+  {
+    "question": "Analysieren Sie die Laufzeit des folgenden Pseudocodes: `for(int i = 0; i < n; i++) { for(int j = 0; j < i; j++) { Konstante Operation } }`. Welches ist die Θ-Notation für die Laufzeit?",
+    "answers": [
+      "Θ(n)",
+      "Θ(n log n)",
+      "Θ(n²)",
+      "Θ(n³)"
+    ],
+    "correct": 2,
+    "explanation": "Die äußere Schleife läuft `n` Mal. Die innere Schleife läuft `i` Mal. Die Anzahl der Operationen ist proportional zu `0 + 1 + ... + (n-1)`, was einer Summe von `n(n-1)/2` entspricht, also Θ(n²) [144, 145]."
+  },
+  {
+    "question": "Analysieren Sie die Laufzeit des folgenden Pseudocodes: `for (float i = n; i > 1; i /= 2) { Konstante Operation }`. Welches ist die Θ-Notation für die Laufzeit?",
+    "answers": [
+      "Θ(1)",
+      "Θ(log n)",
+      "Θ(n)",
+      "Θ(n log n)"
+    ],
+    "correct": 1,
+    "explanation": "Die Schleife teilt `i` in jedem Schritt durch 2, bis es 1 erreicht. Die Anzahl der Iterationen ist logarithmisch, da `n` in `log2(n)` Schritten auf 1 reduziert wird. Daher ist die Laufzeit Θ(log n) [145]."
+  },
+  {
+    "question": "Analysieren Sie die Laufzeit des folgenden Pseudocodes: `for(int i = 1; i < n; i += i) { for(int j = 1; j < i; j++) { Konstante Operation } }`. Welches ist die Θ-Notation für die Laufzeit?",
+    "answers": [
+      "Θ(n)",
+      "Θ(n log n)",
+      "Θ(n²)",
+      "Θ(log² n)"
+    ],
+    "correct": 1,
+    "explanation": "Die äußere Schleife erhöht `i` exponentiell (1, 2, 4, ...), d.h. sie läuft log n mal. Die innere Schleife läuft jeweils `i` mal. Die Gesamtlaufzeit ist `1 + 2 + 4 + ... + n/2`, was ungefähr `n` ist. Daher ist die Laufzeit Θ(n) [146, 147]."
+  },
+  {
+    "question": "Gegeben ist `T(n) = a * T(n/b) + f(n)`. Für die Fast Fourier Transformation (FFT) mit `public static Complex[] fft(Complex[] x)`, wie sind die Werte von `a`, `b`, und `f(n)`?",
+    "answers": [
+      "a=1, b=2, f(n)=Θ(1)",
+      "a=2, b=1, f(n)=Θ(n)",
+      "a=2, b=2, f(n)=Θ(n)",
+      "a=2, b=2, f(n)=Θ(log n)"
+    ],
+    "correct": 2,
+    "explanation": "Für FFT ist `a=2` (zwei rekursive Aufrufe für `n/2` Probleme), `b=2` (Problemgröße halbiert sich), und `f(n)=Θ(n)` für die Kombinationsschritte. Dies entspricht dem 2. Fall des Master-Theorems [148-152]."
+  },
+  {
+    "question": "Was ist das asymptotische Verhalten von `T(n)` für die Fast Fourier Transformation (FFT) unter Anwendung des Master-Theorems, mit `a=2`, `b=2`, und `f(n)=Θ(n)`?",
+    "answers": [
+      "Θ(n)",
+      "Θ(n log n)",
+      "Θ(n²)",
+      "Θ(log n)"
+    ],
+    "correct": 1,
+    "explanation": "Für `a=2, b=2, f(n)=Θ(n)` gilt `n^(log_b a) = n^(log_2 2) = n^1 = n`. Da `f(n) = Θ(n)` und `k=0` ist, liegt dies im 2. Fall des Master-Theorems. Die Laufzeit ist `Θ(n log^(k+1) n) = Θ(n log n)` [151, 152]."
+  },
+  {
+    "question": "Was ist die Zeitkomplexität für die `insert`-Operation in einem Heap?",
+    "answers": [
+      "O(1)",
+      "O(log n)",
+      "O(n)",
+      "O(n log n)"
+    ],
+    "correct": 1,
+    "explanation": "Das Einfügen eines Elements in einen Heap kostet O(log n), da das Element nach dem Einfügen an der letzten Position des Heaps bei Bedarf nach oben getauscht wird, was maximal die Höhe des Baumes (log n) kostet [153, 154]."
+  },
+  {
+    "question": "Was ist die Zeitkomplexität für die `extractMaximum`-Operation in einem Max-Heap?",
+    "answers": [
+      "O(1)",
+      "O(log n)",
+      "O(n)",
+      "O(n log n)"
+    ],
+    "correct": 1,
+    "explanation": "Das Extrahieren des Maximums aus einem Max-Heap (oder Minimums aus einem Min-Heap) kostet O(log n), da das Wurzelelement entfernt, das letzte Element an die Wurzel verschoben und dann die Heap-Eigenschaft wiederhergestellt werden muss (maxHeapify), was die Höhe des Baumes traversiert [155]."
+  },
+  {
+    "question": "Wie lautet das Laufzeitpolynom für das Python-Programm `prime(n)` (angenommen `m.cos(), m.floor(), m.pi, m.factorial()` haben konstante Laufzeit)?",
+    "answers": [
+      "a * 1 + b * (2^n + 1) + c * 2^n",
+      "a * 1 + b * (2^n + 1) + c * 2^n + d * (2^(2n) + 3 * 2^n / 2) + e * (2^(2n) + 2^n / 2)",
+      "a * n + b * n²",
+      "a * 1 + b * n + c * n²"
+    ],
+    "correct": 1,
+    "explanation": "Die Laufzeitanalyse des `prime(n)`-Programms zeigt, dass es mehrere Terme gibt, die von `n` und `2^n` abhängen, wobei die innere Schleife bis `i` läuft und die äußere Schleife bis `2^n`. Das Laufzeitpolynom ist `a * 1 + b * (2^n + 1) + c * 2^n + d * (2^(2n) + 3 * 2^n / 2) + e * (2^(2n) + 2^n / 2)` [156]."
+  },
+  {
+    "question": "Was ist die dominierende Θ-Notation für die Worst-Case-Laufzeit des Python-Programms `prime(n)`?",
+    "answers": [
+      "Θ(n)",
+      "Θ(2^n)",
+      "Θ(2^(2n))",
+      "Θ(n²)"
+    ],
+    "correct": 2,
+    "explanation": "Die Laufzeitanalyse von `prime(n)` ergibt eine dominierende Komplexität von Θ(2^(2n)) [156]."
+  },
+  {
+    "question": "Welche Pivot-Auswahlstrategie gibt den Index des größten Elements im Teilarray zurück und warum ist sie 'ineffizient'?",
+    "answers": [
+      "firstPivot, weil sie immer den ersten Wert nimmt.",
+      "middlePivot, weil sie den mittleren Wert nimmt.",
+      "inefficientPivot, weil sie das größte Element finden muss, was O(n) kostet und den Worst-Case in Quicksort erzeugt.",
+      "medianOfThree, weil sie drei Vergleiche braucht."
+    ],
+    "correct": 2,
+    "explanation": "Die Methode `inefficientPivot` gibt den Index des größten Elements im Teilarray zurück. Dies ist ineffizient, weil das Finden des Maximums selbst O(n) kostet (durchlaufen des gesamten Teilarrays) und diese Wahl den Worst-Case von Quicksort (Θ(n²)) systematisch herbeiführen kann, wenn dies als Pivot verwendet wird [127, 157]."
+  },
+  {
+    "question": "In der `partition` Methode von Quicksort, welches Element wird als Pivot gewählt?",
+    "answers": [
+      "Das erste Element des Arrays.",
+      "Das mittlere Element des Arrays.",
+      "Das letzte Element des Arrays.",
+      "Ein zufälliges Element des Arrays."
+    ],
+    "correct": 2,
+    "explanation": "In der vorgestellten Implementierung der `partition` Methode wird das Element ganz rechts (`array[r]`) als Pivot ausgewählt [158]."
+  },
+  {
+    "question": "In Counting Sort, was wird im ersten Schleifendurchlauf (`for j = 1 to n; C[A[j]] = C[A[j]] + 1`) berechnet?",
+    "answers": [
+      "Die kumulative Summe der Elemente.",
+      "Das Histogramm (Häufigkeit) der Werte.",
+      "Die sortierte Liste.",
+      "Die Medianwerte."
+    ],
+    "correct": 1,
+    "explanation": "Der erste Schleifendurchlauf in Counting Sort (Zeilen 4-5 im Pseudocode) erstellt ein Histogramm, indem die Häufigkeit jedes Elements im Eingabearray gezählt wird [159-161]."
+  },
+  {
+    "question": "In Counting Sort, was wird im zweiten Schleifendurchlauf (`for i = 1 to k; C[i] = C[i] + C[i - 1]`) berechnet?",
+    "answers": [
+      "Das Histogramm der Elemente.",
+      "Die kumulative Summe der Häufigkeiten.",
+      "Die sortierte Liste.",
+      "Die Anzahl der eindeutigen Elemente."
+    ],
+    "correct": 1,
+    "explanation": "Der zweite Schleifendurchlauf in Counting Sort (Zeilen 7-8 im Pseudocode) berechnet die kumulative Summe der Häufigkeiten, um die Endposition jedes Elements in der sortierten Ausgabe zu bestimmen [159, 160, 162]."
+  },
+  {
+    "question": "Was ist die Basisidee von Direct-Address Tables?",
+    "answers": [
+      "Schlüssel werden über eine Hash-Funktion abgebildet.",
+      "Jeder Schlüssel wird direkt als Array-Index verwendet.",
+      "Kollisionen werden mit verketteten Listen gelöst.",
+      "Elemente werden in einem Binärbaum gespeichert."
+    ],
+    "correct": 1,
+    "explanation": "Direct-Address Tables funktionieren, indem der Schlüssel direkt als Array-Index verwendet wird [163]."
+  },
+  {
+    "question": "Was ist die asymptotische Laufzeit einer Traversierung eines Binären Suchbaums (Inorder, Preorder, Postorder)?",
+    "answers": [
+      "O(h)",
+      "O(log n)",
+      "Θ(n)",
+      "Θ(n log n)"
+    ],
+    "correct": 2,
+    "explanation": "Alle Traversierungen eines Binären Suchbaums (Inorder, Preorder, Postorder) bestehen aus zwei rekursiven Aufrufen und der Ausgabe des mittleren Elements und benötigen eine Laufzeit von Θ(n) [164]."
+  },
+  {
+    "question": "Was ist der Basisfall für die rekursive `cutRec` Funktion im Rod Cutting Problem?",
+    "answers": [
+      "Wenn die Länge des Stabs 1 ist, gib den Preis für Länge 1 zurück.",
+      "Wenn die Länge des Stabs 0 ist, gib 0 zurück.",
+      "Wenn die Länge des Stabs negativ ist, gib einen Fehler zurück.",
+      "Wenn der Stab nicht geschnitten werden kann."
+    ],
+    "correct": 1,
+    "explanation": "Der Basisfall für die `cutRec` Funktion ist, wenn die Länge des Stabs `n == 0` ist, dann wird der Ertrag 0 zurückgegeben [165]."
+  },
+  {
+    "question": "Welche Information wird typischerweise in einem zusätzlichen Array (`s`) bei der Matrixkettenmultiplikation gespeichert, um die optimale Klammerung zu rekonstruieren?",
+    "answers": [
+      "Die Anzahl der Multiplikationen.",
+      "Die Dimensionen der Matrizen.",
+      "Die optimale Splitposition (k) für jedes Teilprodukt.",
+      "Die Namen der Matrizen."
+    ],
+    "correct": 2,
+    "explanation": "Die Rekonstruktion der Lösung bei der Matrixkettenmultiplikation erfolgt über ein zweites Array `s`, in dem die optimale Splitposition `k` für das Teilprodukt `[i : j]` gespeichert wird [166]."
+  },
+  {
+    "question": "Was ist die Greedy-Wahl in der Konstruktion von Huffman-Codes?",
+    "answers": [
+      "Die zwei häufigsten Zeichen zu kombinieren.",
+      "Die zwei seltensten Zeichen zu kombinieren.",
+      "Alle Zeichen nach ihrer Häufigkeit zu sortieren.",
+      "Einen fixen Code für jedes Zeichen zu verwenden."
+    ],
+    "correct": 1,
+    "explanation": "Ein Huffman-Code wird erzeugt, indem die jeweils zwei niedrigsten Auftrittswahrscheinlichkeiten zu Blättern eines Baumknotens werden [167, 168]."
+  },
+  {
+    "question": "Was ist der Zweck der `RELAX`-Funktion in Algorithmen für kürzeste Pfade (wie Bellman-Ford oder Dijkstra)?",
+    "answers": [
+      "Den Graphen zu initialisieren.",
+      "Eine Kante aus dem Graphen zu entfernen.",
+      "Zu prüfen, ob ein Knoten über einen anderen Knoten günstiger erreicht werden kann, und die Distanz zu aktualisieren.",
+      "Den kürzesten Pfad zu rekonstruieren."
+    ],
+    "correct": 2,
+    "explanation": "`RELAX` prüft, ob ein Knoten `v` günstiger über einen Knoten `u` plus eine Kante `(u, v)` erreicht werden kann. Falls ja, wird die Distanz zu `v` aktualisiert und `u` als Vorgänger von `v` gesetzt [169, 170]."
+  },
+  {
+    "question": "Wie wird eine Kollision in der `HashMapLinearSubmission` (offene Adressierung mit linearem Sondieren) behandelt?",
+    "answers": [
+      "Eine verkettete Liste wird im Bucket angelegt.",
+      "Es wird nach dem nächsten freien Platz gesucht, indem linear über die Buckets iteriert wird.",
+      "Eine zweite Hash-Funktion wird angewendet.",
+      "Das Element wird verworfen."
+    ],
+    "correct": 1,
+    "explanation": "Bei linearem Sondieren wird bei einer Kollision nach dem nächsten freien Platz gesucht, indem die Buckets sequenziell durchlaufen werden [30, 171]."
+  },
+  {
+    "question": "Was ist der Zweck des `result += Math.floor(Math.pow((n / tmp), (1 / n)))` in der `prime(n)` Funktion?",
+    "answers": [
+      "Die Fakultät zu berechnen.",
+      "Den Logarithmus des Ergebnisses zu nehmen.",
+      "Einen Term der Primzahlformel zu addieren.",
+      "Die Summe der internen Schleife zurückzusetzen."
+    ],
+    "correct": 2,
+    "explanation": "Diese Zeile addiert einen weiteren Term zur Berechnung der n-ten Primzahl gemäß der gegebenen Formel [172-175]."
+  },
+  {
+    "question": "Im Master-Theorem für `T(n) = a * T(n/b) + f(n)`, wann tritt der Fall 1 ein (`T(n) = Θ(n^(log_b a))`)?",
+    "answers": [
+      "Wenn `f(n)` asymptotisch gleich `n^(log_b a)` ist.",
+      "Wenn `f(n)` asymptotisch schneller wächst als `n^(log_b a)`.",
+      "Wenn `f(n)` asymptotisch langsamer wächst als `n^(log_b a)` um einen polynomialen Faktor (`f(n) = O(n^(log_b a - ε))`).",
+      "Wenn `f(n)` konstant ist."
+    ],
+    "correct": 2,
+    "explanation": "Fall 1 tritt ein, wenn es eine Konstante `ϵ > 0` gibt, sodass `f(n) = O(n^(log_b a - ϵ))`, d.h., die Kosten der Rekursionsaufrufe dominieren [17, 176, 177]."
+  },
+  {
+    "question": "Im Master-Theorem für `T(n) = a * T(n/b) + f(n)`, wann tritt der Fall 3 ein (`T(n) = Θ(f(n))`)?",
+    "answers": [
+      "Wenn `f(n)` asymptotisch langsamer wächst als `n^(log_b a)`.",
+      "Wenn `f(n)` asymptotisch gleich `n^(log_b a)` ist.",
+      "Wenn `f(n)` asymptotisch schneller wächst als `n^(log_b a)` um einen polynomialen Faktor (`f(n) = Ω(n^(log_b a + ε))`) und eine Regularitätsbedingung erfüllt ist.",
+      "Wenn `f(n)` exponentiell wächst."
+    ],
+    "correct": 2,
+    "explanation": "Fall 3 tritt ein, wenn es eine Konstante `ϵ > 0` gibt, sodass `f(n) = Ω(n^(log_b a + ϵ))` und zusätzlich `a * f(n/b) ≤ c * f(n)` für eine Konstante `c < 1` und alle hinreichend großen `n` gilt. Das bedeutet, die Kosten der Steuerfunktion `f(n)` dominieren [17, 178, 179]."
+  },
+  {
+    "question": "Welche Eigenschaft muss ein stabiles Matching erfüllen?",
+    "answers": [
+      "Jeder Knoten ist mit jedem anderen Knoten gematcht.",
+      "Es gibt kein Paar von ungematchten Knoten, die sich gegenseitig ihren aktuellen Partnern vorziehen würden.",
+      "Alle Matchings sind von gleicher Größe.",
+      "Die Präferenzen sind gleichmäßig verteilt."
+    ],
+    "correct": 1,
+    "explanation": "In einem stabilen Matching gibt es kein Knotenpaar, die jeweils füreinander eine größere Präferenz haben als für ihr aktuelles Matching, d.h. es gibt kein blockierendes Paar [180]."
+  },
+  {
+    "question": "Was ist die Zeitkomplexität des Edmonds-Karp-Algorithmus?",
+    "answers": [
+      "O(E * |f*|)",
+      "O(V * E)",
+      "O(V * E²)",
+      "O(V² * E)"
+    ],
+    "correct": 2,
+    "explanation": "Der Edmonds-Karp Algorithmus läuft in Zeit O(VE²) [181]."
+  },
+  {
+    "question": "Was ist der Zweck des `splitChild(int i)` Verfahrens in einem B-Baum-Knoten?",
+    "answers": [
+      "Einen Knoten zu löschen.",
+      "Einen neuen Knoten zu erstellen.",
+      "Einen vollen Kindknoten in zwei Hälften zu teilen und den Median in den Elternknoten zu verschieben.",
+      "Die Schlüssel innerhalb eines Knotens zu sortieren."
+    ],
+    "correct": 2,
+    "explanation": "Die `splitChild` Methode teilt einen Kindknoten, der voll ist, in zwei Hälften, und der mittlere Schlüssel (Median) wird in den Elternknoten verschoben [95, 182, 183]."
+  },
+  {
+    "question": "Was passiert in der `insertRecursive` Methode eines AVL-Baums, wenn ein Duplikatwert eingefügt werden soll?",
+    "answers": [
+      "Der Wert wird ignoriert und der aktuelle Knoten zurückgegeben.",
+      "Ein Fehler wird geworfen.",
+      "Der Wert wird am Ende des Baumes eingefügt.",
+      "Der Baum wird neu balanciert."
+    ],
+    "correct": 0,
+    "explanation": "Laut Implementierung werden Duplikatwerte nicht zugelassen (`else { // Duplicate values not allowed return node; }`), und der aktuelle Knoten wird zurückgegeben [91]."
+  },
+  {
+    "question": "Was ist die Rolle der `updateHeight` Methode, die nach rekursiven `insert` und `delete` Aufrufen in `AvlTreeSubmission` erfolgt?",
+    "answers": [
+      "Sie überprüft, ob der Baum gültig ist.",
+      "Sie führt eine Baumrotation durch.",
+      "Sie aktualisiert die Höhe des aktuellen Knotens basierend auf den Höhen seiner Kinder.",
+      "Sie findet den nächsten Knoten zum Einfügen."
+    ],
+    "correct": 2,
+    "explanation": "Nach rekursiven Aufrufen für Einfügen oder Löschen wird `updateHeight(node)` aufgerufen, um sicherzustellen, dass die Höhen der betroffenen Knoten in der Baumstruktur korrekt aktualisiert werden [52, 92]."
+  },
+  {
+    "question": "Welche der folgenden Sortieralgorithmen ist nicht unbedingt In-Place?",
+    "answers": [
+      "Insertion Sort",
+      "Heap Sort",
+      "Merge Sort",
+      "Quick Sort"
+    ],
+    "correct": 2,
+    "explanation": "Merge Sort benötigt typischerweise zusätzlichen Speicherplatz für das Zusammenführen der Teillisten und ist daher nicht In-Place [25]."
+  },
+  {
+    "question": "Welche Form von Hashing ist die \"Divisions-Methode\"?",
+    "answers": [
+      "Dynamisches Hashing",
+      "Statisches Hashing",
+      "Ketten-Hashing",
+      "Lineares Sondieren"
+    ],
+    "correct": 1,
+    "explanation": "Die Divisions-Methode (`h(k) = k mod m`) ist eine Form des statischen Hashing, die am besten funktioniert, wenn `m` eine Primzahl ist [184]."
+  },
+  {
+    "question": "Was ist das Hauptproblem, das durch die Verwendung von modularer Arithmetik im Rabin-Karp-Algorithmus gelöst wird?",
+    "answers": [
+      "Kollisionen zu vermeiden.",
+      "Die Zahlen für die Muster sehr groß werden zu lassen.",
+      "Die Musterzahlen und Text-Hashes in praktikablen Größen zu halten und O(1) Operationen zu ermöglichen.",
+      "Die Vergleiche schneller zu machen."
+    ],
+    "correct": 2,
+    "explanation": "Die modulare Arithmetik im Rabin-Karp-Algorithmus verhindert, dass die Muster- und Text-Zahlen zu groß werden, und ermöglicht, dass alle Berechnungen in O(1) durchgeführt werden können [185, 186]."
+  },
+  {
+    "question": "Was ist der Zweck der `inefficientPivot` Methode in der `QuicksortSubmission`?",
+    "answers": [
+      "Einen zufälligen Pivot zu wählen.",
+      "Den Median der ersten, mittleren und letzten Elemente zu finden.",
+      "Das größte Element als Pivot zu wählen, was oft zu einer schlechten Leistung führt.",
+      "Immer das erste Element als Pivot zu wählen."
+    ],
+    "correct": 2,
+    "explanation": "Die `inefficientPivot` Methode soll den Index des größten Elements im Teilarray zurückgeben. Dies kann zu einer Worst-Case-Laufzeit von Quicksort führen [127, 157]."
+  },
+  {
+    "question": "Was berechnet die Präfix-Funktion `π[q]` im Knuth-Morris-Pratt (KMP) Algorithmus?",
+    "answers": [
+      "Die Länge des Musters `P`.",
+      "Die Länge des längsten echten Präfixes von `P[:q]`, das auch ein Suffix von `P[:q]` ist.",
+      "Die Anzahl der Zeichen im Alphabet.",
+      "Die Anzahl der Kollisionen."
+    ],
+    "correct": 1,
+    "explanation": "Die Präfix-Funktion `π[q]` sucht unter allen kürzeren Präfixen das längste, das Suffix der bisherigen Sequenz `P[:q]` ist [187, 188]."
+  },
+  {
+    "question": "Im Master-Theorem für `Substract and Conquer` (`T(n) = a * T(n - b) + f(n)`), wann tritt der Fall 2 ein (`O(n^(d+1))`)?",
+    "answers": [
+      "Wenn `a < 1`",
+      "Wenn `a = 1`",
+      "Wenn `a > 1`",
+      "Wenn `f(n)` konstant ist"
+    ],
+    "correct": 1,
+    "explanation": "Im Master-Theorem für Substract and Conquer tritt der Fall 2 (`O(n^(d+1))`) ein, wenn `a = 1` [189]."
+  },
+  {
+    "question": "Was ist die dominierende Θ-Notation für die Laufzeit des Python-Programms `get_frequency_domain(n)` unter Anwendung des Master-Theorems, wenn `a=2`, `b=2`, und `f(n)=O(n)`?",
+    "answers": [
+      "Θ(n)",
+      "Θ(n log n)",
+      "Θ(n²)",
+      "Θ(log n)"
+    ],
+    "correct": 1,
+    "explanation": "Für `a=2, b=2, f(n)=O(n)` ist `n^(log_b a) = n^(log_2 2) = n^1 = n`. Da `f(n)` dieselbe asymptotische Ordnung hat, ist es Fall 2 (mit k=0). Die Laufzeit ist `Θ(n log n)` [190, 191]."
+  },
+  {
+    "question": "Was ist der Zweck der `sort_sublists(lsts)` Funktion im Kontext von `partition_sort`?",
+    "answers": [
+      "Die Hauptliste von Listen zu sortieren.",
+      "Die Elemente innerhalb jeder einzelnen Subliste nach Größe zu sortieren.",
+      "Partitionen der Zahl `n` zu generieren.",
+      "Die sortierten Sublisten zusammenzuführen."
+    ],
+    "correct": 1,
+    "explanation": "Die Funktion `sort_sublists(lsts)` soll die Elemente der Listen innerhalb der übergebenen Liste `lsts` nach der Größe sortieren, und zwar mit linearem Aufwand in-place [192, 193]."
+  },
+  {
+    "question": "Wie ist der Basisfall für die rekursive `mergesort(sets)` Funktion definiert?",
+    "answers": [
+      "Wenn `len(sets)` 0 ist, gib eine leere Liste zurück.",
+      "Wenn `len(sets)` 2 ist, gib `sets` zurück.",
+      "Wenn `len(sets)` kleiner oder gleich 1 ist, gib `sets` zurück.",
+      "Wenn `sets` bereits sortiert ist."
+    ],
+    "correct": 2,
+    "explanation": "Der Basisfall für `mergesort(sets)` ist, wenn `len(sets) <= 1` ist, in diesem Fall wird `sets` direkt zurückgegeben [194]."
+  },
+  {
+    "question": "Was ist die Rolle der `merge(left, right)` Funktion im MergeSort-Algorithmus?",
+    "answers": [
+      "Das Array in zwei Hälften zu teilen.",
+      "Zwei sortierte Teillisten zu einer einzigen sortierten Liste zusammenzuführen.",
+      "Die Rekursion zu starten.",
+      "Den Pivot-Element auszuwählen."
+    ],
+    "correct": 1,
+    "explanation": "Die `merge(left, right)` Funktion ist dafür zuständig, zwei bereits sortierte Listen (`left` und `right`) zu einer einzigen sortierten Liste zusammenzuführen [10, 98, 195, 196]."
+  },
+  {
+    "question": "Welche Datenstruktur wird in der `YoungTableauSubmission` verwendet, um das Young Tableau intern zu speichern?",
+    "answers": [
+      "Eine verkettete Liste.",
+      "Ein eindimensionales Array.",
+      "Ein zweidimensionales Array (Matrix).",
+      "Ein Binärbaum."
+    ],
+    "correct": 2,
+    "explanation": "Das Young Tableau wird intern in einem zweidimensionalen Array `int[][] tableau` gespeichert [112]."
+  },
+  {
+    "question": "Was ist die Laufzeitkomplexität der `insert` Methode in einem Young Tableau (m x n)?",
+    "answers": [
+      "O(1)",
+      "O(log(m*n))",
+      "O(m+n)",
+      "O(m*n)"
+    ],
+    "correct": 2,
+    "explanation": "Die `insert` Methode in einem Young Tableau soll eine Laufzeit von O(m+n) haben [197]."
+  },
+  {
+    "question": "Was ist die Laufzeitkomplexität der `extractMin` Methode in einem Young Tableau (m x n)?",
+    "answers": [
+      "O(1)",
+      "O(log(m*n))",
+      "O(m+n)",
+      "O(m*n)"
+    ],
+    "correct": 2,
+    "explanation": "Die `extractMin` Methode in einem Young Tableau soll eine Laufzeit von O(m+n) haben [197]."
+  },
+  {
+    "question": "Was ist die Laufzeitkomplexität der `contains` Methode in einem Young Tableau (m x n)?",
+    "answers": [
+      "O(1)",
+      "O(log(m*n))",
+      "O(m+n)",
+      "O(m*n)"
+    ],
+    "correct": 2,
+    "explanation": "Die `contains` Methode in einem Young Tableau soll eine Laufzeit von O(m+n) haben [198]."
+  },
+  {
+    "question": "In der `BinarySearchTreeSubmission`, warum werden die `contains`, `insert` und `remove` Methoden als `boolean` deklariert?",
+    "answers": [
+      "Um die Anzahl der Operationen zurückzugeben.",
+      "Um anzugeben, ob die Operation erfolgreich war oder nicht.",
+      "Um einen Fehler zu signalisieren.",
+      "Um den Zustand des Baumes nach der Operation zu reflektieren."
+    ],
+    "correct": 1,
+    "explanation": "Die Methoden `contains`, `insert` und `remove` geben einen `boolean` zurück, um anzuzeigen, ob der Schlüssel gefunden, erfolgreich eingefügt oder erfolgreich entfernt wurde [115]."
+  },
+  {
+    "question": "In der `BTreeNodeSubmission`, was bedeutet es, wenn die `leaf` Variable `true` ist?",
+    "answers": [
+      "Der Knoten ist die Wurzel des Baumes.",
+      "Der Knoten enthält keine Schlüssel.",
+      "Der Knoten hat keine Kinder (ist ein Blattknoten).",
+      "Der Knoten ist voll."
+    ],
+    "correct": 2,
+    "explanation": "Die `leaf` Variable (`boolean leaf`) im `BTreeNodeSubmission` repräsentiert, ob der Knoten ein Blattknoten ist (d.h. keine Kinder hat) [95]."
+  },
+  {
+    "question": "Was ist der Zweck der `expandArray(int n)` Methode in der `BinarySearchTreeSubmission`?",
+    "answers": [
+      "Die Anzahl der Elemente im Array zu reduzieren.",
+      "Das Array um `n` Ebenen zu erweitern, wenn kein Platz mehr für neue Elemente ist.",
+      "Die Werte im Array zu sortieren.",
+      "Ein neues Array mit der Größe `n` zu erstellen."
+    ],
+    "correct": 1,
+    "explanation": "Die Methode `expandArray(int n)` soll das globale Array `values` um `n` Ebenen erweitern, wenn beim Einfügen kein Platz mehr für ein neues Element ist [199, 200]."
+  },
+  {
+    "question": "Wie unterscheidet sich die `delete` Methode in einem Binären Suchbaum für einen Knoten mit zwei Kindern von den anderen Löschfällen?",
+    "answers": [
+      "Der Knoten wird einfach entfernt.",
+      "Das einzige Kind wird hochgezogen.",
+      "Der Knoten wird durch seinen Inorder-Nachfolger (kleinstes Element im rechten Teilbaum) ersetzt, der dann aus seiner ursprünglichen Position entfernt wird.",
+      "Der Baum wird vollständig neu aufgebaut."
+    ],
+    "correct": 2,
+    "explanation": "Beim Löschen eines Knotens mit zwei Kindern wird dieser durch seinen Inorder-Nachfolger (kleinstes Element des rechten Teilbaums) ersetzt. Dieser Nachfolger wird dann aus seiner ursprünglichen Position entfernt (was dann Fall 1 oder 2 des Löschens ist) [201-204]."
+  },
+  {
+    "question": "Warum ist die `inefficientPivot` Strategie für Quicksort in der Praxis nicht sinnvoll?",
+    "answers": [
+      "Sie führt zu einem stabilen Sortierverfahren.",
+      "Sie hat eine konstante Laufzeit.",
+      "Sie benötigt zusätzlichen Speicherplatz.",
+      "Sie kann systematisch den Worst Case (Θ(n²)) von Quicksort verursachen, da das Finden des größten Elements selbst O(n) kostet."
+    ],
+    "correct": 3,
+    "explanation": "Die `inefficientPivot` Strategie ist nicht sinnvoll, da sie den Worst Case von Quicksort (Θ(n²)) auslösen kann, wenn der größte Wert als Pivot gewählt wird, und das Finden dieses Elements bereits O(n) kostet [157]."
+  },
+  {
+    "question": "Was ist der Zweck der `medianOfThree` Methode in Quicksort?",
+    "answers": [
+      "Den kleinsten Wert aus drei Elementen zu finden.",
+      "Den größten Wert aus drei Elementen zu finden.",
+      "Den Medianwert aus drei gegebenen Elementen zu ermitteln, um einen besseren Pivot zu wählen.",
+      "Drei Elemente zu sortieren."
+    ],
+    "correct": 2,
+    "explanation": "Die `medianOfThree` Methode gibt den Index des Medians von drei Elementen zurück. Dies wird als Pivot-Strategie verwendet, um die Chance auf gute Splits zu erhöhen und den Worst Case zu vermeiden [205]."
+  },
+  {
+    "question": "Was ist der Hauptunterschied zwischen der rekursiven und der dynamischen Programmierungslösung für das Fährproblem?",
+    "answers": [
+      "Die rekursive Lösung ist immer schneller.",
+      "Die DP-Lösung verwendet Memoization, um redundante Berechnungen zu vermeiden und die Effizienz zu verbessern.",
+      "Die DP-Lösung ist nur für kleine Eingaben geeignet.",
+      "Die rekursive Lösung kann keine optimale Lösung finden."
+    ],
+    "correct": 1,
+    "explanation": "Die dynamische Programmierungslösung (Memoisierung) verbessert die Effizienz, indem sie Teilergebnisse speichert und somit Mehrfachberechnungen vermeidet, die beim naiven rekursiven Ansatz auftreten würden [206-208]."
+  },
+  {
+    "question": "Welche Art von Pfaden sucht der Ford-Fulkerson-Algorithmus im Residual Network, um den Fluss zu erhöhen?",
+    "answers": [
+      "Kürzeste Pfade",
+      "Längste Pfade",
+      "Zyklen",
+      "Augmentierende Pfade"
+    ],
+    "correct": 3,
+    "explanation": "Der Ford-Fulkerson-Algorithmus steigert iterativ den Wert des Flusses mit einem fluss-vergrößernden Pfad ('augmenting path') auf einem Graphen von noch offenen Flusskapazitäten ('residual network') [209]."
+  },
+  {
+    "question": "Welche Methode wird in der `MaxHeapSubmission` verwendet, um das maximale Element aus dem Heap zu erhalten und gleichzeitig zu entfernen?",
+    "answers": [
+      "root()",
+      "insert()",
+      "extractRoot()",
+      "getSwapCandidate()"
+    ],
+    "correct": 2,
+    "explanation": "Die Methode `extractRoot()` ist dafür vorgesehen, die Wurzel (das maximale Element) aus dem Heap zu entfernen, die Heap-Struktur wiederherzustellen und das entfernte Element zurückzugeben [210]."
+  },
+  {
+    "question": "Welche Informationen werden im `printSubtree` Methode für einen AVL-Baum ausgegeben, um die Baumstruktur zu visualisieren?",
+    "answers": [
+      "Nur der Wert des Knotens.",
+      "Der Wert des Knotens und seine Höhe.",
+      "Der Wert des Knotens und sein Balancefaktor.",
+      "Der Wert des Knotens und die Anzahl seiner Kinder."
+    ],
+    "correct": 1,
+    "explanation": "Die `prettyPrint` Methode (welche `printSubtree` aufruft) gibt den Wert des Knotens und seine Höhe aus, z.B. `root.value + \" (h:\" + root.height + \")\"` [92]."
+  },
+  {
+    "question": "Was ist das Ergebnis von `left(index)` für `index = 0` in `BinarySearchTreeSubmission`?",
+    "answers": [
+      "0",
+      "1",
+      "2",
+      "3"
+    ],
+    "correct": 1,
+    "explanation": "Die Methode `left(int index)` gibt `2 * index + 1` zurück. Für `index = 0` ist dies `2 * 0 + 1 = 1` [96]."
+  },
+  {
+    "question": "Was ist der Wert von `t` in der `BTreeNodeSubmission` Implementierung?",
+    "answers": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "correct": 1,
+    "explanation": "Die Variable `t` ist in `BTreeNodeSubmission` als `static int t = 2;` definiert [95]."
+  },
+  {
+    "question": "In der `splitChild` Methode eines B-Baums, welcher Teil der Schlüssel wird in den `new_node` verschoben?",
+    "answers": [
+      "Die kleinere Hälfte der Schlüssel.",
+      "Die größere Hälfte der Schlüssel.",
+      "Alle Schlüssel des ursprünglichen Knotens.",
+      "Nur der Median-Schlüssel."
+    ],
+    "correct": 1,
+    "explanation": "Die `splitChild` Methode verschiebt die größere Hälfte der Schlüssel in den `new_node` [95, 182]."
+  },
+  {
+    "question": "Was ist das Ergebnis der `traverse` Methode in `BTreeNodeSubmission`?",
+    "answers": [
+      "Sie gibt die Schlüssel in unsortierter Reihenfolge aus.",
+      "Sie gibt die Schlüssel in sortierter Reihenfolge aus und zeigt die Baumstruktur durch Einrückung.",
+      "Sie gibt nur die Schlüssel der Blattknoten aus.",
+      "Sie gibt die Schlüssel und die Kinder an."
+    ],
+    "correct": 1,
+    "explanation": "Die `traverse` Methode gibt die Schlüssel in sortierter Reihenfolge aus und verwendet dabei Einrückungen (`\t`) basierend auf der Tiefe (`d`) des Knotens, um die Baumstruktur zu visualisieren [83, 211]."
+  },
+  {
+    "question": "Was ist die Zeitkomplexität für die `insert` Operation auf einem Array, wenn die Elemente verschoben werden müssen?",
+    "answers": [
+      "O(1)",
+      "O(log n)",
+      "O(n)",
+      "O(n log n)"
+    ],
+    "correct": 2,
+    "explanation": "PREPEND, INSERT und DELETE kosten auf Arrays O(n) wegen Umkopieren [50]."
+  },
+  {
+    "question": "Was ist die Zeitkomplexität der `buildMaxHeap` Methode in Heap Sort, die ein unsortiertes Array in einen Heap umwandelt?",
+    "answers": [
+      "O(n log n)",
+      "O(n)",
+      "O(log n)",
+      "O(n²)"
+    ],
+    "correct": 1,
+    "explanation": "Der Aufwand für `buildMaxHeap` ist tatsächlich nur O(n), obwohl eine lose Schranke O(n log n) wäre [212, 213]."
+  },
+  {
+    "question": "Was ist der erwartete Aufwand für die Gesamtzahl der Vergleiche in Quicksort im Average Case?",
+    "answers": [
+      "O(n²)",
+      "O(log n)",
+      "O(n log n)",
+      "O(n)"
+    ],
+    "correct": 2,
+    "explanation": "Die erwartete Anzahl der Vergleiche in Quicksort im Average Case liegt in O(n log n) [21, 214]."
+  },
+  {
+    "question": "Was ist die Laufzeitkomplexität von Radix Sort, wenn `d` die Anzahl der Sortierkriterien und `k` der Bereich der Ziffern ist?",
+    "answers": [
+      "Θ(n + k)",
+      "Θ(d * (n + k))",
+      "Θ(n log n)",
+      "Θ(n²)"
+    ],
+    "correct": 1,
+    "explanation": "Radix Sort läuft in Θ(d * (n + k)), wobei `d` die Anzahl der Sortierkriterien und `k` die Basis (oder Bereich der Ziffern) ist [25, 215]."
+  },
+  {
+    "question": "Wie wird eine Transitive Hülle eines Graphen berechnet?",
+    "answers": [
+      "Mit dem Bellman-Ford Algorithmus.",
+      "Mit einer binarisierten Version des Floyd-Warshall-Algorithmus.",
+      "Mit Dijkstras Algorithmus.",
+      "Mit dem Ford-Fulkerson Algorithmus."
+    ],
+    "correct": 1,
+    "explanation": "Die transitive Hülle kann direkt mit einer binarisierten Version des Floyd-Warshall-Algorithmus berechnet werden, mit einer Laufzeit von Θ(V³) [46]."
+  },
+  {
+    "question": "Welche Art von Algorithmus ist der Gale-Shapley-Algorithmus?",
+    "answers": [
+      "Ein Sortieralgorithmus.",
+      "Ein kürzester-Pfad-Algorithmus.",
+      "Ein Algorithmus zur Berechnung stabiler Matchings.",
+      "Ein Algorithmus zur Berechnung maximaler Flüsse."
+    ],
+    "correct": 2,
+    "explanation": "Der Gale-Shapley-Algorithmus berechnet ein stabiles Matching in O(N²) [216]."
+  },
+  {
+    "question": "Was ist der erwartete Wert für `E[Xk]` (Anzahl Elemente in Generation k) in der Analyse des 'Quickselect' Algorithmus bei hilfreichen und nicht-hilfreichen Splits?",
+    "answers": [
+      "1",
+      "2",
+      "0.5",
+      "n/2"
+    ],
+    "correct": 1,
+    "explanation": "In der Analyse des Quickselect-Algorithmus ist der Erwartungswert E(Xk) = 2 (Beweis über geom. Reihe, vgl. CLRS C.36) [217]."
+  },
+  {
+    "question": "Was ist der Zweck der `tmp` Variablen in der `insertionSort` Java-Implementierung?",
+    "answers": [
+      "Zum Speichern des aktuell kleinsten Elements.",
+      "Zum Speichern des Elements, das in das sortierte Teilarray eingefügt werden soll.",
+      "Als Zähler für die Schleife.",
+      "Zum Speichern des letzten Elements im Array."
+    ],
+    "correct": 1,
+    "explanation": "Die Variable `temp` (oder `tmp`) speichert den Wert des aktuellen Elements `input[i]`, das in das bereits sortierte Teilarray eingefügt werden soll [66, 218]."
+  },
+  {
+    "question": "Was ist die asymptotische Laufzeit (Θ-Notation) des Python-Programms `foo(n)` für den **Worst Case**, wenn die Schleife `range(0, 2**n)` ist und sie nur bei geradem `n` läuft?",
+    "answers": [
+      "Θ(1)",
+      "Θ(n)",
+      "Θ(2^n)",
+      "Θ(n²)"
+    ],
+    "correct": 2,
+    "explanation": "Im Worst Case ist `n` gerade, und die Schleife `for i in range(0, 2**n)` läuft `2^n` Mal. Daher ist die Laufzeit Θ(2^n) [116, 219]."
+  },
+  {
+    "question": "Welche Funktion ist für die rekursive Berechnung der Partitionen in `partition_sort(n)` zuständig?",
+    "answers": [
+      "partition()",
+      "sort_sublists()",
+      "mergesort()",
+      "generate_partitions()"
+    ],
+    "correct": 3,
+    "explanation": "Die Funktion `generate_partitions(remaining, partition, result)` führt die rekursive Berechnung für die Partitionsfunktion `partition(n)` durch und berechnet alle Listen von natürlichen Ganzzahlen, deren Summe `n` ist [220, 221]."
+  },
+  {
+    "question": "Welche Bedingung muss für `i` erfüllt sein, damit `result = generate_partitions(remaining - i, partition + [i], result)` in `generate_partitions` aufgerufen wird, um eine korrekte Partition zu bilden?",
+    "answers": [
+      "`i > remaining`",
+      "`partition == []`",
+      "`partition == [] or i <= partition[len(partition)-1]`",
+      "`i < 0`"
+    ],
+    "correct": 2,
+    "explanation": "Die Bedingung `if( partition == [] or i <= partition[len(partition)-1] )` stellt sicher, dass die Zahlen in der Partition nicht-aufsteigend sind und doppelte Partitionen vermieden werden [222]."
+  },
+  {
+    "question": "Was ist das Ergebnis der `prettyPrint()` Methode in `AvlTreeSubmission` wenn der Baum leer ist?",
+    "answers": [
+      "Ein Fehler.",
+      "Der Wurzelknoten wird ausgegeben.",
+      "└── (empty)",
+      "Nichts wird ausgegeben."
+    ],
+    "correct": 2,
+    "explanation": "Wenn der Wurzelknoten (`root`) `null` ist, gibt `prettyPrint()` `\"└── (empty)\"` aus [92]."
+  },
+  {
+    "question": "In der `splitChild` Methode eines B-Baums, welcher Schlüssel wird in den Elternknoten (`this.keys.add(i, to_be_split.keys.removeLast())`) verschoben?",
+    "answers": [
+      "Der kleinste Schlüssel des gesplitteten Knotens.",
+      "Der größte Schlüssel des gesplitteten Knotens.",
+      "Der mittlere (Median) Schlüssel des gesplitteten Knotens.",
+      "Ein zufälliger Schlüssel."
+    ],
+    "correct": 2,
+    "explanation": "Die `splitChild` Methode verschiebt das letzte Element des `to_be_split` Knotens (was nach dem Sortieren der Median ist) in den Elternknoten [182]."
+  },
+  {
+    "question": "Wie werden Elemente in der `traverse` Methode eines `BTreeNodeSubmission` ausgegeben, wenn es sich um einen Blattknoten handelt?",
+    "answers": [
+      "Alle Schlüssel werden in einer Zeile ausgegeben.",
+      "Jeder Schlüssel wird in einer neuen Zeile ausgegeben, mit Einrückung basierend auf der Tiefe.",
+      "Nur der erste Schlüssel wird ausgegeben.",
+      "Die Schlüssel werden rekursiv ausgegeben."
+    ],
+    "correct": 1,
+    "explanation": "Wenn der Knoten ein Blatt ist (`if (leaf)`), werden alle seine Schlüssel durchlaufen und jeder Schlüssel wird in einer neuen Zeile ausgegeben, mit einer Einrückung, die von der Tiefe (`d`) abhängt [83, 211]."
+  },
+  {
+    "question": "Was ist der Zweck der `search(int key)` Methode in `BinarySearchTreeSubmission`?",
+    "answers": [
+      "Einen neuen Schlüssel einzufügen.",
+      "Einen Schlüssel aus dem Baum zu entfernen.",
+      "Zu prüfen, ob ein Schlüssel im Array-basierten Binärbaum enthalten ist.",
+      "Die Wurzel des Baumes zurückzugeben."
+    ],
+    "correct": 2,
+    "explanation": "Die Methode `contains(int key)` (als `search` bezeichnet) soll nach dem Schlüssel `key` im Array-gespeicherten Binärbaum suchen und `true` zurückgeben, wenn er gefunden wird, sonst `false` [115, 199]."
+  },
+  {
+    "question": "Welche Datenstruktur ist in der `FerryRecursiveSubmission` und `FerryDPSubmission` am besten geeignet, um die Länge der Autos zu speichern?",
+    "answers": [
+      "Ein Array von Strings.",
+      "Eine Liste von ganzen Zahlen.",
+      "Eine HashMap.",
+      "Eine verkettete Liste von Objekten."
+    ],
+    "correct": 1,
+    "explanation": "Die `assignCars` Methode erhält eine `List<Car>` oder `List<Integer>` für die Autolängen, was eine Liste von ganzen Zahlen darstellt [103, 208]."
+  },
+  {
+    "question": "Was ist der Zweck der `resize()` Methode in den `HashMap` Implementierungen (`HashMapChainSubmission`, `HashMapLinearSubmission`)?",
+    "answers": [
+      "Die Größe der Hash-Tabelle zu reduzieren.",
+      "Die Hash-Tabelle bei Überschreiten des `LOAD_FACTOR` zu vergrößern und die vorhandenen Einträge neu zu verteilen.",
+      "Die Anzahl der Kollisionen zu reduzieren.",
+      "Die Hash-Funktion zu ändern."
+    ],
+    "correct": 1,
+    "explanation": "Die `resize()` Methode ist dafür vorgesehen, die Hash-Tabelle zu vergrößern (Rehashing), wenn der `LOAD_FACTOR` überschritten wird, und dabei alle Einträge neu zu verteilen [100, 114, 223]."
+  },
+  {
+    "question": "In `HeapsortSubmission`, wie wird der Index des linken Kindes (`getLeftChild`) eines Knotens `parent` in einem Ternary Heap (0-indiziert) berechnet?",
+    "answers": [
+      "`parent / 3`",
+      "`3 * parent + 1`",
+      "`3 * parent + 2`",
+      "`3 * parent + 3`"
+    ],
+    "correct": 1,
+    "explanation": "Der Index des linken Kindes eines Knotens an Index `parent` in einem Ternary Heap wird als `3 * parent + 1` berechnet [224]. (Anmerkung: Das Quellcode-Snippet für `getLeftChild` ist mit `//TODO` markiert, aber der Standard für d-ary Heaps ist `d * i + 1`)."
+  },
+  {
+    "question": "Was ist der Zweck der `toRemove` HashMap in `MaxHeapSubmission`?",
+    "answers": [
+      "Temporäre Speicherung der Wurzelelemente.",
+      "Zähler für Elemente, die aus dem Heap entfernt werden sollen, aber noch physisch vorhanden sind (lazy deletion).",
+      "Speicherung von Elementen, die hinzugefügt werden sollen.",
+      "Protokollierung von Heap-Operationen."
+    ],
+    "correct": 1,
+    "explanation": "Die `toRemove` HashMap in `MaxHeapSubmission` wird genutzt, um Elemente, die entfernt werden sollen, zu markieren (`toRemove.merge(item, 1, Integer::sum)`) anstatt sie sofort physisch aus dem Heap zu entfernen. Dies ist Teil einer 'lazy deletion' Strategie [101, 225]."
+  },
+  {
+    "question": "Die `naive` Methode in `MeanSubmission` verwendet `Arrays.sort(input)` in einer Schleife. Warum ist dies eine 'naive' Implementierung?",
+    "answers": [
+      "Weil sie keinen zusätzlichen Speicherplatz verwendet.",
+      "Weil sie die Fenster nicht effizient verschiebt und bei jeder Iteration das gesamte Unterarray neu sortiert.",
+      "Weil sie rekursiv ist.",
+      "Weil sie nur für kleine `k`-Werte funktioniert."
+    ],
+    "correct": 1,
+    "explanation": "Die `naive` Methode sortiert bei jeder Verschiebung des Fensters das gesamte Subarray (`Arrays.sort(input)`), anstatt die vorherige Sortierung beizubehalten oder inkrementell zu aktualisieren, was zu Ineffizienz führt [129]."
+  },
+  {
+    "question": "In `PrimSubmission`, was ist die primäre Rolle der `minKey(WeightedGraph graph)` Methode?",
+    "answers": [
+      "Den gesamten Graphen nach minimalen Kanten zu durchsuchen.",
+      "Den Knoten zu finden, der noch nicht im MST ist, aber die geringste Kantenverbindung zum wachsenden MST hat.",
+      "Die Summe der Kantengewichte im MST zu berechnen.",
+      "Die Nachbarknoten eines gegebenen Knotens zu finden."
+    ],
+    "correct": 1,
+    "explanation": "Die `minKey` Methode in Prim's Algorithmus ist entscheidend, um denjenigen Knoten auszuwählen, der noch nicht Teil des MST ist, aber die geringste gewichtete Kante zu einem bereits im MST enthaltenen Knoten aufweist [226-228]."
+  },
+  {
+    "question": "Wie wird der Pfad vom `start`-Knoten zum `end`-Knoten in `DijkstraSubmission.reconstructPath` rekonstruiert?",
+    "answers": [
+      "Durch einen BFS-Durchlauf vom Start zum Ende.",
+      "Durch Iteration von der `predecessors` Map, beginnend vom `end`-Knoten zurück zum `start`-Knoten.",
+      "Durch einen DFS-Durchlauf.",
+      "Durch einfaches Umkehren der `get_distances`-Ergebnisse."
+    ],
+    "correct": 1,
+    "explanation": "Die Methode `reconstructPath` rekonstruiert den Pfad, indem sie die `predecessors`-Map verwendet und iterativ vom `end`-Knoten zurück zum `start`-Knoten verfolgt [229]."
+  },
+  {
+    "question": "Was wird durch die `isValid()` Methode in `YoungTableauSubmission` überprüft?",
+    "answers": [
+      "Ob das Tableau leer ist.",
+      "Ob die Anzahl der Zeilen und Spalten gültig ist.",
+      "Ob die Young-Tableau-Eigenschaften (sortierte Zeilen und Spalten) erfüllt sind.",
+      "Ob alle Elemente im Tableau eindeutig sind."
+    ],
+    "correct": 2,
+    "explanation": "Die `isValid()` Methode überprüft, ob das Young Tableau die Eigenschaften erfüllt, dass Einträge jeder Zeile von links nach rechts aufsteigend und Einträge jeder Spalte von oben nach unten aufsteigend sortiert sind [230, 231]."
+  },
+  {
+    "question": "In der Python-Funktion `foo(n)`: `for i in range(0,n): pass`. Bestimmen Sie das Laufzeitpolynom.",
+    "answers": [
+      "a * 1",
+      "a * n",
+      "a * 1 + b * n + c * n",
+      "a * n + b * n²"
+    ],
+    "correct": 2,
+    "explanation": "Die Initialisierung ist konstant (`a * 1`), der Schleifenkopf wird `n+1` mal (`b * (n+1)`) und die Schleife selbst `n` mal (`c * n`) ausgeführt. Das Laufzeitpolynom ist `a * 1 + b * (n+1) + c * n` [232-234]."
+  },
+  {
+    "question": "Nach der Ausführung von Insertion Sort auf `[59-65, 73, 235]`, wie sieht die Liste nach dem Element `5` (Index 4) an der richtigen Stelle eingefügt wurde?",
+    "answers": [
+      "[59-65, 73, 235]",
+      "[59-65, 73, 235]",
+      "[59-65, 73, 235]",
+      "[59-65, 73, 235]"
+    ],
+    "correct": 1,
+    "explanation": "Nach dem Einfügen von 5 (welches ursprünglich an Index 4 war) in die bereits sortierte Teilliste `[59-62]`, verschiebt sich die 7 und 9 nach rechts. Die Liste wird `[59-65, 73, 235]` [68]."
+  },
+  {
+    "question": "Nach der Ausführung von Selection Sort auf `[59-65, 73, 235]`, wie sieht die Liste nach dem Tausch des Minimums mit dem **dritten Element** aus?",
+    "answers": [
+      "[59-65, 73, 235]",
+      "[59-65, 73, 235]",
+      "[59-65, 73, 235]",
+      "[60-64, 64, 65, 73, 235]"
+    ],
+    "correct": 0,
+    "explanation": "Schritt 1: Min(1) mit 7 tauschen: `[59-65, 73, 235]`. Schritt 2: Min(2) mit 2 tauschen: `[59-65, 73, 235]`. Schritt 3: Min(3) mit 3 tauschen: `[59-65, 73, 235]`. (Hier gab es im Beispiel nur 5 Elemente)"
+  },
+  {
+    "question": "Welche Laufzeitkomplexität hat Selection Sort im Worst Case?",
+    "answers": [
+      "Θ(n)",
+      "Θ(n log n)",
+      "Θ(n²)",
+      "Θ(log n)"
+    ],
+    "correct": 2,
+    "explanation": "Selection Sort hat eine Worst-Case-Laufzeit von Θ(n²) [136, 236]."
+  },
+  {
+    "question": "Wie wird in der `MaxHeapSubmission` das letzte Element des Heaps gehandhabt, wenn die Wurzel extrahiert wird?",
+    "answers": [
+      "Es wird ignoriert.",
+      "Es wird gelöscht.",
+      "Es wird an die Wurzel verschoben, um die Heap-Eigenschaft wiederherzustellen.",
+      "Es wird in einen separaten Puffer verschoben."
+    ],
+    "correct": 2,
+    "explanation": "Beim Extrahieren der Wurzel wird das letzte Element des Heaps entfernt (`heap.removeLast()`) und dann an die Wurzelposition (`heap.set(0, lastElement)`) verschoben, wonach die Heap-Eigenschaft durch `maxHeapify` (impliziert durch `bubble down`) wiederhergestellt wird [225]."
+  },
+  {
+    "question": "Was ist die Zeitkomplexität für die `getSwapCandidate` Methode in `MaxHeapSubmission`?",
+    "answers": [
+      "O(1)",
+      "O(log n)",
+      "O(n)",
+      "O(n log n)"
+    ],
+    "correct": 0,
+    "explanation": "Die Methode `getSwapCandidate` soll den Index des Knotens mit dem maximalen Wert unter dem gegebenen Knoten und seinen direkten Kindern zurückgeben. Dies erfordert konstanten Aufwand, da nur eine feste Anzahl von Vergleichen (mit 2 Kindern und dem Knoten selbst) durchgeführt wird [210, 225]."
+  },
+  {
+    "question": "Welcher Algorithmus wird für die Berechnung der Mediane aller k-langen 'sliding window'-Subarrays empfohlen, um eine effiziente Lösung zu erzielen?",
+    "answers": [
+      "Bubble Sort.",
+      "Merge Sort.",
+      "Die Verwendung von zwei Heaps (einem Max-Heap und einem Min-Heap).",
+      "Quicksort."
+    ],
+    "correct": 2,
+    "explanation": "Um den Median eines 'sliding window'-Subarrays effizient zu berechnen, kann man zwei Heaps verwenden: einen Max-Heap und einen Min-Heap [237]."
+  },
+  {
+    "question": "Welcher Schritt wird in `YoungTableauSubmission.insert` ausgeführt, wenn ein Element in das Tableau eingefügt wird?",
+    "answers": [
+      "Das Element wird direkt an der Wurzel eingefügt.",
+      "Das Element wird zunächst an der untersten rechten Position eingefügt und dann nach oben-links getauscht, bis die Tableau-Eigenschaften erfüllt sind.",
+      "Das Element wird an einer zufälligen Position eingefügt.",
+      "Das Element wird vor dem Einfügen sortiert."
+    ],
+    "correct": 1,
+    "explanation": "Beim Einfügen in ein Young Tableau wird das Element zuerst ganz unten rechts eingefügt und dann nach oben-links getauscht, indem es mit dem größten Nachbarn (links oder oben) verglichen und getauscht wird [238]."
+  },
+  {
+    "question": "Was ist der erste Schritt beim `extractMin()`-Algorithmus in `YoungTableauSubmission`?",
+    "answers": [
+      "Das Element ganz unten rechts wird entfernt.",
+      "Das Element ganz oben links wird entfernt und durch `∞` (Integer.MAX_VALUE) ersetzt.",
+      "Der Median des Tableaus wird entfernt.",
+      "Das Element wird zufällig ausgewählt und entfernt."
+    ],
+    "correct": 1,
+    "explanation": "Beim `extractMin()`-Algorithmus wird das Element ganz oben links (das Minimum) entfernt und durch `∞` (Integer.MAX_VALUE) ersetzt [239]."
+  },
+  {
+    "question": "Wie funktioniert die `contains()` Methode in `YoungTableauSubmission`, um zu überprüfen, ob ein Wert enthalten ist?",
+    "answers": [
+      "Sie durchläuft das gesamte Tableau.",
+      "Sie beginnt unten links und bewegt sich je nach Vergleichsergebnis nach rechts (kleiner) oder oben (größer), bis der Wert gefunden oder ein Rand erreicht ist.",
+      "Sie verwendet binäre Suche in jeder Zeile.",
+      "Sie verwendet Hashing, um den Wert zu finden."
+    ],
+    "correct": 1,
+    "explanation": "Die `contains()` Methode beginnt unten links im Tableau. Wenn der momentane Wert kleiner ist als der gesuchte, geht sie eine Spalte weiter nach rechts; andernfalls geht sie eine Zeile weiter nach oben [240]."
+  },
+  {
+    "question": "Was ist die Zeitkomplexität des `sort(int[] array)` Algorithmus, der ein Young Tableau verwendet (m x m Tableau, m = ceil(sqrt(len(array))))?",
+    "answers": [
+      "O(n)",
+      "O(n log n)",
+      "O(n * (m+n))",
+      "O(n²)"
+    ],
+    "correct": 2,
+    "explanation": "Der Sortieralgorithmus unter Verwendung eines m x m Young Tableaus, bei dem `m = ⌈√n⌉` ist, und `insert` und `extractMin` jeweils O(m+n) (hier O(sqrt(n)+n)=O(n)) kosten, führt dazu, dass das Einfügen von n Elementen O(n²) und das Extrahieren O(n²) kostet. Eine effizientere Lösung, wie in den Vorlesungsfolien gezeigt (O(n³)), wäre das Sortieren von n² Elementen in O(n³). Da hier nur `n` Elemente eingefügt werden, und `insert`/`extractMin` O(n) (weil `m = sqrt(n)`) sind, sollte dies O(n² log n) sein wenn n = m^2, oder O(n^2) wenn m = n. Hier müsste es O(n * (m+n)) sein, was O(n * (sqrt(n)+n)) = O(n^2) ist. Der Hinweis sagt O(n^3) für n^2 Zahlen mit O(n) insert/extract, also O(n^2 * n) = O(n^3). Für n Zahlen mit einem m x m Tableau, wobei m = ceil(sqrt(n)), und O(m+n) insert/extract, wäre es n * O(sqrt(n)+n) = O(n * n) = O(n^2)."
+  },
+  {
+    "question": "Gegeben das Python-Programm `def foo(n): for i in range(0,1): pass; for j in range(0,2): pass; for k in range(0,3): pass`. Welche Laufzeitabschätzung in Θ-Notation ist korrekt?",
+    "answers": [
+      "Θ(n)",
+      "Θ(n log n)",
+      "Θ(1)",
+      "Θ(6)"
+    ],
+    "correct": 2,
+    "explanation": "Die Schleifen sind nicht von `n` abhängig und iterieren eine konstante Anzahl von Malen. Daher ist die Laufzeit konstant, also Θ(1) [58, 89]."
+  },
+  {
+    "question": "Wie ist die Höhe eines `null`-Knotens in der `height(Node node)` Methode einer AVL-Baum-Implementierung definiert?",
+    "answers": [
+      "-1",
+      "0",
+      "1",
+      "Undefiniert"
+    ],
+    "correct": 1,
+    "explanation": "Die `height` Methode in der `AvlTreeSubmission` gibt 0 zurück, wenn der Knoten `null` ist [52]."
+  },
+  {
+    "question": "Welche Methode in der `AvlTreeSubmission` ist dafür zuständig, die Balance eines Knotens nach einer Einfüge- oder Löschoperation wiederherzustellen?",
+    "answers": [
+      "rightRotate()",
+      "leftRotate()",
+      "balance()",
+      "updateHeight()"
+    ],
+    "correct": 2,
+    "explanation": "Die Methode `balance(Node node)` ist dafür vorgesehen, einen Knoten auf AVL-Konformität zu überprüfen und durch geeignete Rotationen zu balancieren, falls notwendig [90-93]."
+  },
+  {
+    "question": "Was ist der Zweck der `findMinValueNode(Node node)` Methode in einem AVL-Baum?",
+    "answers": [
+      "Den höchsten Wert im Baum zu finden.",
+      "Den Knoten mit dem kleinsten Schlüssel in einem Teilbaum zu finden.",
+      "Die Wurzel des Baumes zurückzugeben.",
+      "Einen neuen Knoten zu erstellen."
+    ],
+    "correct": 1,
+    "explanation": "Die Methode `findMinValueNode(Node node)` soll den Knoten mit dem kleinsten enthaltenen Schlüssel in dem gegebenen Teilbaum zurückgeben [90, 94]."
+  },
+  {
+    "question": "Wofür steht die statische Variable `t` in der `BTreeNodeSubmission` Klasse?",
+    "answers": [
+      "Für die maximale Anzahl der Schlüssel.",
+      "Für die minimale Ordnung des B-Baums.",
+      "Für die Anzahl der Kinder eines Knotens.",
+      "Für die Höhe des Baumes."
+    ],
+    "correct": 1,
+    "explanation": "`static int t = 2;` definiert den Grad des B-Baums, welcher die minimale und maximale Anzahl der Schlüssel und Kinder in einem Knoten festlegt [95]."
+  },
+  {
+    "question": "In einer array-basierten Binärsuchbaum-Implementierung, wie wird der Index des linken Kindes eines Knotens an Index `i` (0-indiziert) berechnet?",
+    "answers": [
+      "2 * i",
+      "2 * i + 1",
+      "2 * i + 2",
+      "(i - 1) / 2"
+    ],
+    "correct": 1,
+    "explanation": "Der Index des linken Kindes eines Knotens an Index `i` wird in einem 0-indizierten Array als `2 * i + 1` berechnet [96, 97]."
+  },
+  {
+    "question": "Was ist der Zweck der `lCopy` und `rCopy` Arrays in der `merge` Methode von MergeSort?",
+    "answers": [
+      "Speichern der unsortierten Hälften.",
+      "Speichern der sortierten Hälften vor dem Zusammenführen.",
+      "Speichern der finalen sortierten Liste.",
+      "Speichern von temporären Indizes."
+    ],
+    "correct": 1,
+    "explanation": "Die Arrays `lCopy` und `rCopy` werden verwendet, um die zwei sortierten Teillisten temporär zu speichern, bevor sie zur einer sortierten Gesamtliste zusammengeführt werden [98, 99]."
+  },
+  {
+    "question": "Für einen 0-indizierten Array, der einen Heap darstellt, wie berechnet man den Index des Elternknotens (`parentIdx`) eines Knotens an Index `i`?",
+    "answers": [
+      "`2 * i + 1`",
+      "`2 * i + 2`",
+      "`(i - 1) / 2`",
+      "`i / 2`"
+    ],
+    "correct": 2,
+    "explanation": "In Java (0-indiziert) ist der Elternknoten eines Kindknotens `k` bei `⌊(i - 1) / 2⌋` zu finden [97]."
+  },
+  {
+    "question": "Was ist die Zeitkomplexität für die `PREPEND`-Operation in einer einfach verketteten Liste?",
+    "answers": [
+      "O(n)",
+      "O(log n)",
+      "O(1)",
+      "O(n²)"
+    ],
+    "correct": 2,
+    "explanation": "`PREPEND` (Anhängen am Anfang) ändert nur Referenzen, was eine Laufzeit von O(1) hat [50]."
+  },
+  {
+    "question": "Was ist der Zweck des `LOAD_FACTOR` in den `HashMap` Implementierungen?",
+    "answers": [
+      "Definiert die anfängliche Größe der Hash-Tabelle.",
+      "Bestimmt die maximale Anzahl von Kollisionen.",
+      "Gibt die Schwelle an, bei der eine Größenänderung (Rehashing) ausgelöst wird.",
+      "Legt die Hash-Funktion fest."
+    ],
+    "correct": 2,
+    "explanation": "Der `LOAD_FACTOR` (z.B. 0.75) ist eine Schwelle, die zur Vergrößerung (Rehashing) der Hash-Tabelle genutzt wird, wenn das Verhältnis von Einträgen zu Buckets diesen Faktor überschreitet [100]."
+  },
+  {
+    "question": "In der `MaxHeapSubmission` oder `MinHeapSubmission`, wofür wird die `toRemove` HashMap verwendet?",
+    "answers": [
+      "Um Elemente zu speichern, die eingefügt werden sollen.",
+      "Um eine Liste aller entfernten Elemente zu führen.",
+      "Um eine verzögerte Löschung von Elementen im Heap zu handhaben.",
+      "Um die Größe des Heaps zu verfolgen."
+    ],
+    "correct": 2,
+    "explanation": "Die `toRemove` HashMap wird verwendet, um eine verzögerte Löschung ('lazy deletion') von Elementen zu implementieren, anstatt sie sofort physisch aus dem Heap zu entfernen [101, 102]."
+  },
+  {
+    "question": "Was ist der Zweck der `assignCars` Methode in der `FerryRecursiveSubmission`?",
+    "answers": [
+      "Die Gesamtlänge aller Autos zu berechnen.",
+      "Die maximale Anzahl von Autos zu bestimmen, die auf die Fähre passen, unter Verwendung eines rekursiven Ansatzes.",
+      "Die Fahrzeuge zufällig auf die Spuren zu verteilen.",
+      "Den optimalen Preis für die Fährfahrt zu berechnen."
+    ],
+    "correct": 1,
+    "explanation": "Die Methode `assignCars` soll die maximale Anzahl von Fahrzeugen berechnen, die auf die Fähre untergebracht werden können, und deren Zuweisung zu den Spuren (LEFT/RIGHT) unter Verwendung eines rekursiven Ansatzes [103, 104]."
+  },
+  {
+    "question": "Betrachten Sie die `KatzeSubmission.compareTo` Methode. Welches Attribut wird zuerst für den Vergleich zweier Katzen verwendet?",
+    "answers": [
+      "Matrikelnummer",
+      "Studiengang",
+      "Name",
+      "Geburtsdatum"
+    ],
+    "correct": 2,
+    "explanation": "Die `compareTo` Methode in `KatzeSubmission` vergleicht Katzen zuerst alphabetisch nach dem Namen und dann nach der Matrikelnummer, wenn die Namen gleich sind [105, 106]."
+  },
+  {
+    "question": "Im Floyd-Warshall-Algorithmus, wie lautet die Aktualisierungsregel für `d[i][j]`?",
+    "answers": [
+      "`d[i][j] = d[i][k] + d[k][j]`",
+      "`d[i][j] = min(d[i][j], d[i][k] + d[k][j])`",
+      "`d[i][j] = max(d[i][j], d[i][k] + d[k][j])`",
+      "`d[i][j] = d[i][k] - d[k][j]`"
+    ],
+    "correct": 1,
+    "explanation": "Die Rekurrenzgleichung für `d[i][j]` im Floyd-Warshall-Algorithmus lautet `d^(k)ij = min(d^(k-1)ij, d^(k-1)ik + d^(k-1)kj)` [45, 111]."
+  },
+  {
+    "question": "Welche Zahl wird in der `YoungTableauSubmission` verwendet, um leere Einträge oder Unendlichkeit (`∞`) darzustellen?",
+    "answers": [
+      "0",
+      "-1",
+      "Integer.MIN_VALUE",
+      "Integer.MAX_VALUE"
+    ],
+    "correct": 3,
+    "explanation": "In der `YoungTableauSubmission` wird `Integer.MAX_VALUE` verwendet, um leere Einträge oder Unendlichkeit darzustellen [112]."
+  },
+  {
+    "question": "Was ist der Zweck der `search(int key)` Methode in einer `HashMapChainSubmission`?",
+    "answers": [
+      "Einen neuen Schlüssel in die Hash-Tabelle einzufügen.",
+      "Einen Schlüssel aus der Hash-Tabelle zu löschen.",
+      "Die Existenz eines Schlüssels in der Hash-Tabelle zu überprüfen, indem die entsprechende verkettete Liste durchsucht wird.",
+      "Die Hash-Tabelle zu vergrößern."
+    ],
+    "correct": 2,
+    "explanation": "Die `search` Methode in einer `HashMapChainSubmission` soll überprüfen, ob ein Schlüssel in der Hash-Tabelle vorhanden ist. Dies geschieht, indem der Hash-Index berechnet und dann die verkettete Liste an diesem Index durchsucht wird [113, 114]."
+  },
+  {
+    "question": "In der `BinarySearchTreeSubmission`, welche Werte werden von den Helper-Methoden `left(int index)` und `right(int index)` zurückgegeben?",
+    "answers": [
+      "Die Werte der Kindknoten.",
+      "Die Höhen der Kindknoten.",
+      "Die Indizes der linken bzw. rechten Kindknoten.",
+      "Boolesche Werte, ob Kindknoten existieren."
+    ],
+    "correct": 2,
+    "explanation": "Die Helper-Methoden `left(int index)` und `right(int index)` geben die Indizes der linken (2 * index + 1) bzw. rechten (2 * index + 2) Kindknoten im Array zurück [96, 115]."
+  },
+  {
+    "question": "Was ist das Ergebnis der Funktion `partition_sort(n)` laut Aufgabenstellung?",
+    "answers": [
+      "Eine Liste von Primzahlen bis n.",
+      "Eine nach Größe der Elemente sortierte Liste von Listen.",
+      "Eine nach Länge der Listen sortierte Liste, die aus nach Größe der Elemente sortierten Listen besteht.",
+      "Eine Liste von Fibonacci-Zahlen."
+    ],
+    "correct": 2,
+    "explanation": "Die Funktion `partition_sort(n)` gibt eine nach Länge der Listen sortierte Liste zurück, die aus nach Größe der Elemente sortierten Listen besteht [118]."
+  },
+  {
+    "question": "In der `generate_partitions` Funktion, wie lautet die Bedingung für den Basisfall, dass `remaining` 0 ist?",
+    "answers": [
+      "`remaining == 1`",
+      "`remaining < 0`",
+      "`remaining == 0`",
+      "`remaining > 0`"
+    ],
+    "correct": 2,
+    "explanation": "Der Basisfall für `generate_partitions` ist, wenn `remaining == 0` ist, was bedeutet, dass eine gültige Partition gefunden wurde [119]."
+  },
+  {
+    "question": "Was ist die Zeitkomplexität für die `search`-Operation in einer einfach verketteten Liste im Worst Case?",
+    "answers": [
+      "O(1)",
+      "O(log n)",
+      "O(n)",
+      "O(n log n)"
+    ],
+    "correct": 2,
+    "explanation": "Für `SEARCH` muss potentiell jedes Element angesehen werden, d.h. der Worst Case-Aufwand ist in O(n) [50]."
+  },
+  {
+    "question": "Was ist der `EMPTY` Wert in der `HashMapLinearSubmission` und wofür wird er genutzt?",
+    "answers": [
+      "Der Wert, der eingefügt wurde.",
+      "Ein Marker für gelöschte Einträge.",
+      "Ein Wert, der anzeigt, dass ein Bucket leer ist.",
+      "Die maximale Größe der Hashmap."
+    ],
+    "correct": 2,
+    "explanation": "`EMPTY = Integer.MIN_VALUE` wird verwendet, um zu initialisieren und anzuzeigen, dass ein Bucket in der Hash-Tabelle leer ist [120]."
+  },
+  {
+    "question": "Was ist die Rolle der `maxheapify` Methode im Heapsort-Algorithmus?",
+    "answers": [
+      "Ein Element in den Heap einzufügen.",
+      "Die Heap-Eigenschaft für einen Teilbaum wiederherzustellen.",
+      "Das Array in einen Heap umzuwandeln.",
+      "Das größte Element aus dem Heap zu extrahieren."
+    ],
+    "correct": 1,
+    "explanation": "Die `maxheapify` Methode ist dafür verantwortlich, die Heap-Eigenschaft für einen Teilbaum wiederherzustellen, indem sie einen Knoten nach unten tauscht, wenn die Heap-Eigenschaft an seiner Wurzel verletzt ist [121-123]."
+  },
+  {
+    "question": "Welche Datenstruktur wird typischerweise für die Warteschlange in Dijkstras Algorithmus empfohlen, um die Laufzeit zu optimieren?",
+    "answers": [
+      "Array",
+      "Stack",
+      "Verkettete Liste",
+      "Prioritätswarteschlange (PriorityQueue)"
+    ],
+    "correct": 3,
+    "explanation": "Die Laufzeit von Dijkstras Algorithmus hängt wesentlich von der Implementierung der Prioritäts-Queue ab; diese wird verwendet, um den aktuell günstigsten Knoten auszuwählen [124, 125]."
+  },
+  {
+    "question": "Was ist der Zweck der `predecessors` HashMap in Dijkstras `get_distances` Methode?",
+    "answers": [
+      "Um die Kosten zu jedem Knoten zu speichern.",
+      "Um die Kanten des Graphen zu speichern.",
+      "Um die Vorgängerknoten auf den kürzesten Pfaden zu speichern und so den Pfad rekonstruieren zu können.",
+      "Um besuchte Knoten zu markieren."
+    ],
+    "correct": 2,
+    "explanation": "Die `predecessors` HashMap wird in Dijkstras `get_distances` Methode verwendet, um für jeden Knoten den Vorgängerknoten auf dem jeweiligen kürzesten Pfad zu speichern, was die Rekonstruktion des Pfades ermöglicht [125]."
+  },
+  {
+    "question": "Welche Pivot-Auswahlstrategie wählt das Element an der letzten Position des Teilarrays?",
+    "answers": [
+      "firstPivot",
+      "middlePivot",
+      "lastPivot",
+      "medianOfThree"
+    ],
+    "correct": 2,
+    "explanation": "Die Methode `lastPivot` gibt den Index des letzten Elements im Teilarray zurück [126, 127]."
+  },
+  {
+    "question": "Was berechnet die `berechneDistanz` Methode in der `LevenshteinSubmission` Klasse?",
+    "answers": [
+      "Die Länge zweier Sätze zu vergleichen.",
+      "Die Levenshtein-Distanz zwischen zwei Zeichenketten zu berechnen.",
+      "Zwei Sätze zu konkattenieren.",
+      "Die Anzahl der gemeinsamen Zeichen in zwei Sätzen zu finden."
+    ],
+    "correct": 1,
+    "explanation": "Die `berechneDistanz` Methode in der `LevenshteinSubmission` ist dazu da, die Levenshtein-Distanz zwischen zwei Zeichenketten (`satz1`, `satz2`) zu berechnen [128]."
+  },
+  {
+    "question": "Was ist die Zeitkomplexität für die `getSwapCandidate` Methode in `MaxHeapSubmission`?",
+    "answers": [
+      "O(1)",
+      "O(log n)",
+      "O(n)",
+      "O(n log n)"
+    ],
+    "correct": 0,
+    "explanation": "Die Methode `getSwapCandidate` soll den Index des Knotens mit dem maximalen Wert unter dem gegebenen Knoten und seinen direkten Kindern zurückgeben. Dies erfordert konstanten Aufwand, da nur eine feste Anzahl von Vergleichen (mit 2 Kindern und dem Knoten selbst) durchgeführt wird [210, 225]."
+  },
+  {
+    "question": "Welcher Algorithmus wird für die Berechnung der Mediane aller k-langen 'sliding window'-Subarrays empfohlen, um eine effiziente Lösung zu erzielen?",
+    "answers": [
+      "Bubble Sort.",
+      "Merge Sort.",
+      "Die Verwendung von zwei Heaps (einem Max-Heap und einem Min-Heap).",
+      "Quicksort."
+    ],
+    "correct": 2,
+    "explanation": "Um den Median eines 'sliding window'-Subarrays effizient zu berechnen, kann man zwei Heaps verwenden: einem Max-Heap und einem Min-Heap [237]."
+  },
+  {
+    "question": "Welcher Schritt wird in `YoungTableauSubmission.insert` ausgeführt, wenn ein Element in das Tableau eingefügt wird?",
+    "answers": [
+      "Das Element wird direkt an der Wurzel eingefügt.",
+      "Das Element wird zunächst an der untersten rechten Position eingefügt und dann nach oben-links getauscht, bis die Tableau-Eigenschaften erfüllt sind.",
+      "Das Element wird an einer zufälligen Position eingefügt.",
+      "Das Element wird vor dem Einfügen sortiert."
+    ],
+    "correct": 1,
+    "explanation": "Beim Einfügen in ein Young Tableau wird das Element zuerst ganz unten rechts eingefügt und dann nach oben-links getauscht, indem es mit dem größten Nachbarn (links oder oben) verglichen und getauscht wird [238]."
+  },
+  {
+    "question": "Was ist der erste Schritt beim `extractMin()`-Algorithmus in `YoungTableauSubmission`?",
+    "answers": [
+      "Das Element ganz unten rechts wird entfernt.",
+      "Das Element ganz oben links wird entfernt und durch `∞` (Integer.MAX_VALUE) ersetzt.",
+      "Der Median des Tableaus wird entfernt.",
+      "Das Element wird zufällig ausgewählt und entfernt."
+    ],
+    "correct": 1,
+    "explanation": "Beim `extractMin()`-Algorithmus wird das Element ganz oben links (das Minimum) entfernt und durch `∞` (Integer.MAX_VALUE) ersetzt [239]."
+  },
+  {
+    "question": "Wie funktioniert die `contains()` Methode in `YoungTableauSubmission`, um zu überprüfen, ob ein Wert enthalten ist?",
+    "answers": [
+      "Sie durchläuft das gesamte Tableau.",
+      "Sie beginnt unten links und bewegt sich je nach Vergleichsergebnis nach rechts (kleiner) oder oben (größer), bis der Wert gefunden oder ein Rand erreicht ist.",
+      "Sie verwendet binäre Suche in jeder Zeile.",
+      "Sie verwendet Hashing, um den Wert zu finden."
+    ],
+    "correct": 1,
+    "explanation": "Die `contains()` Methode beginnt unten links im Tableau. Wenn der momentane Wert kleiner ist als der gesuchte, geht sie eine Spalte weiter nach rechts; andernfalls geht sie eine Zeile weiter nach oben [240]."
+  },
+  {
+    "question": "Was wird durch die `isValid()` Methode in `YoungTableauSubmission` überprüft?",
+    "answers": [
+      "Ob das Tableau leer ist.",
+      "Ob die Anzahl der Zeilen und Spalten gültig ist.",
+      "Ob die Young-Tableau-Eigenschaften (sortierte Zeilen und Spalten) erfüllt sind.",
+      "Ob alle Elemente im Tableau eindeutig sind."
+    ],
+    "correct": 2,
+    "explanation": "Die `isValid()` Methode überprüft, ob das Young Tableau die Eigenschaften erfüllt, dass Einträge jeder Zeile von links nach rechts aufsteigend und Einträge jeder Spalte von oben nach unten aufsteigend sortiert sind [230, 231]."
+  },
+  {
+    "question": "Welche Methode in `PrimSubmission` ist dafür zuständig, den Knoten zu finden, der noch nicht im MST ist, aber die geringste Kantenverbindung zum wachsenden MST hat?",
+    "answers": [
+      "findMinimumSpanningTree()",
+      "minKey()",
+      "addEdge()",
+      "getVertices()"
+    ],
+    "correct": 1,
+    "explanation": "Die `minKey` Methode in Prim's Algorithmus ist dafür zuständig, den Knoten zu finden, der noch nicht im MST ist, aber die geringste Kantenverbindung zum wachsenden MST hat [228]."
+  }
+]
