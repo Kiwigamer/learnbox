@@ -1,0 +1,400 @@
+{
+  "questions": [
+  {
+    "question": "Was ist die grundlegende Definition eines Algorithmus laut den Kursmaterialien?",
+    "answers": [
+      "Eine Reihe von Anweisungen zur Hardware-Steuerung",
+      "Eine wohldefinierte Folge von Berechnungen, die Eingaben entgegennimmt und Ausgaben in endlicher Zeit zurückgibt.",
+      "Ein Programm, das stets das schnellste Ergebnis liefert.",
+      "Eine Methode zur Organisation von Daten."
+    ],
+    "correct": 1,
+    "explanation": "Ein Algorithmus wird definiert als eine wohldefinierte Folge von Berechnungen, die einen oder mehrere Werte als Eingabe entgegennimmt und einen oder mehrere Werte als Ausgabe in endlicher Zeit zurückgibt. [1]"
+  },
+  {
+    "question": "Nennen Sie vier Quellen für Paketverzögerungen in paketvermittelten Netzen.",
+    "answers": [
+      "Codierungsverzögerung, Speicherverzögerung, Sicherheitsverzögerung, Abfrageseitenverzögerung",
+      "Übertragungsverzögerung, Ausbreitungsverzögerung, Verarbeitungsverzögerung, Warteschlangenverzögerung",
+      "Fragmentierungsverzögerung, Bestätigungsverzögerung, Wiederholungsverzögerung, Flusskontrollverzögerung",
+      "Synchronisationsverzögerung, Kompressionsverzögerung, Multiplexverzögerung, Routingtabellenverzögerung"
+    ],
+    "correct": 1,
+    "explanation": "Die vier Quellen für Paketverzögerungen sind Übertragungs-, Ausbreitungs-, Verarbeitungs- und Warteschlangenverzögerung. [2-4]"
+  },
+  {
+    "question": "Wodurch können Paketverluste auftreten? Nennen Sie zwei Beispiele.",
+    "answers": [
+      "Fehlende Protokollkonformität und falsche Zeiteinstellungen.",
+      "Vollständiger Verlust der physikalischen Verbindung und unerwartete Paketgrößen.",
+      "Warteschlange voll und physikalische Probleme (z.B. Bitfehler).",
+      "Übermäßige Bandbreitennutzung und langsame Serverantworten."
+    ],
+    "correct": 2,
+    "explanation": "Paketverluste können auftreten, wenn Puffer-Warteschlangen in Routern überlaufen (Warteschlange voll) oder durch physikalische Probleme auf der Verbindung. [3, 5]"
+  },
+  {
+    "question": "Was ist der wesentliche Grund für die minimale Framegröße von 64 Byte bei Ethernet?",
+    "answers": [
+      "Zur Optimierung des Speichermanagements in Switches.",
+      "Um sicherzustellen, dass Kollisionen sicher erkannt werden können, bevor der Sender die Übertragung beendet.",
+      "Zur Kompatibilität mit älteren Netzwerkkarten.",
+      "Um eine Mindestmenge an Nutzdaten pro Paket zu gewährleisten."
+    ],
+    "correct": 1,
+    "explanation": "Die minimale Framegröße von 64 Byte (ohne Präambel) bei Ethernet ist entscheidend, damit die Kollisionserkennung (CSMA/CD) funktioniert, da ein Sender eine Kollision erkennen muss, bevor er das Senden des Rahmens beendet. [3, 6, 7]"
+  },
+  {
+    "question": "Wieso wird bei Stop-And-Wait eine bereits versendete Bestätigung (ACK) zwischengespeichert?",
+    "answers": [
+      "Um die Übertragungsbandbreite zu maximieren.",
+      "Zur Reduzierung der Verarbeitungslast des Empfängers.",
+      "Wegen möglichem ACK-Verlust oder ACK-Verzögerung.",
+      "Um die Duplikaterkennung zu vereinfachen."
+    ],
+    "correct": 2,
+    "explanation": "Eine bereits versendete Bestätigung (ACK) wird zwischengespeichert, um auf mögliche ACK-Verluste oder -Verzögerungen reagieren zu können und eine erneute Übertragung unnötigerweise zu vermeiden. [3, 8]"
+  },
+  {
+    "question": "Nennen Sie zwei Modifikationen von IPv6 gegenüber IPv4, die es dem Router ermöglichen, Pakete schneller zu verarbeiten.",
+    "answers": [
+      "Dynamische Header-Größe und optionale Prüfsummen.",
+      "Eingeführte Fragmentierung auf dem Weg und obligatorische NAT-Unterstützung.",
+      "Feste Header-Länge und keine Fragmentierung (Pakete > MTU werden verworfen).",
+      "Kleinere Adressräume und Entfernung der Time-to-Live-Felder."
+    ],
+    "correct": 2,
+    "explanation": "IPv6 ermöglicht eine schnellere Verarbeitung in Routern durch Merkmale wie eine feste Header-Länge und die Vermeidung von Fragmentierung, da Pakete, die größer als die MTU sind, verworfen werden, anstatt fragmentiert zu werden. [8, 9]"
+  },
+  {
+    "question": "Warum wird für drahtlose Kommunikation in der Regel CSMA/CA (und nicht CSMA/CD) verwendet?",
+    "answers": [
+      "CSMA/CA bietet höhere Datenraten in drahtlosen Netzen.",
+      "Kollisionserkennung (CD) ist im Funk schwierig und teuer, da eine zweite Antenne zum Empfangen während des Sendens benötigt würde.",
+      "CSMA/CD ist für Funkkanäle zu komplex zu implementieren.",
+      "CSMA/CA bietet eine bessere Sicherheit gegen Abhörversuche."
+    ],
+    "correct": 1,
+    "explanation": "In drahtlosen Netzen ist CSMA/CD (Collision Detection) schwierig umzusetzen, da die Kollisionserkennung eine zusätzliche Antenne erfordern würde, die während des Sendens empfängt. Daher wird CSMA/CA (Collision Avoidance) bevorzugt. [9-11]"
+  },
+  {
+    "question": "Nennen Sie je einen Vor- und Nachteil für eine statische Kanalaufteilung statt eines zufallsbasierten Zugriffsverfahren.",
+    "answers": [
+      "Vorteil: Höherer Durchsatz; Nachteil: Geringere Sicherheit.",
+      "Vorteil: Keine Kollisionen, echtzeitfähig; Nachteil: Ineffizient bei schubartiger Datenkommunikation.",
+      "Vorteil: Einfachere Implementierung; Nachteil: Höherer Overhead.",
+      "Vorteil: Bessere Skalierbarkeit; Nachteil: Anfälliger für Störungen."
+    ],
+    "correct": 1,
+    "explanation": "Statische Kanalaufteilungsverfahren haben den Vorteil, dass sie keine Kollisionen verursachen und echtzeitfähig sind. Ihr Nachteil ist jedoch, dass sie bei schubartiger Datenkommunikation ineffizient sind, da zugewiesene Kapazitäten während Inaktivität ungenutzt bleiben. [9, 11-16]"
+  },
+  {
+    "question": "Werden ICMP-Nachrichten zuverlässig ausgeliefert? Wenn dies nicht zutreffend ist, begründen Sie Ihre Antwort.",
+    "answers": [
+      "Ja, sie werden zuverlässig ausgeliefert, da sie Mechanismen zur Sendewiederholung verwenden.",
+      "Nein, ICMP-Nachrichten werden nicht zuverlässig ausgeliefert, da sie direkt auf IP aufsetzen und daher keine eigenen Mechanismen zur Fehlerbehebung oder Sendewiederholung besitzen.",
+      "Nur in lokalen Netzwerken, im Internet ist die Zuverlässigkeit nicht garantiert.",
+      "Ja, aber nur, wenn das Zielsystem eine Bestätigung zurücksendet."
+    ],
+    "correct": 1,
+    "explanation": "ICMP-Nachrichten werden nicht zuverlässig ausgeliefert, da sie direkt in IP-Datagrammen befördert werden und somit die gleiche Unzuverlässigkeit wie IP selbst aufweisen. Sie dienen zur Fehlersignalisierung, nicht zur gesicherten Übertragung. [9, 17, 18]"
+  },
+  {
+    "question": "Ein IP-Paket trägt ein TCP-Segment in sich und wird von einem NAT-Router aus dem lokalen Netzwerk in das Internet weitergeleitet. Nennen Sie auf TCP/IP-Ebene alle Header-Felder, die der Router für eine korrekte Weiterleitung verändern muss.",
+    "answers": [
+      "Ziel-IP-Adresse und Ziel-Portnummer.",
+      "Quell-MAC-Adresse und Ziel-MAC-Adresse.",
+      "Quell-IP-Adresse und Quell-Portnummer.",
+      "Time-to-Live (TTL) und Checksumme des TCP-Segments."
+    ],
+    "correct": 2,
+    "explanation": "Ein NAT-Router muss beim Weiterleiten eines Pakets vom lokalen Netzwerk ins Internet die Quell-IP-Adresse und die Quell-Portnummer im Header des Pakets ändern. [18-20]"
+  },
+  {
+    "question": "Kann auf Grundlage eines Ablaufdiagramms entschieden werden, ob Go-Back-N oder Selective-Repeat verwendet wird? Begründen Sie Ihre Antwort kurz.",
+    "answers": [
+      "Nein, da beide Protokolle ähnliche Fensterstrategien verwenden.",
+      "Ja, wenn Pakete außerhalb der Reihenfolge bestätigt werden (selektive ACKs) oder wenn nach einem Paketverlust nur das fehlende Paket erneut gesendet wird, handelt es sich um Selective Repeat.",
+      "Ja, aber nur, wenn der Sequenznummernraum des Protokolls bekannt ist.",
+      "Nur durch die Beobachtung der Fenstergröße des Senders."
+    ],
+    "correct": 1,
+    "explanation": "Man kann dies entscheiden, da Selective Repeat selektive Bestätigungen (selective ACKs) und die Wiederholung nur des tatsächlich fehlenden Pakets ermöglicht, während Go-Back-N kumulative Bestätigungen verwendet und bei einem Fehler alle nachfolgenden, bereits gesendeten Pakete ab dem Fehler wiederholt. [19, 21-23]"
+  },
+  {
+    "question": "Zeigen Sie anhand eines Beispielverlaufs, dass ein Sequenznummernfeld von 2 Bit bei einem Schiebefensterprotokoll mit W=4 nicht ausreichend ist. Welcher Parameter muss verändert werden, um eine eindeutige Übertragung zu gewährleisten?",
+    "answers": [
+      "Wenn ein Paket mit der Sequenznummer 0 wiederholt wird und das ACK dafür verloren geht, kann der Empfänger das wiederholte Paket als neues Paket der Sequenznummer 0 (aus dem nächsten Zyklus) interpretieren. Das Feld muss auf 3 Bit erhöht oder die Fenstergröße auf 2 reduziert werden.",
+      "Die Fenstergröße W=4 ist zu groß für einen 2-Bit-Sequenznummernraum, da 2^2 = 4 maximale Sequenznummern zur Verfügung stehen, aber für eine eindeutige Übertragung in der Regel W <= 2^(n-1) oder W < 2^n benötigt wird. Das Feld muss vergrößert werden.",
+      "Der Timer für die Sendewiederholung ist zu kurz, was zu unnötigen Wiederholungen führt. Die Timeout-Dauer muss verlängert werden.",
+      "Die ACK-Verzögerung ist zu hoch, was die Synchronisation stört. Die ACK-Sendezeit muss minimiert werden."
+    ],
+    "correct": 0,
+    "explanation": "Bei einem Sequenznummernraum von 2 Bit (00, 01, 10, 11) und einer Fenstergröße W=4 kann es bei Paketverlust zu Mehrdeutigkeiten kommen, wenn ein alter Rahmen wiederholt wird, dessen Sequenznummer in einem neuen Kontext vom Empfänger als neu interpretiert wird. Um Eindeutigkeit zu gewährleisten, muss der Sequenznummernraum vergrößert (z.B. auf 3 Bit) oder die Fenstergröße reduziert werden. [24-27]"
+  },
+  {
+    "question": "Erklären Sie kurz, wie Caching den Datenverkehr in einem Netzwerk reduzieren kann.",
+    "answers": [
+      "Caching reduziert den Datenverkehr, indem es die Paketkomprimierung am Ursprungsserver verbessert.",
+      "Caching reduziert den Datenverkehr, indem häufig angefragte Objekte lokal gespeichert werden, sodass wiederholte Anfragen nicht zum Ursprungsserver weitergeleitet werden müssen.",
+      "Caching reduziert den Datenverkehr durch die Priorisierung von Echtzeit-Anwendungen.",
+      "Caching reduziert den Datenverkehr durch die Implementierung von Fehlerkorrekturmechanismen auf der Anwendungsschicht."
+    ],
+    "correct": 1,
+    "explanation": "Caching reduziert den Datenverkehr in einem Netzwerk, indem es häufig angefragte Objekte lokal speichert. Dadurch müssen diese Objekte bei wiederholter Anfrage nicht erneut vom Ursprungsserver geladen werden, was die Auslastung der Zugangsleitungen und die Gesamtverzögerung verringert. [28-30]"
+  },
+  {
+    "question": "Nennen Sie einen Vor- und einen Nachteil von einer Peer-to-Peer (P2P) Architektur im Vergleich zu Client-Server-Systemen.",
+    "answers": [
+      "Vorteil: Höhere Sicherheitsstandards; Nachteil: Geringere Skalierbarkeit.",
+      "Vorteil: Einfachere Verwaltung; Nachteil: Höhere initiale Einrichtungskosten.",
+      "Vorteil: Hohe Skalierbarkeit und Robustheit (keine Single Point of Failure); Nachteil: Schwierigere Verwaltung, Sicherheitsprobleme (z.B. Anonymität, Traffic Analysis).",
+      "Vorteil: Garantierte Dienstgüte; Nachteil: Geringere Flexibilität."
+    ],
+    "correct": 2,
+    "explanation": "Ein Vorteil der P2P-Architektur ist ihre hohe Skalierbarkeit und Robustheit durch die Dezentralität und die Vermeidung eines Single Point of Failure. Ein Nachteil ist die potenziell schwierigere Verwaltung und die Herausforderungen bei der Gewährleistung von Sicherheit und Anonymität (z.B. durch Traffic Analysis). [30-34]"
+  },
+  {
+    "question": "Nennen Sie einen Vor- und einen Nachteil der Manchester-Kodierung im Vergleich zu Non-Return-to-Zero (NRZ).",
+    "answers": [
+      "Vorteil: Höhere Datenrate; Nachteil: Anfälliger für Rauschen.",
+      "Vorteil: Selbsttaktend (einfache Taktrückgewinnung); Nachteil: Benötigt doppelt so hohe Bandbreite wie NRZ.",
+      "Vorteil: Ermöglicht Mehrfachzugriff; Nachteil: Komplexere Implementierung.",
+      "Vorteil: Geringerer Energieverbrauch; Nachteil: Nicht gleichstromfrei."
+    ],
+    "correct": 1,
+    "explanation": "Die Manchester-Kodierung ist selbsttaktend, was die Taktrückgewinnung für den Empfänger erleichtert. Ihr Nachteil ist jedoch, dass sie die doppelte Bandbreite im Vergleich zu NRZ-Codes benötigt. [8, 30, 35-37]"
+  },
+  {
+    "question": "Wofür steht DNS? Ist es möglich, mit einem Web-Server zu kommunizieren, wenn alle DNS-Server offline sind? Begründen Sie Ihre Antwort.",
+    "answers": [
+      "DNS steht für Domain Name System. Ja, es ist möglich, wenn die IP-Adresse des Web-Servers direkt bekannt ist.",
+      "DNS steht für Data Network Service. Nein, da die Kommunikation immer über einen DNS-Server initiiert werden muss.",
+      "DNS steht für Distributed Naming Service. Ja, aber nur über lokale Caches, nicht direkt.",
+      "DNS steht für Dynamic Name Resolution. Nein, da die Domain-Namen dann nicht in IP-Adressen aufgelöst werden können."
+    ],
+    "correct": 0,
+    "explanation": "DNS steht für Domain Name System. Eine Kommunikation mit einem Web-Server ist auch dann möglich, wenn alle DNS-Server offline sind, vorausgesetzt, die IP-Adresse des Web-Servers ist dem Client direkt bekannt und muss nicht erst über den DNS-Dienst aufgelöst werden. [38-40]"
+  },
+  {
+    "question": "Welches Medienzugriffsverfahren würden Sie für ein Netzwerk mit folgenden Kenngrößen verwenden: Datenrate 1 Mbit/s, Paketlänge 1 kbit, Ausbreitungsverzögerung 250 ms? Begründen Sie Ihre Antwort kurz.",
+    "answers": [
+      "CSMA/CD, da es für niedrige Latenzen optimiert ist.",
+      "Token Ring, da es eine garantierte Zugriffszeit bietet.",
+      "Slotted ALOHA, da die Kanalpuffergröße 'a' sehr groß ist.",
+      "1-persistentes CSMA, da es die Wartezeit minimiert."
+    ],
+    "correct": 2,
+    "explanation": "Bei den gegebenen Parametern ist die Kanalpuffergröße a = (R * D) / L = (1 Mbit/s * 250 ms) / 1 kbit = 250. Gemäß den Durchsatzkurven von Zufallszugriffsverfahren ist bei großen Werten für 'a' Slotted ALOHA die effizienteste Wahl. [39, 41-43]"
+  },
+  {
+    "question": "Wofür steht SNMP und wie funktioniert es? Identifizieren Sie die Hauptkomponenten eines Netzwerks, die mittels SNMP gemanagt werden.",
+    "answers": [
+      "SNMP steht für Secure Network Management Protocol; es sichert Netzwerke durch Verschlüsselung von Management-Nachrichten. Hauptkomponenten sind Firewalls und Router.",
+      "SNMP steht für Simple Network Monitoring Protocol; es überwacht den Datenverkehr in Echtzeit. Hauptkomponenten sind Switches und Endgeräte.",
+      "SNMP steht für Simple Network Management Protocol; es ist ein Anfrage/Antwort-Protokoll über UDP zwischen einer Managing Entity und Management Agents auf Managed Devices. Hauptkomponenten sind Managed Devices, Managed Objects und Management Agents.",
+      "SNMP steht für System Network Processing; es optimiert die Netzwerkleistung durch automatische Konfiguration. Hauptkomponenten sind Server und Clients."
+    ],
+    "correct": 2,
+    "explanation": "SNMP steht für Simple Network Management Protocol. Es funktioniert als Anfrage/Antwort-Protokoll über UDP zwischen einer zentralen Managing Entity und Management Agents auf Managed Devices. Es wird verwendet, um Netzwerkgeräte (Managed Devices), deren Hardware- oder Software-Komponenten (Managed Objects) zu überwachen und zu verwalten. [39, 44-47]"
+  },
+  {
+    "question": "Berechnen Sie die maximale Datenrate für ein Modem mit einer Bandbreite von 3 kHz und einem Signal-Rausch-Verhältnis (SNR) auf der Leitung von 32 dB.",
+    "answers": [
+      "Ca. 3000 bps",
+      "Ca. 32000 bps",
+      "Ca. 96000 bps",
+      "Ca. 128000 bps"
+    ],
+    "correct": 1,
+    "explanation": "Nach dem Shannon-Theorem beträgt die maximale Datenrate C = B * log2(1 + S/N). Für 32 dB SNR ist S/N = 10^(32/10) ≈ 1584.89. Mit B = 3 kHz ergibt sich C ≈ 3000 Hz * log2(1 + 1584.89) ≈ 3000 * 10.63 ≈ 31890 bps. [48, 49]"
+  },
+  {
+    "question": "Angenommen, mehrere Benutzer teilen sich eine Verbindung mit einer Rate von 1 Mbit/s. Jeder Benutzer ist 10 % seiner Zeit aktiv und sendet in dieser Zeit mit einer Rate von 500 kbit/s. Wie viele Nutzer sind bei Leitungsvermittlung mit fester Kanalaufteilung möglich? Bestimmen Sie die Wahrscheinlichkeit, dass zu einem Zeitpunkt kein Nutzer sendet, für vier Benutzer bei Paketvermittlung.",
+    "answers": [
+      "Leitungsvermittlung: 10 Nutzer; Wahrscheinlichkeit (kein Nutzer sendet): 0.1^4",
+      "Leitungsvermittlung: 2 Nutzer; Wahrscheinlichkeit (kein Nutzer sendet): 0.9^4",
+      "Leitungsvermittlung: 5 Nutzer; Wahrscheinlichkeit (kein Nutzer sendet): 0.6^4",
+      "Leitungsvermittlung: 1 Nutzer; Wahrscheinlichkeit (kein Nutzer sendet): 0.5^4"
+    ],
+    "correct": 1,
+    "explanation": "Bei Leitungsvermittlung ist der Kanal fest aufgeteilt, sodass nur 1 Mbit/s / 0.5 Mbit/s = 2 Nutzer gleichzeitig mit voller Rate senden könnten. Bei Paketvermittlung senden 4 Nutzer jeweils 10% der Zeit; die Wahrscheinlichkeit, dass zu einem Zeitpunkt kein Nutzer sendet, ist (1 - 0.1)^4 = 0.9^4 = 0.6561. [49, 50]"
+  },
+  {
+    "question": "Was ist die minimale Fenstergröße, um 90 % normierten Durchsatz im fehlerfreien Fall zu erreichen, wenn die Datenrate 1 Mbit/s, die Paketlänge 1500 B und die Distanz 381600 km beträgt (Ausbreitungsgeschwindigkeit 3× 10^8 m/s)?",
+    "answers": [
+      "W min = 20",
+      "W min = 44",
+      "W min = 107",
+      "W min = 192"
+    ],
+    "correct": 3,
+    "explanation": "Zuerst wird die Ausbreitungsverzögerung D = l/v = 381600 km / (3*10^8 m/s) = 1.272 s berechnet. Die Paketlänge L = 1500 B = 12000 bit. Dann die Kanalpuffergröße a = (R*D)/L = (10^6 * 1.272) / 12000 = 106. Für 90% normierten Durchsatz (S=0.9) im fehlerfreien Fall, wenn W < 1+2a, gilt S = W / (1+2a). Umgestellt: W = S * (1+2a) = 0.9 * (1 + 2*106) = 0.9 * 213 = 191.7. Die minimale Fenstergröße muss also 192 sein. [27, 51, 52]"
+  },
+  {
+    "question": "Ist eine Fenstergröße von 192 Paketen mit dem Standard-TCP-Header möglich oder muss eine Erweiterung verwendet werden? Wenn ja, welche?",
+    "answers": [
+      "Ja, der Standard-TCP-Header kann bis zu 65.535 Pakete adressieren.",
+      "Nein, der Standard-TCP-Header ist auf 65.535 Bytes begrenzt und erfordert die TCP Window Scale Option (RFC 1323).",
+      "Ja, aber nur unter Verwendung von Fast Retransmit.",
+      "Nein, da die maximale Segmentgröße (MSS) überschritten würde."
+    ],
+    "correct": 1,
+    "explanation": "Der Standard-TCP-Header verwendet ein 16-Bit-Feld für die Fenstergröße, was auf 65.535 Bytes begrenzt ist. Bei einer Paketgröße von 1500 Bytes wären das maximal ca. 43 Pakete. Eine Fenstergröße von 192 Paketen erfordert daher die Verwendung der TCP Window Scale Option (RFC 1323) zur Skalierung des Fensters über diese Grenze hinaus. [52-54]"
+  },
+  {
+    "question": "Welchen Effekt stellt die Kanalpuffergröße 'a' dar?",
+    "answers": [
+      "Die maximale Anzahl der gleichzeitig aktiven Verbindungen in einem Kanal.",
+      "Die mittlere Verzögerung, die ein Paket in einer Warteschlange erfährt.",
+      "Die maximale Menge an Daten in Paketen, die während der Übertragung im Übertragungsmedium vorliegen kann, während das erste Bit unterwegs ist.",
+      "Das Verhältnis der Bitfehlerrate zur Datenrate eines Kanals."
+    ],
+    "correct": 2,
+    "explanation": "Die Kanalpuffergröße 'a' (Bandwidth-Delay Product in Paketen, a = R*D/L) stellt die Anzahl der Pakete dar, die sich maximal auf der Leitung befinden können, während das erste Bit des ersten Pakets vom Sender zum Empfänger unterwegs ist. [55-59]"
+  },
+  {
+    "question": "Wodurch wird bei Berechnung der Prüfsumme in TCP und UDP das Schichtenprinzip verletzt?",
+    "answers": [
+      "Durch die Nutzung von Hardware-Beschleunigung statt Software-Implementierung.",
+      "Durch die Einbeziehung von Informationen aus dem IP-Header (wie Quell- und Ziel-IP-Adressen) in die Prüfsummenberechnung.",
+      "Durch die dynamische Anpassung der Prüfsummenlänge an die Paketgröße.",
+      "Durch die Notwendigkeit einer erneuten Berechnung bei jeder Routerweiterleitung."
+    ],
+    "correct": 1,
+    "explanation": "Die Berechnung der Prüfsumme in TCP und UDP verletzt das Schichtenprinzip, da sie Informationen aus der darunterliegenden Netzwerkschicht (wie Quell- und Ziel-IP-Adressen sowie die Protokollnummer im Pseudo-Header) verwendet. Dies ermöglicht zwar eine bessere Fehlererkennung, widerspricht aber der strikten Trennung der Schichten. [57, 60-62]"
+  },
+  {
+    "question": "Nennen Sie ein echtzeitfähiges Medienzugriffsverfahren. Begründen Sie Ihre Antwort.",
+    "answers": [
+      "ALOHA, da es eine hohe Flexibilität beim Senden bietet.",
+      "CSMA/CD, da es Kollisionen effizient erkennt und behebt.",
+      "Feste Kanalaufteilung (z.B. TDMA) oder Token Ring, da sie eine garantierte Sendegelegenheit bieten und Kollisionen vermeiden.",
+      "P-persistent CSMA, da es einen Kompromiss zwischen Effizienz und Kollisionsvermeidung darstellt."
+    ],
+    "correct": 2,
+    "explanation": "Echtzeitfähige Medienzugriffsverfahren sind solche, die eine garantierte Sendegelegenheit bieten und Kollisionen vermeiden. Beispiele hierfür sind feste Kanalaufteilung (wie FDMA, TDMA) oder zyklische Zuteilungsverfahren wie Token Ring. [12, 16, 57, 58, 63]"
+  },
+  {
+    "question": "Ein Rechner hat die IP-Adresse 192.168.20.9/20 (klassenlose Adressierung). Wie lautet die dazugehörige Subnetzadresse?",
+    "answers": [
+      "192.168.20.0",
+      "192.168.0.0",
+      "192.168.16.0",
+      "192.168.32.0"
+    ],
+    "correct": 2,
+    "explanation": "Bei der klassenlosen Adressierung (CIDR) wird die Subnetzadresse durch Setzen aller Host-Bits der IP-Adresse auf Null bestimmt. Bei einer /20-Maske für 192.168.20.9 sind die ersten 20 Bits der Netzwerkanteil. Dies ergibt 192.168.16.0. [57, 64]"
+  },
+  {
+    "question": "Nennen und beschreiben Sie kurz die zwei Hauptaufgaben der Netzwerkschicht.",
+    "answers": [
+      "Flusskontrolle (Steuerung der Senderate) und Überlastkontrolle (Schutz des Netzes vor Überlast).",
+      "Rahmensynchronisation und Fehlerkorrektur.",
+      "Weiterleitung (Forwarding) von Dateneinheiten und Wegewahl (Routing) zur Entscheidung über den besten Pfad.",
+      "Verbindungsaufbau und Ende-zu-Ende-Transport von Segmenten."
+    ],
+    "correct": 2,
+    "explanation": "Die zwei Hauptaufgaben der Netzwerkschicht sind die Weiterleitung (Forwarding), bei der Dateneinheiten von einer Schnittstelle auf eine andere weitergeleitet werden, und die Wegewahl (Routing), bei der Verfahren angewendet werden, um den besten Pfad für die Dateneinheiten zu bestimmen. [65-68]"
+  },
+  {
+    "question": "Wie groß muss die Rahmengröße gewählt werden, um Kollisionen sicher zu erkennen, wenn die maximale Ausbreitungsverzögerung 4,8 µs und die Senderate 100 Mbit/s beträgt (CSMA/CD)?",
+    "answers": [
+      "Mindestens 64 Byte",
+      "Mindestens 96 Byte",
+      "Mindestens 120 Byte",
+      "Mindestens 1500 Byte"
+    ],
+    "correct": 2,
+    "explanation": "Für eine sichere Kollisionserkennung bei CSMA/CD muss die Rahmengröße L so gewählt werden, dass die Sendezeit L/R größer ist als die zweifache maximale Ausbreitungsverzögerung 2D. Daraus ergibt sich L > 2 * R * D = 2 * (100 * 10^6 bit/s) * (4.8 * 10^-6 s) = 960 bit, was 120 Byte entspricht. [43, 69, 70]"
+  },
+  {
+    "question": "Nennen Sie die drei Hauptschutzziele der Informationssicherheit, die als 'CIA-Triade' bekannt sind.",
+    "answers": [
+      "Kontrolle, Identifikation, Authentifizierung",
+      "Vertraulichkeit, Integrität, Verfügbarkeit",
+      "Sicherheit, Compliance, Audit",
+      "Zertifizierung, Implementierung, Analyse"
+    ],
+    "correct": 1,
+    "explanation": "Die drei Hauptschutzziele der Informationssicherheit, bekannt als CIA-Triade, sind Vertraulichkeit (Confidentiality), Integrität (Integrity) und Verfügbarkeit (Availability). [71, 72]"
+  },
+  {
+    "question": "Listen Sie die fünf Schichten des Internet-Protokollstapels von oben nach unten auf. Geben Sie für jede Schicht ein Beispiel (Protokoll, Verfahren oder Anwendung) an und ordnen Sie ihnen die jeweiligen Bezeichnungen der PDU zu.",
+    "answers": [
+      "Anwendungsschicht (HTTP, APDU); Transportschicht (TCP, Segment); Netzwerkschicht (IP, Paket); Sicherungsschicht (Ethernet, Rahmen); Physikalische Schicht (Leitungskodierung, Bit).",
+      "Anwendungsschicht (FTP, Datei); Transportschicht (UDP, Datagramm); Netzwerkschicht (Routing, Router); Sicherungsschicht (MAC, Frame); Physikalische Schicht (Modulation, Signal).",
+      "Sitzungsschicht (RPC, SPDU); Darstellungsschicht (ASN.1, PPDU); Anwendungsschicht (DNS, ADPU); Transportschicht (TCP, TPDU); Netzwerkschicht (IP, Paket).",
+      "Physikalische Schicht (Signal, Bit); Sicherungsschicht (Frame, Rahmen); Netzwerkschicht (Paket, Paket); Transportschicht (Segment, Segment); Anwendungsschicht (Daten, APDU)."
+    ],
+    "correct": 0,
+    "explanation": "Die fünf Schichten des Internet-Protokollstapels von oben nach unten sind: Anwendungsschicht (z.B. HTTP, PDU: Daten/APDU), Transportschicht (z.B. TCP, PDU: Segment/TPDU), Netzwerkschicht (z.B. IP, PDU: Paket), Sicherungsschicht (z.B. Ethernet, PDU: Rahmen/Frame) und Physikalische Schicht (z.B. Modulation, PDU: Bit). [73-78]"
+  },
+  {
+    "question": "Auf welchen Schichten des Internetprotokollstapels müssen folgende Netzwerkgeräte jeweils mindestens arbeiten? Hubs, Router, Repeater, Switches.",
+    "answers": [
+      "Hubs: Sicherungsschicht; Router: Anwendungsschicht; Repeater: Netzwerkschicht; Switches: Physikalische Schicht.",
+      "Hubs: Physikalische Schicht; Router: Netzwerkschicht; Repeater: Physikalische Schicht; Switches: Sicherungsschicht.",
+      "Hubs: Netzwerkschicht; Router: Transportschicht; Repeater: Sicherungsschicht; Switches: Anwendungsschicht.",
+      "Hubs: Physikalische Schicht; Router: Anwendungsschicht; Repeater: Sicherungsschicht; Switches: Netzwerkschicht."
+    ],
+    "correct": 1,
+    "explanation": "Hubs und Repeater arbeiten auf der physikalischen Schicht. Switches operieren auf der Sicherungsschicht, während Router auf der Netzwerkschicht arbeiten. [57, 67, 78, 79]"
+  },
+  {
+    "question": "Was bedeutet QoS?",
+    "answers": [
+      "Quantity of Services (Anzahl der bereitgestellten Dienste).",
+      "Quality of Source (Qualität der Datenquelle).",
+      "Quality of Security (Qualität der Netzwerksicherheit).",
+      "Quality of Service (Dienstgüte – quantitative Aspekte von Rechnernetzen und Protokollen aus Sicht der Anwender)."
+    ],
+    "correct": 3,
+    "explanation": "QoS (Quality of Service) beschreibt die Dienstgüte eines Kommunikationsdienstes aus der Sicht der Anwender. Es umfasst quantitative Aspekte wie Latenz, Jitter, Durchsatz, Verlustrate und Verfügbarkeit. [57, 72, 80, 81]"
+  },
+  {
+    "question": "Nennen Sie zwei Unterschiede zwischen symmetrischen und asymmetrischen Kryptoverfahren.",
+    "answers": [
+      "Symmetrisch: Höherer Rechenaufwand; Asymmetrisch: Geringere Sicherheit.",
+      "Symmetrisch: Sender und Empfänger verwenden den gleichen geheimen Schlüssel; Asymmetrisch: Sender und Empfänger verwenden unterschiedliche Schlüssel (privater und öffentlicher).",
+      "Symmetrisch: Schlüsselaustausch einfach; Asymmetrisch: Schlüsselaustausch komplex.",
+      "Symmetrisch: Nur für Verschlüsselung; Asymmetrisch: Auch für digitale Signaturen."
+    ],
+    "correct": 1,
+    "explanation": "Bei symmetrischen Kryptoverfahren verwenden Sender und Empfänger den gleichen geheimen Schlüssel, während bei asymmetrischen Verfahren ein Schlüsselpaar (privater und öffentlicher Schlüssel) genutzt wird. Symmetrische Verfahren sind typischerweise schneller, aber der Schlüsselaustausch ist aufwendiger. [82-85]"
+  },
+  {
+    "question": "Wofür und wie wird bei TCP kontinuierlich die RTT geschätzt?",
+    "answers": [
+      "Die RTT wird geschätzt, um die optimale Paketgröße zu bestimmen, indem die durchschnittliche Paketlänge über einen Zeitraum gemessen wird.",
+      "Die RTT wird geschätzt, um den Retransmission Timeout (RTO) dynamisch anzupassen. Dies geschieht, indem der Sendezeitpunkt eines Segments gespeichert und bei Empfang des zugehörigen ACK die Differenz berechnet wird.",
+      "Die RTT wird geschätzt, um die Anzahl der TCP-Verbindungen zu optimieren, basierend auf der Serverauslastung.",
+      "Die RTT wird geschätzt, um die Jitter-Rate zu minimieren, durch Analyse der zeitlichen Abstände zwischen den empfangenen ACKs."
+    ],
+    "correct": 1,
+    "explanation": "Bei TCP wird die Round Trip Time (RTT) kontinuierlich geschätzt, um den Retransmission Timeout (RTO) dynamisch anzupassen und somit eine effiziente Fehlerbehandlung zu gewährleisten. Dies geschieht durch Messung der Zeit zwischen dem Senden eines Segments und dem Empfang seines Acknowledgments. [56, 67]"
+  },
+  {
+    "question": "Was ist die Grundidee von CSMA-Verfahren? Warum können dennoch noch Kollisionen auftreten?",
+    "answers": [
+      "Grundidee: Jeder Knoten sendet sofort. Kollisionen treten auf, wenn mehrere Knoten gleichzeitig senden, da es keine Koordination gibt.",
+      "Grundidee: Knoten erhalten eine Sendeberechtigung. Kollisionen treten auf, wenn ein Knoten seine Berechtigung verliert und trotzdem sendet.",
+      "Grundidee: 'Listen before talking' – Knoten prüfen vor dem Senden, ob das Medium belegt ist. Kollisionen können dennoch auftreten, weil das Signal Zeit zur Ausbreitung benötigt und ein anderer Knoten mit dem Senden beginnen kann, bevor das Signal des ersten Senders ihn erreicht hat.",
+      "Grundidee: 'Listen while talking' – Knoten erkennen Kollisionen während des Sendens. Kollisionen treten dennoch auf, wenn die Erkennung fehlerhaft ist."
+    ],
+    "correct": 2,
+    "explanation": "Die Grundidee von CSMA-Verfahren ist das 'listen before talking', d.h., Knoten prüfen vor dem Senden, ob das Medium belegt ist. Kollisionen können trotzdem auftreten, da sich Signale nicht sofort überall ausbreiten; ein anderer Knoten kann mit dem Senden beginnen, bevor er das Signal eines bereits sendenden Knotens empfängt. [86-89]"
+  },
+  {
+    "question": "Wie heißt das Problem, das auftritt, wenn Kosten in Distanzvektor-Routing-Verfahren erhöht werden, und wie lautet eine beliebte Gegenmaßnahme?",
+    "answers": [
+      "Das Problem ist 'Black Hole Routing'; Gegenmaßnahme: Link-State-Routing.",
+      "Das Problem ist 'Route Flapping'; Gegenmaßnahme: Router-Aggregation.",
+      "Das Problem ist das 'Count-to-infinity-Problem'; Gegenmaßnahme: Poisoned Reverse.",
+      "Das Problem ist 'Routing Loops'; Gegenmaßnahme: Statische Routen."
+    ],
+    "correct": 2,
+    "explanation": "Wenn in Distanzvektor-Routing-Verfahren die Kosten eines Links erhöht werden, kann das Count-to-infinity-Problem auftreten, bei dem veraltete Informationen zu langen Konvergenzzeiten führen. Eine beliebte Gegenmaßnahme ist Poisoned Reverse. [90-94]"
+  }
+]
+}
